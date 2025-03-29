@@ -1,0 +1,15 @@
+numpy==1.24.4
+pyautogui==0.9.54
+opencv-python==4.8.1.78
+pillow==10.0.1
+requests==2.31.0
+gymnasium==0.29.1
+stable-baselines3==2.2.1
+torch==2.1.0
+transformers==4.35.0
+pygetwindow==0.0.9
+tomli==2.0.1
+distro==1.8.0
+platformdirs==3.11.0
+oauthlib==3.2.2
+importlib_metadata==6.8.0
