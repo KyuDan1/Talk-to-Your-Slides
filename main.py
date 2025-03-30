@@ -17,10 +17,11 @@ from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import DummyVecEnv
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import pygetwindow as gw
-
+from dotenv import load_dotenv
+load_dotenv()
 # API 키 설정 (실제 사용 시 환경 변수로 관리하는 것을 추천)
-LLM_API_KEY = "your_llm_api_key"  # 예: OpenAI API 키
-VLM_API_KEY = "your_vlm_api_key"  # 예: OpenAI API 키 또는 다른 Vision API 키
+LLM_API_KEY = os.environ.get("OPENAI_API_KEY") # 예: OpenAI API 키
+VLM_API_KEY = os.environ.get("OPENAI_API_KEY")  # 예: OpenAI API 키 또는 다른 Vision API 키
 
 class PowerPointAction:
     """PowerPoint에서 수행할 수 있는 액션 정의"""
@@ -81,14 +82,15 @@ class ScreenCapture:
         return None
     
     @staticmethod
-    def capture_screen(powerpoint_only=True):
+    def capture_screen(powerpoint_only=True, target_size=(1920, 1080)):
         """현재 화면을 캡처하여 PIL 이미지로 반환
         
         Args:
             powerpoint_only (bool): True면 PowerPoint 창만 캡처, False면 전체 화면 캡처
+            target_size (tuple): 반환할 이미지의 목표 크기 (width, height)
         
         Returns:
-            PIL.Image: 캡처된 이미지
+            PIL.Image: 크기가 조정된 캡처 이미지
         """
         if powerpoint_only:
             # PowerPoint 창 찾기
@@ -100,15 +102,21 @@ class ScreenCapture:
                 
                 # 창 영역만 캡처
                 screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))
-                return screenshot
             else:
-                print("경고: PowerPoint 창을 찾을 수 없습니다. 전체 화면을 캡처합니다.")
+                print("경고: PowerPoint 창을 찾을 수 없습니다. PowerPoint를 켜십시오. 전체 화면을 캡처합니다.")
+                screenshot = ImageGrab.grab()
+        else:
+            # 전체 화면 캡처
+            screenshot = ImageGrab.grab()
         
-        # PowerPoint 창을 찾지 못했거나 전체 화면 캡처 모드일 경우
-        screenshot = ImageGrab.grab()
+        # 목표 크기로 이미지 리사이징
+        if target_size and (screenshot.width != target_size[0] or screenshot.height != target_size[1]):
+            screenshot = screenshot.resize(target_size, Image.LANCZOS)
+            
         return screenshot
     
     @staticmethod
+    #https://ai.google.dev/gemini-api/docs/vision?hl=ko&lang=python
     def image_to_base64(image):
         """PIL 이미지를 base64 인코딩 문자열로 변환"""
         buffered = BytesIO()
@@ -292,21 +300,27 @@ class PowerPointEnv(gym.Env):
         self.vlm_module = vlm_module
         self.manual_kb = manual_kb
         
-        # 액션 공간 정의 (간소화된 버전)
-        # 실제로는 더 복잡한 액션 공간이 필요할 수 있음
-        self.action_space = spaces.Dict({
-            "action_type": spaces.Discrete(7),  # 7가지 액션 타입
-            "params": spaces.Dict({
-                "x": spaces.Box(low=0, high=1920, shape=(1,), dtype=np.int32),
-                "y": spaces.Box(low=0, high=1080, shape=(1,), dtype=np.int32),
-                "text": spaces.Text(10),  # 최대 10자 텍스트
-                "amount": spaces.Box(low=-10, high=10, shape=(1,), dtype=np.int32)
-            })
-        })
+        # Screen dimensions
+        self.screen_width = 1920
+        self.screen_height = 1080
+        
+        # Flattened action space - replacing the nested Dict
+        # action_type: 0-6 (7 action types)
+        # x, y: screen coordinates
+        # text_idx: index into a predefined text list (simpler than Text space)
+        # amount: scroll amount
+        self.action_space = spaces.Box(
+            low=np.array([0, 0, 0, 0, -10]), 
+            high=np.array([6, self.screen_width, self.screen_height, 9, 10]),  # 10 predefined text options
+            dtype=np.float32
+        )
+        
+        # Predefined text options for simplicity
+        self.text_options = ["", "Title", "Subtitle", "Bullet", "Text", "Hello", "World", "Slide", "Image", "Chart"]
         
         # 관측 공간 정의 (화면 이미지)
         self.observation_space = spaces.Box(
-            low=0, high=255, shape=(1080, 1920, 3), dtype=np.uint8
+            low=0, high=255, shape=(self.screen_height, self.screen_width, 3), dtype=np.uint8
         )
         
         self.current_command = None
@@ -330,35 +344,70 @@ class PowerPointEnv(gym.Env):
         ]
         self.current_command = random.choice(commands)
         
-        # 현재 화면 캡처
-        screenshot = ScreenCapture.capture_screen()
+        # 현재 화면 캡처 - 지정된 크기로 리사이징
+        screenshot = ScreenCapture.capture_screen(target_size=(self.screen_width, self.screen_height))
         screen_array = np.array(screenshot)
         
         self.episode_steps = 0
         
         return screen_array, {"command": self.current_command}
         
-    def step(self, action_dict):
+    def step(self, action):
         """환경에서 한 스텝 진행"""
         self.episode_steps += 1
         
-        # 딕셔너리에서 액션 파라미터 추출
-        action_type_idx = action_dict["action_type"]
-        params = action_dict["params"]
+        # Convert Box action to our needed format
+        # Round and convert to int for discrete values
+        action_type_idx = int(round(float(action[0])))
+        x = int(round(float(action[1])))
+        y = int(round(float(action[2])))
+        text_idx = int(round(float(action[3])))
+        amount = int(round(float(action[4])))
+        
+        # Ensure values are within valid ranges
+        action_type_idx = np.clip(action_type_idx, 0, 6)
+        x = np.clip(x, 0, 1920)
+        y = np.clip(y, 0, 1080)
+        text_idx = np.clip(text_idx, 0, len(self.text_options) - 1)
+        amount = np.clip(amount, -10, 10)
+        
+        # Get the text from predefined options
+        text = self.text_options[text_idx]
         
         # 인덱스를 액션 타입 문자열로 변환
         action_types = ["click", "right_click", "double_click", "type", "hotkey", "scroll", "drag"]
         action_type = action_types[action_type_idx]
         
+        # Build params dictionary based on action type
+        params = {}
+        if action_type in ["click", "right_click", "double_click"]:
+            params = {"x": x, "y": y}
+        elif action_type == "type":
+            params = {"text": text}
+        elif action_type == "hotkey":
+            # Simplified - would need more elaborate handling for real use
+            params = {"keys": ["ctrl", "s"]}
+        elif action_type == "scroll":
+            params = {"amount": amount}
+        elif action_type == "drag":
+            # For drag, we're using x, y as start coordinates and some offset for end
+            params = {
+                "start_x": x, 
+                "start_y": y,
+                "end_x": min(x + 100, 1920),  # Simple offset for demo
+                "end_y": min(y + 100, 1080),
+                "duration": 0.5
+            }
+        
         # PowerPointAction 객체 생성 및 실행
-        action = PowerPointAction(action_type, params)
-        success = action.execute()
+        ppt_action = PowerPointAction(action_type, params)
+        success = ppt_action.execute()
         
         # 잠시 대기 (UI 업데이트 대기)
         time.sleep(0.5)
         
-        # 새 화면 상태 관측
-        screenshot = ScreenCapture.capture_screen()
+        # 새 화면 상태 관측 - 지정된 크기로 리사이징
+        screenshot = ScreenCapture.capture_screen(target_size=(self.screen_width, self.screen_height))
         screen_array = np.array(screenshot)
         
         # VLM으로 화면 분석
@@ -413,7 +462,7 @@ class PPOAgent:
             print(f"모델을 {model_path}에서 로드했습니다.")
         else:
             self.model = PPO(
-                "MultiInputPolicy",
+                "CnnPolicy",  # 이미지 기반 정책 사용
                 env,
                 verbose=1,
                 learning_rate=0.0003,
@@ -452,16 +501,17 @@ class PowerPointAgent:
         self.vlm_module = VLMModule()
         self.manual_kb = ManualKnowledgeBase()
         
-        # 강화학습 환경 설정
-        self.env = DummyVecEnv([lambda: PowerPointEnv(
-            self.llm_module, self.vlm_module, self.manual_kb
-        )])
+        # Create a single environment instance first
+        self.env = PowerPointEnv(self.llm_module, self.vlm_module, self.manual_kb)
+        
+        # Wrap with DummyVecEnv as required by stable-baselines3
+        self.vec_env = DummyVecEnv([lambda: self.env])
         
         # 에이전트 초기화
         if use_trained_model and os.path.exists(model_path):
-            self.agent = PPOAgent(self.env, model_path)
+            self.agent = PPOAgent(self.vec_env, model_path)
         else:
-            self.agent = PPOAgent(self.env)
+            self.agent = PPOAgent(self.vec_env)
             
     def train(self, total_timesteps=10000):
         """에이전트 훈련"""
