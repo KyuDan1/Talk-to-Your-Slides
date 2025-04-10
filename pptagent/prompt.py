@@ -31,6 +31,8 @@ The 'requires_processing' flag should be true if data manipulation or calculatio
 Be comprehensive but concise."""
 
 PLAN_INPUT_EX = "Change the title of slide 3 to 'Financial Results 2023' and update the chart with data from the Excel file"
+
+
 PLAN_OUTPUT_EX = """{
     "understanding": "The user wants to modify the title of slide 3 and update a chart using data from an Excel file.",
     "tasks": [
@@ -53,3 +55,14 @@ PLAN_OUTPUT_EX = """{
     "requires_processing": true,
     "additional_notes": "Will need to locate and read the Excel file referenced by the user"
 }"""
+
+
+ACCESS_TO_VBA_PROJECT = """
+PowerPoint의 VBA 프로젝트 액세스 보안 설정이 활성화되어 있어야 함
+
+
+PowerPoint 보안 설정 확인:
+
+PowerPoint를 열고 File > Options > Trust Center > Trust Center Settings > Macro Settings로 이동
+"Trust access to the VBA project object model" 옵션을 체크해야 합니다
+"""
