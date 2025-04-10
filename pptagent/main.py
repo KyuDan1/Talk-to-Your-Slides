@@ -1,4 +1,4 @@
-from utils import Planner, Parser, Processor, Applier, Reporter, SharedLogMemory
+from classes import Planner, Parser, Processor, Applier, Reporter, SharedLogMemory
 def main(user_input):
     planner = Planner()
     parser = Parser()
@@ -25,7 +25,7 @@ def main(user_input):
     # 이전 내용 모두 넣어서 간추리고 사용자에게 report할 내용 return
     to_report = memory(plan, to_process, to_apply, result)
     
-    # 사용자에게 report하기기
+    # 사용자에게 report하기
     reporter(to_report)
 
 #test
