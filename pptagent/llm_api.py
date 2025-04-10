@@ -82,7 +82,7 @@ def send_openai_request(
 def llm_request_with_retries(model_name: str,
                              request,
                              num_retries: int = 4,
-                             ):
+                             )->str:
     for attempt in range(num_retries):
         try:
             request = create_openai_request(content=request)

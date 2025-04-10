@@ -174,3 +174,4 @@ cython_debug/
 .pypirc
 
 pptagent/credentials.yml
+credentials.yml
