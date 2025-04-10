@@ -1,6 +1,32 @@
 import win32com.client
 import pywintypes
-
+def get_simple_powerpoint_info():
+    """
+    현재 열려있는 PowerPoint의 페이지 수와 파일 이름만 가져옵니다.
+    """
+    try:
+        # PowerPoint 애플리케이션에 연결
+        ppt_app = win32com.client.GetObject(Class="PowerPoint.Application")
+        
+        # PowerPoint가 실행 중이고 열린 프레젠테이션이 있는지 확인
+        if not ppt_app or not hasattr(ppt_app, 'ActivePresentation'):
+            return "PowerPoint가 실행 중이 아니거나 열린 프레젠테이션이 없습니다."
+        
+        # 활성 프레젠테이션 가져오기
+        presentation = ppt_app.ActivePresentation
+        
+        # 파일 이름과 페이지 수 가져오기
+        file_name = presentation.Name
+        slide_count = presentation.Slides.Count
+        
+        return {
+            "파일 이름": file_name,
+            "슬라이드 수": slide_count
+        }
+        
+    except Exception as e:
+        return f"오류 발생: {str(e)}"
+    
 def parse_active_slide_objects(slide_num:int=1):
     output = ""  # 출력을 저장할 문자열 초기화
     try:

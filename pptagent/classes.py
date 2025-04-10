@@ -1,24 +1,16 @@
 from llm_api import llm_request_with_retries
-from prompt import PLAN_PROMPT, PLAN_INPUT_EX, PLAN_OUTPUT_EX
-
-
+from prompt import PLAN_PROMPT, PARSER_PROMPT, VBA_PROMPT, create_process_prompt
+from utils import parse_active_slide_objects
+import json
+import time
 class Planner:
     def __init__(self):
         self.system_prompt = PLAN_PROMPT
-        
-        self.example_input = PLAN_INPUT_EX
-        self.example_output = PLAN_OUTPUT_EX
     
     def __call__(self, user_input: str, model_name ="gemini-1.5-flash") -> dict:
         # Construct the prompt for the LLM
         prompt = f"""
         {self.system_prompt}
-        
-        Example Input:
-        {self.example_input}
-        
-        Example Output:
-        {self.example_output}
         
         Now, please create a plan for the following request:
         {user_input}
@@ -30,11 +22,15 @@ class Planner:
             request=prompt,
             num_retries=4
         )
-        print(response)
+        #print(response)
         # The response should be a JSON string, but let's handle errors safely
         try:
             import json
-            plan = json.loads(response)
+            json_str = response.strip().replace("```json", "").replace("```", "").strip()
+            last_brace = json_str.rfind('}')
+            if last_brace != -1:
+                json_str = json_str[:last_brace+1]
+            plan = json.loads(json_str)
             return plan
         except json.JSONDecodeError:
             # Fallback - return a basic structure with the raw response
@@ -55,12 +51,69 @@ class Planner:
             }
 
 class Parser:
-    class VBAgenerator:
-        pass
-    pass
+    def __init__(self, json_data):
+        self.json_data = json_data
+        self.tasks = json_data.get("tasks", [])
+    def process(self):
+        """
+        Process the tasks in the JSON data and add contents for each page number.
+        
+        Returns:
+            dict: The updated JSON data with contents added
+        """
+        for task in self.tasks:
+            page_number = task.get("page number")
+            if page_number:
+                # Parse objects for this slide
+                slide_contents = parse_active_slide_objects(page_number)
+                
+                # Add the contents to the task
+                task["contents"] = slide_contents
+        
+        return self.json_data
+    
 
 class Processor:
-    pass
+    def __init__(self, json_data, model_name="gemini-1.5-flash"):
+
+        self.json_data = json_data
+        # 'tasks' 키를 사용하는 것으로 보입니다 (원래 코드에서는 processed_datas였지만 입력 예시와 맞춤)
+        self.tasks = json_data.get("tasks", [])
+        self.model_name = model_name
+
+    def process(self):
+        for task in self.tasks:
+            page_number = task.get("page number")
+            description = task.get("description", "")
+            action = task.get("action", "")
+            contents = task.get("contents", "")
+            
+            if page_number:
+                # LLM에게 보낼 프롬프트 생성
+                prompt = create_process_prompt(page_number, description, action, contents)
+                
+                # LLM 요청 보내기
+                response = llm_request_with_retries(
+                    model_name=self.model_name,
+                    request=prompt,
+                    num_retries=4
+                )
+                
+                # LLM 응답 파싱
+                # print(response)
+                json_str = response.strip().replace("```json", "").replace("```", "").strip()
+                last_brace = json_str.rfind('}')
+                if last_brace != -1:
+                    json_str = json_str[:last_brace+1]
+                processed_result = json.loads(json_str)
+
+                
+                # 결과를 작업에 추가
+                task["edit target type"] = processed_result["edit target type"]
+                task["edit target content"] = processed_result["edit target content"]
+                task["content after edit"] = processed_result["content after edit"]
+        
+        return self.json_data
 
 class Applier:
     class VBAgenerator:
@@ -72,3 +125,25 @@ class Reporter:
 
 class SharedLogMemory:
     pass
+
+    
+class VBAgenerator:
+    def __init__(self):
+        self.system_prompt = VBA_PROMPT
+   
+    def __call__(self, user_input: str, model_name ="gemini-1.5-flash") -> dict:
+        # Construct the prompt for the LLM
+        prompt = f"""
+        {self.system_prompt}
+        
+        Now, please create a python code using win32com library:
+        {user_input}
+        """
+        
+        # Request plan from LLM
+        response = llm_request_with_retries(
+            model_name=model_name,
+            request=prompt,
+            num_retries=4
+        )
+        print(response)
