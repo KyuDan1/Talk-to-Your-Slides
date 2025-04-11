@@ -19,31 +19,23 @@ def main(user_input):
 
     processor = Processor(parsed_json)
     processed_json = processor.process()
-    print(processed_json)
-    import sys
-    sys.exit()
+    #print(processed_json)
 
-    applier = Applier()
-    reporter = Reporter()
-
-    memory = SharedLogMemory()
-    # print(plan)
     # import sys
     # sys.exit()
-    # ppt에서 데이터 파싱하기
-    to_process = parser(plan)
-    
-    # 데이터 processing
-    to_apply = processor(to_process)
-    
-    # ppt에 적용하고, True return하기
-    result:bool = applier(to_apply)
 
+    applier = Applier()
+    result = applier(processed_json)
+    #print(f"결과: {result}")
+    import sys
+    sys.exit()
+    reporter = Reporter()
+    summary = reporter(processed_json, result)
+    print(summary)
+    
+    memory = SharedLogMemory()
     # 이전 내용 모두 넣어서 간추리고 사용자에게 report할 내용 return
-    to_report = memory(plan, to_process, to_apply, result)
+    memory = memory(user_input, plan_json, processed_json, result)
     
-    # 사용자에게 report하기
-    reporter(to_report)
-
 #test
 main(user_input="please translate ppt slides number 2 in English.")

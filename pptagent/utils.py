@@ -102,6 +102,118 @@ def get_shape_type(type_val):
     }
     return shape_types.get(type_val, f"Unknown Type ({type_val})")
 
+def extract_text_from_shape(shape, indent_level=1):
+    """모든 유형의 도형에서 텍스트를 추출하는 함수"""
+    output = ""
+    indent = "  " * indent_level
+    
+    try:
+        # 텍스트프레임이 있는 객체에서 텍스트 추출 (TextBox, AutoShape, Placeholder 등)
+        if hasattr(shape, 'HasTextFrame') and shape.HasTextFrame:
+            text_frame = shape.TextFrame
+            if hasattr(text_frame, 'HasText') and text_frame.HasText:
+                text_range = text_frame.TextRange
+                output += f"\n{indent}Text content: {text_range.Text}"
+                
+                # 텍스트 서식 정보 추출
+                try:
+                    output += f"\n{indent}Font: {text_range.Font.Name}, Size: {text_range.Font.Size}"
+                    output += f"\n{indent}Bold: {text_range.Font.Bold}, Italic: {text_range.Font.Italic}"
+                    
+                    # 단락 정보 추출
+                    if hasattr(text_range, 'ParagraphFormat'):
+                        para_format = text_range.ParagraphFormat
+                        output += f"\n{indent}Alignment: {get_alignment_type(para_format.Alignment)}"
+                        output += f"\n{indent}Line Spacing: {para_format.LineSpacing}"
+                except:
+                    output += f"\n{indent}Cannot retrieve all text formatting details"
+        
+        # TextFrame2 지원 (Office 2007 이상)
+        elif hasattr(shape, 'HasTextFrame2') and shape.HasTextFrame2:
+            text_frame = shape.TextFrame2
+            if hasattr(text_frame, 'TextRange') and text_frame.TextRange.Text != "":
+                text_range = text_frame.TextRange
+                output += f"\n{indent}Text content (TextFrame2): {text_range.Text}"
+                
+                # 텍스트 서식 정보 추출
+                try:
+                    output += f"\n{indent}Font: {text_range.Font.Name}, Size: {text_range.Font.Size}"
+                    output += f"\n{indent}Bold: {text_range.Font.Bold}, Italic: {text_range.Font.Italic}"
+                except:
+                    output += f"\n{indent}Cannot retrieve TextFrame2 formatting details"
+        
+        # 테이블 셀 내의 텍스트 추출
+        elif shape.Type == 19:  # Table
+            try:
+                table = shape.Table
+                rows = table.Rows.Count
+                cols = table.Columns.Count
+                
+                output += f"\n{indent}Table text content:"
+                for row in range(1, rows + 1):
+                    for col in range(1, cols + 1):
+                        cell = table.Cell(row, col)
+                        if hasattr(cell, 'Shape') and hasattr(cell.Shape, 'TextFrame'):
+                            text_frame = cell.Shape.TextFrame
+                            if text_frame.HasText:
+                                cell_text = text_frame.TextRange.Text
+                                output += f"\n{indent}  Cell({row},{col}): {cell_text}"
+            except:
+                output += f"\n{indent}Cannot retrieve table text content"
+                
+        # 차트 내의 텍스트 추출
+        elif shape.Type == 3:  # Chart
+            try:
+                chart = shape.Chart
+                if chart.HasTitle:
+                    output += f"\n{indent}Chart Title: {chart.ChartTitle.Text}"
+                    
+                # 축 제목 추출
+                if hasattr(chart, 'Axes'):
+                    for axis_type in range(1, 3):  # 1: Primary, 2: Secondary
+                        for axis_group in range(1, 4):  # 1: X, 2: Y, 3: Z
+                            try:
+                                axis = chart.Axes(axis_group, axis_type)
+                                if axis.HasTitle:
+                                    output += f"\n{indent}Axis Title ({axis_group},{axis_type}): {axis.AxisTitle.Text}"
+                            except:
+                                pass
+            except:
+                output += f"\n{indent}Cannot retrieve chart text content"
+                
+        # SmartArt 내의 텍스트 추출
+        elif shape.Type == 24:  # SmartArt
+            try:
+                if hasattr(shape, 'SmartArt'):
+                    smart_art = shape.SmartArt
+                    if hasattr(smart_art, 'AllNodes'):
+                        nodes = smart_art.AllNodes
+                        output += f"\n{indent}SmartArt text content:"
+                        for i in range(1, nodes.Count + 1):
+                            node = nodes.Item(i)
+                            if hasattr(node, 'TextFrame2'):
+                                text_frame = node.TextFrame2
+                                if text_frame.TextRange.Text != "":
+                                    output += f"\n{indent}  Node {i}: {text_frame.TextRange.Text}"
+            except:
+                output += f"\n{indent}Cannot retrieve SmartArt text content"
+    
+    except Exception as e:
+        output += f"\n{indent}Text extraction error: {e}"
+    
+    return output
+
+def get_alignment_type(alignment_val):
+    # 단락 정렬 값을 텍스트로 변환
+    alignment_types = {
+        1: "Left",
+        2: "Center",
+        3: "Right",
+        4: "Justify",
+        5: "Distributed"
+    }
+    return alignment_types.get(alignment_val, f"Unknown Alignment ({alignment_val})")
+
 def parse_group_shape(group_shape, indent_level=1):
     """Recursively parse all items within a group object"""
     output = ""  # 출력을 저장할 문자열 초기화
@@ -119,6 +231,9 @@ def parse_group_shape(group_shape, indent_level=1):
             output += f"\n{indent}  Position: Left={group_item.Left}, Top={group_item.Top}"
             output += f"\n{indent}  Size: Width={group_item.Width}, Height={group_item.Height}"
             
+            # 그룹 내 개체의 텍스트 추출
+            output += extract_text_from_shape(group_item, indent_level + 1)
+            
             # Process recursively if the item in the group is another group
             if group_item.Type == 6:  # Group
                 output += parse_group_shape(group_item, indent_level + 1)
@@ -135,25 +250,15 @@ def parse_shape_details(shape, indent_level=1):
     # Extract specific details based on shape type
     output = ""  # 출력을 저장할 문자열 초기화
     indent = "  " * indent_level
+    
+    # 모든 도형에서 텍스트 추출 시도
+    output += extract_text_from_shape(shape, indent_level)
+    
     try:
         if shape.Type == 6:  # Group
             output += f"\n{indent}Group object found: {shape.Name}"
             output += parse_group_shape(shape, indent_level)
-            
-        elif shape.Type == 17:  # Text Box
-            if shape.HasTextFrame:
-                text_frame = shape.TextFrame
-                if text_frame.HasText:
-                    text_range = text_frame.TextRange
-                    output += f"\n{indent}Text content: {text_range.Text}"
-                    
-                    # Get text formatting details
-                    try:
-                        output += f"\n{indent}Font: {text_range.Font.Name}, Size: {text_range.Font.Size}"
-                        output += f"\n{indent}Bold: {text_range.Font.Bold}, Italic: {text_range.Font.Italic}"
-                    except:
-                        output += f"\n{indent}Cannot retrieve all text formatting details"
-        
+                
         elif shape.Type == 13:  # Picture
             output += f"\n{indent}Picture: {shape.Name}"
             try:
@@ -167,8 +272,6 @@ def parse_shape_details(shape, indent_level=1):
                 chart = shape.Chart
                 output += f"\n{indent}Chart Type: {chart.ChartType}"
                 output += f"\n{indent}Has Title: {chart.HasTitle}"
-                if chart.HasTitle:
-                    output += f"\n{indent}Title: {chart.ChartTitle.Text}"
             except:
                 output += f"\n{indent}Cannot retrieve all chart details"
                 
