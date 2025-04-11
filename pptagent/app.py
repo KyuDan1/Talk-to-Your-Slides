@@ -14,7 +14,7 @@ def index():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AI Pipeline Tool</title>
+        <title>PPT Agent</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -60,7 +60,7 @@ def index():
         </style>
     </head>
     <body>
-        <h1>🤖 AI Pipeline Tool</h1>
+        <h1>🤖 PPT Agent</h1>
         
         <textarea id="userInput" placeholder="Enter your request here..."></textarea>
         <br>
