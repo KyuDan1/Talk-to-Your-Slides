@@ -1,8 +1,11 @@
 from llm_api import llm_request_with_retries
 from prompt import PLAN_PROMPT, PARSER_PROMPT, VBA_PROMPT, create_process_prompt
 from utils import parse_active_slide_objects
+import os
 import json
+from datetime import datetime
 import time
+
 class Planner:
     def __init__(self):
         self.system_prompt = PLAN_PROMPT
@@ -71,7 +74,6 @@ class Parser:
                 task["contents"] = slide_contents
         
         return self.json_data
-    
 
 class Processor:
     def __init__(self, json_data, model_name="gemini-1.5-flash"):
@@ -115,16 +117,16 @@ class Processor:
         
         return self.json_data
 
-# 텍스트 수정: 기존 기능을 유지하면서 텍스트를 이름으로 찾지 못할 경우 내용으로 검색하는 기능 추가
-# 텍스트 서식 변경: 글꼴, 크기, 볼드, 이탤릭, 밑줄, 색상, 정렬 등 변경
-# 도형 색상 변경: 도형 채우기 색상 변경
-# 테두리선 변경: 선 색상, 두께, 스타일, 투명도 변경
-# 이미지 교체: 기존 이미지를 새 이미지로 교체
-# 표 수정: 표 내용 및 서식 변경
-# 차트 수정: 차트 데이터 및 제목 변경
-
-# 데이터를 모은다면 Applier 데이터를 모아야 함.
 class Applier:
+    # 텍스트 수정: 기존 기능을 유지하면서 텍스트를 이름으로 찾지 못할 경우 내용으로 검색하는 기능 추가
+    # 텍스트 서식 변경: 글꼴, 크기, 볼드, 이탤릭, 밑줄, 색상, 정렬 등 변경
+    # 도형 색상 변경: 도형 채우기 색상 변경
+    # 테두리선 변경: 선 색상, 두께, 스타일, 투명도 변경
+    # 이미지 교체: 기존 이미지를 새 이미지로 교체
+    # 표 수정: 표 내용 및 서식 변경
+    # 차트 수정: 차트 데이터 및 제목 변경
+
+    # 데이터를 모은다면 Applier 데이터를 모아야 함.
     def __init__(self):
         """Initialize the Applier class"""
         pass
@@ -542,10 +544,6 @@ class Applier:
         
         return "\n".join(code_lines)
 
-import os
-import json
-from datetime import datetime
-
 class Reporter:
     def __init__(self):
         pass
@@ -623,7 +621,6 @@ class SharedLogMemory:
         # Return the log record as memories
         memories = log_record
         return memories
-
     
 class VBAgenerator:
     def __init__(self):
