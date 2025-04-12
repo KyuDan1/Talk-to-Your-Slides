@@ -6,7 +6,7 @@ def main(user_input):
     # input: 사용자 명령 output: 계획 json
     planner = Planner()
     plan_json:json = planner(user_input, model_name="gemini-1.5-flash")
-
+    print(plan_json)
     # ppt의 요소 가져오는 애. python 코드를 실행함. 정해진 형식이 있어 LLM 사용 안함.
     parser = Parser(plan_json)
     parsed_json:json = parser.process()
@@ -21,11 +21,11 @@ def main(user_input):
     # 부분으로 쪼개서 각각 적용하는 python 코드를 짜게 하는게 더 안정적일 것으로 예상함.
     applier = Applier()
     result = applier(processed_json)
-    
+    print(processed_json)
     # 진행 된 사항을 사용자에게 리포트하는 애. (외부 LLM 사용)
     reporter = Reporter()
     summary = reporter(processed_json, result)
-    print(summary)
+    #print(summary)
 
     # 이전 내용을 모두 저장. context를 가지고 있음.
     memory = SharedLogMemory()
