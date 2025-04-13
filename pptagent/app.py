@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
-import subprocess
 import sys
 import os
+import importlib.util
 
 app = Flask(__name__)
 
@@ -113,25 +113,26 @@ def run_pipeline():
         current_dir = os.path.dirname(os.path.abspath(__file__))
         main_py_path = os.path.join(current_dir, 'main.py')
         
-        # Run main.py with user_input as an argument
-        result = subprocess.run(
-            [sys.executable, main_py_path, user_input],
-            capture_output=True,
-            text=True,
-            check=True
-        )
+        # 다이나믹하게 main.py 모듈을 로드합니다
+        spec = importlib.util.spec_from_file_location("main_module", main_py_path)
+        main_module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(main_module)
         
-        return jsonify({
-            'status': 'success',
-            'result': result.stdout,
-            'error': result.stderr
-        })
-    except subprocess.CalledProcessError as e:
-        return jsonify({
-            'status': 'error',
-            'result': '',
-            'error': e.stderr
-        }), 500
+        # main 함수가 존재하는지 확인하고 사용자 입력을 인수로 전달합니다
+        if hasattr(main_module, 'main'):
+            # main 함수를 직접 호출하고 사용자 입력을 인수로 전달합니다
+            result_output = main_module.main(user_input)
+            return jsonify({
+                'status': 'success',
+                'result': str(result_output),
+                'error': ''
+            })
+        else:
+            return jsonify({
+                'status': 'error',
+                'result': '',
+                'error': 'main 함수를 main.py에서 찾을 수 없습니다.'
+            }), 500
     except Exception as e:
         return jsonify({
             'status': 'error',

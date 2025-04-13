@@ -44,4 +44,4 @@ def main(user_input):
     memory = memory(user_input, plan_json, processed_json, result)
     
 #test
-main(user_input="please translate ppt slides number 3 in Korean.")
+#main(user_input="please translate ppt slides number 3 in Korean.")
