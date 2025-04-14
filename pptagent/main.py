@@ -8,19 +8,25 @@ from dotenv import load_dotenv
 load_dotenv()
 ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
 logging.getLogger('test_Applier').setLevel(logging.DEBUG)
-def main(user_input):
+def main(user_input, rule_base_apply:bool = False):
     # 계획짜는 class (외부 LLM 사용)
     # input: 사용자 명령 output: 계획 json
     planner = Planner()
     plan_json:json = planner(user_input, model_name="gemini-1.5-flash")
+    print("=====PLAN====")
+    print(plan_json)
     # print(plan_json)
     # ppt의 요소 가져오는 애. python 코드를 실행함. 정해진 형식이 있어 LLM 사용 안함.
     parser = Parser(plan_json)
     parsed_json:json = parser.process()
+    print("=====PARSED====")
+    print(parsed_json)
 
     # ppt에서 가져온 요소를 plan에 맞춰서 행동하는 애.(번역, 요약, 검색 등) (외부 LLM 사용)
     processor = Processor(parsed_json)
     processed_json:json = processor.process()
+    print("=====PROCESSED====")
+    print(processed_json)   
     # print(processed_json)
     # import sys
     # sys.exit()
@@ -28,10 +34,10 @@ def main(user_input):
     # 현재는 rule-base로 python 코드를 짜고 있는데, 이게 오류율이 상당히 높음.
     # 이 부분을 데이터 수집해서 LLM으로 돌리면 더 안정적일 것으로 예상함.
     # 부분으로 쪼개서 각각 적용하는 python 코드를 짜게 하는게 더 안정적일 것으로 예상함.
-    
-    #applier = Applier()
-    
-    applier = test_Applier(api_key=ANTHROPIC_API_KEY)
+    if rule_base_apply:
+        applier = Applier()
+    else:
+        applier = test_Applier(api_key=ANTHROPIC_API_KEY)
     result = applier(processed_json)
     #print(processed_json)
     # 진행 된 사항을 사용자에게 리포트하는 애. (외부 LLM 사용)
@@ -44,4 +50,4 @@ def main(user_input):
     memory = memory(user_input, plan_json, processed_json, result)
     
 #test
-#main(user_input="please translate ppt slides number 3 in Korean.")
+main(user_input="please translate ppt slides number 6 in English.", rule_base_apply=True)
