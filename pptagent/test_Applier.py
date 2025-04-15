@@ -1,4 +1,5 @@
 from dotenv import load_dotenv
+from utils import _call_gpt_api
 import anthropic
 import os
 import json
@@ -7,6 +8,10 @@ import urllib.error
 import traceback
 import time
 load_dotenv()
+import openai
+from openai import OpenAI
+
+    
 
 def _call_claude_api(prompt, api_key):
     # API 요청 준비
@@ -45,12 +50,15 @@ def _call_claude_api(prompt, api_key):
         print("API 응답 수신 완료")
         return result["content"][0]["text"]
 
-def _generate_code(api_key, type, before, after, slide_num, total_content):
+def _generate_code(model, api_key, type, before, after, slide_num, total_content):
     # API 호출을 위한 프롬프트 구성
     prompt = f"""
-    Generate Python code to modify an active PowerPoint presentation based on the provided JSON task data.
+    Generate Python code modify an active PowerPoint presentation based on the provided JSON task data.
 
     The code should:
+    0. Find activate powerpoint app with
+        ppt_app = win32com.client.GetActiveObject("PowerPoint.Application")
+        active_presentation = ppt_app.ActivePresentation
     1. Find the slide specified by page number: {slide_num}
     2. Content reference: {total_content}
     3. Target to change: {type}, current content: {before}
@@ -65,17 +73,35 @@ def _generate_code(api_key, type, before, after, slide_num, total_content):
     - Always print detailed status messages for debugging
     - Make sure to explicitly apply any changes (e.g., shape.TextFrame.TextRange.Text = new_text)
     - Print each step of the process (e.g., "Found slide X", "Found shape Y", "Updated content from Z to W")
-
+    - Do not write print function or comments.
     Note that the code will run in a context where these variables are already available:
     - ppt_application: The PowerPoint application instance
     - active_presentation: The currently open presentation
+    -If you want to modify the formatting, refer to the following code for modification.
+    if text_frame.HasText: text_range = text_frame.TextRange # Find text
+    found_range = text_range.Find(text_to_highlight) 
+    while found_range: found_any = True 
+    found_range.Font.Bold = True # Bold
+    found_range.Font.Color.RGB = 16711680
+    example color)        
+    found_range.Font.Size = found_range.Font.Size * 1.2 # Increase font size by 20%
+    start_pos = found_range.Start + len(text_to_highlight)
+    found_range = text_range.Find(text_to_highlight, start_pos)
+    Do not use any "**" to make bold. It won't be applied on powerpoint.
+
 
     The code must be direct, practical and focused solely on making the specific change requested.
     """
 
     # Claude API 호출
-    code = _call_claude_api(prompt, api_key)
-    
+    if model == "claude-3.7-sonnet":
+        code = _call_claude_api(prompt, api_key)
+    elif model == "gpt-4.1":
+        code = _call_gpt_api(prompt, api_key, model)
+    elif model == "gpt-4.1-mini":
+        code = _call_gpt_api(prompt, api_key, model)
+    elif model == "gpt-4.1-nano":
+        code = _call_gpt_api(prompt, api_key, model)
     # 코드 전처리
     code = code.strip()
     if code.startswith("```python"):
@@ -92,9 +118,9 @@ def _generate_code(api_key, type, before, after, slide_num, total_content):
     return code
 
 class test_Applier:
-    def __init__(self, api_key=os.environ.get('ANTHROPIC_API_KEY')):
+    def __init__(self, model = 'claude-3.7-sonnet', api_key=os.environ.get('ANTHROPIC_API_KEY')):
         self.api_key = api_key
-    
+        self.model = model
     def __call__(self, processed_json):
         # PowerPoint 설정 코드를 별도 함수로 실행
         try:
@@ -138,7 +164,7 @@ class test_Applier:
                     print(f"\nChanging {type}: '{before}' → '{after}'")
                     
                     # 코드 생성
-                    code = _generate_code(self.api_key, type, before, after, slide_num, total_content)
+                    code = _generate_code(self.model, self.api_key, type, before, after, slide_num, total_content)
                     
                     # 디버깅을 위해 전체 코드 출력
                     print("====Generated Code====")

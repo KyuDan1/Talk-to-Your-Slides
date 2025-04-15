@@ -1,0 +1,36 @@
+{"Summarize text in a specific text box" :
+
+"Please summarize the text in the specified text box on ppt slides number 1 in a simpler way.",
+
+"Bold or color important parts in the entire PPT":
+
+"Please highlight the important points on ppt slides number 2 (e.g., using bold or color).",
+
+"Create a script for all slides and add to slide notes":
+
+"Please create a full script for ppt slides number 3 and add the script to the slide notes.",
+
+"Check and correct typos across all slides, then summarize changes":
+
+"Please check ppt slides number 4 for any typos or errors, correct them, and provide a summary of the changes.",
+
+"Translate slides into another language":
+
+"Please translate ppt slides number 5 into English.",
+
+"Ensure all content fits neatly inside the slide area":
+
+"Please adjust the layout of ppt slides number 6 so that all content fits neatly within the slide area.",
+
+"Convert certain terms to camelCase":
+
+"Please update all English on ppt slides number 7 to camelCase formatting.",
+
+"Change the overall color theme":
+
+"Please change the overall color theme on ppt slides number 8.",
+
+"Split a slide with too much information into two slides":
+
+"Please split ppt slides number 9 into two slides if there is too much information."
+}

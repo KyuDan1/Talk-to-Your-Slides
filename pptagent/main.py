@@ -4,64 +4,94 @@ import json
 import anthropic
 import os
 import logging
+import time
 from dotenv import load_dotenv
+
 load_dotenv()
 ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
+OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 logging.getLogger('test_Applier').setLevel(logging.DEBUG)
+
 def main(user_input, rule_base_apply:bool = False):
     import sys
 
     # 로그 파일을 쓰기 모드로 엽니다.
-    log_file = open("output.log", "w")
+    log_file = open(f"./log/output{user_input.replace(' ', '_')}.log", "w", encoding="utf-8")
     # 표준 출력을 log_file로 재지정합니다.
     sys.stdout = log_file
 
     print("이 메시지는 output.log 파일에 기록됩니다.")
     
-    # 계획짜는 class (외부 LLM 사용)
-    # input: 사용자 명령 output: 계획 json
+    # --- 측정 시작: Planner ---
+    planner_start_time = time.time()
     planner = Planner()
     plan_json:json = planner(user_input, model_name="gemini-1.5-flash")
+    planner_end_time = time.time()
     print("=====PLAN====")
     print(plan_json)
-    # print(plan_json)
-    # ppt의 요소 가져오는 애. python 코드를 실행함. 정해진 형식이 있어 LLM 사용 안함.
+
+    # --- 측정 시작: Parser ---
+    parser_start_time = time.time()
     parser = Parser(plan_json)
     parsed_json:json = parser.process()
+    parser_end_time = time.time()
     print("=====PARSED====")
     print(parsed_json)
 
-    # ppt에서 가져온 요소를 plan에 맞춰서 행동하는 애.(번역, 요약, 검색 등) (외부 LLM 사용)
-    processor = Processor(parsed_json)
+    # --- 측정 시작: Processor ---
+    processor_start_time = time.time()
+    processor = Processor(parsed_json, model_name = 'gpt-4.1-mini', api_key=OPENAI_API_KEY)
     processed_json:json = processor.process()
+    processor_end_time = time.time()
     print("=====PROCESSED====")
     print(processed_json)   
-    # print(processed_json)
-    # import sys
-    # sys.exit()
-    # processed 된 내용을 ppt에 적용하는 애. (ppt에 적용하는 python 코드를 짜서 실행하는 애.)
-    # 현재는 rule-base로 python 코드를 짜고 있는데, 이게 오류율이 상당히 높음.
-    # 이 부분을 데이터 수집해서 LLM으로 돌리면 더 안정적일 것으로 예상함.
-    # 부분으로 쪼개서 각각 적용하는 python 코드를 짜게 하는게 더 안정적일 것으로 예상함.
-    #if rule_base_apply:
-    #    applier = Applier()
-    #else:
-    applier = test_Applier(api_key=ANTHROPIC_API_KEY)
+
+    # --- 측정 시작: Applier (or test_Applier) ---
+    applier_start_time = time.time()
+    if rule_base_apply:
+        applier = Applier()
+    else:
+        applier = test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY)
     result = applier(processed_json)
-    #print(processed_json)
-    # 진행 된 사항을 사용자에게 리포트하는 애. (외부 LLM 사용)
+    applier_end_time = time.time()
+
+    # --- 측정 시작: Reporter ---
+    reporter_start_time = time.time()
     reporter = Reporter()
     summary = reporter(processed_json, result)
+    reporter_end_time = time.time()
     print("=====SUMMARY=====")
     print(summary)
 
-    # 이전 내용을 모두 저장. context를 가지고 있음.
+    # 메모리에 기록
     memory = SharedLogMemory()
     memory = memory(user_input, plan_json, processed_json, result)
 
-    # 코드 실행 후 파일을 닫아야 합니다.
+    # 전체 실행 종료 시각
+    end_time = time.time()
+
+    # --- 시간 측정 결과 출력 ---
+    print("\n=====TIME MEASUREMENTS=====")
+    print(f"Planner Time:   {planner_end_time - planner_start_time:.4f} seconds")
+    print(f"Parser Time:    {parser_end_time - parser_start_time:.4f} seconds")
+    print(f"Processor Time: {processor_end_time - processor_start_time:.4f} seconds")
+    print(f"Applier Time:   {applier_end_time - applier_start_time:.4f} seconds")
+    print(f"Reporter Time:  {reporter_end_time - reporter_start_time:.4f} seconds")
+    print(f"Total Time:     {end_time - planner_start_time:.4f} seconds")
+
+    # 코드 실행 후 파일을 닫습니다.
     log_file.close()
 
-    
-#test
-main(user_input="please translate ppt slides number 6 in English.", rule_base_apply=True)
+
+# 테스트 코드
+# with open('pptagent/instructions.json', 'r', encoding='utf-8') as f:
+#     instructions = json.load(f)
+#     print(instructions)
+#     for _, inst in instructions.items():
+#         try:
+#             main(user_input=inst, rule_base_apply=False)
+#         except Exception as e:
+#             print(f"Error while processing instruction '{inst}': {e}")
+#             continue  # 에러가 나면 다음 루프로 넘어감
+
+main(user_input="Please adjust the layout of ppt slides number 6 so that all content fits neatly within the slide area.", rule_base_apply=False)

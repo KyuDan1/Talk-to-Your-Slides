@@ -1,6 +1,6 @@
 from llm_api import llm_request_with_retries
 from prompt import PLAN_PROMPT, PARSER_PROMPT, VBA_PROMPT, create_process_prompt
-from utils import parse_active_slide_objects
+from utils import parse_active_slide_objects, _call_gpt_api
 import os
 import json
 from datetime import datetime
@@ -10,7 +10,7 @@ class Planner:
     def __init__(self):
         self.system_prompt = PLAN_PROMPT
     
-    def __call__(self, user_input: str, model_name ="gemini-1.5-flash") -> dict:
+    def __call__(self, user_input: str, model_name ="gemini-1.5-flash", api_key = None) -> dict:
         # Construct the prompt for the LLM
         prompt = f"""
         {self.system_prompt}
@@ -18,7 +18,8 @@ class Planner:
         Now, please create a plan for the following request:
         {user_input}
         """
-        
+        if "4.1" in model_name:
+            response = _call_gpt_api(prompt= prompt, api_key=api_key, model = model_name)
         # Request plan from LLM
         response = llm_request_with_retries(
             model_name=model_name,
@@ -76,12 +77,13 @@ class Parser:
         return self.json_data
 
 class Processor:
-    def __init__(self, json_data, model_name="gemini-1.5-flash"):
+    def __init__(self, json_data, model_name="gemini-1.5-flash", api_key = None):
 
         self.json_data = json_data
         # 'tasks' 키를 사용하는 것으로 보입니다 (원래 코드에서는 processed_datas였지만 입력 예시와 맞춤)
         self.tasks = json_data.get("tasks", [])
         self.model_name = model_name
+        self.api_key = api_key
 
     def process(self):
         for task in self.tasks:
@@ -94,8 +96,11 @@ class Processor:
                 # LLM에게 보낼 프롬프트 생성
                 prompt = create_process_prompt(page_number, description, action, contents)
                 
+                if "4.1" in self.model_name:
+                    response = _call_gpt_api(prompt= prompt, api_key=self.api_key, model = self.model_name)
                 # LLM 요청 보내기
-                response = llm_request_with_retries(
+                else:
+                    response = llm_request_with_retries(
                     model_name=self.model_name,
                     request=prompt,
                     num_retries=4
@@ -107,8 +112,10 @@ class Processor:
                 last_brace = json_str.rfind('}')
                 if last_brace != -1:
                     json_str = json_str[:last_brace+1]
+                import re
+                # 0x00 ~ 0x1F(제어문자)에 해당하는 부분을 전부 삭제
+                json_str = re.sub(r'[\x00-\x1F]+', '', json_str)
                 processed_result = json.loads(json_str)
-
                 
                 # 결과를 작업에 추가
                 task["edit target type"] = processed_result["edit target type"]

@@ -1,5 +1,39 @@
 import win32com.client
 import pywintypes
+import openai
+from openai import OpenAI
+def _call_gpt_api(prompt: str, api_key: str, model: str):
+    # API 키 설정
+    openai.api_key = api_key
+    
+    # 지원하는 모델 목록 검증
+    allowed_models = ["gpt-4.1", "gpt-4.1-mini", "gpt-4.1-nano"]
+    if model not in allowed_models:
+        raise ValueError(f"Model must be one of {allowed_models}")
+
+    # 모델명 매핑 (== → =)
+    if model == "gpt-4.1":
+        model = "gpt-4.1-2025-04-14"
+    elif model == "gpt-4.1-mini":
+        model = "gpt-4.1-mini-2025-04-14"
+    elif model == "gpt-4.1-nano":
+        model = "gpt-4.1-nano-2025-04-14"
+
+    try:
+        client = OpenAI(
+            api_key = api_key,
+        )
+        response = client.responses.create(
+            model=model,
+            instructions="You are a coding assistant that editing powerpoint slides.",
+            input=prompt,
+        )
+        
+        return response.output_text
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
 def get_simple_powerpoint_info():
     """
     현재 열려있는 PowerPoint의 페이지 수와 파일 이름만 가져옵니다.
