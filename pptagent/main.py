@@ -12,7 +12,7 @@ ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 logging.getLogger('test_Applier').setLevel(logging.DEBUG)
 
-def main(user_input, rule_base_apply:bool = False):
+def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=None):
     import sys
 
     # 로그 파일을 쓰기 모드로 엽니다.
@@ -94,4 +94,4 @@ def main(user_input, rule_base_apply:bool = False):
 #             print(f"Error while processing instruction '{inst}': {e}")
 #             continue  # 에러가 나면 다음 루프로 넘어감
 
-main(user_input="Please split ppt slides number 9 into two slides.", rule_base_apply=False)
+main(user_input="Please translate in Korean in ppt slide number 1.", rule_base_apply=False)
