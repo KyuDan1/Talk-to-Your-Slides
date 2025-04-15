@@ -9,6 +9,15 @@ load_dotenv()
 ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
 logging.getLogger('test_Applier').setLevel(logging.DEBUG)
 def main(user_input, rule_base_apply:bool = False):
+    import sys
+
+    # 로그 파일을 쓰기 모드로 엽니다.
+    log_file = open("output.log", "w")
+    # 표준 출력을 log_file로 재지정합니다.
+    sys.stdout = log_file
+
+    print("이 메시지는 output.log 파일에 기록됩니다.")
+    
     # 계획짜는 class (외부 LLM 사용)
     # input: 사용자 명령 output: 계획 json
     planner = Planner()
@@ -34,20 +43,25 @@ def main(user_input, rule_base_apply:bool = False):
     # 현재는 rule-base로 python 코드를 짜고 있는데, 이게 오류율이 상당히 높음.
     # 이 부분을 데이터 수집해서 LLM으로 돌리면 더 안정적일 것으로 예상함.
     # 부분으로 쪼개서 각각 적용하는 python 코드를 짜게 하는게 더 안정적일 것으로 예상함.
-    if rule_base_apply:
-        applier = Applier()
-    else:
-        applier = test_Applier(api_key=ANTHROPIC_API_KEY)
+    #if rule_base_apply:
+    #    applier = Applier()
+    #else:
+    applier = test_Applier(api_key=ANTHROPIC_API_KEY)
     result = applier(processed_json)
     #print(processed_json)
     # 진행 된 사항을 사용자에게 리포트하는 애. (외부 LLM 사용)
     reporter = Reporter()
     summary = reporter(processed_json, result)
+    print("=====SUMMARY=====")
     print(summary)
 
     # 이전 내용을 모두 저장. context를 가지고 있음.
     memory = SharedLogMemory()
     memory = memory(user_input, plan_json, processed_json, result)
+
+    # 코드 실행 후 파일을 닫아야 합니다.
+    log_file.close()
+
     
 #test
 main(user_input="please translate ppt slides number 6 in English.", rule_base_apply=True)

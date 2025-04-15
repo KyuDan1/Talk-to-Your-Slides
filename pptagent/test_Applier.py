@@ -102,13 +102,13 @@ class test_Applier:
             import win32com.client.dynamic
             
             # PowerPoint 애플리케이션 가져오기
-            print("Connecting to PowerPoint...")
+            #print("Connecting to PowerPoint...")
             ppt_application = win32com.client.Dispatch("PowerPoint.Application")
             ppt_application.Visible = True  # PowerPoint 창 표시
             
             # 현재 활성화된 프레젠테이션 가져오기
             active_presentation = ppt_application.ActivePresentation
-            print(f"Connected to PowerPoint. Presentation: {active_presentation.Name}")
+            #print(f"Connected to PowerPoint. Presentation: {active_presentation.Name}")
             
             # 글로벌 변수 설정 - 여기서 명시적으로 정의
             globals_dict = {
@@ -141,9 +141,9 @@ class test_Applier:
                     code = _generate_code(self.api_key, type, before, after, slide_num, total_content)
                     
                     # 디버깅을 위해 전체 코드 출력
-                    print("\n--- Generated Code ---")
+                    print("====Generated Code====")
                     print(code)
-                    print("--- End of Code ---\n")
+                    print("====End of Code=====")
                     
                     # 코드 실행
                     try:
