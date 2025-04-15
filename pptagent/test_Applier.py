@@ -67,10 +67,10 @@ def _generate_code(model, api_key, type, before, after, slide_num, total_content
 
     CRITICAL REQUIREMENTS:
     - DO NOT create a new PowerPoint application - use the existing one
+    - Please check if the slide number you want to work on exists and proceed with the work.
     - The code should NOT be written as a complete program with imports - it will be executed in an environment where PowerPoint is already open
-    - Focus ONLY on finding and modifying the specified content
+    - Focus on finding and modifying the specified content
     - For text changes, use both shape.Name and TextFrame.TextRange.Text to identify the correct element
-    - Always print detailed status messages for debugging
     - Make sure to explicitly apply any changes (e.g., shape.TextFrame.TextRange.Text = new_text)
     - Print each step of the process (e.g., "Found slide X", "Found shape Y", "Updated content from Z to W")
     - Do not write print function or comments.
@@ -88,8 +88,8 @@ def _generate_code(model, api_key, type, before, after, slide_num, total_content
     start_pos = found_range.Start + len(text_to_highlight)
     found_range = text_range.Find(text_to_highlight, start_pos)
     Do not use any "**" to make bold. It won't be applied on powerpoint.
-
-
+    - You can add or split a page with 'presentation = ppt_app.Presentations.Add()'.
+    
     The code must be direct, practical and focused solely on making the specific change requested.
     """
 

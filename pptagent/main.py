@@ -94,4 +94,4 @@ def main(user_input, rule_base_apply:bool = False):
 #             print(f"Error while processing instruction '{inst}': {e}")
 #             continue  # 에러가 나면 다음 루프로 넘어감
 
-main(user_input="Please adjust the layout of ppt slides number 6 so that all content fits neatly within the slide area.", rule_base_apply=False)
+main(user_input="Please split ppt slides number 9 into two slides.", rule_base_apply=False)

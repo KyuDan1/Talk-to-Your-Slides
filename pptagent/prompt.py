@@ -86,7 +86,7 @@ Please provide the results in JSON format as follows:
 "edit target content": [list of items],
 "content after edit": [list of corresponding modifications]
 }}
-
+Please edit only the {page_number}.
 Each list should be the same length, and the edit targets type, edit target contents, contents after edit should correspond one-to-one.
 """
     return prompt
