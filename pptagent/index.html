@@ -1,85 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple PPT Agent</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-        textarea {
-            width: 100%;
-            height: 120px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-        button {
-            background-color: #4169E1;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #3154b3;
-        }
-        .output {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #f5f5f5;
-            white-space: pre-wrap;
-            display: none;
-        }
-    </style>
+    <title>AI 생각 시각화</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>PPT Agent</h1>
-    
-    <form id="inputForm">
-        <textarea id="userInput" placeholder="Enter your request here..."></textarea>
-        <button type="submit">Process Request</button>
-    </form>
-    
-    <div id="output" class="output"></div>
-    
-    <script>
-        document.getElementById('inputForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+    <div class="container">
+        <h1>AI 생각 시각화</h1>
+        
+        <!-- onsubmit="return false" 추가하여 기본 제출 동작 차단 -->
+        <div class="input-section">
+            <form id="userInputForm" onsubmit="return false;">
+                <textarea id="userInput" name="user_input" placeholder="지시사항을 입력하세요...">Please translate in Korean in ppt slide number 1.</textarea>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="ruleBase" name="rule_base">
+                    <label for="ruleBase">Rule Base Apply</label>
+                </div>
+                <button type="button" id="submitBtn">실행</button>
+            </form>
+        </div>
+        
+        <!-- 디버깅 섹션 추가 -->
+        <div class="debug-section">
+            <h3>디버깅 정보</h3>
+            <pre id="debugOutput">준비 완료...</pre>
+        </div>
+        
+        <!-- 모드 전환 버튼 -->
+        <div class="view-toggle">
+            <button id="singleViewBtn" class="active">단계별 보기</button>
+            <button id="expandViewBtn">전체 펼치기</button>
+        </div>
+        
+        <!-- 단일 보드 뷰 -->
+        <div id="singleBoardView" class="thinking-board active">
+            <div class="board-header">
+                <div class="step-icon" id="current-icon">🧠</div>
+                <div class="step-title" id="current-title">대기 중...</div>
+                <div class="step-time" id="current-time"></div>
+            </div>
+            <div class="board-content">
+                <div class="thinking-indicator" id="current-thinking">
+                    <div class="dot dot1"></div>
+                    <div class="dot dot2"></div>
+                    <div class="dot dot3"></div>
+                </div>
+                <pre class="output" id="current-output"></pre>
+            </div>
             
-            const userInput = document.getElementById('userInput').value.trim();
-            if (!userInput) {
-                alert('Please enter a request');
+            <!-- 진행 상태 표시 -->
+            <div class="progress-indicator">
+                <div class="progress-step" data-step="planner">계획</div>
+                <div class="progress-step" data-step="parser">분석</div>
+                <div class="progress-step" data-step="processor">처리</div>
+                <div class="progress-step" data-step="applier">적용</div>
+                <div class="progress-step" data-step="reporter">보고</div>
+                <div class="progress-step" data-step="complete">완료</div>
+            </div>
+        </div>
+        
+        <!-- 전체 펼치기 뷰 -->
+        <div id="expandedView" class="thinking-container">
+            <div class="thinking-step" id="planner">
+                <div class="step-header">
+                    <div class="step-icon">🧠</div>
+                    <div class="step-title">계획 수립</div>
+                    <div class="step-time" id="planner-time"></div>
+                </div>
+                <div class="step-content">
+                    <div class="thinking-indicator" id="planner-thinking">
+                        <div class="dot dot1"></div>
+                        <div class="dot dot2"></div>
+                        <div class="dot dot3"></div>
+                    </div>
+                    <pre class="output" id="planner-output"></pre>
+                </div>
+            </div>
+            
+            <div class="thinking-step" id="parser">
+                <div class="step-header">
+                    <div class="step-icon">📊</div>
+                    <div class="step-title">계획 분석</div>
+                    <div class="step-time" id="parser-time"></div>
+                </div>
+                <div class="step-content">
+                    <div class="thinking-indicator" id="parser-thinking">
+                        <div class="dot dot1"></div>
+                        <div class="dot dot2"></div>
+                        <div class="dot dot3"></div>
+                    </div>
+                    <pre class="output" id="parser-output"></pre>
+                </div>
+            </div>
+            
+            <div class="thinking-step" id="processor">
+                <div class="step-header">
+                    <div class="step-icon">⚙️</div>
+                    <div class="step-title">처리</div>
+                    <div class="step-time" id="processor-time"></div>
+                </div>
+                <div class="step-content">
+                    <div class="thinking-indicator" id="processor-thinking">
+                        <div class="dot dot1"></div>
+                        <div class="dot dot2"></div>
+                        <div class="dot dot3"></div>
+                    </div>
+                    <pre class="output" id="processor-output"></pre>
+                </div>
+            </div>
+            
+            <div class="thinking-step" id="applier">
+                <div class="step-header">
+                    <div class="step-icon">🔄</div>
+                    <div class="step-title">적용</div>
+                    <div class="step-time" id="applier-time"></div>
+                </div>
+                <div class="step-content">
+                    <div class="thinking-indicator" id="applier-thinking">
+                        <div class="dot dot1"></div>
+                        <div class="dot dot2"></div>
+                        <div class="dot dot3"></div>
+                    </div>
+                    <pre class="output" id="applier-output"></pre>
+                </div>
+            </div>
+            
+            <div class="thinking-step" id="reporter">
+                <div class="step-header">
+                    <div class="step-icon">📝</div>
+                    <div class="step-title">보고서 작성</div>
+                    <div class="step-time" id="reporter-time"></div>
+                </div>
+                <div class="step-content">
+                    <div class="thinking-indicator" id="reporter-thinking">
+                        <div class="dot dot1"></div>
+                        <div class="dot dot2"></div>
+                        <div class="dot dot3"></div>
+                    </div>
+                    <pre class="output" id="reporter-output"></pre>
+                </div>
+            </div>
+            
+            <div class="thinking-step" id="final-result">
+                <div class="step-header">
+                    <div class="step-icon">✅</div>
+                    <div class="step-title">최종 결과</div>
+                    <div class="step-time" id="total-time"></div>
+                </div>
+                <div class="step-content">
+                    <pre class="output" id="final-output"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 내에 직접 스크립트 포함 -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM 로드됨!');
+        
+        // 디버깅 출력 함수
+        function debug(message) {
+            const debugOutput = document.getElementById('debugOutput');
+            debugOutput.textContent += '\n' + message;
+            console.log(message);
+        }
+        
+        debug('스크립트 초기화...');
+        
+        // 요소 참조
+        const userInput = document.getElementById('userInput');
+        const ruleBase = document.getElementById('ruleBase');
+        const submitBtn = document.getElementById('submitBtn');
+        const singleViewBtn = document.getElementById('singleViewBtn');
+        const expandViewBtn = document.getElementById('expandViewBtn');
+        
+        // 버튼 클릭 이벤트 리스너
+        submitBtn.addEventListener('click', function() {
+            debug('실행 버튼 클릭됨!');
+            
+            const inputValue = userInput.value.trim();
+            if (!inputValue) {
+                alert('지시사항을 입력해주세요.');
                 return;
             }
             
-            const outputDiv = document.getElementById('output');
-            outputDiv.style.display = 'block';
-            outputDiv.textContent = 'Processing...';
+            debug(`입력값: ${inputValue}`);
+            debug(`규칙 기반: ${ruleBase.checked}`);
             
-            // In a real implementation, this would make an AJAX call or use local storage
-            // to pass the data to a Python script. For demonstration purposes:
+            // 폼 데이터 준비
+            const formData = new FormData();
+            formData.append('user_input', inputValue);
+            formData.append('rule_base', ruleBase.checked);
             
-            // Simulating execution of main.py (in reality, you'd use Python's HTTP server or similar)
-            setTimeout(() => {
-                outputDiv.textContent = `Processing request: "${userInput}"\n\nSimulated output from main.py would appear here.`;
-            }, 1000);
+            // 처리 중 상태 표시
+            document.getElementById('current-icon').textContent = '⏳';
+            document.getElementById('current-title').textContent = '요청 처리 중...';
+            document.getElementById('current-thinking').style.display = 'flex';
             
-            // To actually run main.py, you would need server-side code or use Electron/similar
-            // to create a desktop app that can execute Python scripts locally
+            // AJAX 요청
+            debug('서버에 요청 보내는 중...');
+            fetch('/process', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                debug(`서버 응답 상태: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                debug(`응답 데이터: ${JSON.stringify(data)}`);
+                
+                if (data.status === 'processing') {
+                    debug('폴링 시작...');
+                    pollUpdates();
+                } else {
+                    debug(`오류: ${JSON.stringify(data)}`);
+                    alert('오류: ' + JSON.stringify(data));
+                }
+            })
+            .catch(error => {
+                debug(`오류 발생: ${error}`);
+                alert('처리 중 오류가 발생했습니다: ' + error);
+            });
         });
+        
+        // 뷰 전환 버튼
+        singleViewBtn.addEventListener('click', function() {
+            debug('단계별 보기 선택');
+            singleViewBtn.classList.add('active');
+            expandViewBtn.classList.remove('active');
+            document.getElementById('singleBoardView').classList.add('active');
+            document.getElementById('expandedView').classList.remove('active');
+        });
+        
+        expandViewBtn.addEventListener('click', function() {
+            debug('전체 펼치기 선택');
+            expandViewBtn.classList.add('active');
+            singleViewBtn.classList.remove('active');
+            document.getElementById('expandedView').classList.add('active');
+            document.getElementById('singleBoardView').classList.remove('active');
+        });
+        
+        // 업데이트 폴링 함수
+        function pollUpdates() {
+            fetch('/thinking_updates')
+                .then(response => response.json())
+                .then(data => {
+                    debug(`업데이트: ${JSON.stringify(data).substring(0, 100)}...`);
+                    
+                    // 각종 업데이트 처리 로직
+                    if (data.status === 'waiting') {
+                        setTimeout(pollUpdates, 500);
+                    } else if (data.status === 'finished') {
+                        debug('처리 완료');
+                    } else if (data.status === 'error') {
+                        debug(`오류: ${data.message}`);
+                        alert('오류: ' + data.message);
+                    } else {
+                        // 데이터 처리 (여기서는 생략)
+                        handleUpdate(data);
+                        setTimeout(pollUpdates, 500);
+                    }
+                })
+                .catch(error => {
+                    debug(`폴링 오류: ${error}`);
+                    setTimeout(pollUpdates, 1000);
+                });
+        }
+        
+        // 업데이트 처리 함수
+        function handleUpdate(data) {
+            const step = data.step;
+            const status = data.status;
+            
+            // 현재 단계 표시 업데이트
+            document.getElementById('current-icon').textContent = getStepIcon(step);
+            document.getElementById('current-title').textContent = getStepTitle(step);
+            
+            // 진행 상태 표시 업데이트
+            document.querySelectorAll('.progress-step').forEach(el => {
+                if (el.dataset.step === step) {
+                    el.classList.add('active');
+                }
+            });
+            
+            if (status === 'thinking') {
+                document.getElementById('current-thinking').style.display = 'flex';
+                document.getElementById('current-output').textContent = '';
+            } else if (status === 'complete') {
+                document.getElementById('current-thinking').style.display = 'none';
+                
+                if (data.data) {
+                    let formattedData = typeof data.data === 'object' 
+                        ? JSON.stringify(data.data, null, 2) 
+                        : data.data;
+                    
+                    document.getElementById('current-output').textContent = formattedData;
+                    document.getElementById('current-output').classList.add('visible');
+                }
+                
+                if (data.time) {
+                    document.getElementById('current-time').textContent = 
+                        `소요 시간: ${data.time.toFixed(2)}초`;
+                }
+            }
+        }
+        
+        // 단계별 아이콘 반환
+        function getStepIcon(step) {
+            const icons = {
+                'planner': '🧠',
+                'parser': '📊',
+                'processor': '⚙️',
+                'applier': '🔄',
+                'reporter': '📝',
+                'complete': '✅'
+            };
+            return icons[step] || '⏳';
+        }
+        
+        // 단계별 제목 반환
+        function getStepTitle(step) {
+            const titles = {
+                'planner': '계획 수립',
+                'parser': '계획 분석',
+                'processor': '처리',
+                'applier': '적용',
+                'reporter': '보고서 작성',
+                'complete': '최종 결과'
+            };
+            return titles[step] || '처리 중...';
+        }
+    });
     </script>
 </body>
 </html>

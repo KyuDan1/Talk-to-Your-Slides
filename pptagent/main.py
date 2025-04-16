@@ -3,95 +3,255 @@ from test_Applier import test_Applier
 import json
 import anthropic
 import os
-import logging
 import time
+import threading
+import logging
+import queue
 from dotenv import load_dotenv
+from flask import Flask, render_template, request, jsonify
 
 load_dotenv()
 ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
-logging.getLogger('test_Applier').setLevel(logging.DEBUG)
 
-def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=None):
-    import sys
+# 플라스크 앱 생성
+app = Flask(__name__)
 
-    # 로그 파일을 쓰기 모드로 엽니다.
-    log_file = open(f"./log/output{user_input.replace(' ', '_')}.log", "w", encoding="utf-8")
-    # 표준 출력을 log_file로 재지정합니다.
-    sys.stdout = log_file
+# 디버깅 로그 활성화
+app.logger.setLevel(logging.INFO)
 
-    print("이 메시지는 output.log 파일에 기록됩니다.")
+# 생각하는 과정을 저장할 전역 큐
+thinking_queue = queue.Queue()
+thinking_complete = threading.Event()
+
+def process_task(user_input, rule_base_apply=False):
+    # 디버깅: 서버 콘솔에 입력값 출력
+    app.logger.info(f"프로세스 시작 - 사용자 입력: '{user_input}', rule_base: {rule_base_apply}")
     
-    # --- 측정 시작: Planner ---
-    planner_start_time = time.time()
-    planner = Planner()
-    plan_json:json = planner(user_input, model_name="gemini-1.5-flash")
-    planner_end_time = time.time()
-    print("=====PLAN====")
-    print(plan_json)
+    # COM 초기화 - 스레드에서 PowerPoint 접근을 위해 필요
+    try:
+        import pythoncom
+        pythoncom.CoInitialize()
+        app.logger.info("COM 초기화 성공")
+    except ImportError:
+        app.logger.warning("pythoncom 모듈을 가져올 수 없습니다. COM 초기화 생략")
+    
+    # 진행 상태와 결과를 저장할 변수들
+    result_data = {
+        "plan": None,
+        "parsed": None,
+        "processed": None,
+        "result": None,
+        "summary": None,
+        "times": {}
+    }
+    
+    try:
+        # --- 측정 시작: Planner ---
+        thinking_queue.put({
+            "step": "planner",
+            "status": "thinking",
+            "message": "계획 수립 중..."
+        })
+        
+        planner_start_time = time.time()
+        planner = Planner()
+        app.logger.info(f"Planner 실행 - 사용자 입력: '{user_input}'")
+        plan_json = planner(user_input, model_name="gemini-1.5-flash")
+        planner_end_time = time.time()
+        
+        app.logger.info(f"Planner 완료 - 결과: {plan_json[:100]}..." if isinstance(plan_json, str) else f"Planner 완료 - 결과: {str(plan_json)[:100]}...")
+        
+        result_data["plan"] = plan_json
+        result_data["times"]["planner"] = planner_end_time - planner_start_time
+        
+        thinking_queue.put({
+            "step": "planner",
+            "status": "complete",
+            "message": "계획 수립 완료",
+            "data": plan_json,
+            "time": planner_end_time - planner_start_time
+        })
+        
+        # --- 측정 시작: Parser ---
+        thinking_queue.put({
+            "step": "parser",
+            "status": "thinking",
+            "message": "계획 분석 중..."
+        })
+        
+        parser_start_time = time.time()
+        parser = Parser(plan_json)
+        parsed_json = parser.process()
+        parser_end_time = time.time()
+        
+        app.logger.info(f"Parser 완료 - 결과: {str(parsed_json)[:100]}...")
+        
+        result_data["parsed"] = parsed_json
+        result_data["times"]["parser"] = parser_end_time - parser_start_time
+        
+        thinking_queue.put({
+            "step": "parser",
+            "status": "complete",
+            "message": "계획 분석 완료",
+            "data": parsed_json,
+            "time": parser_end_time - parser_start_time
+        })
+        
+        # --- 측정 시작: Processor ---
+        thinking_queue.put({
+            "step": "processor",
+            "status": "thinking",
+            "message": "처리 중..."
+        })
+        
+        processor_start_time = time.time()
+        processor = Processor(parsed_json, model_name='gpt-4.1-mini', api_key=OPENAI_API_KEY)
+        processed_json = processor.process()
+        processor_end_time = time.time()
+        
+        app.logger.info(f"Processor 완료")
+        
+        result_data["processed"] = processed_json
+        result_data["times"]["processor"] = processor_end_time - processor_start_time
+        
+        thinking_queue.put({
+            "step": "processor",
+            "status": "complete",
+            "message": "처리 완료",
+            "data": processed_json,
+            "time": processor_end_time - processor_start_time
+        })
+        
+        # --- 측정 시작: Applier (or test_Applier) ---
+        thinking_queue.put({
+            "step": "applier",
+            "status": "thinking",
+            "message": "적용 중..."
+        })
+        
+        applier_start_time = time.time()
+        if rule_base_apply:
+            applier = Applier()
+        else:
+            applier = test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY)
+        result = applier(processed_json)
+        applier_end_time = time.time()
+        
+        app.logger.info(f"Applier 완료")
+        
+        result_data["result"] = result
+        result_data["times"]["applier"] = applier_end_time - applier_start_time
+        
+        thinking_queue.put({
+            "step": "applier",
+            "status": "complete",
+            "message": "적용 완료",
+            "data": result,
+            "time": applier_end_time - applier_start_time
+        })
+        
+        # --- 측정 시작: Reporter ---
+        thinking_queue.put({
+            "step": "reporter",
+            "status": "thinking",
+            "message": "보고서 작성 중..."
+        })
+        
+        reporter_start_time = time.time()
+        reporter = Reporter()
+        summary = reporter(processed_json, result)
+        reporter_end_time = time.time()
+        
+        app.logger.info(f"Reporter 완료")
+        
+        result_data["summary"] = summary
+        result_data["times"]["reporter"] = reporter_end_time - reporter_start_time
+        
+        thinking_queue.put({
+            "step": "reporter",
+            "status": "complete",
+            "message": "보고서 작성 완료",
+            "data": summary,
+            "time": reporter_end_time - reporter_start_time
+        })
+        
+        # 메모리에 기록
+        memory = SharedLogMemory()
+        memory = memory(user_input, plan_json, processed_json, result)
+        
+        # 전체 실행 종료 시각
+        end_time = time.time()
+        result_data["times"]["total"] = end_time - planner_start_time
+        
+        # 처리 완료 신호
+        thinking_queue.put({
+            "step": "complete",
+            "status": "complete",
+            "message": "모든 처리가 완료되었습니다",
+            "data": result_data
+        })
+        
+    except Exception as e:
+        app.logger.error(f"오류 발생: {str(e)}")
+        # 오류 발생 시 사용자에게 알림
+        thinking_queue.put({
+            "step": "error",
+            "status": "error",
+            "message": f"처리 중 오류가 발생했습니다: {str(e)}"
+        })
+    
+    finally:
+        # COM 리소스 해제
+        try:
+            import pythoncom
+            pythoncom.CoUninitialize()
+            app.logger.info("COM 리소스 해제 완료")
+        except ImportError:
+            pass
+        
+        # 처리 완료 표시
+        thinking_complete.set()
 
-    # --- 측정 시작: Parser ---
-    parser_start_time = time.time()
-    parser = Parser(plan_json)
-    parsed_json:json = parser.process()
-    parser_end_time = time.time()
-    print("=====PARSED====")
-    print(parsed_json)
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    # --- 측정 시작: Processor ---
-    processor_start_time = time.time()
-    processor = Processor(parsed_json, model_name = 'gpt-4.1-mini', api_key=OPENAI_API_KEY)
-    processed_json:json = processor.process()
-    processor_end_time = time.time()
-    print("=====PROCESSED====")
-    print(processed_json)   
+@app.route('/process', methods=['POST'])
+def process():
+    # 요청 내용 로깅
+    app.logger.info(f"요청 받음 - 폼 데이터: {request.form}")
+    
+    user_input = request.form.get('user_input')
+    rule_base = request.form.get('rule_base') == 'true'
+    
+    # 사용자 입력 확인
+    if not user_input:
+        app.logger.error("사용자 입력이 비어 있습니다.")
+        return jsonify({"status": "error", "message": "사용자 입력이 비어 있습니다."})
+    
+    # 이전 이벤트 초기화
+    thinking_complete.clear()
+    
+    # 큐 비우기 (이전 실행 결과가 있다면)
+    while not thinking_queue.empty():
+        thinking_queue.get()
+    
+    # 새 쓰레드에서 처리 시작
+    threading.Thread(target=process_task, args=(user_input, rule_base)).start()
+    
+    return jsonify({"status": "processing"})
 
-    # --- 측정 시작: Applier (or test_Applier) ---
-    applier_start_time = time.time()
-    if rule_base_apply:
-        applier = Applier()
+@app.route('/thinking_updates')
+def thinking_updates():
+    if not thinking_queue.empty():
+        update = thinking_queue.get()
+        app.logger.info(f"업데이트 전송: {update['step']} - {update['status']}")
+        return jsonify(update)
+    elif thinking_complete.is_set():
+        return jsonify({"status": "finished"})
     else:
-        applier = test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY)
-    result = applier(processed_json)
-    applier_end_time = time.time()
+        return jsonify({"status": "waiting"})
 
-    # --- 측정 시작: Reporter ---
-    reporter_start_time = time.time()
-    reporter = Reporter()
-    summary = reporter(processed_json, result)
-    reporter_end_time = time.time()
-    print("=====SUMMARY=====")
-    print(summary)
-
-    # 메모리에 기록
-    memory = SharedLogMemory()
-    memory = memory(user_input, plan_json, processed_json, result)
-
-    # 전체 실행 종료 시각
-    end_time = time.time()
-
-    # --- 시간 측정 결과 출력 ---
-    print("\n=====TIME MEASUREMENTS=====")
-    print(f"Planner Time:   {planner_end_time - planner_start_time:.4f} seconds")
-    print(f"Parser Time:    {parser_end_time - parser_start_time:.4f} seconds")
-    print(f"Processor Time: {processor_end_time - processor_start_time:.4f} seconds")
-    print(f"Applier Time:   {applier_end_time - applier_start_time:.4f} seconds")
-    print(f"Reporter Time:  {reporter_end_time - reporter_start_time:.4f} seconds")
-    print(f"Total Time:     {end_time - planner_start_time:.4f} seconds")
-
-    # 코드 실행 후 파일을 닫습니다.
-    log_file.close()
-
-
-# 테스트 코드
-# with open('pptagent/instructions.json', 'r', encoding='utf-8') as f:
-#     instructions = json.load(f)
-#     print(instructions)
-#     for _, inst in instructions.items():
-#         try:
-#             main(user_input=inst, rule_base_apply=False)
-#         except Exception as e:
-#             print(f"Error while processing instruction '{inst}': {e}")
-#             continue  # 에러가 나면 다음 루프로 넘어감
-
-main(user_input="Please translate in Korean in ppt slide number 1.", rule_base_apply=False)
+if __name__ == '__main__':
+    app.run(debug=True, port=8080)  # 5000 대신 8080 포트 사용

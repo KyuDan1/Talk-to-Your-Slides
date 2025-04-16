@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 생각 시각화</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #thinking-board {
+            min-height: 300px;
+            display: none;
+        }
+        .output {
+            background-color: #f5f7fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .dots-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #5468ff;
+            border-radius: 50%;
+            margin: 0 5px;
+            animation: pulse 1.5s infinite;
+        }
+        .dot:nth-child(2) { animation-delay: 0.3s; }
+        .dot:nth-child(3) { animation-delay: 0.6s; }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.6; }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        .step {
+            flex: 1;
+            text-align: center;
+            padding: 8px;
+            background-color: #e0e0e0;
+            color: #666;
+            margin: 0 2px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .step.active {
+            background-color: #5468ff;
+            color: white;
+        }
+        .step.complete {
+            background-color: #4caf50;
+            color: white;
+        }
+        /* 디버깅용 로그 영역 */
+        #log {
+            background-color: #000;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI 생각 시각화</h1>
+    
+    <!-- 디버깅 로그 영역 -->
+    <div class="card">
+        <h2>디버깅 로그</h2>
+        <div id="log">로그 시작...</div>
+    </div>
+    
+    <!-- 입력 폼 -->
+    <div class="card">
+        <h2>입력</h2>
+        <textarea id="input-text" rows="4" style="width: 100%; margin-bottom: 10px;">Please translate in Korean in ppt slide number 1.</textarea>
+        <label>
+            <input type="checkbox" id="rule-base"> Rule Base Apply
+        </label>
+        <div style="margin-top: 10px;">
+            <button id="run-btn" style="padding: 8px 15px; background-color: #5468ff; color: white; border: none; border-radius: 4px; cursor: pointer;">실행</button>
+        </div>
+    </div>
+    
+    <!-- 생각 과정 표시 영역 -->
+    <div class="card" id="thinking-board">
+        <h2 id="current-title">대기 중...</h2>
+        
+        <!-- 생각 중 애니메이션 -->
+        <div class="dots-container" id="thinking-indicator">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <!-- 결과 출력 -->
+        <div class="output" id="current-output"></div>
+        
+        <!-- 진행 상태 바 -->
+        <div class="progress-bar">
+            <div class="step" data-step="planner">계획</div>
+            <div class="step" data-step="parser">분석</div>
+            <div class="step" data-step="processor">처리</div>
+            <div class="step" data-step="applier">적용</div>
+            <div class="step" data-step="reporter">보고</div>
+            <div class="step" data-step="complete">완료</div>
+        </div>
+    </div>
+    
+    <script>
+        // 디버깅 로그 함수
+        function log(message) {
+            const logElement = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            logElement.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+            logElement.scrollTop = logElement.scrollHeight;
+            console.log(`[${timestamp}] ${message}`);
+        }
+        
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', function() {
+            log('페이지 로드됨');
+            
+            // 요소 참조
+            const inputText = document.getElementById('input-text');
+            const ruleBase = document.getElementById('rule-base');
+            const runBtn = document.getElementById('run-btn');
+            const thinkingBoard = document.getElementById('thinking-board');
+            const currentTitle = document.getElementById('current-title');
+            const thinkingIndicator = document.getElementById('thinking-indicator');
+            const currentOutput = document.getElementById('current-output');
+            
+            // 단계 정보
+            const steps = {
+                'planner': '계획 수립',
+                'parser': '계획 분석',
+                'processor': '처리',
+                'applier': '적용',
+                'reporter': '보고서 작성',
+                'complete': '최종 결과'
+            };
+            
+            // 실행 버튼 클릭 이벤트
+            runBtn.addEventListener('click', function() {
+                log('실행 버튼 클릭됨');
+                
+                const text = inputText.value.trim();
+                if (!text) {
+                    alert('지시사항을 입력해주세요.');
+                    return;
+                }
+                
+                log(`입력 텍스트: ${text}`);
+                log(`규칙 기반: ${ruleBase.checked}`);
+                
+                // UI 초기화
+                thinkingBoard.style.display = 'block';
+                currentTitle.textContent = '요청 처리 중...';
+                thinkingIndicator.style.display = 'flex';
+                currentOutput.textContent = '';
+                document.querySelectorAll('.step').forEach(step => {
+                    step.classList.remove('active', 'complete');
+                });
+                
+                // 폼 데이터 생성
+                const formData = new FormData();
+                formData.append('user_input', text);
+                formData.append('rule_base', ruleBase.checked);
+                
+                // 서버에 요청 전송
+                log('서버에 요청 전송 중...');
+                fetch('/process', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    log(`응답 상태: ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    log(`응답 데이터: ${JSON.stringify(data)}`);
+                    
+                    if (data.status === 'processing') {
+                        log('폴링 시작');
+                        pollUpdates();
+                    } else {
+                        log(`오류: ${JSON.stringify(data)}`);
+                        alert('오류: ' + JSON.stringify(data));
+                    }
+                })
+                .catch(error => {
+                    log(`오류 발생: ${error}`);
+                    alert('처리 중 오류가 발생했습니다: ' + error);
+                });
+            });
+            
+            // 업데이트 폴링 함수
+            function pollUpdates() {
+                fetch('/thinking_updates')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'waiting') {
+                        setTimeout(pollUpdates, 500);
+                        return;
+                    }
+                    
+                    if (data.status === 'finished') {
+                        log('모든 처리 완료');
+                        return;
+                    }
+                    
+                    if (data.status === 'error') {
+                        log(`오류: ${data.message}`);
+                        alert('오류: ' + data.message);
+                        return;
+                    }
+                    
+                    // 업데이트 처리
+                    log(`업데이트: ${data.step} - ${data.status}`);
+                    updateUI(data);
+                    
+                    // 계속 폴링
+                    setTimeout(pollUpdates, 500);
+                })
+                .catch(error => {
+                    log(`폴링 오류: ${error}`);
+                    setTimeout(pollUpdates, 1000);
+                });
+            }
+            
+            // UI 업데이트 함수
+            function updateUI(data) {
+                const step = data.step;
+                const status = data.status;
+                
+                // 진행 상태 업데이트
+                document.querySelectorAll('.step').forEach(el => {
+                    if (el.dataset.step === step) {
+                        el.classList.add('active');
+                    } else if (steps[el.dataset.step] && 
+                              Object.keys(steps).indexOf(el.dataset.step) < 
+                              Object.keys(steps).indexOf(step)) {
+                        el.classList.remove('active');
+                        el.classList.add('complete');
+                    }
+                });
+                
+                // 현재 단계 제목 업데이트
+                currentTitle.textContent = steps[step] || '처리 중...';
+                
+                if (status === 'thinking') {
+                    thinkingIndicator.style.display = 'flex';
+                    currentOutput.textContent = '';
+                } else if (status === 'complete') {
+                    thinkingIndicator.style.display = 'none';
+                    
+                    if (data.data) {
+                        let output = typeof data.data === 'object' ? 
+                            JSON.stringify(data.data, null, 2) : data.data;
+                        currentOutput.textContent = output;
+                        currentOutput.classList.add('fade-in');
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
