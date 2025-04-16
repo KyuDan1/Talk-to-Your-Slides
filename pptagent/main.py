@@ -3,13 +3,14 @@ from test_Applier import test_Applier
 import json
 import anthropic
 import os
+import re
 import time
 import threading
 import logging
 import queue
 from dotenv import load_dotenv
 from flask import Flask, render_template, request, jsonify
-
+from utils import create_thinking_queue, extract_last_text_content, extract_content_after_edit
 load_dotenv()
 ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
@@ -23,6 +24,7 @@ app.logger.setLevel(logging.INFO)
 # 생각하는 과정을 저장할 전역 큐
 thinking_queue = queue.Queue()
 thinking_complete = threading.Event()
+
 
 def process_task(user_input, rule_base_apply=False):
     # 디버깅: 서버 콘솔에 입력값 출력
@@ -65,11 +67,14 @@ def process_task(user_input, rule_base_apply=False):
         result_data["plan"] = plan_json
         result_data["times"]["planner"] = planner_end_time - planner_start_time
         
+        
+        
+        printing_text = create_thinking_queue(plan_json)
         thinking_queue.put({
             "step": "planner",
             "status": "complete",
             "message": "계획 수립 완료",
-            "data": plan_json,
+            "data": printing_text,
             "time": planner_end_time - planner_start_time
         })
         
@@ -94,7 +99,7 @@ def process_task(user_input, rule_base_apply=False):
             "step": "parser",
             "status": "complete",
             "message": "계획 분석 완료",
-            "data": parsed_json,
+            "data": extract_last_text_content(parsed_json),
             "time": parser_end_time - parser_start_time
         })
         
@@ -119,7 +124,7 @@ def process_task(user_input, rule_base_apply=False):
             "step": "processor",
             "status": "complete",
             "message": "처리 완료",
-            "data": processed_json,
+            "data": "\n".join(extract_content_after_edit(processed_json)),
             "time": processor_end_time - processor_start_time
         })
         
@@ -147,7 +152,7 @@ def process_task(user_input, rule_base_apply=False):
             "step": "applier",
             "status": "complete",
             "message": "적용 완료",
-            "data": result,
+            "data": "completing...",
             "time": applier_end_time - applier_start_time
         })
         

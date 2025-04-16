@@ -2,6 +2,51 @@ import win32com.client
 import pywintypes
 import openai
 from openai import OpenAI
+import re
+
+def extract_content_after_edit(plan_json):
+    result = []
+    
+    if 'tasks' in plan_json and len(plan_json['tasks']) > 0:
+        for task in plan_json['tasks']:
+            if 'content after edit' in task and isinstance(task['content after edit'], list):
+                result.extend(task['content after edit'])
+    
+    return result
+
+def extract_last_text_content(plan_json):
+    last_text = ""
+    
+    if 'tasks' in plan_json and len(plan_json['tasks']) > 0:
+        for task in plan_json['tasks']:
+            if 'contents' in task:
+                contents_str = task['contents']
+                # Text content: 패턴을 모두 찾아서 리스트로 만듦
+                text_contents = re.findall(r'Text content: (.*?)(?=\n\s+Font:|$)', contents_str, re.DOTALL)
+                
+                # 마지막 Text content: 내용을 반환 (없으면 빈 문자열)
+                if text_contents:
+                    last_text = text_contents[-1].strip()
+    
+    return last_text
+
+def create_thinking_queue(plan_json):
+    # thinking queue
+    temp_tasks = []
+    temp_actions = []
+    
+    print_data_ = ""
+
+    for i in range(len(plan_json['tasks'])):
+        temp_tasks.append(plan_json['tasks'][i]['target'])
+        temp_actions.append(plan_json['tasks'][i]['action'])
+    
+    for i in range(len(temp_tasks)):
+        print_data_ += f"• {temp_actions[i]} 작업을 '{temp_tasks[i]}'에 적용합니다.\n"
+    
+    return print_data_
+
+
 def _call_gpt_api(prompt: str, api_key: str, model: str):
     # API 키 설정
     openai.api_key = api_key

@@ -628,24 +628,3 @@ class SharedLogMemory:
         # Return the log record as memories
         memories = log_record
         return memories
-    
-class VBAgenerator:
-    def __init__(self):
-        self.system_prompt = VBA_PROMPT
-   
-    def __call__(self, user_input: str, model_name ="gemini-1.5-flash") -> dict:
-        # Construct the prompt for the LLM
-        prompt = f"""
-        {self.system_prompt}
-        
-        Now, please create a python code using win32com library:
-        {user_input}
-        """
-        
-        # Request plan from LLM
-        response = llm_request_with_retries(
-            model_name=model_name,
-            request=prompt,
-            num_retries=4
-        )
-        print(response)
