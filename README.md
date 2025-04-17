@@ -26,14 +26,30 @@ It receives natural language-based user commands and successfully modifies the P
 
 - **Figure 1. Diagram of the Talk-to-Your-Slides System.** This figure illustrates the overall workflow of the system. When a user inputs a command in natural language, the **Planner** first generates a plan. Then, the **Parser** parses PowerPoint-related information using a rule-based approach. The **Processor** interprets this parsed information, and the **Applier** generates Python code to apply the intended changes to the PowerPoint file. Finally, the **Reporter** summarizes and reports all executed commands back to the user.
 
-## 🎬 Demo Video
+## 🎬 Demo Videos
 
 <div align="center">
-  
-  [![PPT Agent Demo Video](https://img.youtube.com/vi/your-video-id/0.jpg)](https://www.youtube.com/watch?v=your-video-id "PPT Agent Demo Video")
-  
-  [Watch the full demo on YouTube](https://youtu.be/your-demo-link)
-  
+
+[![CamelCase Demo](https://img.youtube.com/vi/9nJ0-yofr7Y/0.jpg)](https://youtu.be/9nJ0-yofr7Y "CamelCase Formatting")  
+**CamelCase**  
+*Demo prompt:* “Please update all English on ppt slides number 7 to camelCase formatting.”  
+
+[![Only English → Blue](https://img.youtube.com/vi/eVSs6xi-bEs/0.jpg)](https://youtu.be/eVSs6xi-bEs "Only English Blue")  
+**Only English → Blue**  
+*Demo prompt:* “Please change only English into blue color in slide number 3.”  
+
+[![Typo Checking Demo](https://img.youtube.com/vi/rBIBsnWX3W0/0.jpg)](https://youtu.be/rBIBsnWX3W0 "Typo Checking & Correction")  
+**Typo Checking & Correction**  
+*Demo prompt:* “Please check ppt slides number 4 for any typos or errors, correct them.”  
+
+[![Translate to English](https://img.youtube.com/vi/GLS_9xh2C-4/0.jpg)](https://youtu.be/GLS_9xh2C-4 "Translate Slides")  
+**Translate to English**  
+*Demo prompt:* “Please translate ppt slides number 5 into English.”  
+
+[![Slide‑Notes Script](https://img.youtube.com/vi/5vzYd5ov_Cs/0.jpg)](https://youtu.be/5vzYd5ov_Cs "Generate Slide Notes")  
+**Slide‑Notes Script**  
+*Demo prompt:* “Please create a full script for ppt slides number 3 and add the script to the slide notes.”  
+
 </div>
 
 ## 🛠️ Installation Guide
