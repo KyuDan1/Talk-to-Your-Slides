@@ -13,9 +13,9 @@
 
 ## 📖 Overview
 
-Our PPT Agent can modify PowerPoint presentations in real-time while PowerPoint is open.
-It receives natural language-based user commands and successfully modifies the PPT through interaction with the agent, presenting the updated PowerPoint to the user.
-Our research paper on PPT Agent will be published soon! It covers in-depth content about the latest AI-based presentation generation technology, so stay tuned.
+Our PPT Agent can modify PowerPoint presentations in real-time while PowerPoint is open.<br>
+It receives natural language-based user commands and successfully modifies the PPT through interaction with the agent, presenting the updated PowerPoint to the user.<br>
+**✨Our research paper on PPT Agent will be published soon!✨<br> It covers in-depth content about the latest AI-based presentation generation technology, so stay tuned.**
 
 > **News about the paper publication will be available first on [LinkedIn](https://www.linkedin.com/in/kyudanjung/) and [Research Blog](https://sites.google.com/view/kyudanjung/).**
 
