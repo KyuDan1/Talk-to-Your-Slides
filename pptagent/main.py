@@ -25,10 +25,25 @@ app.logger.setLevel(logging.INFO)
 thinking_queue = queue.Queue()
 thinking_complete = threading.Event()
 
+# 재시도 카운터 및 최대 재시도 횟수
+MAX_RETRIES = 3
+# 각 단계별 최대 실행 시간(초)
+MAX_STEP_TIME = 300  # 5분
 
-def process_task(user_input, rule_base_apply=False):
+def process_task(user_input, rule_base_apply=False, retry_count=0):
     # 디버깅: 서버 콘솔에 입력값 출력
-    app.logger.info(f"프로세스 시작 - 사용자 입력: '{user_input}', rule_base: {rule_base_apply}")
+    app.logger.info(f"프로세스 시작 - 사용자 입력: '{user_input}', rule_base: {rule_base_apply}, 재시도: {retry_count}")
+    
+    # 재시도 횟수가 최대를 초과하면 중단
+    if retry_count >= MAX_RETRIES:
+        app.logger.error(f"최대 재시도 횟수({MAX_RETRIES})를 초과했습니다.")
+        thinking_queue.put({
+            "step": "error",
+            "status": "error",
+            "message": f"최대 재시도 횟수({MAX_RETRIES})를 초과했습니다. 프로세스를 중단합니다."
+        })
+        thinking_complete.set()
+        return
     
     # COM 초기화 - 스레드에서 PowerPoint 접근을 위해 필요
     try:
@@ -49,6 +64,19 @@ def process_task(user_input, rule_base_apply=False):
     }
     
     try:
+        # 이전 큐 비우기 (재시도 시)
+        if retry_count > 0:
+            while not thinking_queue.empty():
+                thinking_queue.get()
+            thinking_queue.put({
+                "step": "restart",
+                "status": "info",
+                "message": f"오류가 발생하여 프로세스를 재시작합니다. (시도 {retry_count}/{MAX_RETRIES})"
+            })
+            
+        # 타임아웃 설정을 위한 변수
+        process_start_time = time.time()
+        
         # --- 측정 시작: Planner ---
         thinking_queue.put({
             "step": "planner",
@@ -59,15 +87,13 @@ def process_task(user_input, rule_base_apply=False):
         planner_start_time = time.time()
         planner = Planner()
         app.logger.info(f"Planner 실행 - 사용자 입력: '{user_input}'")
-        plan_json = planner(user_input, model_name="gemini-1.5-flash")
+        plan_json = planner(user_input, model_name="gpt-4.1-mini")
         planner_end_time = time.time()
         
         app.logger.info(f"Planner 완료 - 결과: {plan_json[:100]}..." if isinstance(plan_json, str) else f"Planner 완료 - 결과: {str(plan_json)[:100]}...")
         
         result_data["plan"] = plan_json
         result_data["times"]["planner"] = planner_end_time - planner_start_time
-        
-        
         
         printing_text = create_thinking_queue(plan_json)
         thinking_queue.put({
@@ -111,9 +137,19 @@ def process_task(user_input, rule_base_apply=False):
         })
         
         processor_start_time = time.time()
-        processor = Processor(parsed_json, model_name='gpt-4.1-mini', api_key=OPENAI_API_KEY)
+        processor = Processor(parsed_json, model_name='gpt-4.1', api_key=OPENAI_API_KEY)
         processed_json = processor.process()
         processor_end_time = time.time()
+        
+        # 처리 결과 확인
+        if processed_json is None:
+            app.logger.error("Processor 결과가 None입니다.")
+            raise Exception("Processor 결과가 없습니다. 재시작합니다.")
+            
+        # 타임아웃 체크
+        if processor_end_time - processor_start_time > MAX_STEP_TIME:
+            app.logger.warning(f"Processor 실행 시간이 {MAX_STEP_TIME}초를 초과했습니다.")
+            # 경고는 하지만 일단 계속 진행
         
         app.logger.info(f"Processor 완료")
         
@@ -140,9 +176,21 @@ def process_task(user_input, rule_base_apply=False):
             applier = Applier()
         else:
             applier = test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY)
+            
+        # Applier 실행 및 결과 확인
         result = applier(processed_json)
         applier_end_time = time.time()
         
+        # 'N/A' 관련 오류 검사
+        if isinstance(result, str) and "N/A" in result:
+            app.logger.error("• manual_review 작업을 'N/A'에 적용합니다.")
+            raise Exception("Applier에서 'N/A'에 작업을 적용하려는 시도가 있었습니다. 재시작합니다.")
+        
+        # 결과가 None이거나 비어있는 경우
+        if result is None or (isinstance(result, (list, dict)) and len(result) == 0):
+            app.logger.error("Applier 결과가 비어있습니다.")
+            raise Exception("Applier 결과가 비어있거나 없습니다. 재시작합니다.")
+            
         app.logger.info(f"Applier 완료")
         
         result_data["result"] = result
@@ -152,7 +200,7 @@ def process_task(user_input, rule_base_apply=False):
             "step": "applier",
             "status": "complete",
             "message": "적용 완료",
-            "data": "completing...",
+            "data": "complete!",
             "time": applier_end_time - applier_start_time
         })
         
@@ -163,10 +211,21 @@ def process_task(user_input, rule_base_apply=False):
             "message": "보고서 작성 중..."
         })
         
+        # 전체 프로세스 타임아웃 체크
+        current_time = time.time()
+        if current_time - process_start_time > MAX_STEP_TIME * 4:  # 전체 프로세스에 더 긴 시간 허용
+            app.logger.error(f"전체 프로세스 실행 시간이 너무 깁니다: {current_time - process_start_time}초")
+            raise Exception("프로세스 실행 시간이 너무 깁니다. 재시작합니다.")
+        
         reporter_start_time = time.time()
         reporter = Reporter()
         summary = reporter(processed_json, result)
         reporter_end_time = time.time()
+        
+        # 결과 확인
+        if not summary or summary == "N/A" or (isinstance(summary, str) and "manual_review" in summary.lower()):
+            app.logger.error("Reporter 결과가 유효하지 않습니다.")
+            raise Exception("Reporter 결과가 유효하지 않습니다. 재시작합니다.")
         
         app.logger.info(f"Reporter 완료")
         
@@ -203,10 +262,9 @@ def process_task(user_input, rule_base_apply=False):
         thinking_queue.put({
             "step": "error",
             "status": "error",
-            "message": f"처리 중 오류가 발생했습니다: {str(e)}"
+            "message": f"처리 중 오류가 발생했습니다: {str(e)}. 프로세스를 재시작합니다."
         })
-    
-    finally:
+        
         # COM 리소스 해제
         try:
             import pythoncom
@@ -215,8 +273,28 @@ def process_task(user_input, rule_base_apply=False):
         except ImportError:
             pass
         
-        # 처리 완료 표시
-        thinking_complete.set()
+        # 재시도 카운터 증가 후 프로세스 재시작
+        app.logger.info(f"프로세스 재시작 (시도 {retry_count+1}/{MAX_RETRIES})")
+        
+        # 잠시 대기 후 재시작 (시스템 리소스가 정리될 시간 제공)
+        time.sleep(2)
+        
+        # 새 스레드에서 프로세스 재시작
+        threading.Thread(target=process_task, args=(user_input, rule_base_apply, retry_count + 1)).start()
+        return  # 재시도 시작했으므로 현재 함수는 종료
+    
+    finally:
+        # 정상 종료 시에만 COM 리소스 해제 (예외 발생 시에는 이미 해제됨)
+        if 'e' not in locals():
+            try:
+                import pythoncom
+                pythoncom.CoUninitialize()
+                app.logger.info("COM 리소스 해제 완료")
+            except ImportError:
+                pass
+            
+            # 처리 완료 표시
+            thinking_complete.set()
 
 @app.route('/')
 def index():
@@ -243,7 +321,7 @@ def process():
         thinking_queue.get()
     
     # 새 쓰레드에서 처리 시작
-    threading.Thread(target=process_task, args=(user_input, rule_base)).start()
+    threading.Thread(target=process_task, args=(user_input, rule_base, 0)).start()
     
     return jsonify({"status": "processing"})
 

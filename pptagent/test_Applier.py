@@ -189,13 +189,13 @@ class test_Applier:
                         else:
                             print("Code executed successfully")
                             
-                            # 명시적으로 변경사항 저장
-                            try:
-                                active_presentation.Save()
-                                print("Changes saved to presentation")
-                            except Exception as save_error:
-                                print(f"Error saving presentation: {save_error}")
-                                success = False
+                            # # 명시적으로 변경사항 저장
+                            # try:
+                            #     active_presentation.Save()
+                            #     print("Changes saved to presentation")
+                            # except Exception as save_error:
+                            #     print(f"Error saving presentation: {save_error}")
+                            #     success = False
                         
                         # 잠시 대기하여 PowerPoint가 업데이트될 시간 제공
                         time.sleep(0.5)

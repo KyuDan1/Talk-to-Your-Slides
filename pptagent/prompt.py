@@ -75,18 +75,18 @@ def create_process_prompt(page_number, description, action, contents):
 - Slide contents: {contents}
 
 Please analyze what and how to modify based on the contents of the above slide.
-At this time, take the action on the edit target to create the edit content.
-For example, if the action is English translation,
-"edit target type" is the type of target content you think of based on description and slide contents (title 1, content placeholder 2 ...),
-"edit target content" is Korean '인공지능에 대하여', and
-"content after edit" is 'About artificial intelligence'.
-Please provide the results in JSON format as follows:
-{{
-"edit target type": [list of items],
-"edit target content": [list of items],
-"content after edit": [list of corresponding modifications]
-}}
+Identify the appropriate edit targets in the slide and determine what actions need to be taken for each target.
+Consider the type of content (such as titles, content placeholders, text boxes, etc.) when making your assessment.
+After identifying the targets, perform the necessary edits on each target to create the improved content. The edits might involve translation, formatting changes, content restructuring, or other modifications depending on what would improve the slide.
+Please provide your analysis and recommendations in JSON format with three key arrays:
+
+'edit target type': specifying the type of each content element you're modifying
+'edit target content': listing the original content for each target
+'content after edit': providing the modified version of each target content
+
 Please edit only the {page_number}.
-Each list should be the same length, and the edit targets type, edit target contents, contents after edit should correspond one-to-one.
+There might be cases where different texts within a single text box need to be edited separately.
+For example, you could change only the English text to blue color.
+Consider this and create a detailed plan.Each list should be the same length, and the edit targets type, edit target contents, contents after edit should correspond one-to-one.
 """
     return prompt
