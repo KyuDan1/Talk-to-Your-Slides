@@ -58,7 +58,7 @@ It receives natural language-based user commands and successfully modifies the P
 ```bash
 pip install -r 'requirements.txt'
 ```
-- Then make 'credentials.yml' on pptagent-4.16 directory.
+- Then make 'credentials.yml' on (will be out soon) directory.
 you should make like below.
 ```yml
 gpt-4.1-mini:
@@ -70,7 +70,7 @@ gpt-4.1-nano:
 gemini-1.5-flash:
   api_key: "YOUR_GEMINI_API_KEY"
 ```
-- add .env file in pptagent direction on pptagent-4.16/pptagent.
+- add .env file in pptagent direction on (will be out soon)/pptagent.
 ```bash
 python pptagent/main.py
 ```
@@ -83,7 +83,7 @@ If you use PPT Agent in your research or project, please cite as follows:
 @software{ppt_agent2025,
   author = {Kyudan Jung and Hojun Cho and Jooyeol Yun and Jaegul Choo},
   title = {PPT Agent: AI-Powered Presentation Generator},
-  url = {https://github.com/KyuDan1/PPTAgent-4.16},
+  url = {https://github.com/KyuDan1/(will be out soon)},
   version = {1.0.0},
   year = {2025},
 }
@@ -92,5 +92,5 @@ If you use PPT Agent in your research or project, please cite as follows:
 Or you can cite it briefly as:
 
 ```
-Your Name. (2025). PPT Agent: AI-Powered Presentation Generator [Software]. Available from https://github.com/KyuDan1/PPTAgent-4.16
+Your Name. (2025). PPT Agent: AI-Powered Presentation Generator [Software]. Available from https://github.com/KyuDan1/(will be out soon)
 ```
