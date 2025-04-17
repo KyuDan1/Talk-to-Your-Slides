@@ -6,7 +6,6 @@
   **Talk to Your Slides: Real‑Time Agent‑Based PowerPoint Automation with Large Language Models**
   
   [![Stars](https://img.shields.io/github/stars/KyuDan1/PPTAgent-4.16?style=social)](https://github.com/KyuDan1/PPTAgent-4.16/stargazers)
-  [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
   [![Demo](https://img.shields.io/badge/Demo-Watch%20Now-red)](https://youtu.be/your-demo-link)
   
 </div>
@@ -42,7 +41,7 @@ It receives natural language-based user commands and successfully modifies the P
 ```bash
 pip install -r 'requirements.txt'
 ```
-- Then make 'credentials.yml' on pptagent-4.16/pptagent.
+- Then make 'credentials.yml' on pptagent-4.16 directory.
 you should make like below.
 ```yml
 gpt-4.1-mini:
@@ -54,7 +53,7 @@ gpt-4.1-nano:
 gemini-1.5-flash:
   api_key: "YOUR_GEMINI_API_KEY"
 ```
-- .env file in pptagent
+- add .env file in pptagent direction on pptagent-4.16/pptagent.
 ```bash
 python pptagent/main.py
 ```
@@ -65,7 +64,7 @@ If you use PPT Agent in your research or project, please cite as follows:
 
 ```bibtex
 @software{ppt_agent2025,
-  author = {Your Name},
+  author = {Kyudan Jung and Hojun Cho and Jooyeol Yun and Jaegul Choo},
   title = {PPT Agent: AI-Powered Presentation Generator},
   url = {https://github.com/KyuDan1/PPTAgent-4.16},
   version = {1.0.0},
