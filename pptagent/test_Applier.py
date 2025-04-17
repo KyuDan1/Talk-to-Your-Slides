@@ -53,54 +53,57 @@ def _call_claude_api(prompt, api_key):
 def _generate_code(model, api_key, type, before, after, slide_num, total_content):
     # API 호출을 위한 프롬프트 구성
     prompt = f"""
-    Generate Python code modify an active PowerPoint presentation based on the provided JSON task data.
+Generate Python code modify an active PowerPoint presentation based on the provided JSON task data. The code should:
+0. Find activate powerpoint app with ppt_app = win32com.client.GetActiveObject("PowerPoint.Application")
+   active_presentation = ppt_app.ActivePresentation
+1. Find the slide specified by page number: {slide_num}
+2. Content reference: {total_content}
+3. Target to change: {type}, current content: {before}
+4. New content to apply: {after}
+5. Generate ONLY executable code that will directly modify the PowerPoint.
 
-    The code should:
-    0. Find activate powerpoint app with
-        ppt_app = win32com.client.GetActiveObject("PowerPoint.Application")
-        active_presentation = ppt_app.ActivePresentation
-    1. Find the slide specified by page number: {slide_num}
-    2. Content reference: {total_content}
-    3. Target to change: {type}, current content: {before}
-    4. New content to apply: {after}
-    5. Generate ONLY executable code that will directly modify the PowerPoint.
+CRITICAL REQUIREMENTS:
+- DO NOT create a new PowerPoint application - use the existing one
+- Please check if the slide number you want to work on exists and proceed with the work.
+- The code should NOT be written as a complete program with imports - it will be executed in an environment where PowerPoint is already open
+- Focus on finding and modifying the specified content
+- For text changes, use both shape.Name and TextFrame.TextRange.Text to identify the correct element
+- Make sure to explicitly apply any changes (e.g., shape.TextFrame.TextRange.Text = new_text)
+- Print each step of the process (e.g., "Found slide X", "Found shape Y", "Updated content from Z to W")
+- Do not write print function or comments.
 
-    CRITICAL REQUIREMENTS:
-    - DO NOT create a new PowerPoint application - use the existing one
-    - Please check if the slide number you want to work on exists and proceed with the work.
-    - The code should NOT be written as a complete program with imports - it will be executed in an environment where PowerPoint is already open
-    - Focus on finding and modifying the specified content
-    - For text changes, use both shape.Name and TextFrame.TextRange.Text to identify the correct element
-    - Make sure to explicitly apply any changes (e.g., shape.TextFrame.TextRange.Text = new_text)
-    - Print each step of the process (e.g., "Found slide X", "Found shape Y", "Updated content from Z to W")
-    - Do not write print function or comments.
-    Note that the code will run in a context where these variables are already available:
-    - ppt_application: The PowerPoint application instance
-    - active_presentation: The currently open presentation
-    -If you want to modify the formatting, refer to the following code for modification.
-    if text_frame.HasText: text_range = text_frame.TextRange # Find text
-    found_range = text_range.Find(text_to_highlight) 
-    while found_range: found_any = True 
-    found_range.Font.Bold = True # Bold
-    found_range.Font.Color.RGB = 16711680
-    example color)        
-    found_range.Font.Size = found_range.Font.Size * 1.2 # Increase font size by 20%
-    start_pos = found_range.Start + len(text_to_highlight)
-    found_range = text_range.Find(text_to_highlight, start_pos)
-    Do not use any "**" to make bold. It won't be applied on powerpoint.
-    - You can add or split a page with 'presentation = ppt_app.Presentations.Add()'.
-    
-    The code must be direct, practical and focused solely on making the specific change requested.
+Note that the code will run in a context where these variables are already available:
+- ppt_application: The PowerPoint application instance
+- active_presentation: The currently open presentation
+
+IMPORTANT: In PowerPoint, color codes use BGR format (not RGB). For example, RGB(255,0,0) for red should be specified as RGB(0,0,255) in the code. Always convert any color references accordingly.
+
+If you want to modify the formatting, refer to the following code for modification:
+if text_frame.HasText:
+    text_range = text_frame.TextRange
+    # Find text
+    found_range = text_range.Find(text_to_highlight)
+    while found_range:
+        found_any = True
+        found_range.Font.Bold = True # Bold
+        found_range.Font.Color.RGB = 255 # Example color (RED in BGR format - 0,0,255)
+        found_range.Font.Size = found_range.Font.Size * 1.2 # Increase font size by 20%
+        start_pos = found_range.Start + len(text_to_highlight)
+        found_range = text_range.Find(text_to_highlight, start_pos)
+
+Do not use any "**" to make bold. It won't be applied on powerpoint.
+- You can add or split a page with 'presentation = ppt_app.Presentations.Add()'.
+
+The code must be direct, practical and focused solely on making the specific change requested. Ensure all color references use the BGR format for proper appearance in PowerPoint.
     """
 
     # Claude API 호출
     if model == "claude-3.7-sonnet":
         code = _call_claude_api(prompt, api_key)
-    elif model == "gpt-4.1":
+    elif "gpt" in model:
         code = _call_gpt_api(prompt, api_key, model)
-    elif model == "gpt-4.1-mini":
-        code = _call_gpt_api(prompt, api_key, model)
-    elif model == "gpt-4.1-nano":
+    else:
+        "yes"
         code = _call_gpt_api(prompt, api_key, model)
     # 코드 전처리
     code = code.strip()

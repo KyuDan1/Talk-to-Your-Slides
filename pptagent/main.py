@@ -175,7 +175,7 @@ def process_task(user_input, rule_base_apply=False, retry_count=0):
         if rule_base_apply:
             applier = Applier()
         else:
-            applier = test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY)
+            applier = test_Applier(model="gpt-o4-mini", api_key=OPENAI_API_KEY)
             
         # Applier 실행 및 결과 확인
         result = applier(processed_json)

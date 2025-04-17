@@ -52,7 +52,7 @@ def _call_gpt_api(prompt: str, api_key: str, model: str):
     openai.api_key = api_key
     
     # 지원하는 모델 목록 검증
-    allowed_models = ["gpt-4.1", "gpt-4.1-mini", "gpt-4.1-nano"]
+    allowed_models = ["gpt-4.1", "gpt-4.1-mini", "gpt-4.1-nano", "o4-mini"]
     if model not in allowed_models:
         raise ValueError(f"Model must be one of {allowed_models}")
 
@@ -63,6 +63,8 @@ def _call_gpt_api(prompt: str, api_key: str, model: str):
         model = "gpt-4.1-mini-2025-04-14"
     elif model == "gpt-4.1-nano":
         model = "gpt-4.1-nano-2025-04-14"
+    else:
+        model = model
 
     try:
         client = OpenAI(

@@ -12,7 +12,7 @@ ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 logging.getLogger('test_Applier').setLevel(logging.DEBUG)
 
-def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=None):
+def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=None, max_retries=3):
     import sys
 
     # 로그 파일을 쓰기 모드로 엽니다.
@@ -52,7 +52,28 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
         applier = Applier()
     else:
         applier = test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY)
-    result = applier(processed_json)
+        
+        # Retry logic for test_Applier
+        retry_count = 0
+        result = False
+        
+        while not result and retry_count < max_retries:
+            if retry_count > 0:
+                print(f"Retrying test_Applier (Attempt {retry_count+1}/{max_retries})")
+            
+            result = applier(processed_json)
+            
+            if not result:
+                retry_count += 1
+                print(f"test_Applier failed. Result: {result}")
+                
+                if retry_count < max_retries:
+                    print(f"Waiting before retry...")
+                    time.sleep(2)  # Add a small delay between retries
+        
+        if not result:
+            print(f"test_Applier failed after {max_retries} attempts")
+    
     applier_end_time = time.time()
 
     # --- 측정 시작: Reporter ---
@@ -94,4 +115,4 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
 #             print(f"Error while processing instruction '{inst}': {e}")
 #             continue  # 에러가 나면 다음 루프로 넘어감
 
-main(user_input="Please translate in Korean in ppt slide number 1.", rule_base_apply=False)
+main(user_input="Please make only English blue color in slide number 5", rule_base_apply=False, max_retries=3)
