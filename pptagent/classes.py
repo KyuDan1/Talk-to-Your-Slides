@@ -1,6 +1,6 @@
 from llm_api import llm_request_with_retries
 from prompt import PLAN_PROMPT, PARSER_PROMPT, VBA_PROMPT, create_process_prompt
-from utils import parse_active_slide_objects, _call_gpt_api
+from utils import parse_active_slide_objects, _call_gpt_api,  parse_llm_response
 import os
 import json
 from datetime import datetime
@@ -108,14 +108,18 @@ class Processor:
                 
                 # LLM 응답 파싱
                 # print(response)
-                json_str = response.strip().replace("```json", "").replace("```", "").strip()
-                last_brace = json_str.rfind('}')
-                if last_brace != -1:
-                    json_str = json_str[:last_brace+1]
-                import re
-                # 0x00 ~ 0x1F(제어문자)에 해당하는 부분을 전부 삭제
-                json_str = re.sub(r'[\x00-\x1F]+', '', json_str)
-                processed_result = json.loads(json_str)
+                # json_str = response.strip().replace("```json", "").replace("```", "").strip()
+                # last_brace = json_str.rfind('}')
+                # if last_brace != -1:
+                #     json_str = json_str[:last_brace+1]
+                # import re
+                # # 0x00 ~ 0x1F(제어문자)에 해당하는 부분을 전부 삭제
+                # json_str = re.sub(r'[\x00-\x1F]+', '', json_str)
+                
+                processed_result = parse_llm_response(response)
+                if processed_result is None:
+                    print("JSON 파싱에 실패했습니다.")
+                #json.loads(json_str)
                 
                 # 결과를 작업에 추가
                 task["edit target type"] = processed_result["edit target type"]

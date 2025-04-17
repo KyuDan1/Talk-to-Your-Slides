@@ -121,9 +121,10 @@ The code must be direct, practical and focused solely on making the specific cha
     return code
 
 class test_Applier:
-    def __init__(self, model = 'claude-3.7-sonnet', api_key=os.environ.get('ANTHROPIC_API_KEY')):
+    def __init__(self, model = 'claude-3.7-sonnet', api_key=os.environ.get('ANTHROPIC_API_KEY'), retry = 3):
         self.api_key = api_key
         self.model = model
+        self.retry = retry
     def __call__(self, processed_json):
         # PowerPoint 설정 코드를 별도 함수로 실행
         try:
@@ -174,39 +175,43 @@ class test_Applier:
                     print(code)
                     print("====End of Code=====")
                     
-                    # 코드 실행
-                    try:
-                        print("Executing code...")
+                    # 코드 실행에 retry 로직 추가
+                    task_success = False
+                    
+                    for attempt in range(self.retry + 1):  # 초기 시도 + retry 횟수만큼 시도
+                        if attempt > 0:
+                            print(f"Retry attempt {attempt}/{self.retry}...")
                         
-                        # 로컬 네임스페이스 생성 (각 반복마다 새로 생성)
-                        # 글로벌 변수를 여기에 복사
-                        local_vars = globals_dict.copy()
-                        
-                        # 코드 실행
-                        exec(code, globals(), local_vars)
-                        
-                        # 오류 발생 여부 확인
-                        if local_vars.get('error_occurred', False):
-                            print("Error occurred during code execution")
-                            success = False
-                        else:
-                            print("Code executed successfully")
+                        try:
+                            print("Executing code...")
                             
-                            # # 명시적으로 변경사항 저장
-                            # try:
-                            #     active_presentation.Save()
-                            #     print("Changes saved to presentation")
-                            # except Exception as save_error:
-                            #     print(f"Error saving presentation: {save_error}")
-                            #     success = False
-                        
-                        # 잠시 대기하여 PowerPoint가 업데이트될 시간 제공
-                        time.sleep(0.5)
-                        
-                    except Exception as e:
-                        print(f"Error executing code: {str(e)}")
-                        print(f"Error type: {type(e).__name__}")
-                        print(traceback.format_exc())
+                            # 로컬 네임스페이스 생성 (각 반복마다 새로 생성)
+                            local_vars = globals_dict.copy()
+                            
+                            # 코드 실행
+                            exec(code, globals(), local_vars)
+                            
+                            # 오류 발생 여부 확인
+                            if local_vars.get('error_occurred', False):
+                                print("Error occurred during code execution")
+                                # 다음 재시도로 진행 (에러가 발생했으므로)
+                            else:
+                                print("Code executed successfully")
+                                task_success = True
+                                break  # 성공했으므로 재시도 루프 종료
+                            
+                            # 잠시 대기하여 PowerPoint가 업데이트될 시간 제공
+                            time.sleep(0.5)
+                            
+                        except Exception as e:
+                            print(f"Error executing code: {str(e)}")
+                            print(f"Error type: {type(e).__name__}")
+                            print(traceback.format_exc())
+                            # 다음 재시도로 진행 (예외가 발생했으므로)
+                    
+                    # 모든 재시도 후에도 실패한 경우 전체 성공 상태를 False로 설정
+                    if not task_success:
+                        print(f"Failed to execute code after {self.retry} retries. Moving to next task.")
                         success = False
             
             return success

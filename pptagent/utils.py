@@ -4,6 +4,100 @@ import openai
 from openai import OpenAI
 import re
 
+def parse_llm_response(response):
+    """
+    LLM 응답에서 JSON을 안정적으로 파싱하는 함수
+    """
+    import json
+    import re
+    
+    try:
+        # 응답이 None이거나 빈 문자열인 경우 처리
+        if not response:
+            print("응답이 비어 있습니다.")
+            return None
+            
+        # 초기 정리
+        json_str = response.strip()
+        
+        # 마크다운 코드 블록 제거
+        json_str = re.sub(r'```(?:json)?', '', json_str)
+        json_str = json_str.replace('```', '').strip()
+        
+        # 처음부터 유효한 JSON인지 확인
+        try:
+            return json.loads(json_str)
+        except:
+            pass  # 직접 파싱 실패, 계속 진행
+        
+        # JSON 객체의 경계 찾기
+        start_idx = json_str.find('{')
+        end_idx = json_str.rfind('}')
+        
+        if start_idx != -1 and end_idx != -1 and start_idx < end_idx:
+            json_str = json_str[start_idx:end_idx+1]
+        else:
+            # 배열 형식 확인
+            start_idx = json_str.find('[')
+            end_idx = json_str.rfind(']')
+            if start_idx != -1 and end_idx != -1 and start_idx < end_idx:
+                json_str = json_str[start_idx:end_idx+1]
+            else:
+                print("유효한 JSON 구조를 찾을 수 없습니다.")
+                return None
+        
+        # 제어 문자 제거 (탭, 줄바꿈, 캐리지 리턴은 제외)
+        json_str = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F]+', '', json_str)
+        
+        # 일반적인 JSON 오류 수정
+        # 후행 쉼표 제거
+        json_str = re.sub(r',\s*}', '}', json_str)
+        json_str = re.sub(r',\s*]', ']', json_str)
+        
+        # 키가 따옴표로 묶여 있는지 확인
+        json_str = re.sub(r'([{,])\s*([a-zA-Z0-9_]+)\s*:', r'\1"\2":', json_str)
+        
+        # 작은따옴표를 큰따옴표로 변경
+        json_str = re.sub(r"'([^']*)'", r'"\1"', json_str)
+        
+        # 특수 이스케이프 문자 처리
+        json_str = json_str.replace('\\n', '\\\\n').replace('\\r', '\\\\r').replace('\\t', '\\\\t')
+        
+        # 중첩된 따옴표 처리
+        json_str = re.sub(r'(?<!\\)"(?=.*":)', '\\"', json_str)
+        
+        try:
+            return json.loads(json_str)
+        except json.JSONDecodeError as e:
+            print(f"JSON 파싱 오류 위치: {e.pos}, 메시지: {e.msg}")
+            
+            # 문제가 있는 위치 주변 출력
+            error_pos = e.pos
+            start = max(0, error_pos - 20)
+            end = min(len(json_str), error_pos + 20)
+            print(f"문제 지점: ...{json_str[start:error_pos]}|HERE|{json_str[error_pos:end]}...")
+            
+            # 마지막 시도: 문제가 되는 문자 제거 후 재시도
+            if error_pos < len(json_str):
+                fixed_str = json_str[:error_pos] + json_str[error_pos+1:]
+                try:
+                    return json.loads(fixed_str)
+                except:
+                    pass
+            
+            # 실패한 경우 더 공격적인 정리 시도
+            # ASCII가 아닌 문자 제거
+            clean_str = re.sub(r'[^\x20-\x7E]', '', json_str)
+            try:
+                return json.loads(clean_str)
+            except:
+                print("모든 JSON 파싱 시도가 실패했습니다.")
+                return None
+                
+    except Exception as e:
+        print(f"예상치 못한 오류: {str(e)}")
+        return None
+    
 def extract_content_after_edit(plan_json):
     result = []
     
