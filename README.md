@@ -1,17 +1,13 @@
-# PPTAgent
 
 
-
-
-# 🚀 PPT Agent
+# 🚀 Talk-to-Your-Slides
 
 <div align="center">
   
-  ![PPT Agent Banner](https://via.placeholder.com/800x400)
+ 
+  **Talk to Your Slides: Real‑Time Agent‑Based PowerPoint Automation with Large Language Models**
   
-  **자동으로 프레젠테이션을 생성하고 관리하는 AI 기반 솔루션**
-  
-  [![Stars](https://img.shields.io/github/stars/yourusername/ppt-agent?style=social)](https://github.com/yourusername/ppt-agent/stargazers)
+  [![Stars](https://img.shields.io/github/stars/KyuDan1/PPTAgent-4.16?style=social)](https://github.com/KyuDan1/PPTAgent-4.16/stargazers)
   [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
   [![Demo](https://img.shields.io/badge/Demo-Watch%20Now-red)](https://youtu.be/your-demo-link)
   
