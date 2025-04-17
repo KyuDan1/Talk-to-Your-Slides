@@ -23,6 +23,7 @@ It receives natural language-based user commands and successfully modifies the P
 
 ### Overall
 <img src="fig1.png">
+
 - **Figure 1. Diagram of the Talk-to-Your-Slides System.** This figure illustrates the overall workflow of the system. When a user inputs a command in natural language, the **Planner** first generates a plan. Then, the **Parser** parses PowerPoint-related information using a rule-based approach. The **Processor** interprets this parsed information, and the **Applier** generates Python code to apply the intended changes to the PowerPoint file. Finally, the **Reporter** summarizes and reports all executed commands back to the user.
 
 ## 🎬 Demo Video
