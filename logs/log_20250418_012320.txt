@@ -1,0 +1,275 @@
+Timestamp: 20250418_012320
+
+User Input: Please translate ppt slides number 5 into English.
+
+Plan:
+{
+  "understanding": "Translate all content on slide 5 to English.",
+  "tasks": [
+    {
+      "page number": 5,
+      "description": "Translate the title of slide 5 to English.",
+      "target": "Title section of slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        "Title 1"
+      ],
+      "edit target content": [
+        "Lorum Ipsum"
+      ],
+      "content after edit": [
+        "Lorem Ipsum"
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Translate the body text of slide 5 to English.",
+      "target": "Body section of slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        "Content Placeholder 2"
+      ],
+      "edit target content": [
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Renowned institutions, scholars, and writers around the world have long recognized and highly praised the excellence of Hangul. The Linguistics Department at the University of Oxford in the UK, considered the best in language studies worldwide, ranked Hangul first among all the world's scripts based on criteria such as rationality, scientific nature, and originality. Additionally, UNESCO conducted research from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul received the highest rating."
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Translate any text within shapes on slide 5 to English.",
+      "target": "Text within all shapes on slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        "Placeholder 1 (Title 1)",
+        "Placeholder 2 (Content Placeholder 2)"
+      ],
+      "edit target content": [
+        "Lorum Ipsum",
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Lorum Ipsum",
+        "Renowned institutions, scholars, and writers around the world have long recognized and praised the excellence of Hangul. At the University of Oxford, the world's leading institution for linguistic research, Hangul proudly ranked first based on criteria such as rationality, scientific nature, and originality among all global scripts. Additionally, UNESCO conducted a study from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul received the highest evaluation."
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Translate any text within tables on slide 5 to English.",
+      "target": "Text within all table cells on slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Renowned institutions, scholars, and writers around the world have long recognized and praised the excellence of Hangul. Oxford University's linguistics department, the world's best in language research, ranked Hangul first among all world scripts based on criteria such as rationality, scientific nature, and originality. Additionally, UNESCO conducted a study from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul received the highest evaluation."
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Translate the notes for slide 5 to English.",
+      "target": "Notes section of slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Renowned institutions, scholars, and writers around the world have long recognized and highly praised the excellence of Hangul. At the University of Oxford's Faculty of Linguistics, Philology and Phonetics, the best in language research, Hangul was proudly ranked first among all the world's scripts based on criteria such as rationality, scientific nature, and originality. Furthermore, UNESCO conducted research from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul also received the highest evaluation."
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Translate any chart titles or labels on slide 5 to English.",
+      "target": "All chart elements (titles, axis labels, data labels) on slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Renowned institutions, scholars, and writers around the world have long recognized and praised the excellence of Hangul. Oxford University's Linguistics Department, considered the best in the world for language research, ranked all writing systems based on criteria such as rationality, scientific nature, and originality, placing Hangul proudly at number one. Additionally, UNESCO conducted research from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul received the highest evaluation."
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Check for and translate any other text elements not explicitly covered above on slide 5.",
+      "target": "All remaining text elements on slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Renowned institutions, scholars, and writers around the world have long recognized and highly praised the excellence of Hangul. At the University of Oxford's Linguistics Department, the world's top institution for language studies, Hangul proudly ranked first among all the world's scripts based on criteria such as rationality, scientific nature, and originality. Additionally, UNESCO conducted research from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul received the highest evaluation."
+      ]
+    }
+  ]
+}
+
+Processed:
+{
+  "understanding": "Translate all content on slide 5 to English.",
+  "tasks": [
+    {
+      "page number": 5,
+      "description": "Translate the title of slide 5 to English.",
+      "target": "Title section of slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        "Title 1"
+      ],
+      "edit target content": [
+        "Lorum Ipsum"
+      ],
+      "content after edit": [
+        "Lorem Ipsum"
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Translate the body text of slide 5 to English.",
+      "target": "Body section of slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        "Content Placeholder 2"
+      ],
+      "edit target content": [
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Renowned institutions, scholars, and writers around the world have long recognized and highly praised the excellence of Hangul. The Linguistics Department at the University of Oxford in the UK, considered the best in language studies worldwide, ranked Hangul first among all the world's scripts based on criteria such as rationality, scientific nature, and originality. Additionally, UNESCO conducted research from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul received the highest rating."
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Translate any text within shapes on slide 5 to English.",
+      "target": "Text within all shapes on slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        "Placeholder 1 (Title 1)",
+        "Placeholder 2 (Content Placeholder 2)"
+      ],
+      "edit target content": [
+        "Lorum Ipsum",
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Lorum Ipsum",
+        "Renowned institutions, scholars, and writers around the world have long recognized and praised the excellence of Hangul. At the University of Oxford, the world's leading institution for linguistic research, Hangul proudly ranked first based on criteria such as rationality, scientific nature, and originality among all global scripts. Additionally, UNESCO conducted a study from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul received the highest evaluation."
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Translate any text within tables on slide 5 to English.",
+      "target": "Text within all table cells on slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Renowned institutions, scholars, and writers around the world have long recognized and praised the excellence of Hangul. Oxford University's linguistics department, the world's best in language research, ranked Hangul first among all world scripts based on criteria such as rationality, scientific nature, and originality. Additionally, UNESCO conducted a study from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul received the highest evaluation."
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Translate the notes for slide 5 to English.",
+      "target": "Notes section of slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Renowned institutions, scholars, and writers around the world have long recognized and highly praised the excellence of Hangul. At the University of Oxford's Faculty of Linguistics, Philology and Phonetics, the best in language research, Hangul was proudly ranked first among all the world's scripts based on criteria such as rationality, scientific nature, and originality. Furthermore, UNESCO conducted research from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul also received the highest evaluation."
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Translate any chart titles or labels on slide 5 to English.",
+      "target": "All chart elements (titles, axis labels, data labels) on slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Renowned institutions, scholars, and writers around the world have long recognized and praised the excellence of Hangul. Oxford University's Linguistics Department, considered the best in the world for language research, ranked all writing systems based on criteria such as rationality, scientific nature, and originality, placing Hangul proudly at number one. Additionally, UNESCO conducted research from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul received the highest evaluation."
+      ]
+    },
+    {
+      "page number": 5,
+      "description": "Check for and translate any other text elements not explicitly covered above on slide 5.",
+      "target": "All remaining text elements on slide 5",
+      "action": "Translate to English",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 261\nSlide Index: 5\nSlide Name: Slide6\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 5.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: 세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "세계의 저명한 기관과 학자, 작가들은 한글의 우수성에 대해 일찍이 인정하고 극찬했다. 언어연구학으로 세계 최고인 영국 옥스퍼드대의 언어학대학에서 세계의 모든 문자를 놓고 합리성, 과학성, 독창성 등의 기준으로한 순위에서 한글이 당당히 1위를 차지했다. 또 유네스코가 1998년부터 2002년까지 말뿐인 언어 2900여 종에 가장 적합한 문자를 찾는 연구를 진행했는데, 최고의 평가를 받은 것 역시 한글이었다."
+      ],
+      "content after edit": [
+        "Renowned institutions, scholars, and writers around the world have long recognized and highly praised the excellence of Hangul. At the University of Oxford's Linguistics Department, the world's top institution for language studies, Hangul proudly ranked first among all the world's scripts based on criteria such as rationality, scientific nature, and originality. Additionally, UNESCO conducted research from 1998 to 2002 to find the most suitable script for over 2,900 spoken languages, and Hangul received the highest evaluation."
+      ]
+    }
+  ]
+}
+
+Result:
+true
+

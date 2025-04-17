@@ -87,7 +87,7 @@ def process_task(user_input, rule_base_apply=False, retry_count=0):
         planner_start_time = time.time()
         planner = Planner()
         app.logger.info(f"Planner 실행 - 사용자 입력: '{user_input}'")
-        plan_json = planner(user_input, model_name="gpt-4.1-mini")
+        plan_json = planner(user_input, model_name="gemini-1.5-flash")
         planner_end_time = time.time()
         
         app.logger.info(f"Planner 완료 - 결과: {plan_json[:100]}..." if isinstance(plan_json, str) else f"Planner 완료 - 결과: {str(plan_json)[:100]}...")
@@ -175,21 +175,22 @@ def process_task(user_input, rule_base_apply=False, retry_count=0):
         if rule_base_apply:
             applier = Applier()
         else:
-            applier = test_Applier(model="gpt-o4-mini", api_key=OPENAI_API_KEY)
+            #applier = test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY)
+            applier = test_Applier(model="claude-3.7-sonnet", api_key=ANTHROPIC_API_KEY)
             
         # Applier 실행 및 결과 확인
         result = applier(processed_json)
         applier_end_time = time.time()
         
-        # 'N/A' 관련 오류 검사
-        if isinstance(result, str) and "N/A" in result:
-            app.logger.error("• manual_review 작업을 'N/A'에 적용합니다.")
-            raise Exception("Applier에서 'N/A'에 작업을 적용하려는 시도가 있었습니다. 재시작합니다.")
+        # # 'N/A' 관련 오류 검사
+        # if isinstance(result, str) and "N/A" in result:
+        #     app.logger.error("• manual_review 작업을 'N/A'에 적용합니다.")
+        #     raise Exception("Applier에서 'N/A'에 작업을 적용하려는 시도가 있었습니다. 재시작합니다.")
         
-        # 결과가 None이거나 비어있는 경우
-        if result is None or (isinstance(result, (list, dict)) and len(result) == 0):
-            app.logger.error("Applier 결과가 비어있습니다.")
-            raise Exception("Applier 결과가 비어있거나 없습니다. 재시작합니다.")
+        # # 결과가 None이거나 비어있는 경우
+        # if result is None or (isinstance(result, (list, dict)) and len(result) == 0):
+        #     app.logger.error("Applier 결과가 비어있습니다.")
+        #     raise Exception("Applier 결과가 비어있거나 없습니다. 재시작합니다.")
             
         app.logger.info(f"Applier 완료")
         

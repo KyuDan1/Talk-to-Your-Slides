@@ -1,0 +1,191 @@
+{
+  "timestamp": "20250418_011608",
+  "user_input": "Please summarize the text in the main text box on ppt slides number 1 in three sentences.",
+  "plan": {
+    "understanding": "Summarize the text content within the main text box of slide 1 into a three-sentence summary.",
+    "tasks": [
+      {
+        "page number": 1,
+        "description": "Identify the main text box on slide 1",
+        "target": "Main text box on slide 1 (assuming it's the largest text box or the one most prominently positioned)",
+        "action": "Detect the largest text box or the text box with the most characters on slide 1. If multiple text boxes are of similar size and prominence, select the topmost one.",
+        "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 257\nSlide Index: 1\nSlide Name: Slide2\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 1.\n\nObject 1:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation.\n  Font: , Size: 22.0\n  Bold: -2, Italic: -2\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Title 6\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Long sentences\n  Font: Aptos Display, Size: 44.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 2"
+          }
+        ],
+        "edit target content": [
+          "Dear Members of the Harvard Community,\r\n \r\nFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation."
+        ],
+        "content after edit": [
+          "Dear Members of the Harvard Community,\n\nFor the past seventy-five years, the federal government has supported Harvard and other universities with grants and contracts, helping fuel groundbreaking innovations across medical, engineering, and scientific fields. These advances have vastly improved health and safety worldwide. Recently, the federal government has threatened to end its partnerships with several universities, including Harvard, due to allegations of antisemitism on campuses. These partnerships have been among the most productive and beneficial in American history. We stand at the brink of new breakthroughs—from treatments for Alzheimer’s, Parkinson’s, and diabetes to advances in artificial intelligence, quantum science and engineering, and many more. Withdrawing now would endanger not only the health and welfare of millions but also the economic strength and future vitality of our nation."
+        ]
+      },
+      {
+        "page number": 1,
+        "description": "Extract text content from the identified main text box",
+        "target": "Text content within the main text box identified in the previous step",
+        "action": "Extract all text from the selected text box.",
+        "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 257\nSlide Index: 1\nSlide Name: Slide2\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 1.\n\nObject 1:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation.\n  Font: , Size: 22.0\n  Bold: -2, Italic: -2\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Title 6\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Long sentences\n  Font: Aptos Display, Size: 44.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 2"
+          }
+        ],
+        "edit target content": [
+          "Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation."
+        ],
+        "content after edit": [
+          "Dear Members of the Harvard Community,\n\nFor over seventy years, the federal government has funded Harvard and other universities with grants and contracts, enabling groundbreaking work in medical, engineering, and scientific fields. These efforts have made millions healthier and safer globally.\n\nRecently, the government has threatened to end partnerships with some universities, including Harvard, citing accusations of antisemitism on campuses. These collaborations are among the most productive in American history.\n\nNew advances in treatments for diseases like Alzheimer’s, Parkinson’s, and diabetes, as well as innovations in AI, quantum science, and engineering, are on the horizon. Withdrawing now risks not only public health but also the nation’s economic security and vitality."
+        ]
+      },
+      {
+        "page number": 1,
+        "description": "Summarize the extracted text into three sentences",
+        "target": "Generated summary",
+        "action": "Use a text summarization algorithm to condense the extracted text into a concise three-sentence summary.  Prioritize maintaining the core meaning and key information.",
+        "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 257\nSlide Index: 1\nSlide Name: Slide2\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 1.\n\nObject 1:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation.\n  Font: , Size: 22.0\n  Bold: -2, Italic: -2\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Title 6\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Long sentences\n  Font: Aptos Display, Size: 44.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 2"
+          }
+        ],
+        "edit target content": [
+          "Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation."
+        ],
+        "content after edit": [
+          "For over seventy-five years, the federal government has funded Harvard and other universities, enabling groundbreaking innovations in medicine, engineering, and science that have improved global health and safety. Recently, threats to these partnerships due to accusations of antisemitism risk halting progress on critical advances in areas like disease treatment and emerging technologies. Maintaining these collaborations is essential to safeguarding public health and supporting the nation's economic strength."
+        ]
+      },
+      {
+        "page number": 1,
+        "description": "Add the three-sentence summary to the slide",
+        "target": "Slide 1, below the main text box (or a designated area)",
+        "action": "Create a new text box below the main text box (or in a specified location) and insert the generated three-sentence summary.  Format the summary text appropriately (font, size, color).",
+        "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 257\nSlide Index: 1\nSlide Name: Slide2\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 1.\n\nObject 1:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation.\n  Font: , Size: 22.0\n  Bold: -2, Italic: -2\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Title 6\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Long sentences\n  Font: Aptos Display, Size: 44.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "textbox",
+            "id": "summary_box"
+          }
+        ],
+        "edit target content": [
+          ""
+        ],
+        "content after edit": [
+          {
+            "text": "For over seventy-five years, Harvard and other universities have partnered with the federal government to drive groundbreaking innovations in medicine, engineering, and science. These collaborations have produced life-changing advances, improving health and safety worldwide. However, recent government threats to end these partnerships jeopardize both public well-being and national economic vitality.",
+            "font": "Aptos",
+            "font_size": 20,
+            "font_color": "darkgray",
+            "position": {
+              "left": 66.0,
+              "top": 500.0,
+              "width": 828.0,
+              "height": 100.0
+            },
+            "alignment": "left"
+          }
+        ]
+      }
+    ]
+  },
+  "processed": {
+    "understanding": "Summarize the text content within the main text box of slide 1 into a three-sentence summary.",
+    "tasks": [
+      {
+        "page number": 1,
+        "description": "Identify the main text box on slide 1",
+        "target": "Main text box on slide 1 (assuming it's the largest text box or the one most prominently positioned)",
+        "action": "Detect the largest text box or the text box with the most characters on slide 1. If multiple text boxes are of similar size and prominence, select the topmost one.",
+        "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 257\nSlide Index: 1\nSlide Name: Slide2\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 1.\n\nObject 1:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation.\n  Font: , Size: 22.0\n  Bold: -2, Italic: -2\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Title 6\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Long sentences\n  Font: Aptos Display, Size: 44.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 2"
+          }
+        ],
+        "edit target content": [
+          "Dear Members of the Harvard Community,\r\n \r\nFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation."
+        ],
+        "content after edit": [
+          "Dear Members of the Harvard Community,\n\nFor the past seventy-five years, the federal government has supported Harvard and other universities with grants and contracts, helping fuel groundbreaking innovations across medical, engineering, and scientific fields. These advances have vastly improved health and safety worldwide. Recently, the federal government has threatened to end its partnerships with several universities, including Harvard, due to allegations of antisemitism on campuses. These partnerships have been among the most productive and beneficial in American history. We stand at the brink of new breakthroughs—from treatments for Alzheimer’s, Parkinson’s, and diabetes to advances in artificial intelligence, quantum science and engineering, and many more. Withdrawing now would endanger not only the health and welfare of millions but also the economic strength and future vitality of our nation."
+        ]
+      },
+      {
+        "page number": 1,
+        "description": "Extract text content from the identified main text box",
+        "target": "Text content within the main text box identified in the previous step",
+        "action": "Extract all text from the selected text box.",
+        "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 257\nSlide Index: 1\nSlide Name: Slide2\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 1.\n\nObject 1:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation.\n  Font: , Size: 22.0\n  Bold: -2, Italic: -2\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Title 6\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Long sentences\n  Font: Aptos Display, Size: 44.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 2"
+          }
+        ],
+        "edit target content": [
+          "Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation."
+        ],
+        "content after edit": [
+          "Dear Members of the Harvard Community,\n\nFor over seventy years, the federal government has funded Harvard and other universities with grants and contracts, enabling groundbreaking work in medical, engineering, and scientific fields. These efforts have made millions healthier and safer globally.\n\nRecently, the government has threatened to end partnerships with some universities, including Harvard, citing accusations of antisemitism on campuses. These collaborations are among the most productive in American history.\n\nNew advances in treatments for diseases like Alzheimer’s, Parkinson’s, and diabetes, as well as innovations in AI, quantum science, and engineering, are on the horizon. Withdrawing now risks not only public health but also the nation’s economic security and vitality."
+        ]
+      },
+      {
+        "page number": 1,
+        "description": "Summarize the extracted text into three sentences",
+        "target": "Generated summary",
+        "action": "Use a text summarization algorithm to condense the extracted text into a concise three-sentence summary.  Prioritize maintaining the core meaning and key information.",
+        "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 257\nSlide Index: 1\nSlide Name: Slide2\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 1.\n\nObject 1:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation.\n  Font: , Size: 22.0\n  Bold: -2, Italic: -2\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Title 6\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Long sentences\n  Font: Aptos Display, Size: 44.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 2"
+          }
+        ],
+        "edit target content": [
+          "Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation."
+        ],
+        "content after edit": [
+          "For over seventy-five years, the federal government has funded Harvard and other universities, enabling groundbreaking innovations in medicine, engineering, and science that have improved global health and safety. Recently, threats to these partnerships due to accusations of antisemitism risk halting progress on critical advances in areas like disease treatment and emerging technologies. Maintaining these collaborations is essential to safeguarding public health and supporting the nation's economic strength."
+        ]
+      },
+      {
+        "page number": 1,
+        "description": "Add the three-sentence summary to the slide",
+        "target": "Slide 1, below the main text box (or a designated area)",
+        "action": "Create a new text box below the main text box (or in a specified location) and insert the generated three-sentence summary.  Format the summary text appropriately (font, size, color).",
+        "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 257\nSlide Index: 1\nSlide Name: Slide2\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 1.\n\nObject 1:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Dear Members of the Harvard Community,\u000b \u000bFor three-quarters of a century, the federal government has awarded grants and contracts to Harvard and other universities to help pay for work that, along with investments by the universities themselves, has led to groundbreaking innovations across a wide range of medical, engineering, and scientific fields. These innovations have made countless people in our country and throughout the world healthier and safer. In recent weeks, the federal government has threatened its partnerships with several universities, including Harvard, over accusations of antisemitism on our campuses. These partnerships are among the most productive and beneficial in American history. New frontiers beckon us with the prospect of life-changing advances—from treatments for diseases such as Alzheimer’s, Parkinson’s, and diabetes, to breakthroughs in artificial intelligence, quantum science and engineering, and numerous other areas of possibility. For the government to retreat from these partnerships now risks not only the health and well-being of millions of individuals but also the economic security and vitality of our nation.\n  Font: , Size: 22.0\n  Bold: -2, Italic: -2\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Title 6\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Long sentences\n  Font: Aptos Display, Size: 44.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "textbox",
+            "id": "summary_box"
+          }
+        ],
+        "edit target content": [
+          ""
+        ],
+        "content after edit": [
+          {
+            "text": "For over seventy-five years, Harvard and other universities have partnered with the federal government to drive groundbreaking innovations in medicine, engineering, and science. These collaborations have produced life-changing advances, improving health and safety worldwide. However, recent government threats to end these partnerships jeopardize both public well-being and national economic vitality.",
+            "font": "Aptos",
+            "font_size": 20,
+            "font_color": "darkgray",
+            "position": {
+              "left": 66.0,
+              "top": 500.0,
+              "width": 828.0,
+              "height": 100.0
+            },
+            "alignment": "left"
+          }
+        ]
+      }
+    ]
+  },
+  "result": true
+}

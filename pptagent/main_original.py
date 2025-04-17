@@ -97,4 +97,4 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
 #             print(f"Error while processing instruction '{inst}': {e}")
 #             continue  # 에러가 나면 다음 루프로 넘어감
 
-main(user_input="Please translate into Enlgish all of non-English in the slide number 1.", rule_base_apply=False, retry=3)
+main(user_input="Please create a full script for ppt slides number 3 and add the script to the slide notes.", rule_base_apply=False, retry=3)

@@ -1,0 +1,235 @@
+Timestamp: 20250418_010750
+
+User Input: Please check ppt slides number 4 for any typos or errors, correct them
+
+Plan:
+{
+  "understanding": "Proofread and correct any typos or grammatical errors on slide 4 of the presentation.",
+  "tasks": [
+    {
+      "page number": 4,
+      "description": "Proofread the title of slide 4 for typos and grammatical errors.",
+      "target": "Title section of slide 4",
+      "action": "Proofread and correct any typos or grammatical errors.  Maintain original formatting.",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 260\nSlide Index: 4\nSlide Name: Slide5\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 4.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: \"Check and correct typos across all slides, then summarize changes\":\u000b\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.\",\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness.\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes."
+      ],
+      "content after edit": [
+        "A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ]
+    },
+    {
+      "page number": 4,
+      "description": "Proofread the body text of slide 4 for typos and grammatical errors.",
+      "target": "Body text section of slide 4",
+      "action": "Proofread and correct any typos or grammatical errors. Maintain original formatting, including bullet points, numbering, and paragraph breaks.",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 260\nSlide Index: 4\nSlide Name: Slide5\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 4.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: \"Check and correct typos across all slides, then summarize changes\":\u000b\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.\",\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness.\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes."
+      ],
+      "content after edit": [
+        "A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ]
+    },
+    {
+      "page number": 4,
+      "description": "Proofread any text within shapes or text boxes on slide 4.",
+      "target": "All text within shapes and text boxes on slide 4",
+      "action": "Proofread and correct any typos or grammatical errors within each shape and text box. Maintain original formatting and positioning.",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 260\nSlide Index: 4\nSlide Name: Slide5\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 4.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: \"Check and correct typos across all slides, then summarize changes\":\u000b\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.\",\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness.\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Check and correct typos across all slides, then summarize changes\":\n\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.",
+        "A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes."
+      ],
+      "content after edit": [
+        "Check and correct typos across all slides, then summarize changes:\nPlease check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.",
+        "A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ]
+    },
+    {
+      "page number": 4,
+      "description": "Proofread the notes section of slide 4 for typos and grammatical errors.",
+      "target": "Notes section of slide 4",
+      "action": "Proofread and correct any typos or grammatical errors. Maintain original formatting.",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 260\nSlide Index: 4\nSlide Name: Slide5\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 4.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: \"Check and correct typos across all slides, then summarize changes\":\u000b\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.\",\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness.\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Notes",
+          "id": "Notes Content"
+        }
+      ],
+      "edit target content": [
+        "GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ],
+      "content after edit": [
+        "GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr. Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ]
+    },
+    {
+      "page number": 4,
+      "description": "Check for any chart or table data errors on slide 4.",
+      "target": "All charts and tables on slide 4",
+      "action": "Verify data accuracy and consistency within charts and tables. Correct any identified errors.",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 260\nSlide Index: 4\nSlide Name: Slide5\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 4.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: \"Check and correct typos across all slides, then summarize changes\":\u000b\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.\",\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness.\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Check and correct typos across all slides, then summarize changes:\nPlease check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.",
+        "A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes."
+      ],
+      "content after edit": [
+        "Check and correct typos across all slides, then summarize changes:\nPlease check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.",
+        "A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ]
+    }
+  ]
+}
+
+Processed:
+{
+  "understanding": "Proofread and correct any typos or grammatical errors on slide 4 of the presentation.",
+  "tasks": [
+    {
+      "page number": 4,
+      "description": "Proofread the title of slide 4 for typos and grammatical errors.",
+      "target": "Title section of slide 4",
+      "action": "Proofread and correct any typos or grammatical errors.  Maintain original formatting.",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 260\nSlide Index: 4\nSlide Name: Slide5\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 4.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: \"Check and correct typos across all slides, then summarize changes\":\u000b\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.\",\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness.\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes."
+      ],
+      "content after edit": [
+        "A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ]
+    },
+    {
+      "page number": 4,
+      "description": "Proofread the body text of slide 4 for typos and grammatical errors.",
+      "target": "Body text section of slide 4",
+      "action": "Proofread and correct any typos or grammatical errors. Maintain original formatting, including bullet points, numbering, and paragraph breaks.",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 260\nSlide Index: 4\nSlide Name: Slide5\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 4.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: \"Check and correct typos across all slides, then summarize changes\":\u000b\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.\",\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness.\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes."
+      ],
+      "content after edit": [
+        "A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ]
+    },
+    {
+      "page number": 4,
+      "description": "Proofread any text within shapes or text boxes on slide 4.",
+      "target": "All text within shapes and text boxes on slide 4",
+      "action": "Proofread and correct any typos or grammatical errors within each shape and text box. Maintain original formatting and positioning.",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 260\nSlide Index: 4\nSlide Name: Slide5\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 4.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: \"Check and correct typos across all slides, then summarize changes\":\u000b\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.\",\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness.\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Check and correct typos across all slides, then summarize changes\":\n\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.",
+        "A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes."
+      ],
+      "content after edit": [
+        "Check and correct typos across all slides, then summarize changes:\nPlease check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.",
+        "A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ]
+    },
+    {
+      "page number": 4,
+      "description": "Proofread the notes section of slide 4 for typos and grammatical errors.",
+      "target": "Notes section of slide 4",
+      "action": "Proofread and correct any typos or grammatical errors. Maintain original formatting.",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 260\nSlide Index: 4\nSlide Name: Slide5\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 4.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: \"Check and correct typos across all slides, then summarize changes\":\u000b\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.\",\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness.\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Notes",
+          "id": "Notes Content"
+        }
+      ],
+      "edit target content": [
+        "GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ],
+      "content after edit": [
+        "GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr. Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ]
+    },
+    {
+      "page number": 4,
+      "description": "Check for any chart or table data errors on slide 4.",
+      "target": "All charts and tables on slide 4",
+      "action": "Verify data accuracy and consistency within charts and tables. Correct any identified errors.",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 260\nSlide Index: 4\nSlide Name: Slide5\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 4.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: \"Check and correct typos across all slides, then summarize changes\":\u000b\"Please check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.\",\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes.\n  Font: Aptos, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: GT: A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness.\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Check and correct typos across all slides, then summarize changes:\nPlease check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.",
+        "A grounbraeking medikal deviec desingned to detec catracts in nweborns is beeing enahnced with the hlpe of AI. The Neocom, a handeld digitl imgaing tool creted by Addenbrooe’s eye surgon, Dr Lousie Alen, allwos midwivse to take potos of a babby’s eeys to sopt cognetial catracts — the leding cause of preventibal childhod blindnes."
+      ],
+      "content after edit": [
+        "Check and correct typos across all slides, then summarize changes:\nPlease check ppt slides number 3 for any typos or errors, correct them, and provide a summary of the changes.",
+        "A groundbreaking medical device designed to detect cataracts in newborns is being enhanced with the help of AI. The Neocam, a handheld digital imaging tool created by Addenbrooke’s eye surgeon, Dr Louise Allen, allows midwives to take photos of a baby’s eyes to spot congenital cataracts — the leading cause of preventable childhood blindness."
+      ]
+    }
+  ]
+}
+
+Result:
+true
+

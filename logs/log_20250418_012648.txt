@@ -1,0 +1,373 @@
+Timestamp: 20250418_012648
+
+User Input: Please update all English on ppt slides number 7 to camelCase formatting.
+
+Plan:
+{
+  "understanding": "Convert all English text on slides 7 to camelCase formatting. This includes title, body text, footnotes, headers, and footers.",
+  "tasks": [
+    {
+      "page number": 7,
+      "description": "Convert title text to camelCase",
+      "target": "Title section of slide 7",
+      "action": "Convert text to camelCase",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum"
+      ],
+      "content after edit": [
+        "lorumIpsum"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Convert body text to camelCase",
+      "target": "Body text section of slide 7",
+      "action": "Convert all text within the body text section to camelCase",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "otherNewAdditionsToCwruAiAreAgentsTailoredToSpecificTasks. microsoft’sPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMath. codestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages."
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Convert footer text to camelCase",
+      "target": "Footer section of slide 7",
+      "action": "Convert text to camelCase",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Footer text",
+          "id": "footer_text_placeholder"
+        }
+      ],
+      "edit target content": [
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "otherNewAdditionsToCWRUAIAreAgentsTailoredToSpecificTasksMicrosoftsPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMathCodestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Convert header text to camelCase",
+      "target": "Header section of slide 7",
+      "action": "Convert text to camelCase",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum"
+      ],
+      "content after edit": [
+        "lorumIpsum"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Convert notes text to camelCase",
+      "target": "Notes section of slide 7",
+      "action": "Convert text to camelCase",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum",
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "lorumIpsum",
+        "otherNewAdditionsToCwruAiAreAgentsTailoredToSpecificTasksMicrosoftsPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMathCodestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Check for and convert text within shapes to camelCase",
+      "target": "All shapes on slide 7 containing text",
+      "action": "Iterate through all shapes, extract text, convert to camelCase, and update shape text",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum",
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "lorumIpsum",
+        "otherNewAdditionsToCwruAiAreAgentsTailoredToSpecificTasks microsoftsPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMath codestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Check for and convert text within textboxes to camelCase",
+      "target": "All textboxes on slide 7",
+      "action": "Iterate through all textboxes, extract text, convert to camelCase, and update textbox text",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum",
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "lorumIpsum",
+        "otherNewAdditionsToCwruAiAreAgentsTailoredToSpecificTasksMicrosoft’sPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMathCodestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Check for and convert text within charts to camelCase (titles and labels)",
+      "target": "All chart elements (titles, axis labels, data labels) on slide 7",
+      "action": "Iterate through chart elements, extract text, convert to camelCase, and update chart text",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum",
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "lorumIpsum",
+        "otherNewAdditionsToCWRUAIAreAgentsTailoredToSpecificTasks. microsoft’sPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMath. codestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages."
+      ]
+    }
+  ]
+}
+
+Processed:
+{
+  "understanding": "Convert all English text on slides 7 to camelCase formatting. This includes title, body text, footnotes, headers, and footers.",
+  "tasks": [
+    {
+      "page number": 7,
+      "description": "Convert title text to camelCase",
+      "target": "Title section of slide 7",
+      "action": "Convert text to camelCase",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum"
+      ],
+      "content after edit": [
+        "lorumIpsum"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Convert body text to camelCase",
+      "target": "Body text section of slide 7",
+      "action": "Convert all text within the body text section to camelCase",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "otherNewAdditionsToCwruAiAreAgentsTailoredToSpecificTasks. microsoft’sPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMath. codestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages."
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Convert footer text to camelCase",
+      "target": "Footer section of slide 7",
+      "action": "Convert text to camelCase",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Footer text",
+          "id": "footer_text_placeholder"
+        }
+      ],
+      "edit target content": [
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "otherNewAdditionsToCWRUAIAreAgentsTailoredToSpecificTasksMicrosoftsPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMathCodestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Convert header text to camelCase",
+      "target": "Header section of slide 7",
+      "action": "Convert text to camelCase",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum"
+      ],
+      "content after edit": [
+        "lorumIpsum"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Convert notes text to camelCase",
+      "target": "Notes section of slide 7",
+      "action": "Convert text to camelCase",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum",
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "lorumIpsum",
+        "otherNewAdditionsToCwruAiAreAgentsTailoredToSpecificTasksMicrosoftsPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMathCodestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Check for and convert text within shapes to camelCase",
+      "target": "All shapes on slide 7 containing text",
+      "action": "Iterate through all shapes, extract text, convert to camelCase, and update shape text",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum",
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "lorumIpsum",
+        "otherNewAdditionsToCwruAiAreAgentsTailoredToSpecificTasks microsoftsPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMath codestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Check for and convert text within textboxes to camelCase",
+      "target": "All textboxes on slide 7",
+      "action": "Iterate through all textboxes, extract text, convert to camelCase, and update textbox text",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum",
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "lorumIpsum",
+        "otherNewAdditionsToCwruAiAreAgentsTailoredToSpecificTasksMicrosoft’sPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMathCodestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages"
+      ]
+    },
+    {
+      "page number": 7,
+      "description": "Check for and convert text within charts to camelCase (titles and labels)",
+      "target": "All chart elements (titles, axis labels, data labels) on slide 7",
+      "action": "Iterate through chart elements, extract text, convert to camelCase, and update chart text",
+      "contents": "Presentation: test_ppt_원본.pptx\nTotal Slides: 9\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 263\nSlide Index: 7\nSlide Name: Slide8\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 7.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=66.0, Top=28.75\n Size: Width=828.0, Height=104.37503814697266\n  Text content: Lorum Ipsum\n  Font: Aptos Display, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 2\n Type: Placeholder\n Position: Left=66.0, Top=143.75\n Size: Width=828.0, Height=342.6250305175781\n  Text content: Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages.\n  Font: Arizona, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNo notes page found\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        },
+        {
+          "type": "Placeholder",
+          "id": "Content Placeholder 2"
+        }
+      ],
+      "edit target content": [
+        "Lorum Ipsum",
+        "Other new additions to CWRU AI are agents tailored to specific tasks. Microsoft’s Phi 4 is a small language model that specializes in reasoning and math. Codestral by Mistral is a model dedicated to assisting with writing code across a diverse set of programming languages."
+      ],
+      "content after edit": [
+        "lorumIpsum",
+        "otherNewAdditionsToCWRUAIAreAgentsTailoredToSpecificTasks. microsoft’sPhi4IsASmallLanguageModelThatSpecializesInReasoningAndMath. codestralByMistralIsAModelDedicatedToAssistingWithWritingCodeAcrossADiverseSetOfProgrammingLanguages."
+      ]
+    }
+  ]
+}
+
+Result:
+true
+

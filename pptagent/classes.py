@@ -28,13 +28,10 @@ class Planner:
         )
         #print(response)
         # The response should be a JSON string, but let's handle errors safely
+        
+        
         try:
-            import json
-            json_str = response.strip().replace("```json", "").replace("```", "").strip()
-            last_brace = json_str.rfind('}')
-            if last_brace != -1:
-                json_str = json_str[:last_brace+1]
-            plan = json.loads(json_str)
+            plan = parse_llm_response(response)
             return plan
         except json.JSONDecodeError:
             # Fallback - return a basic structure with the raw response
@@ -93,38 +90,41 @@ class Processor:
             contents = task.get("contents", "")
             
             if page_number:
-                # LLM에게 보낼 프롬프트 생성
-                prompt = create_process_prompt(page_number, description, action, contents)
+                success = False
+                retry_count = 0
+                max_retries = 3  # Setting a limit on retries
                 
-                if "4.1" in self.model_name:
-                    response = _call_gpt_api(prompt= prompt, api_key=self.api_key, model = self.model_name)
-                # LLM 요청 보내기
-                else:
-                    response = llm_request_with_retries(
-                    model_name=self.model_name,
-                    request=prompt,
-                    num_retries=4
-                )
-                
-                # LLM 응답 파싱
-                # print(response)
-                # json_str = response.strip().replace("```json", "").replace("```", "").strip()
-                # last_brace = json_str.rfind('}')
-                # if last_brace != -1:
-                #     json_str = json_str[:last_brace+1]
-                # import re
-                # # 0x00 ~ 0x1F(제어문자)에 해당하는 부분을 전부 삭제
-                # json_str = re.sub(r'[\x00-\x1F]+', '', json_str)
-                
-                processed_result = parse_llm_response(response)
-                if processed_result is None:
-                    print("JSON 파싱에 실패했습니다.")
-                #json.loads(json_str)
-                
-                # 결과를 작업에 추가
-                task["edit target type"] = processed_result["edit target type"]
-                task["edit target content"] = processed_result["edit target content"]
-                task["content after edit"] = processed_result["content after edit"]
+                while not success and retry_count < max_retries:
+                    # LLM에게 보낼 프롬프트 생성
+                    prompt = create_process_prompt(page_number, description, action, contents)
+                    
+                    # LLM 요청 보내기
+                    if "4.1" in self.model_name:
+                        response = _call_gpt_api(prompt=prompt, api_key=self.api_key, model=self.model_name)
+                    else:
+                        response = llm_request_with_retries(
+                            model_name=self.model_name,
+                            request=prompt,
+                            num_retries=4
+                        )
+                    
+                    # LLM 응답 파싱
+                    processed_result = parse_llm_response(response)
+                    if processed_result is None:
+                        print("JSON 파싱에 실패했습니다.")
+                        retry_count += 1
+                        continue
+                    
+                    # 결과를 작업에 추가
+                    try:
+                        task["edit target"] = processed_result["edit target"]#processed_result["edit target type"]
+                        task["edit target content"] = processed_result["edit target content"]
+                        task["content after edit"] = processed_result["content after edit"]
+                        success = True  # Mark as successful if no exceptions occur
+                    except (KeyError, TypeError) as e:
+                        print(f"결과 처리 중 오류 발생: {e}")
+                        retry_count += 1
+                        print(f"재시도 중... ({retry_count}/{max_retries})")
         
         return self.json_data
 
@@ -353,8 +353,8 @@ class Applier:
             action = task.get('action', '').lower()
             
             # Default behavior - text edits
-            if 'edit target type' in task and 'edit target content' in task and 'content after edit' in task:
-                edit_types = task['edit target type']
+            if 'edit target' in task and 'edit target content' in task and 'content after edit' in task:
+                edit_types = task['edit target']
                 original_contents = task['edit target content']
                 new_contents = task['content after edit']
                 

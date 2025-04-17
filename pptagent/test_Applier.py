@@ -10,6 +10,7 @@ import time
 load_dotenv()
 import openai
 from openai import OpenAI
+import pythoncom
 
     
 
@@ -64,14 +65,16 @@ Generate Python code modify an active PowerPoint presentation based on the provi
 
 CRITICAL REQUIREMENTS:
 - DO NOT create a new PowerPoint application - use the existing one
-- Please check if the slide number you want to work on exists and proceed with the work.
+- Please check if the slide number you want to work on exists and proceed with the work. The index starts with 1.
 - The code should NOT be written as a complete program with imports - it will be executed in an environment where PowerPoint is already open
 - Focus on finding and modifying the specified content
 - For text changes, use both shape.Name and TextFrame.TextRange.Text to identify the correct element
 - Make sure to explicitly apply any changes (e.g., shape.TextFrame.TextRange.Text = new_text)
-- Print each step of the process (e.g., "Found slide X", "Found shape Y", "Updated content from Z to W")
 - Do not write print function or comments.
-
+- You can write at slide note with slide.NotesPage
+    ```python
+    slide.NotesPage.Shapes.Placeholders(2).TextFrame.TextRange.Text = notes_text
+    ```
 Note that the code will run in a context where these variables are already available:
 - ppt_application: The PowerPoint application instance
 - active_presentation: The currently open presentation
@@ -119,7 +122,6 @@ The code must be direct, practical and focused solely on making the specific cha
         code = "error_occurred = False\n\n" + code
     
     return code
-
 class test_Applier:
     def __init__(self, model = 'claude-3.7-sonnet', api_key=os.environ.get('ANTHROPIC_API_KEY'), retry = 3):
         self.api_key = api_key
@@ -127,6 +129,7 @@ class test_Applier:
         self.retry = retry
     def __call__(self, processed_json):
         # PowerPoint 설정 코드를 별도 함수로 실행
+        pythoncom.CoInitialize()
         try:
             import win32com.client
             import win32com.client.dynamic
@@ -153,10 +156,19 @@ class test_Applier:
                 print(f"\nProcessing task {task_idx+1}:")
                 print(task)
                 
-                slide_num = task['page number']
+                try:
+                    slide_num = task['page_number']
+                except (KeyError, TypeError):
+                    try:
+                        slide_num = task['page number']
+                    except (KeyError, TypeError):
+                        # Handle the case where neither key exists
+                        print(f"Error: Could not find page number in task: {task}")
+                        slide_num = None  # Or some default value
+                
                 total_content = task['contents']
                 
-                edit_target_type = task['edit target type']
+                edit_target_type = task['edit target']#task['edit target type']
                 edit_target_content = task['edit target content']
                 content_after_edit = task['content after edit']
                 
