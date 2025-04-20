@@ -1,0 +1,293 @@
+{
+  "timestamp": "20250418_184345",
+  "user_input": "Please translate in English slide number 41",
+  "plan": {
+    "understanding": "Translate all content on slide 41 to English.",
+    "tasks": [
+      {
+        "page number": 41,
+        "description": "Translate the title of slide 41 to English",
+        "target": "Title section of slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 1"
+          }
+        ],
+        "edit target content": [
+          "Language model의 시각화"
+        ],
+        "content after edit": [
+          "Visualization of Language Model"
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Translate the body text of slide 41 to English",
+        "target": "Body text section of slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 4"
+          }
+        ],
+        "edit target content": [
+          "새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\n\n\n\n\n따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:"
+        ],
+        "content after edit": [
+          "A node that remembers the number of characters generated after a new line starts:\n\n\n\n\nA node that remembers if a quotation mark has been opened and resets the value when it is closed:"
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Translate any text within shapes on slide 41 to English",
+        "target": "Text within all shapes on slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          "Title 1",
+          "Content Placeholder 4"
+        ],
+        "edit target content": [
+          "Language model의 시각화",
+          "새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\n\n\n\n\n따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:"
+        ],
+        "content after edit": [
+          "Visualization of Language Model",
+          "Node that remembers the number of characters generated after starting a new line:\n\n\n\n\nNode that remembers whether a quotation mark is open, and resets the value when it is closed:"
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Translate text within any charts on slide 41 to English",
+        "target": "Chart titles and labels on slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 1"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 4"
+          }
+        ],
+        "edit target content": [
+          "Language model의 시각화",
+          "새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\n\n\n\n\n\n따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\n"
+        ],
+        "content after edit": [
+          "Visualization of the Language Model",
+          "Node that remembers the number of characters generated after a new line starts:\n\n\n\n\n\nNode that remembers whether a quotation mark is open and resets the value when it is closed:\n"
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Translate text within any tables on slide 41 to English",
+        "target": "Table headers and cells on slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          "Content Placeholder 4"
+        ],
+        "edit target content": [
+          "새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\n\n\n\n\n따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:"
+        ],
+        "content after edit": [
+          "A node that remembers the number of characters generated after a new line starts:\n\n\n\n\nA node that remembers whether quotation marks have been opened and resets the value when they are closed:"
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Translate the notes section of slide 41 to English",
+        "target": "Notes section of slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          "Notes Content"
+        ],
+        "edit target content": [
+          "가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요,  \n\n또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠.  \n\n이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다."
+        ],
+        "content after edit": [
+          "For example, in the case of a specific node, during the generation of the text you see here, right after a line break, that value was not very large. However, as the number of characters generated after the line break increases, and as the moment to start a new line approaches, the value of that particular dimension gradually increases. When the value grows to about 1 point, the model generates the line break character, producing the next line. In other words, the trained hidden state vector N2 below can be understood to play a role in counting the characters one by one as they are generated.\n\nAdditionally, in the example below, we observed another specific dimension showing this pattern. In this case, when a quotation mark is opened, the value stays at around -1, and the moment the quotation mark is closed, the value changes to around +1. This dimension can be thought of as remembering whether the quotation mark is currently open or closed while generating these characters. Using this information, as seen in an earlier example involving code, the model remembers that a quotation mark was opened and knows how to close it properly at the right moment.\n\nAll of this information is what the model learns during training to predict the next character. These various pieces of information indicate that this neural network has successfully learned such details."
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Check for and translate any other text elements on slide 41 to English",
+        "target": "All remaining text elements on slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 1"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 4"
+          }
+        ],
+        "edit target content": [
+          "Language model의 시각화",
+          "새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\n\n\n\n\n\n\n따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\n"
+        ],
+        "content after edit": [
+          "Visualization of Language Model",
+          "A node that remembers the number of characters generated after a new line starts:\n\n\n\n\n\n\nA node that remembers whether a quotation mark was opened and resets that value when it is closed:\n"
+        ]
+      }
+    ]
+  },
+  "processed": {
+    "understanding": "Translate all content on slide 41 to English.",
+    "tasks": [
+      {
+        "page number": 41,
+        "description": "Translate the title of slide 41 to English",
+        "target": "Title section of slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 1"
+          }
+        ],
+        "edit target content": [
+          "Language model의 시각화"
+        ],
+        "content after edit": [
+          "Visualization of Language Model"
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Translate the body text of slide 41 to English",
+        "target": "Body text section of slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 4"
+          }
+        ],
+        "edit target content": [
+          "새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\n\n\n\n\n따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:"
+        ],
+        "content after edit": [
+          "A node that remembers the number of characters generated after a new line starts:\n\n\n\n\nA node that remembers if a quotation mark has been opened and resets the value when it is closed:"
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Translate any text within shapes on slide 41 to English",
+        "target": "Text within all shapes on slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          "Title 1",
+          "Content Placeholder 4"
+        ],
+        "edit target content": [
+          "Language model의 시각화",
+          "새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\n\n\n\n\n따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:"
+        ],
+        "content after edit": [
+          "Visualization of Language Model",
+          "Node that remembers the number of characters generated after starting a new line:\n\n\n\n\nNode that remembers whether a quotation mark is open, and resets the value when it is closed:"
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Translate text within any charts on slide 41 to English",
+        "target": "Chart titles and labels on slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 1"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 4"
+          }
+        ],
+        "edit target content": [
+          "Language model의 시각화",
+          "새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\n\n\n\n\n\n따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\n"
+        ],
+        "content after edit": [
+          "Visualization of the Language Model",
+          "Node that remembers the number of characters generated after a new line starts:\n\n\n\n\n\nNode that remembers whether a quotation mark is open and resets the value when it is closed:\n"
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Translate text within any tables on slide 41 to English",
+        "target": "Table headers and cells on slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          "Content Placeholder 4"
+        ],
+        "edit target content": [
+          "새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\n\n\n\n\n따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:"
+        ],
+        "content after edit": [
+          "A node that remembers the number of characters generated after a new line starts:\n\n\n\n\nA node that remembers whether quotation marks have been opened and resets the value when they are closed:"
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Translate the notes section of slide 41 to English",
+        "target": "Notes section of slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          "Notes Content"
+        ],
+        "edit target content": [
+          "가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요,  \n\n또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠.  \n\n이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다."
+        ],
+        "content after edit": [
+          "For example, in the case of a specific node, during the generation of the text you see here, right after a line break, that value was not very large. However, as the number of characters generated after the line break increases, and as the moment to start a new line approaches, the value of that particular dimension gradually increases. When the value grows to about 1 point, the model generates the line break character, producing the next line. In other words, the trained hidden state vector N2 below can be understood to play a role in counting the characters one by one as they are generated.\n\nAdditionally, in the example below, we observed another specific dimension showing this pattern. In this case, when a quotation mark is opened, the value stays at around -1, and the moment the quotation mark is closed, the value changes to around +1. This dimension can be thought of as remembering whether the quotation mark is currently open or closed while generating these characters. Using this information, as seen in an earlier example involving code, the model remembers that a quotation mark was opened and knows how to close it properly at the right moment.\n\nAll of this information is what the model learns during training to predict the next character. These various pieces of information indicate that this neural network has successfully learned such details."
+        ]
+      },
+      {
+        "page number": 41,
+        "description": "Check for and translate any other text elements on slide 41 to English",
+        "target": "All remaining text elements on slide 41",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1376\nSlide Index: 41\nSlide Name: Slide1121\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 6 objects in slide number 41.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Language model의 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Slide Number Placeholder 7\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 41\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Content Placeholder 4\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\r\r\r\r\r\r따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\r\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 5:\n Name: Picture 2\n Type: Picture\n Position: Left=133.8867645263672, Top=138.74732971191406\n Size: Width=716.2001342773438, Height=148.5545654296875\n  Picture: Picture 2\n  Alternative Text: \n\nObject 6:\n Name: Picture 2\n Type: Picture\n Position: Left=43.815433502197266, Top=371.2148742675781\n Size: Width=716.2002563476562, Height=96.08944702148438\n  Picture: Picture 2\n  Alternative Text: \n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 어떤 특정 노드의 경우에는 지금 여기 보이는 이러한 글을 생성하는 동안에 이렇게 줄바꿈을 한 직후에는 그 값이 그렇게 크지 않았다가 점점 줄바꿈을 한 이후 생선 캐릭터 개수가 많아질수록, 그래서 출발꿈을 해야 되는 시점이 임박할수록 점점 그 해당 디멘션의 값이 커지는 모습을 보여주고 있고 그 값이 일 점 크기만큼 커지게 되면 그제서야 줄바꿈 캐릭터를 생성해서 다음 줄을 생산하는 것을 알 수 있습니다. 즉 이렇게 학습된 아래 N2 어떤 특정 히든 스테이트 벡터는 이렇게 캐릭터를 하나씩 하나씩 생성하는 동안 어떤 카운팅을 해주는 역할을 하고 있는 것으로 이해해 볼 수 있고요, \r\r또한 아래의 경우에는 어떤 특정한 다른 디멘젼이 이러한 양상을 보이는 것을 관찰할 수 있었는데요 이 경우는 보시면 지금 따옴표를 열었을 때는 그 값이 이 마이너스 일로 유지하고 있다가, 따옴표를 다시 닫는 순간 그 해당 디멘션의 값이 플러스 일로 바뀌는 즉 이 캐릭터들을 쭉 생성하는 동안 현재 이 다운표를 지금 열어뒀는지 혹은 받았는지를 기억하는 그런 디멘션으로 생각해  볼 수 있습니다. 이러한 정보를 활용하여 아까 어떤 시코드를 생소한 예시에서도 보신 것처럼 지금 다음표를 열었던 경우에는 이를 기억하고 있다가 어느 시점에서 적절하게 따옴표를 닫을 줄 아는 그런 행동을 보이고 있는 것이죠. \r\r이는 모두 학습 단계에서 다음 캐릭터를 예측하는 어찌 보면 이 단순한 데스크를 학습하는 데 필요한 정보들로서 이러한 다양한 정보들을 오늘 이 뉴럴넷이 성공적으로 잘 학습했다는 뜻이 될 것입니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 1"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 4"
+          }
+        ],
+        "edit target content": [
+          "Language model의 시각화",
+          "새로운 줄이 시작한 후, 생성한 글자 수를 기억하고 있는 노드:\n\n\n\n\n\n\n따옴표가 열렸는지를 기억하고 있다가, 닫히는 경우 그 값을 리셋하는 노드:\n"
+        ],
+        "content after edit": [
+          "Visualization of Language Model",
+          "A node that remembers the number of characters generated after a new line starts:\n\n\n\n\n\n\nA node that remembers whether a quotation mark was opened and resets that value when it is closed:\n"
+        ]
+      }
+    ]
+  },
+  "result": true
+}

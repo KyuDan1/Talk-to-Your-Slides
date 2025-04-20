@@ -59,16 +59,16 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     applier_end_time = time.time()
 
     # --- 측정 시작: Reporter ---
-    reporter_start_time = time.time()
-    reporter = Reporter()
-    summary = reporter(processed_json, result)
-    reporter_end_time = time.time()
-    print("=====SUMMARY=====")
-    print(summary)
+    #reporter_start_time = time.time()
+    #reporter = Reporter()
+    #summary = reporter(processed_json, result)
+    #reporter_end_time = time.time()
+    #print("=====SUMMARY=====")
+    #print(summary)
 
     # 메모리에 기록
-    memory = SharedLogMemory()
-    memory = memory(user_input, plan_json, processed_json, result)
+    #memory = SharedLogMemory()
+    #memory = memory(user_input, plan_json, processed_json, result)
 
     # 전체 실행 종료 시각
     end_time = time.time()
@@ -79,7 +79,7 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     print(f"Parser Time:    {parser_end_time - parser_start_time:.4f} seconds")
     print(f"Processor Time: {processor_end_time - processor_start_time:.4f} seconds")
     print(f"Applier Time:   {applier_end_time - applier_start_time:.4f} seconds")
-    print(f"Reporter Time:  {reporter_end_time - reporter_start_time:.4f} seconds")
+    #print(f"Reporter Time:  {reporter_end_time - reporter_start_time:.4f} seconds")
     print(f"Total Time:     {end_time - planner_start_time:.4f} seconds")
 
     # 코드 실행 후 파일을 닫습니다.
@@ -97,4 +97,13 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
 #             print(f"Error while processing instruction '{inst}': {e}")
 #             continue  # 에러가 나면 다음 루프로 넘어감
 
-main(user_input="Please create a full script for ppt slides number 3 and add the script to the slide notes.", rule_base_apply=False, retry=3)
+#main(user_input="Please create a full script for ppt slides number 3 and add the script to the slide notes.", rule_base_apply=False, retry=3)
+for i in range(65,90):
+    try:
+        main(user_input=f"Please translate in English slide number {i}", rule_base_apply=False, retry=4)
+    except Exception as e:
+        print(f"Error while processing instruction : {e}")
+        continue  # 에러가 나면 다음 루프로 넘어감
+
+# 바꾼 다음에 대기하는 시간이 쓸데없이 길다.
+# reporter 없앨까?

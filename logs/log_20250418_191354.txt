@@ -1,0 +1,225 @@
+Timestamp: 20250418_191354
+
+User Input: Please translate in English slide number 55
+
+Plan:
+{
+  "understanding": "Translate all content on slide 55 to English.",
+  "tasks": [
+    {
+      "page number": 55,
+      "description": "Translate the title of slide 55 to English",
+      "target": "Title section of slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Vanishing Gradient 시각화"
+      ],
+      "content after edit": [
+        "Vanishing Gradient Visualization"
+      ]
+    },
+    {
+      "page number": 55,
+      "description": "Translate the body text of slide 55 to English",
+      "target": "Body text section of slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Vanishing Gradient 시각화"
+      ],
+      "content after edit": [
+        "Vanishing Gradient Visualization"
+      ]
+    },
+    {
+      "page number": 55,
+      "description": "Translate any text within shapes on slide 55 to English",
+      "target": "Text within all shapes on slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Vanishing Gradient 시각화"
+      ],
+      "content after edit": [
+        "Vanishing Gradient Visualization"
+      ]
+    },
+    {
+      "page number": 55,
+      "description": "Translate any text within charts on slide 55 to English (chart titles, axis labels, data labels)",
+      "target": "Text within all charts on slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [
+        "Title 1"
+      ],
+      "edit target content": [
+        "Vanishing Gradient 시각화"
+      ],
+      "content after edit": [
+        "Vanishing Gradient Visualization"
+      ]
+    },
+    {
+      "page number": 55,
+      "description": "Translate the notes section of slide 55 to English",
+      "target": "Notes section of slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [],
+      "edit target content": [],
+      "content after edit": []
+    },
+    {
+      "page number": 55,
+      "description": "Translate any text within tables on slide 55 to English",
+      "target": "Text within all tables on slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Vanishing Gradient 시각화"
+      ],
+      "content after edit": [
+        "Vanishing Gradient Visualization"
+      ]
+    }
+  ]
+}
+
+Processed:
+{
+  "understanding": "Translate all content on slide 55 to English.",
+  "tasks": [
+    {
+      "page number": 55,
+      "description": "Translate the title of slide 55 to English",
+      "target": "Title section of slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Vanishing Gradient 시각화"
+      ],
+      "content after edit": [
+        "Vanishing Gradient Visualization"
+      ]
+    },
+    {
+      "page number": 55,
+      "description": "Translate the body text of slide 55 to English",
+      "target": "Body text section of slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Vanishing Gradient 시각화"
+      ],
+      "content after edit": [
+        "Vanishing Gradient Visualization"
+      ]
+    },
+    {
+      "page number": 55,
+      "description": "Translate any text within shapes on slide 55 to English",
+      "target": "Text within all shapes on slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Vanishing Gradient 시각화"
+      ],
+      "content after edit": [
+        "Vanishing Gradient Visualization"
+      ]
+    },
+    {
+      "page number": 55,
+      "description": "Translate any text within charts on slide 55 to English (chart titles, axis labels, data labels)",
+      "target": "Text within all charts on slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [
+        "Title 1"
+      ],
+      "edit target content": [
+        "Vanishing Gradient 시각화"
+      ],
+      "content after edit": [
+        "Vanishing Gradient Visualization"
+      ]
+    },
+    {
+      "page number": 55,
+      "description": "Translate the notes section of slide 55 to English",
+      "target": "Notes section of slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [],
+      "edit target content": [],
+      "content after edit": []
+    },
+    {
+      "page number": 55,
+      "description": "Translate any text within tables on slide 55 to English",
+      "target": "Text within all tables on slide 55",
+      "action": "Translate to English",
+      "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1390\nSlide Index: 55\nSlide Name: Slide1135\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 4 objects in slide number 55.\n\nObject 1:\n Name: Title 1\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: Vanishing Gradient 시각화\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 55\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Footer Placeholder 7\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: Image credit: https://www.reddit.com/r/MachineLearning/comments/3vnwum/rnn_vs_lstm_vanishing_gradients/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Picture 9\n Type: Picture\n Position: Left=159.75, Top=103.5\n Size: Width=640.5, Height=360.0\n  Picture: Picture 9\n  Alternative Text: 텍스트, 가구, 카페트이(가) 표시된 사진\n\n자동 생성된 설명\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNo text found in notes\n\nParsing complete.",
+      "edit target": [
+        {
+          "type": "Placeholder",
+          "id": "Title 1"
+        }
+      ],
+      "edit target content": [
+        "Vanishing Gradient 시각화"
+      ],
+      "content after edit": [
+        "Vanishing Gradient Visualization"
+      ]
+    }
+  ]
+}
+
+Result:
+true
+

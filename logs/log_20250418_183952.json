@@ -1,0 +1,149 @@
+{
+  "timestamp": "20250418_183952",
+  "user_input": "Please translate in English slide number 35",
+  "plan": {
+    "understanding": "Translate the entire content of slide 35 into English.",
+    "tasks": [
+      {
+        "page number": 35,
+        "description": "Translate all text content on slide 35 to English",
+        "target": "All text elements on slide 35 (Title, Body, Footers, Headers, Notes, Captions, Chart/Table labels, etc.)",
+        "action": "Translate to English using a machine translation API, preserving original formatting as much as possible.",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1370\nSlide Index: 35\nSlide Name: Slide1115\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 14 objects in slide number 35.\n\nObject 1:\n Name: Title 5\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 문자열 단위 Language Model 예시\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 35\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Content Placeholder 1\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: RNN 학습과정\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Group 4\n Type: Group\n Position: Left=56.88102340698242, Top=136.5037841796875\n Size: Width=718.6469116210938, Height=64.10645294189453\n  Group object found: Group 4  Number of objects in group: 2\n  Object in group 1:\n    Name: Rectangle 6\n    Type: AutoShape\n    Position: Left=56.88102340698242, Top=136.5037841796875\n    Size: Width=718.6469116210938, Height=64.10645294189453\n    Text content: tyntd-iafhatawiaoihrdemot lytdws e, tfti, astai f ogoh eoase rrranbyne ‘nhthnee e\rplia tklrgd t o idoe ns, smtt h ne etie h, hregtrs nigtike, aoaenns lng\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n    Text content: tyntd-iafhatawiaoihrdemot lytdws e, tfti, astai f ogoh eoase rrranbyne ‘nhthnee e\rplia tklrgd t o idoe ns, smtt h ne etie h, hregtrs nigtike, aoaenns lng\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n  Object in group 2:\n    Name: TextBox 8\n    Type: Text Box\n    Position: Left=88.40370178222656, Top=144.8751220703125\n    Size: Width=655.6015625, Height=29.081260681152344\n\nObject 5:\n Name: Group 9\n Type: Group\n Position: Left=56.88086700439453, Top=209.2950439453125\n Size: Width=718.6467895507812, Height=98.92913055419922\n  Group object found: Group 9  Number of objects in group: 2\n  Object in group 1:\n    Name: Rectangle 10\n    Type: AutoShape\n    Position: Left=56.88086700439453, Top=209.2950439453125\n    Size: Width=718.6467895507812, Height=98.92913055419922\n    Text content: “Tmont thithey” fomesscerliund\rKeushey. Thom here\rsheulke, anmerenith ol sivh I lalterthend Bleipile shuwy fil on aseterlome\rCoaniogennc Phe lism thond hon at. MeiDimorotion in ther thize.”\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n    Text content: “Tmont thithey” fomesscerliund\rKeushey. Thom here\rsheulke, anmerenith ol sivh I lalterthend Bleipile shuwy fil on aseterlome\rCoaniogennc Phe lism thond hon at. MeiDimorotion in ther thize.”\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n  Object in group 2:\n    Name: TextBox 11\n    Type: Text Box\n    Position: Left=86.2269287109375, Top=213.39669799804688\n    Size: Width=655.6014404296875, Height=29.081260681152344\n\nObject 6:\n Name: Group 12\n Type: Group\n Position: Left=56.88086700439453, Top=316.9089660644531\n Size: Width=718.6467895507812, Height=82.16551208496094\n  Group object found: Group 12  Number of objects in group: 2\n  Object in group 1:\n    Name: Rectangle 13\n    Type: AutoShape\n    Position: Left=56.88086700439453, Top=316.9089660644531\n    Size: Width=718.6467895507812, Height=82.16551208496094\n    Text content: Aftair fall unsuch that the hall for Prince Velzonski’s that me of\rher hearly, and behs to so arwage fiving were to it beloge, pavu say falling misfort\rHow, and Gogition is so overelical and ofter.\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n    Text content: Aftair fall unsuch that the hall for Prince Velzonski’s that me of\rher hearly, and behs to so arwage fiving were to it beloge, pavu say falling misfort\rHow, and Gogition is so overelical and ofter.\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n  Object in group 2:\n    Name: TextBox 14\n    Type: Text Box\n    Position: Left=86.2269287109375, Top=323.8211669921875\n    Size: Width=655.6014404296875, Height=29.081260681152344\n\nObject 7:\n Name: Group 15\n Type: Group\n Position: Left=56.88086700439453, Top=407.75927734375\n Size: Width=718.6467895507812, Height=82.16551208496094\n  Group object found: Group 15  Number of objects in group: 2\n  Object in group 1:\n    Name: Rectangle 16\n    Type: AutoShape\n    Position: Left=56.88086700439453, Top=407.75927734375\n    Size: Width=718.6467895507812, Height=82.16551208496094\n    Text content: “Why do what that day,” replied Natasha, and wishing to himself the fact the \rPrincess, Princess Mary was easier, fed in had oftened him.\rPierre aking his soul came to the packs and drove up his father-in-law-women\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n    Text content: “Why do what that day,” replied Natasha, and wishing to himself the fact the \rPrincess, Princess Mary was easier, fed in had oftened him.\rPierre aking his soul came to the packs and drove up his father-in-law-women\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n  Object in group 2:\n    Name: TextBox 17\n    Type: Text Box\n    Position: Left=86.2269287109375, Top=414.6715087890625\n    Size: Width=655.6014404296875, Height=29.081260681152344\n\nObject 8:\n Name: 아래로 구부러진 화살표[C] 51\n Type: AutoShape\n Position: Left=775.2860717773438, Top=191.0167694091797\n Size: Width=38.86692810058594, Height=29.34165382385254\n\nObject 9:\n Name: 아래로 구부러진 화살표[C] 52\n Type: AutoShape\n Position: Left=775.2860717773438, Top=297.6977844238281\n Size: Width=38.86692810058594, Height=29.34165382385254\n\nObject 10:\n Name: 아래로 구부러진 화살표[C] 54\n Type: AutoShape\n Position: Left=775.2860717773438, Top=391.99755859375\n Size: Width=38.86692810058594, Height=29.34165382385254\n\nObject 11:\n Name: TextBox 23\n Type: Text Box\n Position: Left=805.3812866210938, Top=184.85787963867188\n Size: Width=105.7167739868164, Height=31.504724502563477\n  Text content: 계속 학습\n  Font: 에스코어 드림 4 Regular, Size: 20.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 12:\n Name: TextBox 24\n Type: Text Box\n Position: Left=805.3812866210938, Top=294.2928466796875\n Size: Width=105.7167739868164, Height=31.504724502563477\n  Text content: 계속 학습\n  Font: 에스코어 드림 4 Regular, Size: 20.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 13:\n Name: TextBox 25\n Type: Text Box\n Position: Left=805.3812866210938, Top=391.8514099121094\n Size: Width=105.7167739868164, Height=31.504724502563477\n  Text content: 계속 학습\n  Font: 에스코어 드림 4 Regular, Size: 20.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 14:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 이 동일 데이터를 가지고 몇 에폭 안 돌린 학습 초기의 모델을 가져와서 인퍼런스를 수행했을 때는, 즉 해당 모델의 sos 토큰을 최초 입력으로 주고 연수 최적으로 다음 캐릭터를 예측하면 초기 모델에서는 이렇게 무의미한 캐릭터로 이루어진 시퀀스가 나오게 되고요, 그렇지만 추가적으로 여러 에폭을 더 돌린 이후에는 모델의 인퍼런스 결과가 이렇게 그럴듯하게 나타나는 것을 볼 수 있습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 5"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 1"
+          },
+          {
+            "type": "AutoShape",
+            "id": "Rectangle 6"
+          },
+          {
+            "type": "AutoShape",
+            "id": "Rectangle 10"
+          },
+          {
+            "type": "AutoShape",
+            "id": "Rectangle 13"
+          },
+          {
+            "type": "AutoShape",
+            "id": "Rectangle 16"
+          },
+          {
+            "type": "Text Box",
+            "id": "TextBox 23"
+          },
+          {
+            "type": "Text Box",
+            "id": "TextBox 24"
+          },
+          {
+            "type": "Text Box",
+            "id": "TextBox 25"
+          }
+        ],
+        "edit target content": [
+          "문자열 단위 Language Model 예시",
+          "RNN 학습과정",
+          "tyntd-iafhatawiaoihrdemot lytdws e, tfti, astai f ogoh eoase rrranbyne ‘nhthnee e\nplia tklrgd t o idoe ns, smtt h ne etie h, hregtrs nigtike, aoaenns lng",
+          "“Tmont thithey” fomesscerliund\nKeushey. Thom here\nsheulke, anmerenith ol sivh I lalterthend Bleipile shuwy fil on aseterlome\nCoaniogennc Phe lism thond hon at. MeiDimorotion in ther thize.”",
+          "Aftair fall unsuch that the hall for Prince Velzonski’s that me of\nher hearly, and behs to so arwage fiving were to it beloge, pavu say falling misfort\nHow, and Gogition is so overelical and ofter.",
+          "“Why do what that day,” replied Natasha, and wishing to himself the fact the \nPrincess, Princess Mary was easier, fed in had oftened him.\nPierre aking his soul came to the packs and drove up his father-in-law-women",
+          "계속 학습",
+          "계속 학습",
+          "계속 학습"
+        ],
+        "content after edit": [
+          "Example of Character-level Language Model",
+          "RNN Training Process",
+          "t y n t d - i a f h a t a w i a o i h r d e m o t l y t d w s e, t f t i, a s t a i f o g o h e o a s e r r r a n b y n e ‘ n h t h n e e \n p l i a t k l r g d t o i d o e n s, s m t t h n e e t i e h, h r e g t r s n i g t i k e, a o a e n n s l n g",
+          "\"The moment the city\" formed a circle,\nKeushey. Then here\nshould, a reminiscence of which I altered. Blipile shows fill on a sterile dome.\nConsequence: The list stood here at. Meditation in their size.\"",
+          "After all, such that the hall for Prince Velzonski’s that me of\nher heartily, and began to so average living were to it belong, maybe say falling misfortune.\nHow, and cognition is so overcritical and often.",
+          "\"Why do that day,\" replied Natasha, and wishing to himself the fact that the\nPrincess, Princess Mary was easier, fed in had oftened him.\nPierre asking his soul came to the packs and drove up his father-in-law-women.",
+          "Continue Training",
+          "Continue Training",
+          "Continue Training"
+        ]
+      }
+    ]
+  },
+  "processed": {
+    "understanding": "Translate the entire content of slide 35 into English.",
+    "tasks": [
+      {
+        "page number": 35,
+        "description": "Translate all text content on slide 35 to English",
+        "target": "All text elements on slide 35 (Title, Body, Footers, Headers, Notes, Captions, Chart/Table labels, etc.)",
+        "action": "Translate to English using a machine translation API, preserving original formatting as much as possible.",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 1370\nSlide Index: 35\nSlide Name: Slide1115\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 14 objects in slide number 35.\n\nObject 1:\n Name: Title 5\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 문자열 단위 Language Model 예시\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Slide Number Placeholder 3\n Type: Placeholder\n Position: Left=729.7443237304688, Top=500.5\n Size: Width=38.977481842041016, Height=28.75\n  Text content: 35\n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Right\n  Cannot retrieve all text formatting details\n\nObject 3:\n Name: Content Placeholder 1\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: RNN 학습과정\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\nObject 4:\n Name: Group 4\n Type: Group\n Position: Left=56.88102340698242, Top=136.5037841796875\n Size: Width=718.6469116210938, Height=64.10645294189453\n  Group object found: Group 4  Number of objects in group: 2\n  Object in group 1:\n    Name: Rectangle 6\n    Type: AutoShape\n    Position: Left=56.88102340698242, Top=136.5037841796875\n    Size: Width=718.6469116210938, Height=64.10645294189453\n    Text content: tyntd-iafhatawiaoihrdemot lytdws e, tfti, astai f ogoh eoase rrranbyne ‘nhthnee e\rplia tklrgd t o idoe ns, smtt h ne etie h, hregtrs nigtike, aoaenns lng\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n    Text content: tyntd-iafhatawiaoihrdemot lytdws e, tfti, astai f ogoh eoase rrranbyne ‘nhthnee e\rplia tklrgd t o idoe ns, smtt h ne etie h, hregtrs nigtike, aoaenns lng\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n  Object in group 2:\n    Name: TextBox 8\n    Type: Text Box\n    Position: Left=88.40370178222656, Top=144.8751220703125\n    Size: Width=655.6015625, Height=29.081260681152344\n\nObject 5:\n Name: Group 9\n Type: Group\n Position: Left=56.88086700439453, Top=209.2950439453125\n Size: Width=718.6467895507812, Height=98.92913055419922\n  Group object found: Group 9  Number of objects in group: 2\n  Object in group 1:\n    Name: Rectangle 10\n    Type: AutoShape\n    Position: Left=56.88086700439453, Top=209.2950439453125\n    Size: Width=718.6467895507812, Height=98.92913055419922\n    Text content: “Tmont thithey” fomesscerliund\rKeushey. Thom here\rsheulke, anmerenith ol sivh I lalterthend Bleipile shuwy fil on aseterlome\rCoaniogennc Phe lism thond hon at. MeiDimorotion in ther thize.”\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n    Text content: “Tmont thithey” fomesscerliund\rKeushey. Thom here\rsheulke, anmerenith ol sivh I lalterthend Bleipile shuwy fil on aseterlome\rCoaniogennc Phe lism thond hon at. MeiDimorotion in ther thize.”\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n  Object in group 2:\n    Name: TextBox 11\n    Type: Text Box\n    Position: Left=86.2269287109375, Top=213.39669799804688\n    Size: Width=655.6014404296875, Height=29.081260681152344\n\nObject 6:\n Name: Group 12\n Type: Group\n Position: Left=56.88086700439453, Top=316.9089660644531\n Size: Width=718.6467895507812, Height=82.16551208496094\n  Group object found: Group 12  Number of objects in group: 2\n  Object in group 1:\n    Name: Rectangle 13\n    Type: AutoShape\n    Position: Left=56.88086700439453, Top=316.9089660644531\n    Size: Width=718.6467895507812, Height=82.16551208496094\n    Text content: Aftair fall unsuch that the hall for Prince Velzonski’s that me of\rher hearly, and behs to so arwage fiving were to it beloge, pavu say falling misfort\rHow, and Gogition is so overelical and ofter.\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n    Text content: Aftair fall unsuch that the hall for Prince Velzonski’s that me of\rher hearly, and behs to so arwage fiving were to it beloge, pavu say falling misfort\rHow, and Gogition is so overelical and ofter.\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n  Object in group 2:\n    Name: TextBox 14\n    Type: Text Box\n    Position: Left=86.2269287109375, Top=323.8211669921875\n    Size: Width=655.6014404296875, Height=29.081260681152344\n\nObject 7:\n Name: Group 15\n Type: Group\n Position: Left=56.88086700439453, Top=407.75927734375\n Size: Width=718.6467895507812, Height=82.16551208496094\n  Group object found: Group 15  Number of objects in group: 2\n  Object in group 1:\n    Name: Rectangle 16\n    Type: AutoShape\n    Position: Left=56.88086700439453, Top=407.75927734375\n    Size: Width=718.6467895507812, Height=82.16551208496094\n    Text content: “Why do what that day,” replied Natasha, and wishing to himself the fact the \rPrincess, Princess Mary was easier, fed in had oftened him.\rPierre aking his soul came to the packs and drove up his father-in-law-women\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n    Text content: “Why do what that day,” replied Natasha, and wishing to himself the fact the \rPrincess, Princess Mary was easier, fed in had oftened him.\rPierre aking his soul came to the packs and drove up his father-in-law-women\n    Font: 에스코어 드림 4 Regular, Size: 18.0\n    Bold: 0, Italic: 0\n    Alignment: Left\n    Cannot retrieve all text formatting details\n  Object in group 2:\n    Name: TextBox 17\n    Type: Text Box\n    Position: Left=86.2269287109375, Top=414.6715087890625\n    Size: Width=655.6014404296875, Height=29.081260681152344\n\nObject 8:\n Name: 아래로 구부러진 화살표[C] 51\n Type: AutoShape\n Position: Left=775.2860717773438, Top=191.0167694091797\n Size: Width=38.86692810058594, Height=29.34165382385254\n\nObject 9:\n Name: 아래로 구부러진 화살표[C] 52\n Type: AutoShape\n Position: Left=775.2860717773438, Top=297.6977844238281\n Size: Width=38.86692810058594, Height=29.34165382385254\n\nObject 10:\n Name: 아래로 구부러진 화살표[C] 54\n Type: AutoShape\n Position: Left=775.2860717773438, Top=391.99755859375\n Size: Width=38.86692810058594, Height=29.34165382385254\n\nObject 11:\n Name: TextBox 23\n Type: Text Box\n Position: Left=805.3812866210938, Top=184.85787963867188\n Size: Width=105.7167739868164, Height=31.504724502563477\n  Text content: 계속 학습\n  Font: 에스코어 드림 4 Regular, Size: 20.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 12:\n Name: TextBox 24\n Type: Text Box\n Position: Left=805.3812866210938, Top=294.2928466796875\n Size: Width=105.7167739868164, Height=31.504724502563477\n  Text content: 계속 학습\n  Font: 에스코어 드림 4 Regular, Size: 20.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 13:\n Name: TextBox 25\n Type: Text Box\n Position: Left=805.3812866210938, Top=391.8514099121094\n Size: Width=105.7167739868164, Height=31.504724502563477\n  Text content: 계속 학습\n  Font: 에스코어 드림 4 Regular, Size: 20.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 14:\n Name: Footer Placeholder 2\n Type: Placeholder\n Position: Left=11.368346214294434, Top=500.5\n Size: Width=718.3759765625, Height=28.75\n  Text content: http://karpathy.github.io/2015/05/21/rnn-effectiveness/ \n  Font: 에스코어 드림 4 Regular, Size: 12.0\n  Bold: 0, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 가령 이 동일 데이터를 가지고 몇 에폭 안 돌린 학습 초기의 모델을 가져와서 인퍼런스를 수행했을 때는, 즉 해당 모델의 sos 토큰을 최초 입력으로 주고 연수 최적으로 다음 캐릭터를 예측하면 초기 모델에서는 이렇게 무의미한 캐릭터로 이루어진 시퀀스가 나오게 되고요, 그렇지만 추가적으로 여러 에폭을 더 돌린 이후에는 모델의 인퍼런스 결과가 이렇게 그럴듯하게 나타나는 것을 볼 수 있습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 5"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 1"
+          },
+          {
+            "type": "AutoShape",
+            "id": "Rectangle 6"
+          },
+          {
+            "type": "AutoShape",
+            "id": "Rectangle 10"
+          },
+          {
+            "type": "AutoShape",
+            "id": "Rectangle 13"
+          },
+          {
+            "type": "AutoShape",
+            "id": "Rectangle 16"
+          },
+          {
+            "type": "Text Box",
+            "id": "TextBox 23"
+          },
+          {
+            "type": "Text Box",
+            "id": "TextBox 24"
+          },
+          {
+            "type": "Text Box",
+            "id": "TextBox 25"
+          }
+        ],
+        "edit target content": [
+          "문자열 단위 Language Model 예시",
+          "RNN 학습과정",
+          "tyntd-iafhatawiaoihrdemot lytdws e, tfti, astai f ogoh eoase rrranbyne ‘nhthnee e\nplia tklrgd t o idoe ns, smtt h ne etie h, hregtrs nigtike, aoaenns lng",
+          "“Tmont thithey” fomesscerliund\nKeushey. Thom here\nsheulke, anmerenith ol sivh I lalterthend Bleipile shuwy fil on aseterlome\nCoaniogennc Phe lism thond hon at. MeiDimorotion in ther thize.”",
+          "Aftair fall unsuch that the hall for Prince Velzonski’s that me of\nher hearly, and behs to so arwage fiving were to it beloge, pavu say falling misfort\nHow, and Gogition is so overelical and ofter.",
+          "“Why do what that day,” replied Natasha, and wishing to himself the fact the \nPrincess, Princess Mary was easier, fed in had oftened him.\nPierre aking his soul came to the packs and drove up his father-in-law-women",
+          "계속 학습",
+          "계속 학습",
+          "계속 학습"
+        ],
+        "content after edit": [
+          "Example of Character-level Language Model",
+          "RNN Training Process",
+          "t y n t d - i a f h a t a w i a o i h r d e m o t l y t d w s e, t f t i, a s t a i f o g o h e o a s e r r r a n b y n e ‘ n h t h n e e \n p l i a t k l r g d t o i d o e n s, s m t t h n e e t i e h, h r e g t r s n i g t i k e, a o a e n n s l n g",
+          "\"The moment the city\" formed a circle,\nKeushey. Then here\nshould, a reminiscence of which I altered. Blipile shows fill on a sterile dome.\nConsequence: The list stood here at. Meditation in their size.\"",
+          "After all, such that the hall for Prince Velzonski’s that me of\nher heartily, and began to so average living were to it belong, maybe say falling misfortune.\nHow, and cognition is so overcritical and often.",
+          "\"Why do that day,\" replied Natasha, and wishing to himself the fact that the\nPrincess, Princess Mary was easier, fed in had oftened him.\nPierre asking his soul came to the packs and drove up his father-in-law-women.",
+          "Continue Training",
+          "Continue Training",
+          "Continue Training"
+        ]
+      }
+    ]
+  },
+  "result": true
+}

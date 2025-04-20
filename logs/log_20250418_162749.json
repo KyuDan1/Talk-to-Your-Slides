@@ -1,0 +1,349 @@
+{
+  "timestamp": "20250418_162749",
+  "user_input": "Please translate in English slide number 2",
+  "plan": {
+    "understanding": "Translate all content on slide 2 to English.",
+    "tasks": [
+      {
+        "page number": 2,
+        "description": "Translate the title of slide 2 to English",
+        "target": "Title section of slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 2"
+          }
+        ],
+        "edit target content": [
+          "수업 목표"
+        ],
+        "content after edit": [
+          "Course Objectives"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate the body text of slide 2 to English",
+        "target": "Body text section of slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 3"
+          }
+        ],
+        "edit target content": [
+          "이번 수업의 핵심:\nRecurrent Neural Network의 기본 개념 및 구조\nRNN의 동작 과정 및 계산 방법\nRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\n\n\n핵심 개념\nRecurrent neural network\nRolled / Unrolled RNN"
+        ],
+        "content after edit": [
+          "Key points of this lesson:\nBasic concepts and structure of Recurrent Neural Network\nOperation process and calculation methods of RNN\nVarious input-output forms of RNN and the application of various tasks using these\n\n\nCore concepts\nRecurrent neural network\nRolled / Unrolled RNN"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate any text within shapes on slide 2 to English",
+        "target": "Text within all shapes on slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 2"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 3"
+          }
+        ],
+        "edit target content": [
+          "수업 목표",
+          "이번 수업의 핵심:\r\nRecurrent Neural Network의 기본 개념 및 구조\r\nRNN의 동작 과정 및 계산 방법\r\nRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\n\r\n\r\n핵심 개념\r\nRecurrent neural network\r\nRolled / Unrolled RNN"
+        ],
+        "content after edit": [
+          "Course Objectives",
+          "Key points of this lesson:\r\nBasic concepts and structure of Recurrent Neural Networks\r\nOperation process and calculation methods of RNN\r\nVarious input/output forms of RNN and applications to diverse tasks\r\n\r\n\r\nKey concepts\r\nRecurrent neural network\r\nRolled / Unrolled RNN"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate the chart title and labels on slide 2 (if present) to English",
+        "target": "Chart title and data labels on slide 2 (if any)",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 2"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 3"
+          }
+        ],
+        "edit target content": [
+          "수업 목표",
+          "이번 수업의 핵심:\nRecurrent Neural Network의 기본 개념 및 구조\nRNN의 동작 과정 및 계산 방법\nRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\n\n\n핵심 개념\nRecurrent neural network\nRolled / Unrolled RNN"
+        ],
+        "content after edit": [
+          "Lesson Objectives",
+          "Core topics of this lesson:\n- Basic concepts and structure of Recurrent Neural Network\n- Operation process and computation method of RNN\n- Various input-output forms of RNN and application of diverse tasks using them\n\nKey concepts\nRecurrent neural network\nRolled / Unrolled RNN"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate the table headers and cell content on slide 2 (if present) to English",
+        "target": "Table headers and cells on slide 2 (if any)",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 2"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 3"
+          }
+        ],
+        "edit target content": [
+          "수업 목표",
+          "이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\n\r\n핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN"
+        ],
+        "content after edit": [
+          "Lesson Objectives",
+          "Core of This Class:\rBasic concepts and structure of Recurrent Neural Network\rOperation process and calculation methods of RNN\rVarious input-output forms of RNN and application of various tasks using them\r\n\r\nKey Concepts\rRecurrent Neural Network\rRolled / Unrolled RNN"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate the notes section of slide 2 to English",
+        "target": "Notes section of slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          "Notes Content"
+        ],
+        "edit target content": [
+          "구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다."
+        ],
+        "content after edit": [
+          "Specifically, in this lesson, we will explore the basic concepts and model structure of Recurrent Neural Networks (RNN), the calculation process and operation method of RNN, as well as the input and output forms used when working with RNN, and various practical applications of RNN in different tasks."
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate any footer text on slide 2 to English",
+        "target": "Footer text of slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 3"
+          }
+        ],
+        "edit target content": [
+          "이번 수업의 핵심:\r\nRecurrent Neural Network의 기본 개념 및 구조\r\nRNN의 동작 과정 및 계산 방법\r\nRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\n\r\n핵심 개념\r\nRecurrent neural network\r\nRolled / Unrolled RNN"
+        ],
+        "content after edit": [
+          "Key points of this lesson:\r\nBasic concepts and structure of Recurrent Neural Networks\r\nOperation process and computation methods of RNN\r\nVarious input/output forms of RNN and applications of diverse tasks using them\r\n\r\nCore concepts\r\nRecurrent Neural Network\r\nRolled / Unrolled RNN"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate any header text on slide 2 to English",
+        "target": "Header text of slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 2"
+          }
+        ],
+        "edit target content": [
+          "수업 목표"
+        ],
+        "content after edit": [
+          "Course Objectives"
+        ]
+      }
+    ]
+  },
+  "processed": {
+    "understanding": "Translate all content on slide 2 to English.",
+    "tasks": [
+      {
+        "page number": 2,
+        "description": "Translate the title of slide 2 to English",
+        "target": "Title section of slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 2"
+          }
+        ],
+        "edit target content": [
+          "수업 목표"
+        ],
+        "content after edit": [
+          "Course Objectives"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate the body text of slide 2 to English",
+        "target": "Body text section of slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 3"
+          }
+        ],
+        "edit target content": [
+          "이번 수업의 핵심:\nRecurrent Neural Network의 기본 개념 및 구조\nRNN의 동작 과정 및 계산 방법\nRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\n\n\n핵심 개념\nRecurrent neural network\nRolled / Unrolled RNN"
+        ],
+        "content after edit": [
+          "Key points of this lesson:\nBasic concepts and structure of Recurrent Neural Network\nOperation process and calculation methods of RNN\nVarious input-output forms of RNN and the application of various tasks using these\n\n\nCore concepts\nRecurrent neural network\nRolled / Unrolled RNN"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate any text within shapes on slide 2 to English",
+        "target": "Text within all shapes on slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 2"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 3"
+          }
+        ],
+        "edit target content": [
+          "수업 목표",
+          "이번 수업의 핵심:\r\nRecurrent Neural Network의 기본 개념 및 구조\r\nRNN의 동작 과정 및 계산 방법\r\nRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\n\r\n\r\n핵심 개념\r\nRecurrent neural network\r\nRolled / Unrolled RNN"
+        ],
+        "content after edit": [
+          "Course Objectives",
+          "Key points of this lesson:\r\nBasic concepts and structure of Recurrent Neural Networks\r\nOperation process and calculation methods of RNN\r\nVarious input/output forms of RNN and applications to diverse tasks\r\n\r\n\r\nKey concepts\r\nRecurrent neural network\r\nRolled / Unrolled RNN"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate the chart title and labels on slide 2 (if present) to English",
+        "target": "Chart title and data labels on slide 2 (if any)",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 2"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 3"
+          }
+        ],
+        "edit target content": [
+          "수업 목표",
+          "이번 수업의 핵심:\nRecurrent Neural Network의 기본 개념 및 구조\nRNN의 동작 과정 및 계산 방법\nRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\n\n\n핵심 개념\nRecurrent neural network\nRolled / Unrolled RNN"
+        ],
+        "content after edit": [
+          "Lesson Objectives",
+          "Core topics of this lesson:\n- Basic concepts and structure of Recurrent Neural Network\n- Operation process and computation method of RNN\n- Various input-output forms of RNN and application of diverse tasks using them\n\nKey concepts\nRecurrent neural network\nRolled / Unrolled RNN"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate the table headers and cell content on slide 2 (if present) to English",
+        "target": "Table headers and cells on slide 2 (if any)",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 2"
+          },
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 3"
+          }
+        ],
+        "edit target content": [
+          "수업 목표",
+          "이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\n\r\n핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN"
+        ],
+        "content after edit": [
+          "Lesson Objectives",
+          "Core of This Class:\rBasic concepts and structure of Recurrent Neural Network\rOperation process and calculation methods of RNN\rVarious input-output forms of RNN and application of various tasks using them\r\n\r\nKey Concepts\rRecurrent Neural Network\rRolled / Unrolled RNN"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate the notes section of slide 2 to English",
+        "target": "Notes section of slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          "Notes Content"
+        ],
+        "edit target content": [
+          "구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다."
+        ],
+        "content after edit": [
+          "Specifically, in this lesson, we will explore the basic concepts and model structure of Recurrent Neural Networks (RNN), the calculation process and operation method of RNN, as well as the input and output forms used when working with RNN, and various practical applications of RNN in different tasks."
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate any footer text on slide 2 to English",
+        "target": "Footer text of slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Content Placeholder 3"
+          }
+        ],
+        "edit target content": [
+          "이번 수업의 핵심:\r\nRecurrent Neural Network의 기본 개념 및 구조\r\nRNN의 동작 과정 및 계산 방법\r\nRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\n\r\n핵심 개념\r\nRecurrent neural network\r\nRolled / Unrolled RNN"
+        ],
+        "content after edit": [
+          "Key points of this lesson:\r\nBasic concepts and structure of Recurrent Neural Networks\r\nOperation process and computation methods of RNN\r\nVarious input/output forms of RNN and applications of diverse tasks using them\r\n\r\nCore concepts\r\nRecurrent Neural Network\r\nRolled / Unrolled RNN"
+        ]
+      },
+      {
+        "page number": 2,
+        "description": "Translate any header text on slide 2 to English",
+        "target": "Header text of slide 2",
+        "action": "Translate to English",
+        "contents": "Presentation: 07_RNN_LSTM_Seq2Seq_Attention.pptx\nTotal Slides: 89\n\n\n--- SLIDE PROPERTIES ---\nSlide ID: 409\nSlide Index: 2\nSlide Name: Slide154\nError parsing slide properties: 'int' object has no attribute 'Type'\n\n--- SLIDE OBJECTS ---\nFound 2 objects in slide number 2.\n\nObject 1:\n Name: Title 2\n Type: Placeholder\n Position: Left=35.8110237121582, Top=28.34645652770996\n Size: Width=888.3779296875, Height=53.85826873779297\n  Text content: 수업 목표\n  Font: 에스코어 드림 6 Bold, Size: 28.0\n  Bold: 0, Italic: 0\n  Alignment: Center\n  Cannot retrieve all text formatting details\n\nObject 2:\n Name: Content Placeholder 3\n Type: Placeholder\n Position: Left=65.99992370605469, Top=92.57149505615234\n Size: Width=828.0, Height=397.3533020019531\n  Text content: 이번 수업의 핵심:\rRecurrent Neural Network의 기본 개념 및 구조\rRNN의 동작 과정 및 계산 방법\rRNN의 여러 입출력 형태와 이를 활용한 다양한 Task의 적용\r\r\r핵심 개념\rRecurrent neural network\rRolled / Unrolled RNN\r\n  Font: 에스코어 드림 4 Regular, Size: 24.0\n  Bold: -2, Italic: 0\n  Alignment: Left\n  Cannot retrieve all text formatting details\n\n--- SLIDE NOTES ---\nNotes Shapes Count: 3\nNotes Content: 구체적으로 본수업에서는 이 리커런트 리얼 네트웍은 RN 의 기본 개념과 모델 구조 그리고 rnn의 계산 과정과 동작 방식 그리고 rnn을 사용할 때의 입출력 형태 및 이를 활용한 다양한 테스크에 적용 사례를 살펴보도록 하겠습니다.\n\nParsing complete.",
+        "edit target": [
+          {
+            "type": "Placeholder",
+            "id": "Title 2"
+          }
+        ],
+        "edit target content": [
+          "수업 목표"
+        ],
+        "content after edit": [
+          "Course Objectives"
+        ]
+      }
+    ]
+  },
+  "result": true
+}
