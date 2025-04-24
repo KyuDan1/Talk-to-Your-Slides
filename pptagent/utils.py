@@ -555,7 +555,7 @@ def parse_slide_properties(slide):
 
 def parse_active_slide_objects(slide_num:int=1):
     """슬라이드 객체 파싱 메인 함수"""
-    output = "" # 출력을 저장할 문자열 초기화
+    output = {} # 출력을 저장할 문자열 초기화
     
     try:
         # Connect to running PowerPoint instance
@@ -566,32 +566,33 @@ def parse_active_slide_objects(slide_num:int=1):
         
         # Check if there is an active presentation
         if not presentation:
-            output += "No active presentation found."
-            return output
+            output['status'] = "No active presentation found."
+            return output['status']
         
         # 프레젠테이션 정보 추가
-        output += f"Presentation: {presentation.Name}\n"
-        output += f"Total Slides: {presentation.Slides.Count}\n"
+        output["Presntation_Name"] = f"{presentation.Name}\n"
+        output["Total_Slide_Number"] = f"{presentation.Slides.Count}\n"
         
         # 슬라이드 범위 확인
         if slide_num > presentation.Slides.Count or slide_num < 1:
-            output += f"Invalid slide number. Please provide a number between 1 and {presentation.Slides.Count}."
-            return output
+            output["status"] = f"Invalid slide number. Please provide a number between 1 and {presentation.Slides.Count}."
+            return output["status"]
         
         # Access the specified slide
         slide = presentation.Slides(slide_num)
         
         # 슬라이드 속성 파싱
-        output += parse_slide_properties(slide)
+        output["Slide_Properties"] = parse_slide_properties(slide)
         
         # Get the number of shapes in the slide
         shape_count = slide.Shapes.Count
-        output += f"\n\n--- SLIDE OBJECTS ---\nFound {shape_count} objects in slide number {slide_num}."
+        output["Objects_Overview"] = f"Found {shape_count} objects in slide number {slide_num}."
         
         # Iterate through each shape
         for i in range(1, shape_count + 1):
             shape = slide.Shapes(i)
-            output += f"\n\nObject {i}:"
+            output["Objects_Detail"] = []
+            output["Objects_Detail"].append(f"Object {i}:")
             output += f"\n Name: {shape.Name}"
             output += f"\n Type: {get_shape_type(shape.Type)}"
             output += f"\n Position: Left={shape.Left}, Top={shape.Top}"
