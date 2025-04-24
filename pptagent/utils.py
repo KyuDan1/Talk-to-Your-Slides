@@ -256,49 +256,157 @@ def get_placeholder_type(placeholder_type):
     }
     return placeholder_types.get(placeholder_type, f"Unknown Placeholder ({placeholder_type})")
 
-def parse_text_frame(text_frame):
-    """텍스트 프레임 정보 파싱 (결과를 dict로 반환)"""
-    result = {}
-    try:
-        has_text = getattr(text_frame, "HasText", False)
-        result["Has Text"] = bool(has_text)
+def parse_text_frame(text_frame, merge_same_style=False, char_fallback=True):
+    """
+    Parse PowerPoint text frame and extract formatted text runs.
+    
+    Args:
+        text_frame: PowerPoint TextFrame object
+        merge_same_style: Whether to merge adjacent runs with the same formatting
+        char_fallback: Whether to use character-by-character parsing if run count is 0 or 1
         
-        if has_text:
-            tr = text_frame.TextRange
-            # 기본 텍스트 정보
-            result["Text"] = getattr(tr, "Text", "")
-            result["Paragraphs Count"] = getattr(tr.Paragraphs(), "Count", 0)
-            result["Text Alignment"] = getattr(tr.ParagraphFormat, "Alignment", None)
-            
-            # 글꼴 정보
-            font = tr.Font
-            font_info = {
-                "Name": getattr(font, "Name", None),
-                "Size": getattr(font, "Size", None),
+    Return:
+        {
+            "Text": "...",
+            "Runs": [
+                {"Text": "...", "Font": {...}, "Hyperlink": ...},
+                ...
+            ],
+            "Paragraphs": {...},
+            "Font": {...},          # Base font for the entire text
+            "Hyperlink": ...,
+        }
+    """
+    def safe(obj, attr, default=None):
+        try:
+            return getattr(obj, attr, default)
+        except Exception:
+            return default
+
+    def rgb_of(font):
+        """Font → actual RGB int (or None)"""
+        rgb = safe(safe(font, "Fill"), "ForeColor", None)
+        rgb = safe(rgb, "RGB", None)
+        if rgb is None or rgb == -1:
+            rgb = safe(safe(font, "Color"), "RGB", None)
+        return rgb                     # format: 0x00BBGGRR
+
+    def snap(font):
+        """Key for font comparison"""
+        return (
+            safe(font, "Name"),
+            round(float(safe(font, "Size", 0)), 1),
+            bool(safe(font, "Bold", 0)),
+            bool(safe(font, "Italic", 0)),
+            bool(safe(font, "Underline", 0)),
+            rgb_of(font),
+        )
+
+    def make_run_dict(tr_char):
+        f = tr_char.Font
+        rgb = rgb_of(f)
+        info = {
+            "Text": safe(tr_char, "Text", ""),
+            "Font": {
+                "Name": safe(f, "Name"),
+                "Size": safe(f, "Size"),
+                "Bold": bool(safe(f, "Bold", 0)),
+                "Italic": bool(safe(f, "Italic", 0)),
+                "Underline": bool(safe(f, "Underline", 0)),
+            },
+            "Hyperlink": None,
+        }
+        if rgb not in (None, -1):
+            info["Font"]["Color"] = {
+                "R": rgb & 0xFF,
+                "G": (rgb >> 8) & 0xFF,
+                "B": (rgb >> 16) & 0xFF,
             }
-            # RGB 색 추출
-            rgb = getattr(font.Color, "RGB", None)
-            if rgb is not None:
-                font_info["Color"] = {
-                    "R": rgb & 0xFF,
-                    "G": (rgb >> 8) & 0xFF,
-                    "B": (rgb >> 16) & 0xFF
-                }
-            result["Font"] = font_info
+        # Character-level hyperlinks (rare but included for completeness)
+        try:
+            act = tr_char.ActionSettings(1)
+            hl = safe(act, "Hyperlink", None)
+            info["Hyperlink"] = safe(hl, "Address", None) if hl else None
+        except Exception:
+            pass
+        return info
 
-            # 하이퍼링크 검사
-            try:
-                action = tr.ActionSettings(1)
-                hl = getattr(action, "Hyperlink", None)
-                addr = getattr(hl, "Address", None) if hl else None
-                result["Hyperlink"] = addr or None
-            except Exception:
-                result["Hyperlink"] = None
+    # ---------- Start ----------
+    out = {"Has Text": False}
+    if not safe(text_frame, "HasText", False):
+        return out
 
-    except Exception as e:
-        result["Text Frame Error"] = str(e)
+    tr_all    = text_frame.TextRange
+    full_text = safe(tr_all, "Text", "")
+    out.update({
+        "Has Text": True,
+        "Text": full_text,
+        "Paragraphs": {
+            "Count":      safe(tr_all.Paragraphs(), "Count", 0),
+            "Alignment":  safe(tr_all.ParagraphFormat, "Alignment", None),
+            "LineSpacing":safe(tr_all.ParagraphFormat, "SpaceWithin", None),
+        },
+    })
 
-    return result
+    runs = []
+
+    # ---------- 새 로직 ----------
+    if not merge_same_style and full_text:
+        # 글자마다 하나씩
+        for idx in range(1, len(full_text) + 1):
+            runs.append(make_run_dict(tr_all.Characters(idx, 1)))
+
+    else:
+        # 1) PowerPoint Runs
+        try:
+            ppt_runs = tr_all.Runs()
+            if ppt_runs and ppt_runs.Count > 0:
+                for i in range(1, ppt_runs.Count + 1):
+                    runs.append(make_run_dict(ppt_runs(i)))
+        except Exception:
+            pass
+
+        # 2) 부족하면 글자-스캔 보완
+        if len(runs) <= 1 and char_fallback and full_text:
+            cur_start = 1
+            cur_snap  = snap(cur_start := 1)
+            n = len(full_text)
+            for idx in range(2, n + 1):
+                if snap(idx) != cur_snap:
+                    seg_len = idx - cur_start
+                    runs.append(make_run_dict(tr_all.Characters(cur_start, seg_len)))
+                    cur_start, cur_snap = idx, snap(idx)
+            runs.append(make_run_dict(tr_all.Characters(cur_start, n - cur_start + 1)))
+
+    out["Runs"] = runs
+
+    # ----------- Base font and hyperlink for entire text range -----------
+    base_font = tr_all.Font
+    rgb_full = rgb_of(base_font)
+    out["Font"] = {
+        "Name": safe(base_font, "Name"),
+        "Size": safe(base_font, "Size"),
+    }
+    if rgb_full not in (None, -1):
+        out["Font"]["Color"] = {
+            "R": rgb_full & 0xFF,
+            "G": (rgb_full >> 8) & 0xFF,
+            "B": (rgb_full >> 16) & 0xFF,
+        }
+    try:
+        act_w = tr_all.ActionSettings(1)
+        hl_w = safe(act_w, "Hyperlink", None)
+        out["Hyperlink"] = safe(hl_w, "Address", None) if hl_w else None
+    except Exception:
+        out["Hyperlink"] = None
+
+    return out
+
+
+
+
+
+
 
 
 def parse_table(table):
@@ -480,7 +588,13 @@ def parse_shape_details(shape):
 
         # 텍스트 프레임
         if getattr(shape, "HasTextFrame", False):
-            result["TextFrame"] = parse_text_frame(shape.TextFrame)
+            result["TextFrame"] = parse_text_frame(
+                                    shape.TextFrame,          # 필수
+                                    merge_same_style=False,    # 인접 run 동일-서식 병합
+                                    char_fallback=True      # Runs()가 0/1개면 글자별 fallback
+                                )
+        print("여기부터")
+        print(result["TextFrame"]["Runs"])
 
         # Placeholder
         if t == 14:
