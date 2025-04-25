@@ -94,22 +94,21 @@ def create_process_prompt(page_number, description, action, contents):
 - Task description: {description}
 - Action type: {action}
 - Slide contents: {contents}
+You are a specialized AI that analyzes PowerPoint slide content and performs specific tasks. You will receive the following JSON data, perform the designated tasks, and return the results in exactly the same JSON format.
 
-Please analyze what and how to modify based on the contents of the above slide.
-Identify the appropriate edit targets in the slide and determine what actions need to be taken for each target.
-Consider the type of content (such as titles, content placeholders, text boxes, etc.) when making your assessment.
-After identifying the targets, perform the necessary edits on each target to create the improved content. The edits might involve translation, formatting changes, content restructuring, or other modifications depending on what would improve the slide.
-Please provide your analysis and recommendations in JSON format with three key arrays:
+Important rules:
+1. You must maintain the exact input JSON structure
+2. Only perform the work described in the 'action' within 'tasks'
+3. Only modify the elements specified in 'target' within 'tasks'
+4. Output must contain pure JSON only - no explanations or additional text
+5. Preserve all formatting information (fonts, sizes, colors, etc.)
+6. Verify that the JSON format is valid after completing the task
 
-'edit target': specifying the type and exact ID of each content element you're modifying
-'edit target content': listing the original content for each target
-'content after edit': providing the modified version of each target content
-Be careful not to edit elements that the user has not requested.
+Before starting the task:
+1. Check the 'understanding' field to grasp the overall task objective
+2. Review 'page number', 'description', 'target', and 'action' within 'tasks'
+3. Identify all text elements in 'Objects_Detail'
 
-Please edit only the {page_number}.
-There might be cases where different texts within a single text box need to be edited separately.
-For example, you could change only the English text to blue color.
-Consider this and create a detailed plan.Each list should be the same length, and the edit targets type, edit target contents, contents after edit should correspond one-to-one.
-Give me in JSON format.
+The output must maintain the identical structure as the original JSON, with only the necessary text modified according to the task.
 """
     return prompt

@@ -1,5 +1,5 @@
 from classes import Planner, Parser, Processor, Applier, Reporter, SharedLogMemory
-from test_Applier import test_Applier
+from test_Applier import test_Applier, test_json_Applier
 import json
 import anthropic
 import os
@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
+GEMINI_API_KEY = os.environ.get('GEMINI')
 logging.getLogger('test_Applier').setLevel(logging.DEBUG)
 
 def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=None, retry=3):
@@ -37,26 +38,27 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     parser_end_time = time.time()
     print("=====PARSED====")
     print(parsed_json)
-    sys.exit()
+    
     # --- 측정 시작: Processor ---
     processor_start_time = time.time()
-    processor = Processor(parsed_json, model_name = 'gpt-4.1-mini', api_key=OPENAI_API_KEY)
+    processor = Processor(parsed_json, model_name = 'gemini-2.5-flash-preview-04-17', 
+                          api_key=GEMINI_API_KEY#OPENAI_API_KEY
+                          )
     processed_json:json = processor.process()
     processor_end_time = time.time()
     print("=====PROCESSED====")
     print(processed_json)   
-
+    
     # --- 측정 시작: Applier (or test_Applier) ---
     applier_start_time = time.time()
     if rule_base_apply:
         applier = Applier()
     else:
-        applier = test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY, retry = retry)
+        applier = test_json_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY, retry = retry) #test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY, retry = retry)
     
     result = applier(processed_json)
-        
-    
     applier_end_time = time.time()
+    print(result)
 
     # --- 측정 시작: Reporter ---
     #reporter_start_time = time.time()

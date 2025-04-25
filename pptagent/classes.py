@@ -117,12 +117,12 @@ class Processor:
                     
                     # 결과를 작업에 추가
                     try:
-                        task["edit target"] = processed_result["edit target"]#processed_result["edit target type"]
-                        task["edit target content"] = processed_result["edit target content"]
-                        task["content after edit"] = processed_result["content after edit"]
+                        #task["edit target"] = processed_result["edit target"]#processed_result["edit target type"]
+                        #task["edit target content"] = processed_result["edit target content"]
+                        task["content after edit"] = processed_result
                         success = True  # Mark as successful if no exceptions occur
                     except (KeyError, TypeError) as e:
-                        print(f"결과 처리 중 오류 발생: {e}")
+                        print(f"Processor에서 오류 발생: {e}")
                         retry_count += 1
                         print(f"재시도 중... ({retry_count}/{max_retries})")
         

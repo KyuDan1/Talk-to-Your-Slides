@@ -4,99 +4,41 @@ import openai
 from openai import OpenAI
 import re
 
+import json
+import re
+import ast
+
 def parse_llm_response(response):
     """
-    LLM 응답에서 JSON을 안정적으로 파싱하는 함수
+    Robustly parse JSON or Python-like structures from an LLM response.
+    Returns the loaded object (dict or list), or None if parsing fails.
     """
-    import json
-    import re
-    
-    try:
-        # 응답이 None이거나 빈 문자열인 경우 처리
-        if not response:
-            print("응답이 비어 있습니다.")
-            return None
-            
-        # 초기 정리
-        json_str = response.strip()
-        
-        # 마크다운 코드 블록 제거
-        json_str = re.sub(r'```(?:json)?', '', json_str)
-        json_str = json_str.replace('```', '').strip()
-        
-        # 처음부터 유효한 JSON인지 확인
-        try:
-            return json.loads(json_str)
-        except:
-            pass  # 직접 파싱 실패, 계속 진행
-        
-        # JSON 객체의 경계 찾기
-        start_idx = json_str.find('{')
-        end_idx = json_str.rfind('}')
-        
-        if start_idx != -1 and end_idx != -1 and start_idx < end_idx:
-            json_str = json_str[start_idx:end_idx+1]
-        else:
-            # 배열 형식 확인
-            start_idx = json_str.find('[')
-            end_idx = json_str.rfind(']')
-            if start_idx != -1 and end_idx != -1 and start_idx < end_idx:
-                json_str = json_str[start_idx:end_idx+1]
-            else:
-                print("유효한 JSON 구조를 찾을 수 없습니다.")
-                return None
-        
-        # 제어 문자 제거 (탭, 줄바꿈, 캐리지 리턴은 제외)
-        json_str = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F]+', '', json_str)
-        
-        # 일반적인 JSON 오류 수정
-        # 후행 쉼표 제거
-        json_str = re.sub(r',\s*}', '}', json_str)
-        json_str = re.sub(r',\s*]', ']', json_str)
-        
-        # 키가 따옴표로 묶여 있는지 확인
-        json_str = re.sub(r'([{,])\s*([a-zA-Z0-9_]+)\s*:', r'\1"\2":', json_str)
-        
-        # 작은따옴표를 큰따옴표로 변경
-        json_str = re.sub(r"'([^']*)'", r'"\1"', json_str)
-        
-        # 특수 이스케이프 문자 처리
-        json_str = json_str.replace('\\n', '\\\\n').replace('\\r', '\\\\r').replace('\\t', '\\\\t')
-        
-        # 중첩된 따옴표 처리
-        json_str = re.sub(r'(?<!\\)"(?=.*":)', '\\"', json_str)
-        
-        try:
-            return json.loads(json_str)
-        except json.JSONDecodeError as e:
-            print(f"JSON 파싱 오류 위치: {e.pos}, 메시지: {e.msg}")
-            
-            # 문제가 있는 위치 주변 출력
-            error_pos = e.pos
-            start = max(0, error_pos - 20)
-            end = min(len(json_str), error_pos + 20)
-            print(f"문제 지점: ...{json_str[start:error_pos]}|HERE|{json_str[error_pos:end]}...")
-            
-            # 마지막 시도: 문제가 되는 문자 제거 후 재시도
-            if error_pos < len(json_str):
-                fixed_str = json_str[:error_pos] + json_str[error_pos+1:]
-                try:
-                    return json.loads(fixed_str)
-                except:
-                    pass
-            
-            # 실패한 경우 더 공격적인 정리 시도
-            # ASCII가 아닌 문자 제거
-            clean_str = re.sub(r'[^\x20-\x7E]', '', json_str)
-            try:
-                return json.loads(clean_str)
-            except:
-                print("모든 JSON 파싱 시도가 실패했습니다.")
-                return None
-                
-    except Exception as e:
-        print(f"예상치 못한 오류: {str(e)}")
+    if not response or not isinstance(response, str):
         return None
+
+    # Remove markdown code fences
+    response_clean = re.sub(r'```(?:json)?', '', response).strip()
+
+    # Extract JSON or Python literal between the first { } or [ ]
+    match = re.search(r'(\{.*\}|\[.*\])', response_clean, re.DOTALL)
+    if not match:
+        return None
+
+    payload = match.group(1)
+
+    # Remove trailing commas before } or ]
+    payload = re.sub(r',\s*([\}\]])', r'\1', payload)
+
+    # Attempt JSON load
+    try:
+        return json.loads(payload)
+    except json.JSONDecodeError:
+        # Fallback to Python literal eval
+        try:
+            return ast.literal_eval(payload)
+        except Exception:
+            return None
+
     
 def extract_content_after_edit(plan_json):
     result = []
@@ -256,154 +198,141 @@ def get_placeholder_type(placeholder_type):
     }
     return placeholder_types.get(placeholder_type, f"Unknown Placeholder ({placeholder_type})")
 
-def parse_text_frame(text_frame, merge_same_style=False, char_fallback=True):
-    """
-    Parse PowerPoint text frame and extract formatted text runs.
-    
-    Args:
-        text_frame: PowerPoint TextFrame object
-        merge_same_style: Whether to merge adjacent runs with the same formatting
-        char_fallback: Whether to use character-by-character parsing if run count is 0 or 1
-        
-    Return:
-        {
-            "Text": "...",
-            "Runs": [
-                {"Text": "...", "Font": {...}, "Hyperlink": ...},
-                ...
-            ],
-            "Paragraphs": {...},
-            "Font": {...},          # Base font for the entire text
-            "Hyperlink": ...,
-        }
-    """
-    def safe(obj, attr, default=None):
-        try:
-            return getattr(obj, attr, default)
-        except Exception:
+import win32com.client
+import traceback  # 오류 추적을 위해 추가
+
+# --- Helper Functions (디버깅 추가) ---
+
+def safe(obj, attr, default=None):
+    """Safely get an attribute, returning default if an error occurs."""
+    try:
+        if obj is None:
             return default
+        if hasattr(obj, attr):
+            val = getattr(obj, attr, default)
+            if val is None:
+                return default
+            return val
+        return default
+    except Exception:
+        return default
 
-    def rgb_of(font):
-        """Font → actual RGB int (or None)"""
-        rgb = safe(safe(font, "Fill"), "ForeColor", None)
-        rgb = safe(rgb, "RGB", None)
-        if rgb is None or rgb == -1:
-            rgb = safe(safe(font, "Color"), "RGB", None)
-        return rgb                     # format: 0x00BBGGRR
 
-    def snap(font):
-        """Key for font comparison"""
-        return (
-            safe(font, "Name"),
-            round(float(safe(font, "Size", 0)), 1),
-            bool(safe(font, "Bold", 0)),
-            bool(safe(font, "Italic", 0)),
-            bool(safe(font, "Underline", 0)),
-            rgb_of(font),
-        )
-
-    def make_run_dict(tr_char):
-        f = tr_char.Font
-        rgb = rgb_of(f)
-        info = {
-            "Text": safe(tr_char, "Text", ""),
-            "Font": {
-                "Name": safe(f, "Name"),
-                "Size": safe(f, "Size"),
-                "Bold": bool(safe(f, "Bold", 0)),
-                "Italic": bool(safe(f, "Italic", 0)),
-                "Underline": bool(safe(f, "Underline", 0)),
-            },
-            "Hyperlink": None,
-        }
-        if rgb not in (None, -1):
-            info["Font"]["Color"] = {
-                "R": rgb & 0xFF,
-                "G": (rgb >> 8) & 0xFF,
-                "B": (rgb >> 16) & 0xFF,
-            }
-        # Character-level hyperlinks (rare but included for completeness)
+def rgb_of(font):
+    if font is None:
+        return None
+    rgb = None
+    try:
+        fill = safe(font, "Fill")
+        fore = safe(fill, "ForeColor")
+        temp = safe(fore, "RGB")
+        if temp is not None:
+            rgb = temp
+    except Exception:
+        pass
+    if rgb is None:
         try:
-            act = tr_char.ActionSettings(1)
-            hl = safe(act, "Hyperlink", None)
-            info["Hyperlink"] = safe(hl, "Address", None) if hl else None
+            col = safe(font, "Color")
+            temp = safe(col, "RGB")
+            if temp is not None:
+                rgb = temp
         except Exception:
             pass
-        return info
+    return rgb
 
-    # ---------- Start ----------
+
+def snap(font):
+    if font is None:
+        return (None, 0.0, False, False, False, None, False, False, False)
+    size_val = safe(font, "Size", 0)
+    try:
+        size_f = float(size_val)
+    except Exception:
+        size_f = 0.0
+    return (
+        safe(font, "Name"),
+        round(size_f, 1),
+        bool(safe(font, "Bold", 0)),
+        bool(safe(font, "Italic", 0)),
+        bool(safe(font, "Underline", 0)),
+        rgb_of(font),
+        bool(safe(font, "Strikethrough", 0)),
+        bool(safe(font, "Subscript", 0)),
+        bool(safe(font, "Superscript", 0)),
+    )
+
+
+def make_run_dict(text_range_segment):
+    if text_range_segment is None:
+        return {"Text": "", "Font": {}, "Hyperlink": None}
+    f = safe(text_range_segment, "Font")
+    text = safe(text_range_segment, "Text", "")
+    font_dict = {}
+    if f:
+        rgb = rgb_of(f)
+        font_dict = {
+            "Name": safe(f, "Name"),
+            "Size": safe(f, "Size"),
+            "Bold": bool(safe(f, "Bold", 0)),
+            "Italic": bool(safe(f, "Italic", 0)),
+            "Underline": bool(safe(f, "Underline", 0)),
+            "Strikethrough": bool(safe(f, "Strikethrough", 0)),
+            "Subscript": bool(safe(f, "Subscript", 0)),
+            "Superscript": bool(safe(f, "Superscript", 0)),
+        }
+        if rgb is not None:
+            try:
+                font_dict["Color"] = {"R": rgb & 0xFF, "G": (rgb >> 8) & 0xFF, "B": (rgb >> 16) & 0xFF}
+            except Exception:
+                pass
+    else:
+        font_dict = {"Name": None, "Size": None, "Bold": False, "Italic": False,
+                     "Underline": False, "Strikethrough": False, "Subscript": False,
+                     "Superscript": False}
+
+    hyperlink = None
+    try:
+        act = safe(safe(text_range_segment, "ActionSettings"), 1)
+        hyperlink = safe(safe(act, "Hyperlink"), "Address")
+    except Exception:
+        pass
+
+    return {"Text": text, "Font": font_dict, "Hyperlink": hyperlink}
+
+
+def parse_text_frame_debug(text_frame):
     out = {"Has Text": False}
     if not safe(text_frame, "HasText", False):
         return out
-
-    tr_all    = text_frame.TextRange
-    full_text = safe(tr_all, "Text", "")
-    out.update({
-        "Has Text": True,
-        "Text": full_text,
-        "Paragraphs": {
-            "Count":      safe(tr_all.Paragraphs(), "Count", 0),
-            "Alignment":  safe(tr_all.ParagraphFormat, "Alignment", None),
-            "LineSpacing":safe(tr_all.ParagraphFormat, "SpaceWithin", None),
-        },
-    })
-
+    tr = safe(text_frame, "TextRange")
+    if not tr:
+        return out
+    full = safe(tr, "Text", "")
+    out.update({"Has Text": True, "Text": full, "Runs": []})
+    if not full:
+        return out
     runs = []
-
-    # ---------- 새 로직 ----------
-    if not merge_same_style and full_text:
-        # 글자마다 하나씩
-        for idx in range(1, len(full_text) + 1):
-            runs.append(make_run_dict(tr_all.Characters(idx, 1)))
-
-    else:
-        # 1) PowerPoint Runs
-        try:
-            ppt_runs = tr_all.Runs()
-            if ppt_runs and ppt_runs.Count > 0:
-                for i in range(1, ppt_runs.Count + 1):
-                    runs.append(make_run_dict(ppt_runs(i)))
-        except Exception:
-            pass
-
-        # 2) 부족하면 글자-스캔 보완
-        if len(runs) <= 1 and char_fallback and full_text:
-            cur_start = 1
-            cur_snap  = snap(cur_start := 1)
-            n = len(full_text)
-            for idx in range(2, n + 1):
-                if snap(idx) != cur_snap:
-                    seg_len = idx - cur_start
-                    runs.append(make_run_dict(tr_all.Characters(cur_start, seg_len)))
-                    cur_start, cur_snap = idx, snap(idx)
-            runs.append(make_run_dict(tr_all.Characters(cur_start, n - cur_start + 1)))
-
-    out["Runs"] = runs
-
-    # ----------- Base font and hyperlink for entire text range -----------
-    base_font = tr_all.Font
-    rgb_full = rgb_of(base_font)
-    out["Font"] = {
-        "Name": safe(base_font, "Name"),
-        "Size": safe(base_font, "Size"),
-    }
-    if rgb_full not in (None, -1):
-        out["Font"]["Color"] = {
-            "R": rgb_full & 0xFF,
-            "G": (rgb_full >> 8) & 0xFF,
-            "B": (rgb_full >> 16) & 0xFF,
-        }
+    n = len(full)
     try:
-        act_w = tr_all.ActionSettings(1)
-        hl_w = safe(act_w, "Hyperlink", None)
-        out["Hyperlink"] = safe(hl_w, "Address", None) if hl_w else None
-    except Exception:
-        out["Hyperlink"] = None
-
+        cur_idx = 1
+        cur_snap = snap(safe(tr.Characters(cur_idx, 1), "Font"))
+        for i in range(2, n+1):
+            nxt_snap = snap(safe(tr.Characters(i, 1), "Font"))
+            if nxt_snap != cur_snap:
+                seg_len = i - cur_idx
+                if seg_len > 0:
+                    runs.append(make_run_dict(tr.Characters(cur_idx, seg_len)))
+                cur_idx = i
+                cur_snap = nxt_snap
+        last_len = n - cur_idx + 1
+        if last_len > 0:
+            runs.append(make_run_dict(tr.Characters(cur_idx, last_len)))
+    except Exception as e:
+        print(f"Error parsing runs: {e}")
+        traceback.print_exc()
+        runs.append(make_run_dict(tr))
+    out["Runs"] = runs
     return out
-
-
-
 
 
 
@@ -551,86 +480,101 @@ def parse_shape_details(shape):
     result = {}
 
     # 공통 속성
-    try:
-        result["Visibility"] = "Visible" if getattr(shape, "Visible", False) else "Hidden"
-        result["Z-Order"]    = getattr(shape, "ZOrderPosition", None)
-        if hasattr(shape, "Rotation"):
-            result["Rotation (°)"] = getattr(shape, "Rotation", None)
-        result["ID"] = getattr(shape, "Id", None)
+    #try:
+    result["Visibility"] = "Visible" if getattr(shape, "Visible", False) else "Hidden"
+    result["Z-Order"]    = getattr(shape, "ZOrderPosition", None)
+    if hasattr(shape, "Rotation"):
+        result["Rotation (°)"] = getattr(shape, "Rotation", None)
+    result["ID"] = getattr(shape, "Id", None)
 
-        # 투명도
-        fill = getattr(shape, "Fill", None)
-        if fill and hasattr(fill, "Transparency"):
-            result["Fill Transparency (%)"] = fill.Transparency * 100
+    # 투명도
+    fill = getattr(shape, "Fill", None)
+    if fill and hasattr(fill, "Transparency"):
+        result["Fill Transparency (%)"] = fill.Transparency * 100
 
-        # 선 정보
-        line = getattr(shape, "Line", None)
-        if line and getattr(line, "Visible", False):
-            line_info = {
-                "Width (pt)": getattr(line, "Weight", None)
+    # 선 정보
+    line = getattr(shape, "Line", None)
+    if line and getattr(line, "Visible", False):
+        line_info = {
+            "Width (pt)": getattr(line, "Weight", None)
+        }
+        fore = getattr(line, "ForeColor", None)
+        if fore and hasattr(fore, "RGB"):
+            rgb = fore.RGB
+            line_info["Color"] = {
+                "R": rgb & 0xFF,
+                "G": (rgb >> 8) & 0xFF,
+                "B": (rgb >> 16) & 0xFF
             }
-            fore = getattr(line, "ForeColor", None)
-            if fore and hasattr(fore, "RGB"):
-                rgb = fore.RGB
-                line_info["Color"] = {
-                    "R": rgb & 0xFF,
-                    "G": (rgb >> 8) & 0xFF,
-                    "B": (rgb >> 16) & 0xFF
-                }
-            result["Line"] = line_info
+        result["Line"] = line_info
 
-    except Exception as e:
-        result["General Properties Error"] = str(e)
+    #except Exception as e:
+        #result["General Properties Error"] = str(e)
 
     # 타입별 세부 정보
-    try:
-        t = getattr(shape, "Type", None)
+    #try:
+    t = getattr(shape, "Type", None)
+    tf = None
+    if safe(shape, "HasTextFrame", False):
+        tf = shape.TextFrame
+    elif safe(shape, "HasTextFrame2", False):
+        tf = shape.TextFrame2
 
-        # 텍스트 프레임
-        if getattr(shape, "HasTextFrame", False):
-            result["TextFrame"] = parse_text_frame(
-                                    shape.TextFrame,          # 필수
-                                    merge_same_style=False,    # 인접 run 동일-서식 병합
-                                    char_fallback=True      # Runs()가 0/1개면 글자별 fallback
-                                )
-        print("여기부터")
-        print(result["TextFrame"]["Runs"])
+    if tf is None or not safe(tf, "HasText", False):
+        print("No text")
 
-        # Placeholder
-        if t == 14:
-            result["Placeholder"] = parse_placeholder_details(shape)
+    # debug 파싱 함수로부터 runs 정보 얻기
+    parsed = parse_text_frame_debug(tf)
+    runs = parsed.get("Runs", [])
 
-        # Group
-        elif t == 6:
-            result["GroupShapes"] = parse_group_shapes(shape)
+    # result["TextFrame"] 에 run 별로 저장
+    result["TextFrame"] = []
+    for idx, run in enumerate(runs, start=1):
+        # 원하는 속성만 골라 담거나, run 전체를 그대로 담을 수도 있습니다.
+        run_info = {
+            "RunIndex": idx,
+            "Text": run.get("Text", ""),
+            "Font": run.get("Font")
+        }
+        result["TextFrame"].append("run_info")
+    
 
-        # Table
-        elif t == 18:
-            result["Table"] = parse_table(shape.Table)
+    # Placeholder
+    if t == 14:
+        print("placeholder!!!")
+        result["Placeholder"] = parse_placeholder_details(shape)
 
-        # Chart
-        elif t == 3:
-            result["Chart"] = parse_chart(shape.Chart)
+    # Group
+    elif t == 6:
+        result["GroupShapes"] = parse_group_shapes(shape)
 
-        # Picture
-        elif t in (11, 13):
-            result["Picture"] = parse_picture(shape)
+    # Table
+    elif t == 18:
+        result["Table"] = parse_table(shape.Table)
 
-        # SmartArt
-        elif t == 19:
-            result["SmartArt Nodes"] = getattr(shape.SmartArt.AllNodes, "Count", None)
+    # Chart
+    elif t == 3:
+        result["Chart"] = parse_chart(shape.Chart)
 
-        # OLE Object
-        elif t in (7, 10):
-            prog = getattr(shape.OLEFormat, "ProgID", None) if hasattr(shape, "OLEFormat") else None
-            result["OLE Class Type"] = prog or "Unknown"
+    # Picture
+    elif t in (11, 13):
+        result["Picture"] = parse_picture(shape)
 
-        # Media
-        elif t == 15:
-            result["Media Type"] = getattr(shape, "MediaType", "Unknown")
+    # SmartArt
+    elif t == 19:
+        result["SmartArt Nodes"] = getattr(shape.SmartArt.AllNodes, "Count", None)
 
-    except Exception as e:
-        result["Shape Detail Error"] = str(e)
+    # OLE Object
+    elif t in (7, 10):
+        prog = getattr(shape.OLEFormat, "ProgID", None) if hasattr(shape, "OLEFormat") else None
+        result["OLE Class Type"] = prog or "Unknown"
+
+    # Media
+    elif t == 15:
+        result["Media Type"] = getattr(shape, "MediaType", "Unknown")
+
+    #except Exception as e:
+     #   result["Shape Detail Error"] = str(e)
 
     return result
 
@@ -861,22 +805,35 @@ def extract_text_from_shape(shape, indent_level=1):
         # 1) TextFrame 지원 객체
     if getattr(shape, "HasTextFrame", False) and shape.TextFrame.HasText:
         tr = shape.TextFrame.TextRange
-        font = tr.Font
-        result["TextFrame"] = {
-            "Text": getattr(tr, "Text", ""),
-            "Font": {
-                "Name": getattr(font, "Name", None),
-                "Size": getattr(font, "Size", None),
-                "Bold": getattr(font, "Bold", None),
-                "Italic": getattr(font, "Italic", None),
-            },
-            "Paragraphs": {
-                "Count": getattr(tr.Paragraphs(), "Count", 0),
-                "Alignment": get_alignment_type(getattr(tr.ParagraphFormat, "Alignment", None)),
-                "LineSpacing": getattr(tr.ParagraphFormat, "LineSpacing", None),
-            },
-            "Hyperlink": None
-        }
+            
+        t = getattr(shape, "Type", None)
+        tf = None
+        if safe(shape, "HasTextFrame", False):
+            tf = shape.TextFrame
+        elif safe(shape, "HasTextFrame2", False):
+            tf = shape.TextFrame2
+
+        if tf is None or not safe(tf, "HasText", False):
+            print("No text")
+
+        # debug 파싱 함수로부터 runs 정보 얻기
+        parsed = parse_text_frame_debug(tf)
+        runs = parsed.get("Runs", [])
+
+        # result["TextFrame"] 에 run 별로 저장
+        result["TextFrame"] = []
+        for idx, run in enumerate(runs, start=1):
+            # 원하는 속성만 골라 담거나, run 전체를 그대로 담을 수도 있습니다.
+            run_info = {
+                "RunIndex": idx,
+                "Text": run.get("Text", ""),
+                "Font": run.get("Font")
+            }
+            result["TextFrame"].append(run_info)
+
+
+
+
         # Hyperlink 있으면 추가
         try:
             hl = tr.ActionSettings(1).Hyperlink
