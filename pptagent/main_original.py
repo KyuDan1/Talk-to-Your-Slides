@@ -54,7 +54,9 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     if rule_base_apply:
         applier = Applier()
     else:
-        applier = test_json_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY, retry = retry) #test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY, retry = retry)
+        applier = test_json_Applier(model='gemini-2.5-flash-preview-04-17' #"gpt-4.1", 
+                                    ,api_key=GEMINI_API_KEY
+                                    ,retry = retry) #test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY, retry = retry)
     
     result = applier(processed_json)
     applier_end_time = time.time()

@@ -72,7 +72,49 @@ class Parser:
                 task["contents"] = slide_contents
         
         return self.json_data
+import re
+import json
+import ast
 
+def parse_llm_response_processor(response):
+    """
+    Robustly parse JSON or Python-like structures from an LLM response.
+    Returns the loaded object (dict or list), or None if parsing fails.
+    """
+    if not response or not isinstance(response, str):
+        return None
+
+    # Remove markdown code fences
+    response_clean = re.sub(r'```(?:json|python)?', '', response).strip()
+    
+    # Extract JSON or Python literal between the outermost { } or [ ]
+    match = re.search(r'(\{[\s\S]*\}|\[[\s\S]*\])', response_clean)
+    if not match:
+        return None
+
+    payload = match.group(1)
+    
+    # Remove trailing commas before } or ]
+    payload = re.sub(r',(\s*[\}\]])', r'\1', payload)
+    
+    # Try JSON parsing first
+    try:
+        return json.loads(payload)
+    except json.JSONDecodeError:
+        # Convert Python style to JSON style for json.loads
+        try:
+            # Replace Python booleans/None with JSON equivalents
+            json_payload = payload.replace('True', 'true').replace('False', 'false').replace('None', 'null')
+            return json.loads(json_payload)
+        except json.JSONDecodeError:
+            # Fallback to Python literal eval
+            try:
+                # Replace JSON literals with Python equivalents
+                python_payload = payload.replace('null', 'None').replace('true', 'True').replace('false', 'False')
+                return ast.literal_eval(python_payload)
+            except (ValueError, SyntaxError):
+                return None
+            
 class Processor:
     def __init__(self, json_data, model_name="gemini-1.5-flash", api_key = None):
 
@@ -85,48 +127,55 @@ class Processor:
     def process(self):
         for task in self.tasks:
             page_number = task.get("page number")
+            if not page_number:
+                continue
+
             description = task.get("description", "")
             action = task.get("action", "")
             contents = task.get("contents", "")
-            
-            if page_number:
-                success = False
-                retry_count = 0
-                max_retries = 3  # Setting a limit on retries
-                
-                while not success and retry_count < max_retries:
-                    # LLM에게 보낼 프롬프트 생성
-                    prompt = create_process_prompt(page_number, description, action, contents)
-                    
-                    # LLM 요청 보내기
-                    if "4.1" in self.model_name:
-                        response = _call_gpt_api(prompt=prompt, api_key=self.api_key, model=self.model_name)
-                    else:
-                        response = llm_request_with_retries(
-                            model_name=self.model_name,
-                            request=prompt,
-                            num_retries=4
-                        )
-                    
-                    # LLM 응답 파싱
-                    processed_result = parse_llm_response(response)
-                    if processed_result is None:
-                        print("JSON 파싱에 실패했습니다.")
-                        retry_count += 1
-                        continue
-                    
-                    # 결과를 작업에 추가
-                    try:
-                        #task["edit target"] = processed_result["edit target"]#processed_result["edit target type"]
-                        #task["edit target content"] = processed_result["edit target content"]
-                        task["content after edit"] = processed_result
-                        success = True  # Mark as successful if no exceptions occur
-                    except (KeyError, TypeError) as e:
-                        print(f"Processor에서 오류 발생: {e}")
-                        retry_count += 1
-                        print(f"재시도 중... ({retry_count}/{max_retries})")
-        
+
+            success = False
+            retry_count = 0
+            max_retries = 1  # you can bump this up if you want more retries
+
+            while not success and retry_count < max_retries:
+                attempt = retry_count + 1
+                print(f"[Slide {page_number}] Attempt {attempt}/{max_retries} — sending prompt to LLM")
+                prompt = create_process_prompt(page_number, description, action, contents)
+
+                # send request
+                if "4.1" in self.model_name:
+                    response = _call_gpt_api(prompt=prompt, api_key=self.api_key, model=self.model_name)
+                else:
+                    response = llm_request_with_retries(
+                        model_name=self.model_name,
+                        request=prompt,
+                        num_retries=4
+                    )
+
+                print(f"[Slide {page_number}] Raw response:\n{response}")
+
+                # parse
+                processed_result = parse_llm_response_processor(response)
+                if processed_result is None:
+                    print(f"[Slide {page_number}] ✗ JSON parsing failed — retrying ({attempt}/{max_retries})")
+                    retry_count += 1
+                    continue
+
+                # apply result
+                try:
+                    task["content after edit"] = processed_result
+                    success = True
+                    print(f"[Slide {page_number}] ✓ Processing succeeded.")
+                except (KeyError, TypeError) as e:
+                    print(f"[Slide {page_number}] ✗ Error applying result: {e} — retrying ({attempt}/{max_retries})")
+                    retry_count += 1
+
+            if not success:
+                print(f"[Slide {page_number}] ⚠️ Failed to process after {max_retries} attempt(s). Moving on.")
+
         return self.json_data
+
 
 class Applier:
     # 텍스트 수정: 기존 기능을 유지하면서 텍스트를 이름으로 찾지 못할 경우 내용으로 검색하는 기능 추가

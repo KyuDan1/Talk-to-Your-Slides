@@ -110,5 +110,6 @@ Before starting the task:
 3. Identify all text elements in 'Objects_Detail'
 
 The output must maintain the identical structure as the original JSON, with only the necessary text modified according to the task.
+Give only the JSON.
 """
     return prompt
