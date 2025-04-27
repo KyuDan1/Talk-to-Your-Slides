@@ -1,6 +1,6 @@
 from utils import get_simple_powerpoint_info
 
-PLAN_PROMPT = fPLAN_PROMPT = f"""You are a planning assistant for PowerPoint modifications.
+PLAN_PROMPT = f"""You are a planning assistant for PowerPoint modifications.
 Your job is to create a detailed, specific, step-by-step plan for modifying a PowerPoint presentation based on the user's request.
 present ppt state: {get_simple_powerpoint_info()}
 Break down complex requests into highly specific actionable tasks that can be executed by a PowerPoint automation system.
