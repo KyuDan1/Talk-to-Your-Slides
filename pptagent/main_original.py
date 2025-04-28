@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 ANTHROPIC_API_KEY = os.environ.get('ANTHROPIC_API_KEY')
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
+GEMINI_API_KEY = os.environ.get('GEMINI')
 logging.getLogger('test_Applier').setLevel(logging.DEBUG)
 
 def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=None, retry=3):
@@ -40,7 +41,7 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
 
     # --- 측정 시작: Processor ---
     processor_start_time = time.time()
-    processor = Processor(parsed_json, model_name = 'gpt-4.1-mini', api_key=OPENAI_API_KEY)
+    processor = Processor(parsed_json, model_name = 'gemini-2.5-flash-preview-04-17', api_key=OPENAI_API_KEY)
     processed_json:json = processor.process()
     processor_end_time = time.time()
     print("=====PROCESSED====")
@@ -51,7 +52,7 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     if rule_base_apply:
         applier = Applier()
     else:
-        applier = test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY, retry = retry)
+        applier = test_Applier(model="gemini-2.5-flash-preview-04-17", api_key=OPENAI_API_KEY, retry = retry)
     
     result = applier(processed_json)
         
@@ -98,12 +99,12 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
 #             continue  # 에러가 나면 다음 루프로 넘어감
 
 #main(user_input="Please create a full script for ppt slides number 3 and add the script to the slide notes.", rule_base_apply=False, retry=3)
-# for i in range(65,90):
-#     try:
-#         main(user_input=f"Please translate in English slide number {i}", rule_base_apply=False, retry=4)
-#     except Exception as e:
-#         print(f"Error while processing instruction : {e}")
-#         continue  # 에러가 나면 다음 루프로 넘어감
+for i in range(2,50):
+    try:
+        main(user_input=f"Please translate in English slide number {i}", rule_base_apply=False, retry=4)
+    except Exception as e:
+        print(f"Error while processing instruction : {e}")
+        continue  # 에러가 나면 다음 루프로 넘어감
 
 # 바꾼 다음에 대기하는 시간이 쓸데없이 길다.
 # reporter 없앨까?
