@@ -1,174 +1,47 @@
 {
-  "Translation": [
-    {
-      "id": 0,
-      "prompt": "Please translate ppt slides number {slide_num} into English."
-    },
-    {
-      "id": 1,
-      "prompt": "Please translate ppt slides number {slide_num} into Japanese."
-    }
+  "ContentEditing": [
+    { "id": 0, "prompt": "Translate all visible text elements on ppt slide number {slide_num} into English." },
+    { "id": 1, "prompt": "Translate all visible text elements on ppt slide number {slide_num} into Japanese." },
+    { "id": 2, "prompt": "Simplify the main body text on ppt slide number {slide_num} into a concise summary while retaining the key points." },
+    { "id": 3, "prompt": "Condense the speaker notes attached to ppt slide number {slide_num} into bullet points highlighting only the main ideas." },
+    { "id": 4, "prompt": "Write a concise abstract of approximately 50 words summarizing the main message conveyed by the body text on ppt slide number {slide_num}." },
+    { "id": 5, "prompt": "Review all text elements on ppt slide number {slide_num} for spelling, grammar, and typographical errors, and correct them." },
+    { "id": 6, "prompt": "Identify placeholder text (such as 'Lorem ipsum') on ppt slide number {slide_num} and replace it with appropriate real content relevant to the slide context." },
+    { "id": 7, "prompt": "Ensure consistent capitalization, punctuation, and stylistic formatting across all text elements on ppt slide number {slide_num}." },
+    { "id": 35, "prompt": "Write a full speaker script for ppt slide number {slide_num} summarizing all visual and text content, and insert it into the slide notes section." },
+    { "id": 36, "prompt": "Generate concise speaker notes for ppt slide number {slide_num}, summarizing each bullet point in one or two sentences." }
   ],
-  "Summarization": [
-    {
-      "id": 2,
-      "prompt": "Please summarize the text in the main text box on ppt slides number {slide_num} in a simpler way."
-    },
-    {
-      "id": 3,
-      "prompt": "Please condense speaker notes on ppt slides number {slide_num} into bullet points."
-    },
-    {
-      "id": 4,
-      "prompt": "Please create a 50‑word abstract for ppt slides number {slide_num}."
-    }
+
+  "VisualAndLayoutEnhancement": [
+    { "id": 8, "prompt": "Change the font of all text elements to Arial on ppt slide number {slide_num}." },
+    { "id": 9, "prompt": "Convert all bulleted lists within text boxes on ppt slide number {slide_num} into numbered lists, maintaining the logical order." },
+    { "id": 10, "prompt": "Set the font size of all heading text (titles, section headers) to 32 pt on ppt slide number {slide_num}." },
+    { "id": 11, "prompt": "Adjust the line spacing of all body text on ppt slide number {slide_num} to 1.5x." },
+    { "id": 12, "prompt": "Evaluate and adjust text color and background color contrast on ppt slide number {slide_num} to ensure optimal readability." },
+    { "id": 13, "prompt": "Highlight key points within the body text of ppt slide number {slide_num} using bold styling or color emphasis." },
+    { "id": 14, "prompt": "Apply a light background fill to all text boxes on ppt slide number {slide_num} to enhance readability." },
+    { "id": 15, "prompt": "Apply a consistent color palette to all design elements (text, shapes, charts) on ppt slide number {slide_num} to ensure visual harmony." },
+    { "id": 16, "prompt": "Standardize all hyperlinks on ppt slide number {slide_num} to use underlined blue text formatting." },
+    { "id": 17, "prompt": "Center-align all images horizontally within their placeholders or slide layout on ppt slide number {slide_num}." },
+    { "id": 18, "prompt": "Resize all images on ppt slide number {slide_num} to have the same width while maintaining aspect ratio." },
+    { "id": 19, "prompt": "Change the overall layout of ppt slide number {slide_num} to a two-column format, with balanced placement of text and images." },
+    { "id": 20, "prompt": "Group related shapes and images together into logical units on ppt slide number {slide_num} for easier management." },
+    { "id": 21, "prompt": "Create a custom two-column layout on ppt slide number {slide_num} featuring two images on one side and corresponding text on the other." },
+    { "id": 22, "prompt": "Convert all freeform drawn shapes on ppt slide number {slide_num} into static images to preserve visual consistency." },
+    { "id": 23, "prompt": "Apply smooth slide transition effects (such as Fade or Push) to ppt slide number {slide_num} for a polished flow." },
+    { "id": 24, "prompt": "Animate each bullet point in the main text box of ppt slide number {slide_num} to appear one at a time during the slideshow." },
+    { "id": 25, "prompt": "Add both entrance and exit animations to each major element (titles, text boxes, images) on ppt slide number {slide_num}." },
+    { "id": 26, "prompt": "Insert a SmartArt process diagram illustrating sequential steps or flow on ppt slide number {slide_num}." },
+    { "id": 27, "prompt": "Insert a bar chart into ppt slide number {slide_num} using the provided dataset, ensuring accurate labeling." },
+    { "id": 28, "prompt": "Update the styles (colors, fonts, borders) of any existing charts on ppt slide number {slide_num} to match the overall theme of the presentation." }
   ],
-  "ProofreadingAndTextEditing": [
-    {
-      "id": 5,
-      "prompt": "Please check ppt slides number {slide_num} for any typos or errors, and correct them."
-    },
-    {
-      "id": 6,
-      "prompt": "Please replace placeholder text (e.g., 'Lorem ipsum') on ppt slides number {slide_num} with relevant content."
-    },
-    {
-      "id": 7,
-      "prompt": "Please ensure consistent capitalization and punctuation on ppt slides number {slide_num}."
-    }
-  ],
-  "TypographyAndFormatting": [
-    {
-      "id": 8,
-      "prompt": "Please change the font to Arial across ppt slides number {slide_num}."
-    },
-    {
-      "id": 9,
-      "prompt": "Please convert all bulleted lists to numbered lists on ppt slides number {slide_num}."
-    },
-    {
-      "id": 10,
-      "prompt": "Please set all headings to font size 32 pt on ppt slides number {slide_num}."
-    },
-    {
-      "id": 11,
-      "prompt": "Please set line spacing to 1.5 on ppt slides number {slide_num}."
-    },
-    {
-      "id": 12,
-      "prompt": "Please adjust text and background contrast on ppt slides number {slide_num} for readability."
-    },
-    {
-      "id": 13,
-      "prompt": "Please highlight the important points on ppt slides number {slide_num} (e.g., using bold or color)."
-    },
-    {
-      "id": 14,
-      "prompt": "Please highlight text boxes with a light background on ppt slides number {slide_num}."
-    },
-    {
-      "id": 15,
-      "prompt": "Please apply a consistent color palette across ppt slides number {slide_num}."
-    },
-    {
-      "id": 16,
-      "prompt": "Please standardize hyperlink formatting to underlined blue text on ppt slides number {slide_num}."
-    }
-  ],
-  "LayoutAndDesign": [
-    {
-      "id": 17,
-      "prompt": "Please center‑align all images on ppt slides number {slide_num}."
-    },
-    {
-      "id": 18,
-      "prompt": "Please resize all images to the same width on ppt slides number {slide_num}."
-    },
-    {
-      "id": 19,
-      "prompt": "Please change the layout to a two‑column design on ppt slides number {slide_num}."
-    },
-    {
-      "id": 20,
-      "prompt": "Please group related shapes and images on ppt slides number {slide_num}."
-    },
-    {
-      "id": 21,
-      "prompt": "Please create a custom slide layout with two images and text on ppt slides number {slide_num}."
-    },
-    {
-      "id": 22,
-      "prompt": "Please convert drawn shapes to static images on ppt slides number {slide_num}."
-    }
-  ],
-  "AnimationsAndTransitions": [
-    {
-      "id": 23,
-      "prompt": "Please add smooth slide transition effects on ppt slides number {slide_num}."
-    },
-    {
-      "id": 24,
-      "prompt": "Please animate each bullet point to appear one at a time on ppt slides number {slide_num}."
-    },
-    {
-      "id": 25,
-      "prompt": "Please add entrance and exit animations to elements on ppt slides number {slide_num}."
-    }
-  ],
-  "ChartsAndDiagrams": [
-    {
-      "id": 26,
-      "prompt": "Please add a SmartArt process diagram on ppt slides number {slide_num}."
-    },
-    {
-      "id": 27,
-      "prompt": "Please add a bar chart to ppt slides number {slide_num} with the provided data."
-    },
-    {
-      "id": 28,
-      "prompt": "Please update chart styles to match the overall theme on ppt slides number {slide_num}."
-    }
-  ],
-  "SlideStructureAndManagement": [
-    {
-      "id": 29,
-      "prompt": "Please split content on ppt slides number {slide_num} into 'Overview' and 'Details' sections."
-    }
-  ],
-  "HeaderFooterAndBranding": [
-    {
-      "id": 30,
-      "prompt": "Please insert slide numbers in the bottom‑right corner of ppt slides number {slide_num}."
-    },
-    {
-      "id": 31,
-      "prompt": "Please insert 'Confidential' in the footer of ppt slides number {slide_num}."
-    },
-    {
-      "id": 32,
-      "prompt": "Please add a semi‑transparent watermark behind content on ppt slides number {slide_num}."
-    }
-  ],
-  "Accessibility": [
-    {
-      "id": 33,
-      "prompt": "Please check color contrast and add accessibility tags on ppt slides number {slide_num}."
-    }
-  ],
-  "NewSlidesAndContent": [
-    {
-      "id": 34,
-      "prompt": "Please create a formatted title slide on ppt slides number {slide_num} with title and subtitle."
-    }
-  ],
-  "ScriptAndNotes": [
-    {
-      "id": 35,
-      "prompt": "Please create a full script for ppt slides number {slide_num} and add it to the slide notes."
-    },
-    {
-      "id": 36,
-      "prompt": "Please generate concise speaker notes summarizing each bullet on ppt slides number {slide_num}."
-    }
+
+  "SlideStructuringAndMetadata": [
+    { "id": 29, "prompt": "Divide the content of ppt slide number {slide_num} into two clear sections titled 'Overview' and 'Details' for improved structure." },
+    { "id": 30, "prompt": "Insert slide numbers in the bottom-right corner of ppt slide number {slide_num}, formatted consistently with the rest of the deck." },
+    { "id": 31, "prompt": "Add the text 'Confidential' in the footer area of ppt slide number {slide_num} with subtle but visible styling." },
+    { "id": 32, "prompt": "Insert a semi-transparent watermark (such as a company logo or label) behind the main content of ppt slide number {slide_num}." },
+    { "id": 33, "prompt": "Check the color contrast of all text and background elements on ppt slide number {slide_num}, and add appropriate accessibility tags to text and images." },
+    { "id": 34, "prompt": "Create a new formatted title slide at ppt slide number {slide_num} featuring a title and subtitle aligned according to the presentation's style." }
   ]
 }

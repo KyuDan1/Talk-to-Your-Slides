@@ -184,6 +184,7 @@ if text_frame.HasText:
 Do not use any "**" to make bold. It won't be applied on powerpoint.
 - You can add or split a page with 'presentation = ppt_app.Presentations.Add()'.
 
+Make sure to close all curly braces properly and all variables used are properly defined. Omit Strikethrough, Subscript, Superscript as they caused issues.
 The code must be direct, practical and focused solely on making the specific change requested. Ensure all color references use the BGR format for proper appearance in PowerPoint.
     """
 
@@ -500,7 +501,7 @@ class test_json_Applier:
                 slide_num
             )
             print("====raw code====")
-            print(raw_code)
+            #print(raw_code)
             task_success = False
             for attempt in range(1, self.retry + 1):
                 code = extract_python_code(raw_code)

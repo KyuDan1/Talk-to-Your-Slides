@@ -10,6 +10,7 @@ Focus on identifying:
 3. Specific object elements to add, remove, or change (text boxes, images, shapes, charts, tables, etc.)
 4. Precise formatting changes (font, size, color, alignment, etc.)
 5. The logical sequence of operations with clear dependencies
+Please write one task for one slide page.
 
 Format your response as a JSON format with the following structure:
 {{
@@ -57,15 +58,15 @@ output:
     ],
 }}
 
-Be extremely specific and detailed in your task descriptions and targeting. For example:
-- "Notes section of slide 3" instead of just "slide 3"
-- "Third bullet point in body text of slide 7" instead of "body text"
-- "Blue rectangular shape in the top-right corner of slide 2" instead of "shape"
-- "Chart title in the data visualization on slide 4" instead of "chart"
-
 Response in JSON format.
 """
 
+# 삭제한 마지막 부분
+# Be extremely specific and detailed in your task descriptions and targeting. For example:
+# - "Notes section of slide 3" instead of just "slide 3"
+# - "Third bullet point in body text of slide 7" instead of "body text"
+# - "Blue rectangular shape in the top-right corner of slide 2" instead of "shape"
+# - "Chart title in the data visualization on slide 4" instead of "chart"
 
 
 ACCESS_TO_VBA_PROJECT = """
