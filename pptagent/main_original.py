@@ -101,13 +101,13 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
 #             print(f"Error while processing instruction '{inst}': {e}")
 #             continue  # 에러가 나면 다음 루프로 넘어감
 
-main(user_input="Translate in English for ppt slides number 5.", rule_base_apply=False, retry=3)
-# for i in range(65,90):
-#     try:
-#         main(user_input=f"Please translate in English slide number {i}", rule_base_apply=False, retry=4)
-#     except Exception as e:
-#         print(f"Error while processing instruction : {e}")
-#         continue  # 에러가 나면 다음 루프로 넘어감
+#main(user_input="Translate in English for ppt slides number 5.", rule_base_apply=False, retry=3)
+for i in range(1,50):
+    try:
+        main(user_input=f"Translate in English for ppt slides number {i}", rule_base_apply=False, retry=4)
+    except Exception as e:
+        #print(f"Error while processing instruction : {e}")
+        continue  # 에러가 나면 다음 루프로 넘어감
 
 # 바꾼 다음에 대기하는 시간이 쓸데없이 길다.
 # reporter 없앨까?
