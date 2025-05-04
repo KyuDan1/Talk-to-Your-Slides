@@ -1,0 +1,872 @@
+[
+  {
+    "original": "Translate all visible text elements on ppt slide number {slide_num} into English.",
+    "generated_variants": [
+      "Convert all text on slide {slide_num} to English.",
+      "Change the language of all visible text on slide {slide_num} to English.",
+      "Translate every text element on slide {slide_num} into English.",
+      "Switch all text on slide {slide_num} to English.",
+      "Render all text on slide {slide_num} in English.",
+      "Transform all visible text on slide {slide_num} into the English language.",
+      "Rework all text elements on slide {slide_num} to be in English.",
+      "Modify the language of all text on slide {slide_num} to English.",
+      "Adapt all visible text on slide {slide_num} to English.",
+      "Convert every text component on slide {slide_num} into English."
+    ]
+  },
+  {
+    "original": "Translate all visible text elements on ppt slide number {slide_num} into Japanese.",
+    "generated_variants": [
+      "Convert all text on slide {slide_num} to Japanese.",
+      "Change the language of all visible text on slide {slide_num} to Japanese.",
+      "Translate every text element on slide {slide_num} into Japanese.",
+      "Switch all text found on slide {slide_num} to Japanese.",
+      "Render all text content on slide {slide_num} in Japanese.",
+      "Modify the text on slide {slide_num} to appear in Japanese.",
+      "Transform all visible text on slide {slide_num} into Japanese.",
+      "Adapt the language of all text on slide {slide_num} to Japanese.",
+      "Rework all text on slide {slide_num} to be in Japanese.",
+      "Alter the language of every text element on slide {slide_num} to Japanese."
+    ]
+  },
+  {
+    "original": "Simplify the main body text on ppt slide number {slide_num} into a concise summary while retaining the key points.",
+    "generated_variants": [
+      "Condense the primary content on slide {slide_num} into a brief overview, ensuring essential details are preserved.",
+      "Summarize the core information on slide {slide_num} into a shorter format, keeping the main ideas intact.",
+      "Create a succinct version of the text on slide {slide_num}, maintaining all critical elements.",
+      "Transform the detailed text on slide {slide_num} into a compact summary without losing important points.",
+      "Reduce the text on slide {slide_num} to a clear and concise summary, highlighting the key aspects.",
+      "Rewrite the content on slide {slide_num} into a brief synopsis, ensuring all vital information is included.",
+      "Craft a shortened summary of the main text on slide {slide_num}, preserving the essential points.",
+      "Edit the text on slide {slide_num} to a more concise form, while keeping the crucial information.",
+      "Translate the detailed content of slide {slide_num} into a brief and clear summary, retaining the main points.",
+      "Compress the information on slide {slide_num} into a succinct summary, ensuring key details are not omitted."
+    ]
+  },
+  {
+    "original": "Condense the speaker notes attached to ppt slide number {slide_num} into bullet points highlighting only the main ideas.",
+    "generated_variants": [
+      "Summarize the speaker notes for slide {slide_num} into concise bullet points, focusing on key concepts.",
+      "Transform the speaker notes on slide {slide_num} into a list of bullet points that capture the essential points.",
+      "Convert the detailed speaker notes from slide {slide_num} into brief bullet points emphasizing the core ideas.",
+      "Create a set of bullet points from the speaker notes on slide {slide_num}, highlighting the main themes.",
+      "Extract the primary ideas from the speaker notes on slide {slide_num} and present them as bullet points.",
+      "Reformat the speaker notes for slide {slide_num} into succinct bullet points that outline the main topics.",
+      "Distill the speaker notes on slide {slide_num} into bullet points that summarize the central messages.",
+      "Condense the information in the speaker notes for slide {slide_num} into bullet points that emphasize key details.",
+      "Outline the speaker notes from slide {slide_num} into bullet points, focusing on the most important information.",
+      "Translate the speaker notes on slide {slide_num} into a series of bullet points that highlight the main ideas."
+    ]
+  },
+  {
+    "original": "Write a concise abstract of approximately 50 words summarizing the main message conveyed by the body text on ppt slide number {slide_num}.",
+    "generated_variants": [
+      "Craft a brief summary, around 50 words, highlighting the key points from the content on slide number {slide_num}.",
+      "Compose a 50-word abstract that encapsulates the primary message of the text on slide {slide_num}.",
+      "Summarize the core ideas presented on slide {slide_num} in a concise 50-word paragraph.",
+      "Provide a succinct overview, approximately 50 words, of the main themes discussed on slide {slide_num}.",
+      "Generate a 50-word synopsis that reflects the essential information from the text on slide {slide_num}.",
+      "Draft a short, 50-word description that captures the central message of the content on slide {slide_num}.",
+      "Write a 50-word précis summarizing the fundamental points from the body text on slide {slide_num}.",
+      "Create a brief, 50-word narrative that conveys the principal ideas from slide {slide_num}.",
+      "Formulate a 50-word digest that outlines the significant aspects of the text on slide {slide_num}.",
+      "Develop a concise, 50-word account that summarizes the main arguments presented on slide {slide_num}."
+    ]
+  },
+  {
+    "original": "Review all text elements on ppt slide number {slide_num} for spelling, grammar, and typographical errors, and correct them.",
+    "generated_variants": [
+      "Examine the text on slide {slide_num} for any spelling, grammatical, or typographical mistakes and make necessary corrections.",
+      "Inspect slide {slide_num} for errors in spelling, grammar, and typography, and rectify them accordingly.",
+      "Check all written content on slide {slide_num} for any spelling, grammar, or typographic issues and correct them.",
+      "Analyze the text on slide {slide_num} to identify and fix any spelling, grammatical, or typographical errors.",
+      "Go through the text on slide {slide_num} to spot and correct any mistakes in spelling, grammar, or typography.",
+      "Review the content on slide {slide_num} for any errors in spelling, grammar, or typography, and make corrections.",
+      "Look over slide {slide_num} for any spelling, grammar, or typographical errors and correct them as needed.",
+      "Scrutinize the text on slide {slide_num} for any issues with spelling, grammar, or typography and make corrections.",
+      "Evaluate the text on slide {slide_num} for spelling, grammar, and typographical errors, and correct any found.",
+      "Assess the written elements on slide {slide_num} for any spelling, grammar, or typographic errors and correct them."
+    ]
+  },
+  {
+    "original": "Identify placeholder text (such as 'Lorem ipsum') on ppt slide number {slide_num} and replace it with appropriate real content relevant to the slide context.",
+    "generated_variants": [
+      "Locate any dummy text like 'Lorem ipsum' on slide {slide_num} and substitute it with meaningful content that matches the slide's theme.",
+      "On slide {slide_num}, find placeholder text such as 'Lorem ipsum' and update it with contextually appropriate information.",
+      "Examine slide {slide_num} for any 'Lorem ipsum' text and replace it with suitable content that aligns with the slide's purpose.",
+      "Search for any 'Lorem ipsum' text on slide {slide_num} and change it to relevant content that fits the slide's message.",
+      "Identify any sample text like 'Lorem ipsum' on slide {slide_num} and replace it with content that is pertinent to the slide's topic.",
+      "On slide {slide_num}, detect any 'Lorem ipsum' placeholders and fill them with accurate content related to the slide's context.",
+      "Check slide {slide_num} for any placeholder text such as 'Lorem ipsum' and replace it with content that is relevant to the slide's subject.",
+      "Find any 'Lorem ipsum' text on slide {slide_num} and substitute it with appropriate content that reflects the slide's focus.",
+      "Review slide {slide_num} for any 'Lorem ipsum' text and replace it with content that is suitable for the slide's context.",
+      "Inspect slide {slide_num} for placeholder text like 'Lorem ipsum' and update it with content that is relevant to the slide's theme."
+    ]
+  },
+  {
+    "original": "Ensure consistent capitalization, punctuation, and stylistic formatting across all text elements on ppt slide number {slide_num}.",
+    "generated_variants": [
+      "Verify that all text on slide number {slide_num} follows the same capitalization, punctuation, and style guidelines.",
+      "Check slide {slide_num} to ensure uniformity in text capitalization, punctuation, and formatting.",
+      "Make sure the text on slide {slide_num} adheres to consistent style, punctuation, and capitalization rules.",
+      "Review slide {slide_num} to confirm that all text elements are formatted with uniform capitalization and punctuation.",
+      "Ensure that the text on slide {slide_num} maintains consistent stylistic formatting, punctuation, and capitalization.",
+      "Inspect slide {slide_num} to verify that text elements are consistently capitalized and punctuated.",
+      "Examine slide {slide_num} to ensure all text follows the same formatting, punctuation, and capitalization standards.",
+      "Audit the text on slide {slide_num} for consistent use of capitalization, punctuation, and style.",
+      "Ensure uniformity in the text formatting, punctuation, and capitalization on slide {slide_num}.",
+      "Check that all text on slide {slide_num} is consistently styled, punctuated, and capitalized."
+    ]
+  },
+  {
+    "original": "Write a full speaker script for ppt slide number {slide_num} summarizing all visual and text content, and insert it into the slide notes section.",
+    "generated_variants": [
+      "Draft a comprehensive speaker's script for slide {slide_num}, encapsulating all visual and textual elements, and place it in the notes section.",
+      "Create a detailed narration for slide {slide_num} that summarizes its visuals and text, then add it to the slide's notes.",
+      "Compose a full presentation script for slide {slide_num}, covering all images and text, and input it into the notes area.",
+      "Generate a complete speaker's guide for slide {slide_num}, including all graphics and written content, and insert it into the notes.",
+      "Prepare a thorough speaker's note for slide {slide_num}, summarizing all depicted and written information, and add it to the notes section.",
+      "Write an exhaustive script for slide {slide_num}, detailing all visual and textual content, and enter it into the notes.",
+      "Formulate a detailed commentary for slide {slide_num}, capturing all visual and text elements, and include it in the notes section.",
+      "Develop a full narrative for slide {slide_num}, summarizing all graphics and text, and place it in the slide's notes.",
+      "Construct a complete speaker's outline for slide {slide_num}, covering all visual and textual aspects, and add it to the notes.",
+      "Elaborate a full presentation script for slide {slide_num}, integrating all images and text, and input it into the notes area."
+    ]
+  },
+  {
+    "original": "Generate concise speaker notes for ppt slide number {slide_num}, summarizing each bullet point in one or two sentences.",
+    "generated_variants": [
+      "Create brief speaker notes for slide {slide_num}, encapsulating each bullet in a couple of sentences.",
+      "Draft succinct notes for the presenter on slide {slide_num}, summarizing each point in one or two lines.",
+      "Compose short speaker notes for slide {slide_num}, distilling each bullet into a sentence or two.",
+      "Write concise presenter notes for slide {slide_num}, capturing the essence of each bullet point briefly.",
+      "Prepare brief notes for the speaker on slide {slide_num}, summarizing each bullet in one or two sentences.",
+      "Generate short presenter notes for slide {slide_num}, summarizing each bullet point in a couple of sentences.",
+      "Formulate concise notes for slide {slide_num}, summarizing each bullet point in one or two sentences for the speaker.",
+      "Develop brief speaker notes for slide {slide_num}, encapsulating the key ideas of each bullet in a sentence or two.",
+      "Create short notes for the presenter on slide {slide_num}, summarizing each bullet point succinctly.",
+      "Write brief speaker notes for slide {slide_num}, distilling each bullet into a concise summary."
+    ]
+  },
+  {
+    "original": "Check for grammatical errors and typos in the entire slide and correct them.",
+    "generated_variants": [
+      "Review the slide for any spelling or grammar mistakes and make necessary corrections.",
+      "Scan the entire slide for language errors and fix any typos or grammatical issues.",
+      "Ensure the slide is free from spelling and grammatical errors by correcting any mistakes.",
+      "Identify and rectify any grammatical inaccuracies or typographical errors on the slide.",
+      "Go through the slide to spot and amend any spelling or grammar errors.",
+      "Verify the slide for any language mistakes and correct spelling or grammar issues.",
+      "Inspect the slide thoroughly for any typos or grammatical errors and correct them.",
+      "Look over the slide to find and fix any errors in spelling or grammar.",
+      "Examine the slide for any linguistic errors and correct any found typos or grammar mistakes.",
+      "Check the slide for any errors in spelling or grammar and make the necessary corrections."
+    ]
+  },
+  {
+    "original": "Emphasize important words in text boxes using bold and italic types in slide number {slide_num}.",
+    "generated_variants": [
+      "Highlight key terms in text boxes on slide {slide_num} by applying bold and italic formatting.",
+      "On slide {slide_num}, make sure to accentuate significant words in text boxes with bold and italics.",
+      "For slide {slide_num}, use bold and italic styles to stress crucial words within text boxes.",
+      "Ensure that pivotal words in the text boxes on slide {slide_num} are bolded and italicized.",
+      "On slide {slide_num}, apply bold and italic effects to underscore essential words in text boxes.",
+      "Use bold and italics to highlight important phrases in the text boxes of slide {slide_num}.",
+      "For slide {slide_num}, emphasize key vocabulary in text boxes by using bold and italic fonts.",
+      "Make sure to use bold and italic formatting to highlight important text on slide {slide_num}.",
+      "On slide {slide_num}, ensure that critical terms in text boxes stand out with bold and italics.",
+      "Apply bold and italic styles to emphasize significant text in the boxes on slide {slide_num}."
+    ]
+  },
+  {
+    "original": "Alter font sizes so that less important contents have smaller fonts sizes in slide number {slide_num}.",
+    "generated_variants": [
+      "Adjust the text size on slide {slide_num} to ensure key points are highlighted with larger fonts, while secondary details are smaller.",
+      "On slide {slide_num}, modify the font dimensions to emphasize main ideas with bigger text and downplay minor information with smaller fonts.",
+      "For slide {slide_num}, resize the fonts so that primary content stands out with larger sizes, and less critical text is reduced.",
+      "Change the font scale on slide {slide_num} to make sure that essential information is prominent with larger fonts, and supplementary details are minimized.",
+      "In slide {slide_num}, ensure the font sizes reflect the importance of the content, with major points in larger fonts and minor points in smaller ones.",
+      "Revise the font sizes on slide {slide_num} to prioritize significant content with larger text, while reducing the size for less important details.",
+      "On slide {slide_num}, ensure that the font sizes are adjusted so that crucial information is more visible with larger fonts, and less crucial text is smaller.",
+      "Modify the text size on slide {slide_num} to highlight important content with larger fonts, while making less significant details smaller.",
+      "For slide {slide_num}, alter the font sizes to ensure that the most important points are in larger fonts, and the less important ones are in smaller fonts.",
+      "Adjust the font sizes on slide {slide_num} so that the hierarchy of information is clear, with larger fonts for key points and smaller fonts for supporting details."
+    ]
+  },
+  {
+    "original": "Shorten the text in slide number {slide_num} so that the slide is not too convoluted.",
+    "generated_variants": [
+      "Condense the content on slide {slide_num} to enhance clarity and simplicity.",
+      "Simplify the wording on slide {slide_num} to avoid complexity.",
+      "Reduce the amount of text on slide {slide_num} for better readability.",
+      "Streamline the information on slide {slide_num} to make it more concise.",
+      "Trim down the text on slide {slide_num} to ensure it's straightforward.",
+      "Make the text on slide {slide_num} more succinct to improve understanding.",
+      "Edit slide {slide_num} to minimize text and focus on key points.",
+      "Paraphrase the content on slide {slide_num} to make it less dense.",
+      "Revise slide {slide_num} to shorten the text and enhance focus.",
+      "Abbreviate the details on slide {slide_num} to keep it clear and direct."
+    ]
+  },
+  {
+    "original": "Color code the keywords in the text while following the color theme in the slide number {slide_num}.",
+    "generated_variants": [
+      "Highlight the key terms in the text using the slide's color scheme on slide {slide_num}.",
+      "Use the slide's palette to emphasize important words in the text on slide {slide_num}.",
+      "Apply the slide {slide_num} theme colors to mark the significant phrases in the text.",
+      "On slide {slide_num}, differentiate the main concepts in the text with the slide's color theme.",
+      "For slide {slide_num}, use the designated colors to accentuate the critical words in the text.",
+      "Incorporate the slide {slide_num} color scheme to underline the essential terms in the text.",
+      "On slide {slide_num}, use the theme colors to spotlight the key points in the text.",
+      "Employ the slide {slide_num} color palette to distinguish the important words in the text.",
+      "Use the colors from slide {slide_num} to highlight the primary keywords in the text.",
+      "For slide {slide_num}, color-highlight the pivotal terms in the text using the slide's theme."
+    ]
+  },
+  {
+    "original": "Write a script for each presentation slide in the speaker's note. Each slide should take about 2 minutes to present.",
+    "generated_variants": [
+      "Draft detailed speaker notes for each slide, ensuring each takes approximately 2 minutes to deliver.",
+      "Create a narrative for each slide in the presentation, aiming for a 2-minute explanation per slide.",
+      "Compose a 2-minute speaking guide for each slide to assist during the presentation.",
+      "Develop a script for each slide, with each segment designed to last around 2 minutes.",
+      "Prepare a 2-minute verbal outline for each slide to support the presentation flow.",
+      "Generate a 2-minute commentary for each slide to be used as speaker notes.",
+      "Write a detailed explanation for each slide, ensuring it fits within a 2-minute timeframe.",
+      "Formulate a 2-minute discussion point for each slide to guide the presentation.",
+      "Create a concise 2-minute speech for each slide to enhance the presentation delivery.",
+      "Design a 2-minute presentation script for each slide to aid the speaker."
+    ]
+  },
+  {
+    "original": "Change all the font types to a Sans-serif font family while preserving existing emphasis such as bold or italics on slide number {slide_num}.",
+    "generated_variants": [
+      "Modify the font style on slide {slide_num} to a Sans-serif family, ensuring bold and italic styles remain intact.",
+      "On slide {slide_num}, switch all text fonts to a Sans-serif type, keeping any bold or italic formatting unchanged.",
+      "For slide {slide_num}, update every font to a Sans-serif family, while maintaining current bold and italic highlights.",
+      "Transform all text on slide {slide_num} to use a Sans-serif font, preserving any existing bold or italic effects.",
+      "Adjust the fonts on slide {slide_num} to a Sans-serif style, ensuring that bold and italic features are retained.",
+      "Convert all typefaces on slide {slide_num} to a Sans-serif family, keeping bold and italic styles as they are.",
+      "On slide {slide_num}, change every font to a Sans-serif typeface, while preserving any bold or italic formatting.",
+      "Revise the fonts on slide {slide_num} to a Sans-serif family, maintaining the current bold and italic emphasis.",
+      "For slide {slide_num}, alter all fonts to a Sans-serif style, ensuring that bold and italic formatting is preserved.",
+      "Switch the font family on slide {slide_num} to Sans-serif, keeping any existing bold or italic text unchanged."
+    ]
+  },
+  {
+    "original": "Ensure that text does not overflow the text box on slide number {slide_num}.",
+    "generated_variants": [
+      "Check that the text fits within the boundaries of the text box on slide {slide_num}.",
+      "Verify that no text spills out of the text box on slide {slide_num}.",
+      "Make sure the text remains contained within the text box on slide {slide_num}.",
+      "Ensure the text is fully visible and not exceeding the text box on slide {slide_num}.",
+      "Confirm that the text is properly confined to the text box on slide {slide_num}.",
+      "Adjust the text so it stays within the text box limits on slide {slide_num}.",
+      "Review slide {slide_num} to ensure text is not extending beyond the text box.",
+      "On slide {slide_num}, ensure the text is neatly enclosed within the text box.",
+      "Slide {slide_num} should have text that does not surpass the text box edges.",
+      "Make certain that the text on slide {slide_num} is entirely within the text box."
+    ]
+  },
+  {
+    "original": "Change the font of all text elements to Arial on ppt slide number {slide_num}.",
+    "generated_variants": [
+      "Update the typeface of every text component to Arial on slide {slide_num}.",
+      "Switch all text fonts to Arial on the presentation slide numbered {slide_num}.",
+      "Modify the font style to Arial for all text boxes on slide {slide_num}.",
+      "Set the font of every text item to Arial on slide {slide_num}.",
+      "Alter the text font to Arial for all elements on slide {slide_num}.",
+      "Convert all text to use the Arial font on slide {slide_num}.",
+      "Adjust the font of all textual content to Arial on slide {slide_num}.",
+      "Change every text field's font to Arial on slide {slide_num}.",
+      "Transform the font of all text to Arial on slide number {slide_num}.",
+      "Replace the current font with Arial for all text on slide {slide_num}."
+    ]
+  },
+  {
+    "original": "Convert all bulleted lists within text boxes on ppt slide number {slide_num} into numbered lists, maintaining the logical order.",
+    "generated_variants": [
+      "On slide {slide_num}, change every bulleted list in text boxes to a numbered format, keeping the sequence intact.",
+      "For slide {slide_num}, transform all bullet points in text boxes into numbered lists, preserving their original order.",
+      "Modify slide {slide_num} by converting each bulleted list within text boxes to a numbered list, ensuring the order remains unchanged.",
+      "On slide {slide_num}, switch all bullet points in text boxes to numbers, maintaining their logical sequence.",
+      "For slide {slide_num}, alter all bulleted lists in text boxes to numbered lists, keeping the order consistent.",
+      "On slide {slide_num}, replace every bullet point in text boxes with a number, ensuring the sequence is preserved.",
+      "Transform all bullet lists in text boxes on slide {slide_num} into numbered lists, maintaining their order.",
+      "On slide {slide_num}, adjust all text box bullet points to numbered lists, keeping the original sequence.",
+      "For slide {slide_num}, convert each bullet point in text boxes to a numbered list, ensuring the order stays the same.",
+      "On slide {slide_num}, change all bulleted lists in text boxes to numbers, preserving their logical order."
+    ]
+  },
+  {
+    "original": "Set the font size of all heading text (titles, section headers) to 32 pt on ppt slide number {slide_num}.",
+    "generated_variants": [
+      "Adjust the font size for all titles and section headers to 32 pt on slide {slide_num}.",
+      "Change the size of all heading fonts to 32 pt on slide number {slide_num}.",
+      "Modify the font size of titles and headers to 32 pt on the specified slide {slide_num}.",
+      "Set all heading text, including titles and section headers, to 32 pt on slide {slide_num}.",
+      "Ensure that all title and header fonts are resized to 32 pt on slide {slide_num}.",
+      "Update the font size for all headings to 32 pt on slide {slide_num}.",
+      "Configure the font size of all title and section header text to 32 pt on slide {slide_num}.",
+      "Make sure all heading text is set to 32 pt on slide number {slide_num}.",
+      "Apply a 32 pt font size to all titles and section headers on slide {slide_num}.",
+      "Setze die Schriftgröße aller Überschriften und Titel auf 32 pt auf Folie {slide_num}."
+    ]
+  },
+  {
+    "original": "Adjust the line spacing of all body text on ppt slide number {slide_num} to 1.5x.",
+    "generated_variants": [
+      "Set the line spacing for all the main text on slide {slide_num} to 1.5 times the normal spacing.",
+      "Modify the paragraph spacing of the body content on slide {slide_num} to 1.5x.",
+      "Change the line spacing of the text in the body section of slide {slide_num} to 1.5.",
+      "Alter the spacing between lines for all body text on slide {slide_num} to be 1.5 times.",
+      "Update the line spacing for the body text on slide {slide_num} to 1.5x.",
+      "Configure the body text on slide {slide_num} to have a line spacing of 1.5.",
+      "Adjust the spacing between lines for the main text on slide {slide_num} to 1.5x.",
+      "Set the paragraph line spacing on slide {slide_num} to 1.5 for all body text.",
+      "Modify the line spacing for the body text on slide {slide_num} so it is 1.5 times the default.",
+      "Change the body text line spacing on slide {slide_num} to 1.5x."
+    ]
+  },
+  {
+    "original": "Evaluate and adjust text color and background color contrast on ppt slide number {slide_num} to ensure optimal readability.",
+    "generated_variants": [
+      "Review and modify the text and background colors on slide {slide_num} to enhance readability.",
+      "Assess the color contrast between text and background on slide {slide_num} and make necessary adjustments for clarity.",
+      "Check and alter the text and background hues on slide {slide_num} to improve visual accessibility.",
+      "Analyze slide {slide_num} for text and background color contrast and adjust to ensure clear readability.",
+      "Inspect and tweak the color scheme of text and background on slide {slide_num} for better legibility.",
+      "Examine the contrast between text and background on slide {slide_num} and revise to optimize readability.",
+      "Evaluate the color balance on slide {slide_num} and adjust text and background shades for improved clarity.",
+      "Look over slide {slide_num} and change text and background colors to enhance contrast and readability.",
+      "Scrutinize the text and background color contrast on slide {slide_num} and modify for optimal visibility.",
+      "Review slide {slide_num} to ensure text and background colors provide sufficient contrast for easy reading."
+    ]
+  },
+  {
+    "original": "Highlight key points within the body text of ppt slide number {slide_num} using bold styling or color emphasis.",
+    "generated_variants": [
+      "Emphasize the main ideas in the text on slide {slide_num} by using bold fonts or vibrant colors.",
+      "Use bold or colorful text to accentuate the critical details on slide {slide_num}.",
+      "On slide {slide_num}, make the essential points stand out by applying bold or colored text.",
+      "Enhance the visibility of important information on slide {slide_num} with bold or color highlights.",
+      "For slide {slide_num}, highlight the significant content by utilizing boldface or color accents.",
+      "Apply bold or color effects to underscore the key elements on slide {slide_num}.",
+      "On slide {slide_num}, draw attention to the primary points with bold or colorful text enhancements.",
+      "Make the crucial points on slide {slide_num} more prominent by using bold or color styling.",
+      "Use bold or color techniques to highlight the main sections of text on slide {slide_num}.",
+      "For slide {slide_num}, emphasize the pivotal information with bold or color treatments."
+    ]
+  },
+  {
+    "original": "Apply a light background fill to all text boxes on ppt slide number {slide_num} to enhance readability.",
+    "generated_variants": [
+      "Set a pale background color for every text box on slide {slide_num} to improve text visibility.",
+      "Add a subtle backdrop to all text containers on slide {slide_num} for better readability.",
+      "Enhance the clarity of text on slide {slide_num} by applying a soft background to each text box.",
+      "For slide {slide_num}, implement a gentle fill color behind all text areas to boost legibility.",
+      "On slide {slide_num}, use a light tint for the background of all text boxes to make the text stand out.",
+      "Improve the text contrast on slide {slide_num} by giving each text box a faint background shade.",
+      "Apply a muted color fill to the background of all text boxes on slide {slide_num} to enhance text clarity.",
+      "To increase readability on slide {slide_num}, provide a light-colored background for each text box.",
+      "For better text distinction on slide {slide_num}, introduce a soft hue behind all text boxes.",
+      "On slide {slide_num}, ensure all text boxes have a light background to aid in reading the content."
+    ]
+  },
+  {
+    "original": "Apply a consistent color palette to all design elements (text, shapes, charts) on ppt slide number {slide_num} to ensure visual harmony.",
+    "generated_variants": [
+      "Unify the color scheme across all elements (text, graphics, diagrams) on slide {slide_num} for cohesive aesthetics.",
+      "Ensure all design components (fonts, icons, graphs) on slide {slide_num} share a uniform color theme for visual consistency.",
+      "Harmonize the colors of all items (text, shapes, and charts) on slide {slide_num} to achieve a balanced look.",
+      "Standardize the color palette for every element (text, figures, and data visuals) on slide {slide_num} to maintain design uniformity.",
+      "Apply a unified set of colors to all features (text, illustrations, and charts) on slide {slide_num} for a seamless appearance.",
+      "Make sure that all visual elements (text, shapes, and graphs) on slide {slide_num} follow a consistent color scheme for aesthetic unity.",
+      "Integrate a cohesive color palette for all components (text, graphics, and charts) on slide {slide_num} to enhance visual flow.",
+      "Adopt a consistent color strategy for all design aspects (text, icons, and charts) on slide {slide_num} to ensure visual alignment.",
+      "Implement a synchronized color palette for all elements (text, shapes, and visuals) on slide {slide_num} to achieve design harmony.",
+      "Ensure that every design element (text, graphics, and data charts) on slide {slide_num} adheres to a consistent color scheme for a unified look."
+    ]
+  },
+  {
+    "original": "Standardize all hyperlinks on ppt slide number {slide_num} to use underlined blue text formatting.",
+    "generated_variants": [
+      "Ensure all links on slide {slide_num} are formatted with blue text and underlined style.",
+      "Modify hyperlinks on slide {slide_num} to have a blue color and underline.",
+      "On slide {slide_num}, adjust every hyperlink to display as underlined blue text.",
+      "Change the appearance of all URLs on slide {slide_num} to blue and underlined.",
+      "For slide {slide_num}, update each hyperlink to feature underlined text in blue.",
+      "Set all hyperlinks on slide {slide_num} to be blue and underlined for consistency.",
+      "Transform every link on slide {slide_num} to exhibit a blue, underlined format.",
+      "On slide {slide_num}, standardize hyperlink text to be underlined and blue.",
+      "Revise the hyperlink styling on slide {slide_num} to ensure they are blue and underlined.",
+      "Make sure that all hyperlinks on slide {slide_num} are presented with blue underlined text."
+    ]
+  },
+  {
+    "original": "Change the color theme to a dark theme version of the current theme.",
+    "generated_variants": [
+      "Switch the presentation's color scheme to a darker variant of the existing theme.",
+      "Modify the slide deck to use a dark color palette inspired by the current theme.",
+      "Transform the current theme into its dark mode counterpart for the slides.",
+      "Adjust the presentation's colors to reflect a dark theme version.",
+      "Convert the existing theme to a dark-themed style for the slides.",
+      "Alter the color settings to adopt a dark theme based on the current design.",
+      "Revamp the slides with a dark theme that aligns with the current color scheme.",
+      "Update the presentation to feature a dark version of the current theme.",
+      "Redesign the slides using a dark color theme derived from the existing one.",
+      "Implement a dark color theme that mirrors the current slide design."
+    ]
+  },
+  {
+    "original": "Change the font type of the title text boxes to a more engaging font that better fits the title on slide number {slide_num}.",
+    "generated_variants": [
+      "Modify the title font on slide {slide_num} to a more captivating style that enhances the presentation.",
+      "On slide {slide_num}, update the title text box with a font that is more visually appealing.",
+      "Revamp the title font on slide {slide_num} to a style that better complements the content.",
+      "Adjust the font of the title on slide {slide_num} to something more dynamic and fitting.",
+      "For slide {slide_num}, switch the title font to a more attractive and suitable typeface.",
+      "Enhance the title's appearance on slide {slide_num} by selecting a more engaging font.",
+      "Transform the title font on slide {slide_num} to a design that is more eye-catching.",
+      "On slide {slide_num}, replace the current title font with one that offers greater visual impact.",
+      "Choose a more compelling font for the title on slide {slide_num} to improve its presentation.",
+      "Alter the title font on slide {slide_num} to a style that better aligns with the slide's theme."
+    ]
+  },
+  {
+    "original": "Center all titles at the top of each slide.",
+    "generated_variants": [
+      "Align all slide headings to the center at the top.",
+      "Place each slide's title in the middle at the top.",
+      "Ensure all titles are centrally positioned at the top of the slides.",
+      "Position the headings at the top center of every slide.",
+      "Move all slide titles to the top center alignment.",
+      "Set the titles to be centered at the top of each slide.",
+      "Adjust each slide's title to be centered at the top.",
+      "Make sure the top of each slide has a centered title.",
+      "Arrange all slide headings to be centered at the top.",
+      "Ensure the top of every slide features a centered title."
+    ]
+  },
+  {
+    "original": "Increase the spacing between bullet points for better readability on slide number {slide_num}.",
+    "generated_variants": [
+      "Adjust the line spacing between bullet points to enhance clarity on slide {slide_num}.",
+      "Widen the gap between bullet points to improve legibility on slide {slide_num}.",
+      "Modify the spacing between bullet items for clearer presentation on slide {slide_num}.",
+      "Enhance the readability by increasing the distance between bullet points on slide {slide_num}.",
+      "Expand the space between bullet points to make the content more readable on slide {slide_num}.",
+      "Alter the bullet point spacing for better visual separation on slide {slide_num}.",
+      "Boost the readability by adjusting the bullet point spacing on slide {slide_num}.",
+      "Make the bullet points more distinct by increasing the spacing on slide {slide_num}.",
+      "Improve the text flow by enlarging the space between bullet points on slide {slide_num}.",
+      "Refine the presentation by widening the spacing between bullet points on slide {slide_num}."
+    ]
+  },
+  {
+    "original": "Center-align all images horizontally within their placeholders or slide layout on ppt slide number {slide_num}.",
+    "generated_variants": [
+      "Adjust the horizontal alignment of all images to be centered within their frames on slide {slide_num}.",
+      "Ensure all images on slide {slide_num} are horizontally centered in their designated areas.",
+      "Center all images horizontally within their respective placeholders on slide {slide_num}.",
+      "Align all images to the center horizontally on slide {slide_num}.",
+      "Make sure every image on slide {slide_num} is horizontally centered in its layout.",
+      "Position all images so they are centered horizontally within their containers on slide {slide_num}.",
+      "Modify the horizontal alignment of images to be centered on slide {slide_num}.",
+      "Set all images to be horizontally centered within their slots on slide {slide_num}.",
+      "Ensure that images on slide {slide_num} are centered horizontally in their placeholders.",
+      "Center-align the images horizontally within their respective layouts on slide {slide_num}."
+    ]
+  },
+  {
+    "original": "Resize all images on ppt slide number {slide_num} to have the same width while maintaining aspect ratio.",
+    "generated_variants": [
+      "Adjust the width of every image on slide {slide_num} to match, ensuring the aspect ratio remains unchanged.",
+      "On slide {slide_num}, modify all images so they share the same width, keeping their proportions intact.",
+      "Ensure all pictures on slide {slide_num} have a uniform width, preserving their original aspect ratios.",
+      "For slide {slide_num}, resize each image to a consistent width while maintaining their aspect ratios.",
+      "Standardize the width of all images on slide {slide_num}, ensuring the aspect ratio is not altered.",
+      "On slide {slide_num}, set all images to an equal width, making sure to keep their aspect ratios constant.",
+      "Make the width of every image on slide {slide_num} identical, while preserving their aspect ratios.",
+      "For slide {slide_num}, adjust the images so they all have the same width, without changing their aspect ratios.",
+      "Modify the images on slide {slide_num} to have a uniform width, ensuring the aspect ratio is maintained.",
+      "On slide {slide_num}, resize all pictures to a consistent width, keeping their aspect ratios intact."
+    ]
+  },
+  {
+    "original": "Change the overall layout of ppt slide number {slide_num} to a two-column format, with balanced placement of text and images.",
+    "generated_variants": [
+      "Modify slide {slide_num} to feature a dual-column design, ensuring text and images are evenly distributed.",
+      "Adjust the layout of slide {slide_num} to a two-column structure, maintaining equal emphasis on text and visuals.",
+      "Transform slide {slide_num} into a two-column format, balancing the arrangement of text and pictures.",
+      "Reconfigure slide {slide_num} to adopt a two-column layout, with a harmonious distribution of text and images.",
+      "Revamp slide {slide_num} to a two-column setup, ensuring text and images are proportionately placed.",
+      "Alter the design of slide {slide_num} to a two-column format, with an even spread of text and graphics.",
+      "Switch slide {slide_num} to a two-column layout, balancing the placement of textual and visual elements.",
+      "Update slide {slide_num} to a two-column configuration, ensuring a balanced presentation of text and imagery.",
+      "Redesign slide {slide_num} to feature a two-column layout, with text and images equally distributed.",
+      "Convert slide {slide_num} to a two-column format, ensuring a balanced layout of text and visuals."
+    ]
+  },
+  {
+    "original": "Group related shapes and images together into logical units on ppt slide number {slide_num} for easier management.",
+    "generated_variants": [
+      "Organize the shapes and images on slide {slide_num} into cohesive clusters for better handling.",
+      "On slide {slide_num}, arrange related visual elements into unified groups to simplify management.",
+      "Consolidate similar shapes and images on slide {slide_num} into logical sections for improved organization.",
+      "For slide {slide_num}, group together related graphics and pictures to streamline editing.",
+      "Create logical units by clustering related shapes and images on slide {slide_num} for easier access.",
+      "On slide {slide_num}, assemble related visual components into distinct groups for enhanced clarity.",
+      "Combine similar shapes and images on slide {slide_num} into coherent units for more efficient management.",
+      "For slide {slide_num}, organize related images and shapes into structured groups to facilitate editing.",
+      "Arrange the visual elements on slide {slide_num} into logical clusters for better organization.",
+      "On slide {slide_num}, group together similar graphics and images to form manageable units."
+    ]
+  },
+  {
+    "original": "Create a custom two-column layout on ppt slide number {slide_num} featuring two images on one side and corresponding text on the other.",
+    "generated_variants": [
+      "Design a personalized slide layout with two columns on slide {slide_num}, placing two pictures on one side and matching descriptions on the opposite side.",
+      "On slide {slide_num}, configure a unique dual-column format with a pair of images on one side and related text on the other.",
+      "For slide {slide_num}, set up a bespoke two-column arrangement, incorporating two visuals on one side and their corresponding text on the other.",
+      "Develop a custom layout for slide {slide_num} with two columns, featuring a duo of images on one side and aligned text on the other.",
+      "On slide {slide_num}, craft a tailored two-column design, positioning two graphics on one side and associated text on the other.",
+      "Create a distinctive two-column format on slide {slide_num}, with two images on one side and their explanatory text on the opposite side.",
+      "For slide {slide_num}, establish a personalized two-column setup, placing two photos on one side and the relevant text on the other.",
+      "Design a custom two-column slide on slide {slide_num}, arranging two visuals on one side and the corresponding narrative on the other.",
+      "On slide {slide_num}, implement a unique two-column layout, featuring a pair of pictures on one side and the related text on the other.",
+      "Set up a specialized two-column design on slide {slide_num}, with two images on one side and their descriptive text on the opposite side."
+    ]
+  },
+  {
+    "original": "Convert all freeform drawn shapes on ppt slide number {slide_num} into static images to preserve visual consistency.",
+    "generated_variants": [
+      "Transform all hand-drawn shapes on slide {slide_num} into fixed images to maintain uniformity.",
+      "On slide {slide_num}, change every freeform shape into a static picture to ensure consistent visuals.",
+      "For slide {slide_num}, convert each manually drawn shape into an image to keep the design cohesive.",
+      "Alter all custom-drawn figures on slide {slide_num} into static images to uphold visual harmony.",
+      "On slide {slide_num}, replace all freehand shapes with static images to achieve a uniform appearance.",
+      "Modify every freeform drawing on slide {slide_num} into a fixed image to preserve the slide's consistency.",
+      "For slide {slide_num}, turn all hand-crafted shapes into static images to maintain a consistent look.",
+      "On slide {slide_num}, transform each freeform drawing into a static image to ensure design uniformity.",
+      "Convert all manually drawn figures on slide {slide_num} into static images to keep the visual style consistent.",
+      "For slide {slide_num}, change all freehand shapes into fixed images to maintain a cohesive visual presentation."
+    ]
+  },
+  {
+    "original": "Replace all occurring logo images with a new logo image.",
+    "generated_variants": [
+      "Substitute every instance of the current logo with the updated logo image.",
+      "Swap out all existing logo images for the new logo design.",
+      "Update each slide by inserting the new logo in place of the old one.",
+      "Exchange all present logos with the latest logo version.",
+      "Replace the old logo on every slide with the newly provided logo.",
+      "Change all occurrences of the current logo to the new logo image.",
+      "Remove the old logo from all slides and insert the new logo instead.",
+      "Transform each slide by replacing the existing logo with the new one.",
+      "Alter every slide to feature the new logo in place of the old logo.",
+      "Switch out all logo images with the updated logo across the presentation."
+    ]
+  },
+  {
+    "original": "Ensure that there aren't too many white spaces in the slide number {slide_num}.",
+    "generated_variants": [
+      "Check slide {slide_num} for excessive blank areas.",
+      "Verify that slide {slide_num} doesn't have large empty spaces.",
+      "Review slide {slide_num} to minimize unused space.",
+      "Inspect slide {slide_num} to ensure compact content layout.",
+      "Ensure slide {slide_num} is efficiently utilizing space.",
+      "Confirm that slide {slide_num} is free of unnecessary gaps.",
+      "Assess slide {slide_num} for optimal space usage.",
+      "Make sure slide {slide_num} is not overly sparse.",
+      "Look over slide {slide_num} to reduce vacant areas.",
+      "Evaluate slide {slide_num} for excessive whitespace."
+    ]
+  },
+  {
+    "original": "Ensure that images or shapes do not occlude the text boxes and resize or relocate the images if needed on slide number {slide_num}.",
+    "generated_variants": [
+      "Verify that text boxes remain visible and adjust the position or size of images or shapes on slide {slide_num} to prevent overlap.",
+      "On slide {slide_num}, make sure that no images or shapes cover the text boxes; resize or move them as necessary.",
+      "Check slide {slide_num} to ensure text boxes are unobstructed by images or shapes, and modify their dimensions or placement if required.",
+      "Ensure that on slide {slide_num}, text boxes are not blocked by any images or shapes; adjust their size or location accordingly.",
+      "On slide {slide_num}, confirm that text boxes are clear of any overlapping images or shapes, and reposition or resize them if needed.",
+      "For slide {slide_num}, make sure images or shapes do not obscure text boxes, and change their size or position as needed.",
+      "Ensure visibility of text boxes on slide {slide_num} by adjusting the size or position of any overlapping images or shapes.",
+      "On slide {slide_num}, verify that text boxes are not hidden by images or shapes, and alter their dimensions or placement if necessary.",
+      "Check that on slide {slide_num}, no images or shapes are covering text boxes; resize or relocate them as needed.",
+      "Ensure that text boxes on slide {slide_num} are not occluded by images or shapes, and adjust their size or position if required."
+    ]
+  },
+  {
+    "original": "Make sure all images have appropriate alternative text descriptions on slide number {slide_num}.",
+    "generated_variants": [
+      "Ensure that each image on slide {slide_num} includes a suitable alt text description.",
+      "Verify that all visuals on slide {slide_num} are accompanied by descriptive alternative text.",
+      "Check that every picture on slide {slide_num} has a relevant alt text provided.",
+      "Confirm that alternative text is present for all images on slide {slide_num}.",
+      "Make certain that slide {slide_num} contains alt text for each graphic.",
+      "Ensure descriptive text is available for all images on slide {slide_num}.",
+      "Verify the presence of appropriate alt text for every image on slide {slide_num}.",
+      "Check to see that all graphics on slide {slide_num} have corresponding alt text.",
+      "Confirm that each visual element on slide {slide_num} is paired with alt text.",
+      "Make sure that slide {slide_num} includes alt text for all its images."
+    ]
+  },
+  {
+    "original": "Apply smooth slide transition effects (such as Fade or Push) to ppt slide number {slide_num} for a polished flow.",
+    "generated_variants": [
+      "Integrate seamless transition animations like Fade or Push on slide {slide_num} to enhance presentation fluidity.",
+      "For slide {slide_num}, implement gentle transitions such as Fade or Push to ensure a refined presentation flow.",
+      "Enhance the flow of your presentation by adding smooth transitions like Fade or Push to slide {slide_num}.",
+      "On slide {slide_num}, apply elegant transitions such as Fade or Push for a more cohesive slide progression.",
+      "Ensure a polished transition on slide {slide_num} by using effects like Fade or Push.",
+      "Add subtle transition effects, such as Fade or Push, to slide {slide_num} for a smoother presentation experience.",
+      "For a professional touch, apply smooth transitions like Fade or Push to slide {slide_num}.",
+      "Incorporate transition effects like Fade or Push on slide {slide_num} to achieve a seamless presentation flow.",
+      "To maintain a polished presentation, use transitions such as Fade or Push on slide {slide_num}.",
+      "Apply refined transitions, such as Fade or Push, to slide {slide_num} to enhance the overall presentation continuity."
+    ]
+  },
+  {
+    "original": "Animate each bullet point in the main text box of ppt slide number {slide_num} to appear one at a time during the slideshow.",
+    "generated_variants": [
+      "Set up animations for each bullet in the main text area of slide {slide_num} so they appear sequentially during the presentation.",
+      "Configure each bullet point in the primary text box on slide {slide_num} to animate individually as the slideshow progresses.",
+      "Ensure that each bullet in the main text section of slide {slide_num} is animated to show up one by one during the slideshow.",
+      "Arrange for each bullet point in the central text box of slide {slide_num} to appear in sequence as the presentation unfolds.",
+      "Program the bullets in the main text field of slide {slide_num} to animate separately, appearing one at a time in the slideshow.",
+      "Design the animation for each bullet point in the main text area of slide {slide_num} to emerge individually during the presentation.",
+      "Make sure each bullet in the main text box on slide {slide_num} is set to animate one after the other in the slideshow.",
+      "Organize the animation of each bullet point in the primary text section of slide {slide_num} to appear sequentially during the presentation.",
+      "Set animations for each bullet in the main text box of slide {slide_num} so they display one by one in the slideshow.",
+      "Plan the animation for each bullet point in the main text area of slide {slide_num} to appear individually as the slideshow progresses."
+    ]
+  },
+  {
+    "original": "Add both entrance and exit animations to each major element (titles, text boxes, images) on ppt slide number {slide_num}.",
+    "generated_variants": [
+      "Apply entry and exit effects to all key components (headings, text areas, visuals) on slide number {slide_num}.",
+      "Integrate animations for both appearing and disappearing actions on main elements (titles, text boxes, images) of slide {slide_num}.",
+      "Ensure each primary item (titles, text fields, pictures) on slide {slide_num} has both an entrance and an exit animation.",
+      "For slide {slide_num}, add animations for both the introduction and removal of all significant elements (titles, text boxes, images).",
+      "On slide {slide_num}, implement animations for both the arrival and departure of major components (headings, text boxes, images).",
+      "Include animations for both the entry and exit of all principal elements (titles, text boxes, images) on slide {slide_num}.",
+      "Configure both incoming and outgoing animations for each key element (titles, text boxes, images) on slide {slide_num}.",
+      "For slide {slide_num}, set up animations that cover both the entrance and exit of all main elements (titles, text boxes, images).",
+      "Add animations to slide {slide_num} for both the appearance and disappearance of each major component (headings, text boxes, images).",
+      "Ensure that slide {slide_num} features both entrance and exit animations for all primary elements (titles, text boxes, images)."
+    ]
+  },
+  {
+    "original": "Insert a SmartArt process diagram illustrating sequential steps or flow on ppt slide number {slide_num}.",
+    "generated_variants": [
+      "Add a SmartArt graphic to depict a step-by-step process on slide {slide_num}.",
+      "Create a flowchart using SmartArt to show the sequence on slide {slide_num}.",
+      "Place a SmartArt diagram to represent a sequential flow on slide {slide_num}.",
+      "Design a process diagram with SmartArt for slide {slide_num} to illustrate steps.",
+      "Integrate a SmartArt sequence diagram on slide {slide_num} to outline the process.",
+      "Use SmartArt to visualize a series of steps on slide {slide_num}.",
+      "Embed a SmartArt flow diagram on slide {slide_num} to display the process.",
+      "Construct a SmartArt chart to map out sequential steps on slide {slide_num}.",
+      "Illustrate a step-by-step process with SmartArt on slide {slide_num}.",
+      "Insert a SmartArt flowchart to detail the sequence on slide {slide_num}."
+    ]
+  },
+  {
+    "original": "Insert a bar chart into ppt slide number {slide_num} using the provided dataset, ensuring accurate labeling.",
+    "generated_variants": [
+      "Add a bar graph to slide {slide_num} in the presentation, utilizing the given data and making sure all labels are correct.",
+      "Place a bar chart on slide {slide_num} with the supplied dataset, ensuring that each label is precise.",
+      "Integrate a bar diagram into slide {slide_num} using the provided data, and verify that all labels are accurate.",
+      "Create a bar chart on slide {slide_num} with the provided dataset, ensuring that the labels are correctly applied.",
+      "Embed a bar graph into slide {slide_num} using the dataset given, and confirm that all labels are accurate.",
+      "Include a bar chart on slide {slide_num} with the provided data, making sure that each label is correct.",
+      "Insert a bar diagram into slide {slide_num} using the supplied dataset, ensuring all labels are accurate.",
+      "Add a bar chart to slide {slide_num} using the provided data, and ensure that the labels are correctly placed.",
+      "Place a bar graph on slide {slide_num} with the given dataset, ensuring that all labels are accurate.",
+      "Integrate a bar chart into slide {slide_num} using the supplied data, confirming the accuracy of all labels."
+    ]
+  },
+  {
+    "original": "Update the styles (colors, fonts, borders) of any existing charts on ppt slide number {slide_num} to match the overall theme of the presentation.",
+    "generated_variants": [
+      "Revamp the design elements (hues, typefaces, outlines) of the charts on slide {slide_num} to align with the presentation's theme.",
+      "Modify the visual aspects (palette, typography, edges) of the charts on slide {slide_num} to ensure consistency with the presentation's style.",
+      "Adjust the aesthetic features (color schemes, font styles, border designs) of the charts on slide {slide_num} to harmonize with the presentation's overall look.",
+      "Alter the stylistic components (shades, lettering, borderlines) of the charts on slide {slide_num} to reflect the presentation's theme.",
+      "Transform the graphical attributes (color tones, text fonts, border styles) of the charts on slide {slide_num} to match the theme of the presentation.",
+      "Enhance the appearance (color palette, font selection, border details) of the charts on slide {slide_num} to be in sync with the presentation's theme.",
+      "Reconfigure the visual style (color choices, font types, border elements) of the charts on slide {slide_num} to fit the presentation's theme.",
+      "Adapt the design features (color patterns, font families, border characteristics) of the charts on slide {slide_num} to correspond with the presentation's theme.",
+      "Refine the stylistic details (color schemes, font options, border outlines) of the charts on slide {slide_num} to integrate with the presentation's theme.",
+      "Update the graphical style (color selections, text styles, border formats) of the charts on slide {slide_num} to align with the presentation's overall design."
+    ]
+  },
+  {
+    "original": "Divide the content of ppt slide number {slide_num} into two clear sections titled 'Overview' and 'Details' for improved structure.",
+    "generated_variants": [
+      "Split the information on slide {slide_num} into two distinct parts labeled 'Summary' and 'In-Depth Analysis' to enhance clarity.",
+      "Organize slide {slide_num} by creating two separate areas named 'General Info' and 'Specifics' for better readability.",
+      "Rearrange the content on slide {slide_num} into two sections: 'Introduction' and 'Detailed View' for a more structured presentation.",
+      "For slide {slide_num}, divide the material into 'Main Points' and 'Expanded Details' to improve the slide's organization.",
+      "Transform slide {slide_num} by separating the content into 'Highlights' and 'Comprehensive Details' for clearer communication.",
+      "On slide {slide_num}, create two distinct segments titled 'Brief Overview' and 'Detailed Explanation' to enhance understanding.",
+      "Adjust slide {slide_num} by partitioning the content into 'Essentials' and 'Further Information' for a more organized layout.",
+      "For a clearer presentation, split slide {slide_num} into 'Key Concepts' and 'Detailed Insights'.",
+      "Reformat slide {slide_num} by dividing it into 'Overview' and 'In-Depth Details' to improve the flow of information.",
+      "On slide {slide_num}, separate the content into 'Summary' and 'Detailed Breakdown' for a more effective structure."
+    ]
+  },
+  {
+    "original": "Insert slide numbers in the bottom-right corner of ppt slide number {slide_num}, formatted consistently with the rest of the deck.",
+    "generated_variants": [
+      "Add page numbers to the lower-right corner of slide {slide_num}, ensuring they match the existing style of the presentation.",
+      "Place numbering in the bottom-right area of slide {slide_num}, formatted to align with the presentation's design.",
+      "Include slide numbers at the bottom-right on slide {slide_num}, keeping the format consistent with the rest of the slides.",
+      "Embed slide numbers in the bottom-right corner of slide {slide_num}, using the same style as the rest of the deck.",
+      "Position slide numbers in the lower-right corner of slide {slide_num}, ensuring they are styled like the other slides.",
+      "Integrate page numbers into the bottom-right section of slide {slide_num}, maintaining uniformity with the deck's format.",
+      "Insert numbering at the bottom-right of slide {slide_num}, formatted to match the presentation's overall look.",
+      "Add slide numbers to the bottom-right on slide {slide_num}, ensuring they are consistent with the deck's design.",
+      "Place slide numbers in the lower-right corner of slide {slide_num}, using a format that aligns with the rest of the slides.",
+      "Embed page numbers in the bottom-right area of slide {slide_num}, ensuring they match the style of the entire presentation."
+    ]
+  },
+  {
+    "original": "Add the text 'Confidential' in the footer area of ppt slide number {slide_num} with subtle but visible styling.",
+    "generated_variants": [
+      "Insert the word 'Confidential' into the footer section of slide {slide_num}, ensuring it is discreet yet noticeable.",
+      "Place 'Confidential' in the footer of slide {slide_num}, using a style that is understated but clear.",
+      "Embed the text 'Confidential' at the bottom of slide {slide_num}, with a design that is low-key but apparent.",
+      "Add 'Confidential' to the footer of slide {slide_num}, making sure it is subtle yet stands out.",
+      "Include 'Confidential' in the footer area of slide {slide_num}, with a design that is muted but visible.",
+      "Write 'Confidential' in the footer of slide {slide_num}, ensuring the style is reserved but evident.",
+      "Position 'Confidential' in the footer of slide {slide_num}, using a style that is soft yet discernible.",
+      "Incorporate 'Confidential' into the footer of slide {slide_num}, with a styling that is gentle but perceptible.",
+      "Affix 'Confidential' to the footer of slide {slide_num}, ensuring it is understated yet apparent.",
+      "Add the label 'Confidential' to the footer of slide {slide_num}, with a design that is subtle but clear."
+    ]
+  },
+  {
+    "original": "Insert a semi-transparent watermark (such as a company logo or label) behind the main content of ppt slide number {slide_num}.",
+    "generated_variants": [
+      "Add a faint watermark, like a brand logo or text, to the background of slide {slide_num}.",
+      "Place a translucent company emblem or text behind the primary elements on slide {slide_num}.",
+      "Embed a subtle watermark, such as a corporate symbol or label, beneath the main content on slide {slide_num}.",
+      "Overlay a semi-transparent brand image or title in the background of slide {slide_num}.",
+      "Incorporate a light watermark, like a logo or identifier, behind the key content on slide {slide_num}.",
+      "Position a see-through watermark, such as a logo or descriptor, under the main visuals of slide {slide_num}.",
+      "Apply a gentle watermark, like a company insignia or name, to the backdrop of slide {slide_num}.",
+      "Insert a dim watermark, such as a business logo or caption, beneath the main features on slide {slide_num}.",
+      "Add a translucent watermark, like a logo or tag, to the background layer of slide {slide_num}.",
+      "Place a soft watermark, such as a corporate logo or text, behind the primary content on slide {slide_num}."
+    ]
+  },
+  {
+    "original": "Check the color contrast of all text and background elements on ppt slide number {slide_num}, and add appropriate accessibility tags to text and images.",
+    "generated_variants": [
+      "Evaluate the visual contrast between text and backgrounds on slide {slide_num}, and ensure all text and images have suitable accessibility labels.",
+      "On slide {slide_num}, verify the contrast levels of text against backgrounds, and apply necessary accessibility tags to both text and images.",
+      "Inspect slide {slide_num} for adequate text-background contrast and implement accessibility tags for all textual and visual elements.",
+      "Review the contrast of text and background on slide {slide_num}, and assign proper accessibility descriptions to text and images.",
+      "Analyze the color contrast of text with backgrounds on slide {slide_num}, and integrate appropriate accessibility tags for all elements.",
+      "For slide {slide_num}, assess the contrast between text and backgrounds, and add relevant accessibility labels to text and images.",
+      "Examine slide {slide_num} to ensure text-background contrast meets standards, and apply necessary accessibility tags to all content.",
+      "Check slide {slide_num} for sufficient contrast between text and backgrounds, and ensure all elements have correct accessibility tags.",
+      "On slide {slide_num}, confirm that text and background contrast is adequate, and provide accessibility tags for text and images.",
+      "Inspect the contrast of text against backgrounds on slide {slide_num}, and ensure all elements are tagged for accessibility."
+    ]
+  },
+  {
+    "original": "Create a new formatted title slide at ppt slide number {slide_num} featuring a title and subtitle aligned according to the presentation's style.",
+    "generated_variants": [
+      "Design a fresh title slide at position {slide_num} with a headline and subheadline, matching the presentation's theme.",
+      "Insert a newly styled title slide at slide number {slide_num}, ensuring the title and subtitle align with the existing format.",
+      "Generate a new title slide at index {slide_num} with a main title and a secondary title, adhering to the presentation's layout.",
+      "Add a new title slide at slide {slide_num}, featuring a title and subtitle that conform to the presentation's design standards.",
+      "Craft a new title slide at position {slide_num}, incorporating a title and subtitle that fit the presentation's aesthetic.",
+      "Develop a new title slide at slide number {slide_num} with a title and subtitle, ensuring alignment with the presentation's style guide.",
+      "Produce a new title slide at index {slide_num}, including a title and subtitle that match the presentation's visual theme.",
+      "Construct a new title slide at slide {slide_num}, featuring a title and subtitle aligned with the presentation's stylistic elements.",
+      "Fabricate a new title slide at position {slide_num}, with a title and subtitle that adhere to the presentation's formatting rules.",
+      "Assemble a new title slide at slide number {slide_num}, ensuring the title and subtitle are consistent with the presentation's design."
+    ]
+  },
+  {
+    "original": "Add slide numbers to every slide on the bottom right corner.",
+    "generated_variants": [
+      "Insert page numbers in the lower right area of each slide.",
+      "Place numbering on the bottom right of all slides.",
+      "Ensure each slide has a number in the bottom-right corner.",
+      "Add sequential numbers to the bottom-right of every slide.",
+      "Include slide numbers at the bottom right on each page.",
+      "Position slide numbers in the lower-right corner of all slides.",
+      "Display slide numbers on the bottom right of each slide.",
+      "Apply numbering to the bottom-right section of every slide.",
+      "Set up slide numbers to appear in the bottom right on all slides.",
+      "Integrate page numbers into the lower right corner of each slide."
+    ]
+  },
+  {
+    "original": "Re-order the slides so that they match the table of contents in slide number {slide_num}.",
+    "generated_variants": [
+      "Arrange the slides to align with the sequence outlined in the table of contents found on slide {slide_num}.",
+      "Modify the slide order to correspond with the contents list on slide number {slide_num}.",
+      "Reorganize the presentation slides according to the order specified in the table of contents on slide {slide_num}.",
+      "Adjust the sequence of slides to reflect the arrangement in the table of contents located on slide {slide_num}.",
+      "Sort the slides to follow the order presented in the table of contents on slide {slide_num}.",
+      "Rearrange the slides to match the structure detailed in the contents page on slide {slide_num}.",
+      "Align the slides with the order given in the table of contents on slide {slide_num}.",
+      "Re-sequence the slides to fit the layout described in the table of contents on slide {slide_num}.",
+      "Organize the slides to mirror the order in the table of contents on slide {slide_num}.",
+      "Reorder the slides to be consistent with the sequence in the table of contents on slide {slide_num}."
+    ]
+  },
+  {
+    "original": "Add transition effects between slides to create a smoother presentation flow.",
+    "generated_variants": [
+      "Incorporate slide transitions to enhance the fluidity of your presentation.",
+      "Apply animation effects between slides for a seamless presentation experience.",
+      "Introduce transition animations to ensure a cohesive slide progression.",
+      "Utilize slide transitions to improve the overall flow of your presentation.",
+      "Implement effects between slides to achieve a more polished presentation.",
+      "Add animations to slide changes to create a more engaging presentation flow.",
+      "Integrate smooth transitions to connect slides more effectively.",
+      "Employ transition effects to make slide changes less abrupt.",
+      "Use slide animations to maintain a continuous presentation narrative.",
+      "Enhance your presentation by adding subtle transitions between slides."
+    ]
+  },
+  {
+    "original": "Replace the presenter name in the presentation to John Doe.",
+    "generated_variants": [
+      "Update the speaker's name throughout the slides to John Doe.",
+      "Change all instances of the presenter's name to John Doe in the deck.",
+      "Modify the presentation to reflect John Doe as the presenter.",
+      "Substitute the current speaker's name with John Doe on all slides.",
+      "Ensure John Doe is listed as the presenter in the entire presentation.",
+      "Switch the name of the presenter to John Doe in the slideshow.",
+      "Alter the slides to show John Doe as the speaker.",
+      "Revise the presentation to display John Doe as the presenter.",
+      "Adjust the slides so that John Doe is the named speaker.",
+      "Transform the presenter's name to John Doe across the presentation."
+    ]
+  },
+  {
+    "original": "Remove any duplicate content across slides.",
+    "generated_variants": [
+      "Eliminate repeated information from all slides.",
+      "Identify and delete any redundant material across the presentation.",
+      "Ensure each slide contains unique content by removing duplicates.",
+      "Scan the slides for repetitive data and remove it.",
+      "Check for and eliminate any overlapping content in the slides.",
+      "Purge any recurring information found throughout the slides.",
+      "Remove any instances of content duplication across the slides.",
+      "Find and delete any repeated elements within the presentation.",
+      "Ensure no slide content is repeated by removing duplicates.",
+      "Identify and clear out any redundant slide content."
+    ]
+  }
+]

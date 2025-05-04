@@ -49,7 +49,7 @@ def convert_openai_to_gemini(openai_request):
         gemini_messages.append({"role": message["role"].replace("assistant", "model"), "parts": parts})
     
     # Extract parameters
-    temperature = openai_request.get("temperature", 0.1)
+    temperature = openai_request.get("temperature", 0.5)
     max_tokens = openai_request.get("max_tokens", 65536)
     stop = openai_request.get("stop", [])
     top_p = openai_request.get("top_p", 1.0)
@@ -62,7 +62,7 @@ def convert_openai_to_gemini(openai_request):
     gemini_request = {
         "contents": gemini_messages,
         "generation_config": {
-            "temperature": temperature,
+            "temperature": 0.05,#temperature,
             "max_output_tokens": max_tokens,
             "stop_sequences": stop,
             "top_p": top_p,
