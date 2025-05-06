@@ -1,0 +1,24 @@
+{
+    "TextEditing": [
+      { "id": 0, "prompt": "Translate all visible text elements on ppt slide number {slide_num} into Korean." }
+    ],
+  
+    "VisualFormatting": [
+      { "id": 1, "prompt": "Translate all visible text elements on ppt slide number {slide_num} into Englsih."}
+    ],
+  
+    "LayoutAndImageAdjustment": [
+      { "id": 2, "prompt": "Center-align all images horizontally within their placeholders or slide layout on ppt slide number {slide_num}." }
+
+    ],
+  
+    "SlideStructure": [
+
+      { "id": 3, "prompt": "Add transition effects between slides to create a smoother presentation flow." }
+    ],
+  
+    "Etc": [
+      { "id": 4, "prompt": "Remove any duplicate content across slides." }
+    ]
+  }
+  

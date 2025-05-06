@@ -49,7 +49,7 @@
     { "id": 57, "prompt": "Make sure all images have appropriate alternative text descriptions on slide number {slide_num}." }
   ],
 
-  "SlideStructureAndMetadata": [
+  "SlideStructure": [
     { "id": 23, "prompt": "Apply smooth slide transition effects (such as Fade or Push) to ppt slide number {slide_num} for a polished flow." },
     { "id": 24, "prompt": "Animate each bullet point in the main text box of ppt slide number {slide_num} to appear one at a time during the slideshow." },
     { "id": 25, "prompt": "Add both entrance and exit animations to each major element (titles, text boxes, images) on ppt slide number {slide_num}." },
@@ -67,7 +67,7 @@
     { "id": 53, "prompt": "Add transition effects between slides to create a smoother presentation flow." }
   ],
 
-  "GlobalPresentationCleanup": [
+  "Etc": [
     { "id": 41, "prompt": "Replace the presenter name in the presentation to John Doe." },
     { "id": 54, "prompt": "Remove any duplicate content across slides." }
   ]
