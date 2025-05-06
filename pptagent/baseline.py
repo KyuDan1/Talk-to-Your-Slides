@@ -49,19 +49,11 @@ def parsing_python(text):
     # If nothing else worked, return empty string
     return "" 
 
+
+
+# # baseline2 Instruction + Parsed Info
+
 def baseline1 (model_name="gemini-1.5-flash", user_instruction=None):
-    response = llm_request_with_retries(model_name=model_name,
-                            request=BASELINE_PROMPT
-                                    + user_instruction
-                                    + FORMAT_PROMPT)
-    #response 에서 python 코드만 파싱하고
-    response_code = parsing_python(response)
-    exec(response_code)
-    return response_code
-
-# baseline2 Instruction + Parsed Info
-
-def baseline2 (model_name="gemini-1.5-flash", user_instruction=None):
     
 
     # 전체 다 파싱할지? 어떻게 파싱하는게 baseline인가..

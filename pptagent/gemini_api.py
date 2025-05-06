@@ -12,7 +12,7 @@ import base64
 import random
 
 
-credentials = yaml.safe_load(open("credentials.yml"))
+credentials = yaml.safe_load(open("../credentials.yml"))
 
 
 SAFETY_SETTINGS = [

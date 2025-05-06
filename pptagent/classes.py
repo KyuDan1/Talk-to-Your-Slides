@@ -5,6 +5,7 @@ import os
 import json
 from datetime import datetime
 import time
+import win32com.client
 
 class Planner:
     def __init__(self):
@@ -52,25 +53,48 @@ class Planner:
             }
 
 class Parser:
-    def __init__(self, json_data):
-        self.json_data = json_data
-        self.tasks = json_data.get("tasks", [])
+    def __init__(self, json_data=None, baseline=False):
+        """
+        Args:
+            json_data (dict, optional): JSON instructions with 'tasks'.
+            baseline (bool): If True, ignore json_data and parse all slides.
+        """
+        self.json_data = json_data or {}
+        self.tasks = self.json_data.get("tasks", [])
+        self.baseline = baseline
+
     def process(self):
         """
-        Process the tasks in the JSON data and add contents for each page number.
-        
+        Process slide parsing based on baseline flag.
+
         Returns:
-            dict: The updated JSON data with contents added
+            dict: Parsed results. If baseline=True, returns dict with all slides under 'tasks'.
+                  Otherwise, returns the original json_data updated with 'contents'.
         """
+        if self.baseline:
+            # 전체 슬라이드 수 가져오기
+            ppt_app = win32com.client.Dispatch("PowerPoint.Application")
+            presentation = ppt_app.ActivePresentation
+            total_slides = presentation.Slides.Count
+
+            # 모든 슬라이드에 대해 parsing 수행하여 새로운 tasks 리스트 생성
+            all_tasks = []
+            for page_num in range(1, total_slides + 1):
+                slide_contents = parse_active_slide_objects(page_num)
+                all_tasks.append({
+                    "page number": page_num,
+                    "contents": slide_contents
+                })
+
+            return {"tasks": all_tasks}
+
+        # baseline=False: 지정된 task들만 parsing
         for task in self.tasks:
             page_number = task.get("page number")
             if page_number:
-                # Parse objects for this slide
                 slide_contents = parse_active_slide_objects(page_number)
-                
-                # Add the contents to the task
                 task["contents"] = slide_contents
-        
+
         return self.json_data
 import re
 import json

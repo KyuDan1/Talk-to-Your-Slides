@@ -7,7 +7,7 @@ import random
 from gemini_api import convert_openai_to_gemini, send_gemini_request
 
 
-credentials = yaml.safe_load(open("credentials.yml"))
+credentials = yaml.safe_load(open("../credentials.yml"))
 
 
 def create_openai_request(
