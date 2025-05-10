@@ -1,4 +1,5 @@
 from dotenv import load_dotenv
+load_dotenv()
 from utils import _call_gpt_api
 import anthropic
 import os
@@ -7,11 +8,11 @@ import urllib.request
 import urllib.error
 import traceback
 import time
-load_dotenv()
+
 import openai
 from openai import OpenAI
 import pythoncom
-from llm_api import llm_request_with_retries
+from llm_api import llm_request_with_retries, llm_request_with_retries_gemini
     
 
 def _call_claude_api(prompt, api_key):
@@ -196,10 +197,14 @@ The code must be direct, practical and focused solely on making the specific cha
     elif "gpt" in model:
         code = _call_gpt_api(prompt, api_key, model)
     elif "gemini" in model:
-        code = llm_request_with_retries(
-            model_name=model,
-            request=prompt,
-            num_retries=1
+        # code = llm_request_with_retries(
+        #     model_name=model,
+        #     request=prompt,
+        #     num_retries=1
+        # )
+        code, input_tokens, output_tokens, total_cost = llm_request_with_retries_gemini(
+            model_name = model,
+            prompt_content = prompt
         )
     # 코드 전처리
     code = code.strip()
@@ -214,7 +219,7 @@ The code must be direct, practical and focused solely on making the specific cha
     if "error_occurred = False" not in code:
         code = "error_occurred = False\n\n" + code
     
-    return code
+    return code,  input_tokens, output_tokens, total_cost
 import pythoncom, win32com.client
 
 def _connect_powerpoint():
@@ -474,7 +479,9 @@ class test_json_Applier:
         pythoncom.CoInitialize()
         import win32com.client
         import win32com.client.dynamic
-
+        input_tokens=0
+        output_tokens=0 
+        total_cost=0
         # PowerPoint setup
         ppt_application = win32com.client.Dispatch("PowerPoint.Application")
         ppt_application.Visible = True
@@ -493,7 +500,7 @@ class test_json_Applier:
             before = task['contents']
             after = task['content after edit']
 
-            raw_code = _json_generate_code(
+            raw_code,  input_tokens, output_tokens, total_cost= _json_generate_code(
                 self.model,
                 self.api_key,
                 before,
@@ -540,4 +547,4 @@ class test_json_Applier:
 
             overall_success &= task_success
 
-        return overall_success
+        return overall_success, input_tokens, output_tokens, total_cost

@@ -1,4 +1,4 @@
-from llm_api import llm_request_with_retries
+from llm_api import llm_request_with_retries, llm_request_with_retries_gemini
 from prompt import PLAN_PROMPT, PARSER_PROMPT, VBA_PROMPT, create_process_prompt
 from utils import parse_active_slide_objects, _call_gpt_api,  parse_llm_response
 import os
@@ -22,10 +22,15 @@ class Planner:
         if "4.1" in model_name:
             response = _call_gpt_api(prompt= prompt, api_key=api_key, model = model_name)
         # Request plan from LLM
-        response = llm_request_with_retries(
-            model_name=model_name,
-            request=prompt,
-            num_retries=4
+        # response = llm_request_with_retries(
+        #     model_name=model_name,
+        #     request=prompt,
+        #     num_retries=4
+        # )
+
+        response, input_tokens, output_tokens, total_cost = llm_request_with_retries_gemini(
+            model_name = model_name,
+            prompt_content = prompt
         )
         #print(response)
         # The response should be a JSON string, but let's handle errors safely
@@ -33,7 +38,7 @@ class Planner:
         
         try:
             plan = parse_llm_response(response)
-            return plan
+            return plan, input_tokens, output_tokens, total_cost
         except json.JSONDecodeError:
             # Fallback - return a basic structure with the raw response
             return {
@@ -149,6 +154,9 @@ class Processor:
         self.api_key = api_key
 
     def process(self):
+        input_tokens = 0
+        output_tokens = 0
+        total_cost = 0
         for task in self.tasks:
             page_number = task.get("page number")
             if not page_number:
@@ -171,11 +179,16 @@ class Processor:
                 if "4.1" in self.model_name:
                     response = _call_gpt_api(prompt=prompt, api_key=self.api_key, model=self.model_name)
                 else:
-                    response = llm_request_with_retries(
-                        model_name=self.model_name,
-                        request=prompt,
-                        num_retries=4
+                    # response = llm_request_with_retries(
+                    #     model_name=self.model_name,
+                    #     request=prompt,
+                    #     num_retries=4
+                    # )
+                    response, input_tokens, output_tokens, total_cost = llm_request_with_retries_gemini(
+                    model_name = self.model_name,
+                    prompt_content = prompt
                     )
+
 
                 print(f"[Slide {page_number}] Raw response:\n{response}")
 
@@ -198,7 +211,7 @@ class Processor:
             if not success:
                 print(f"[Slide {page_number}] ⚠️ Failed to process after {max_retries} attempt(s). Moving on.")
 
-        return self.json_data
+        return self.json_data, input_tokens, output_tokens, total_cost 
 
 
 class Applier:

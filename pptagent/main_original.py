@@ -26,7 +26,7 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     # --- 측정 시작: Planner ---
     planner_start_time = time.time()
     planner = Planner()
-    plan_json:json = planner(user_input, model_name="gemini-1.5-flash")
+    plan_json, planner_input_tokens, planner_output_tokens, planner_price = planner(user_input, model_name="gemini-1.5-flash")
     planner_end_time = time.time()
     print("=====PLAN====")
     print(plan_json)
@@ -44,7 +44,7 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     processor = Processor(parsed_json, model_name = 'gemini-2.5-flash-preview-04-17', 
                           api_key=GEMINI_API_KEY#OPENAI_API_KEY
                           )
-    processed_json:json = processor.process()
+    processed_json, processor_input_tokens, processor_output_tokens, processor_price = processor.process()
     processor_end_time = time.time()
     print("=====PROCESSED====")
     print(processed_json)   
@@ -54,11 +54,11 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     if rule_base_apply:
         applier = Applier()
     else:
-        applier = test_json_Applier(model='gemini-2.5-flash-preview-04-17' #"gpt-4.1", 
+        applier= test_json_Applier(model='gemini-2.5-flash-preview-04-17' #"gpt-4.1", 
                                     ,api_key=GEMINI_API_KEY
                                     ,retry = retry) #test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY, retry = retry)
     
-    result = applier(processed_json)
+    result ,applier_input_tokens, applier_output_tokens, applier_total_cost = applier(processed_json)
     applier_end_time = time.time()
     print(result)
 
@@ -89,25 +89,10 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     # 코드 실행 후 파일을 닫습니다.
     log_file.close()
 
+    total_input_token = planner_input_tokens + processor_input_tokens + applier_input_tokens
+    total_output_token = planner_output_tokens + processor_output_tokens + applier_output_tokens
+    total_price = planner_price + processor_price + applier_total_cost
+    
+    return result, total_input_token, total_output_token, total_price
 
-# 테스트 코드
-# with open('pptagent/instructions.json', 'r', encoding='utf-8') as f:
-#     instructions = json.load(f)
-#     print(instructions)
-#     for _, inst in instructions.items():
-#         try:
-#             main(user_input=inst, rule_base_apply=False)
-#         except Exception as e:
-#             print(f"Error while processing instruction '{inst}': {e}")
-#             continue  # 에러가 나면 다음 루프로 넘어감
-
-#main(user_input="Translate in English for ppt slides number 5.", rule_base_apply=False, retry=3)
-# for i in [5]:
-#     try:
-#         main(user_input=f"Translate all the text in English for ppt slides number {i}", rule_base_apply=False, retry=4)
-#     except Exception as e:
-#         #print(f"Error while processing instruction : {e}")
-#         continue  # 에러가 나면 다음 루프로 넘어감
-
-# 바꾼 다음에 대기하는 시간이 쓸데없이 길다.
-# reporter 없앨까?
+# result, total_input_token, total_output_token, total_price = main("Translate all text content on slide 1 into Korean.")

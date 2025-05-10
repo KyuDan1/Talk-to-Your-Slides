@@ -12,7 +12,7 @@ import base64
 import random
 
 
-credentials = yaml.safe_load(open("../credentials.yml"))
+credentials = yaml.safe_load(open("./credentials.yml"))
 
 
 SAFETY_SETTINGS = [
@@ -98,4 +98,4 @@ def send_gemini_request(
         **gemini_request,
         safety_settings=SAFETY_SETTINGS,
     )
-    return response.text
+    return response.text, response.usage_metadata.candidates_token_count
