@@ -83,15 +83,14 @@ class Parser:
             total_slides = presentation.Slides.Count
 
             # 모든 슬라이드에 대해 parsing 수행하여 새로운 tasks 리스트 생성
-            all_tasks = []
+            all_tasks = {}
             for page_num in range(1, total_slides + 1):
                 slide_contents = parse_active_slide_objects(page_num)
-                all_tasks.append({
-                    "page number": page_num,
-                    "contents": slide_contents
-                })
-
-            return {"tasks": all_tasks}
+                
+                all_tasks["page number"] = page_num
+                all_tasks["contents"] = slide_contents
+                
+            return all_tasks
 
         # baseline=False: 지정된 task들만 parsing
         for task in self.tasks:
@@ -177,7 +176,7 @@ class Processor:
 
                 # send request
                 if "4.1" in self.model_name:
-                    response = _call_gpt_api(prompt=prompt, api_key=self.api_key, model=self.model_name)
+                    response, input_tokens, output_tokens, total_cost = _call_gpt_api(prompt=prompt, api_key=self.api_key, model=self.model_name)
                 else:
                     # response = llm_request_with_retries(
                     #     model_name=self.model_name,

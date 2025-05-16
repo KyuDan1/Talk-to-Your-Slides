@@ -377,4 +377,3 @@
 {"instruction_key": "55-2", "slide_num": "55", "instruction": "Scan the slides for repetitive data and remove it.", "execution_time": 16.906683683395386, "status": "error", "error_message": "main() 함수 실행 오류: '>' not supported between instances of 'str' and 'int'"}
 {"instruction_key": "55-3", "slide_num": "55", "instruction": "Remove any instances of content duplication across the slides.", "execution_time": 7.939352512359619, "status": "success", "result": [true, 611, 773, 0.000277725]}
 {"instruction_key": "55-4", "slide_num": "55", "instruction": "Identify and clear out any redundant slide content.", "execution_time": 7.037841796875, "status": "success", "result": [true, 610, 636, 0.00023654999999999998]}
-{"total_processed": 379, "total_time": 31159.652744293213, "avg_time": 82.21544259707971, "timestamp": "2025-05-11 00:24:14"}

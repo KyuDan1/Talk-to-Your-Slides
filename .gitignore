@@ -2,7 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.pptx
+*.csv
+*.jsonl
+*.png
+*.txt
+*.bas
 # C extensions
 *.so
 *.yml

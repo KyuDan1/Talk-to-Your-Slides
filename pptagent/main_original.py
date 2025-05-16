@@ -41,8 +41,8 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     
     # --- 측정 시작: Processor ---
     processor_start_time = time.time()
-    processor = Processor(parsed_json, model_name = 'gemini-2.5-flash-preview-04-17', 
-                          api_key=GEMINI_API_KEY#OPENAI_API_KEY
+    processor = Processor(parsed_json, model_name = 'gpt-4.1-mini', #gemini-2.5-flash-preview-04-17', 
+                          api_key=OPENAI_API_KEY #GEMINI_API_KEY
                           )
     processed_json, processor_input_tokens, processor_output_tokens, processor_price = processor.process()
     processor_end_time = time.time()
@@ -54,8 +54,8 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     if rule_base_apply:
         applier = Applier()
     else:
-        applier= test_json_Applier(model='gemini-2.5-flash-preview-04-17' #"gpt-4.1", 
-                                    ,api_key=GEMINI_API_KEY
+        applier= test_json_Applier(model='gpt-4.1-mini' #"gpt-4.1-mini", gemini-2.5-flash-preview-04-17
+                                    ,api_key=OPENAI_API_KEY           #GEMINI_API_KEY
                                     ,retry = retry) #test_Applier(model="gpt-4.1", api_key=OPENAI_API_KEY, retry = retry)
     
     result ,applier_input_tokens, applier_output_tokens, applier_total_cost = applier(processed_json)
@@ -95,4 +95,4 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     
     return result, total_input_token, total_output_token, total_price
 
-# result, total_input_token, total_output_token, total_price = main("Translate all text content on slide 1 into Korean.")
+#result, total_input_token, total_output_token, total_price = main("Translate all text content on slide 1 into Korean.")

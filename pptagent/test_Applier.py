@@ -195,7 +195,7 @@ The code must be direct, practical and focused solely on making the specific cha
     if model == "claude-3.7-sonnet":
         code = _call_claude_api(prompt, api_key)
     elif "gpt" in model:
-        code = _call_gpt_api(prompt, api_key, model)
+        code, input_tokens, output_tokens, total_cost  = _call_gpt_api(prompt, api_key, model)
     elif "gemini" in model:
         # code = llm_request_with_retries(
         #     model_name=model,

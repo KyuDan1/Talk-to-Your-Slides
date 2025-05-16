@@ -83,40 +83,70 @@ def create_thinking_queue(plan_json):
     return print_data_
 
 
-def _call_gpt_api(prompt: str, api_key: str, model: str):
-    # API 키 설정
-    openai.api_key = api_key
-    
-    # 지원하는 모델 목록 검증
-    allowed_models = ["gpt-4.1", "gpt-4.1-mini", "gpt-4.1-nano", "o4-mini"]
-    if model not in allowed_models:
-        raise ValueError(f"Model must be one of {allowed_models}")
+import openai
+from openai import OpenAI
+import tiktoken
 
-    # 모델명 매핑 (== → =)
+# 모델별 토큰당 단가(예시: USD/1K tokens)
+PRICING = {
+    #"gpt-4.1-2025-04-14":    {"prompt": 0.03/1000, "completion": 0.06/1000},
+    "gpt-4.1-mini-2025-04-14":{"prompt": 0.4/1000000, "completion": 1.6/1000000},
+    #"gpt-4.1-nano-2025-04-14":{"prompt": 0.001/1000, "completion": 0.001/1000},
+    #"o4-mini":               {"prompt": 0.002/1000, "completion": 0.002/1000},
+}
+
+def count_tokens(text: str, model: str) -> int:
+    """tiktoken으로 토큰 수 계산"""
+    try:
+        enc = tiktoken.encoding_for_model(model)
+    except KeyError:
+        enc = tiktoken.get_encoding("cl100k_base")
+    return len(enc.encode(text))
+
+def _call_gpt_api(prompt: str, api_key: str, model: str):
+    # --- API 키 설정 및 모델 검증/매핑 ---
+    openai.api_key = api_key
+
+    allowed = ["gpt-4.1", "gpt-4.1-mini", "gpt-4.1-nano", "o4-mini"]
+    if model not in allowed:
+        raise ValueError(f"Model must be one of {allowed}")
+
     if model == "gpt-4.1":
         model = "gpt-4.1-2025-04-14"
     elif model == "gpt-4.1-mini":
         model = "gpt-4.1-mini-2025-04-14"
     elif model == "gpt-4.1-nano":
         model = "gpt-4.1-nano-2025-04-14"
+    # o4-mini는 그대로
+
+    # --- API 호출 ---
+    client = OpenAI(api_key=api_key)
+    response = client.responses.create(
+        model=model,
+        instructions="You are a coding assistant that edits PowerPoint slides.",
+        input=prompt,
+    )
+    text = response.output_text
+
+    # --- 토큰 수 계산 (usage 필드가 있으면 그걸 쓰고, 없으면 count_tokens) ---
+    if getattr(response, "usage", None):
+        inp_toks = response.usage.input_tokens
+        out_toks = response.usage.output_tokens
     else:
-        model = model
+        inp_toks = count_tokens(prompt, model)
+        out_toks = count_tokens(text, model)
 
-    try:
-        client = OpenAI(
-            api_key = api_key,
-        )
-        response = client.responses.create(
-            model=model,
-            instructions="You are a coding assistant that editing powerpoint slides.",
-            input=prompt,
-        )
-        
-        return response.output_text
+    # --- 비용 계산 ---
+    rates = PRICING.get(model)
+    if rates is None:
+        total_cost = None
+    else:
+        total_cost = inp_toks * rates["prompt"] + out_toks * rates["completion"]
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        return None
+    # --- 항상 4개 값 반환 ---
+    return text, inp_toks, out_toks, total_cost
+
+
 def get_simple_powerpoint_info():
     """
     현재 열려있는 PowerPoint의 페이지 수와 파일 이름만 가져옵니다.
