@@ -64,19 +64,6 @@ gemini-1.5-flash:
 python pptagent/main.py
 ```
 
-## 📊 How to Cite
-
-If you use PPT Agent in your research or project, please cite as follows:
-
-```bibtex
-@software{ppt_agent2025,
-  author = {Kyudan Jung and Hojun Cho and Jooyeol Yun and Jaegul Choo},
-  title = {PPT Agent: AI-Powered Presentation Generator},
-  url = {https://github.com/KyuDan1/(will be out soon)},
-  version = {1.0.0},
-  year = {2025},
-}
-```
 
 Or you can cite it briefly as:
 
