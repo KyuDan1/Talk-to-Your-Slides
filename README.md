@@ -4,6 +4,9 @@
 
 <div align="center">
 [![Stars](https://img.shields.io/github/stars/KyuDan1/Talk-to-Your-Slides?style=social)](https://github.com/KyuDan1/Talk-to-Your-Slides/stargazers)
+
+
+  
   **Talk to Your Slides: Efficient Slide Editing Agent with Large Language Models**
   
 🗒️ Our **research paper** on PPT Agent will be published soon!
