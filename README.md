@@ -1,9 +1,9 @@
-  # 🚀 Talk-to-Your-Slides
+  # 🚀 Talk-to-Your-Slides  [![Stars](https://img.shields.io/github/stars/KyuDan1/Talk-to-Your-Slides?style=social)](https://github.com/KyuDan1/Talk-to-Your-Slides/stargazers)
+
   
 
 
 <div align="center">
-[![Stars](https://img.shields.io/github/stars/KyuDan1/Talk-to-Your-Slides?style=social)](https://github.com/KyuDan1/Talk-to-Your-Slides/stargazers)
 
 
   
