@@ -1,58 +1,58 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 엘리먼트 참조
+    // Element references
     const userInputForm = document.getElementById('userInputForm');
     const userInput = document.getElementById('userInput');
     const ruleBase = document.getElementById('ruleBase');
     
-    // 뷰 전환 버튼
+    // View toggle buttons
     const singleViewBtn = document.getElementById('singleViewBtn');
     const expandViewBtn = document.getElementById('expandViewBtn');
     
-    // 단일 보드 뷰와 전체 펼치기 뷰
+    // Single board view and expanded view
     const singleBoardView = document.getElementById('singleBoardView');
     const expandedView = document.getElementById('expandedView');
     
-    // 현재 단계 정보
+    // Current step information
     const currentIcon = document.getElementById('current-icon');
     const currentTitle = document.getElementById('current-title');
     const currentTime = document.getElementById('current-time');
     const currentThinking = document.getElementById('current-thinking');
     const currentOutput = document.getElementById('current-output');
     
-    // 단계별 아이콘과 타이틀 매핑
+    // Step icon and title mapping
     const stepInfo = {
-        'planner': { icon: '🧠', title: '계획 수립' },
-        'parser': { icon: '📊', title: '계획 분석' },
-        'processor': { icon: '⚙️', title: '처리' },
-        'applier': { icon: '🔄', title: '적용' },
-        'reporter': { icon: '📝', title: '보고서 작성' },
-        'complete': { icon: '✅', title: '최종 결과' }
+        'planner': { icon: '🧠', title: 'Planning' },
+        'parser': { icon: '📊', title: 'Plan Analysis' },
+        'processor': { icon: '⚙️', title: 'Processing' },
+        'applier': { icon: '🔄', title: 'Application' },
+        'reporter': { icon: '📝', title: 'Report Writing' },
+        'complete': { icon: '✅', title: 'Final Result' }
     };
     
-    // 현재 활성화된 단계
+    // Currently active step
     let currentStep = '';
-    // 단계별 결과 데이터 저장
+    // Step result data storage
     const stepResults = {};
     
-    // 모든 단계 배열
+    // All steps array
     const steps = ['planner', 'parser', 'processor', 'applier', 'reporter', 'complete'];
     
-    // 초기화: 모든 단계 비활성화 및 진행 상태 초기화
+    // Initialize UI
     function initializeUI() {
-        // 단일 보드 뷰에서 초기 상태 설정
+        // Initialize single board view
         currentIcon.textContent = '⏳';
-        currentTitle.textContent = '대기 중...';
+        currentTitle.textContent = 'Waiting...';
         currentTime.textContent = '';
         currentThinking.style.display = 'none';
         currentOutput.textContent = '';
         currentOutput.classList.remove('visible');
         
-        // 진행 상태 초기화
+        // Initialize progress steps
         document.querySelectorAll('.progress-step').forEach(step => {
             step.classList.remove('active', 'complete');
         });
         
-        // 전체 펼치기 뷰 초기화
+        // Initialize expanded view
         steps.forEach(step => {
             const stepElement = document.getElementById(step);
             if (stepElement) {
@@ -76,12 +76,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // 결과 데이터 초기화
+        // Initialize result data
         Object.keys(stepResults).forEach(key => delete stepResults[key]);
         currentStep = '';
     }
     
-    // 뷰 전환 버튼 이벤트 처리
+    // View toggle button event handling
     singleViewBtn.addEventListener('click', function() {
         singleViewBtn.classList.add('active');
         expandViewBtn.classList.remove('active');
@@ -96,101 +96,101 @@ document.addEventListener('DOMContentLoaded', function() {
         singleBoardView.classList.remove('active');
     });
     
-    // 폼 제출 이벤트 처리
+    // Form submission event handling
     userInputForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         if (!userInput.value.trim()) {
-            alert('지시사항을 입력해주세요.');
+            alert('Please enter instructions.');
             return;
         }
         
-        console.log('폼 제출 - 사용자 입력:', userInput.value);
+        console.log('Form submission - User input:', userInput.value);
         
-        // UI 초기화
+        // Initialize UI
         initializeUI();
         
-        // 기본 뷰로 전환
+        // Switch to default view
         singleViewBtn.click();
         
-        // 폼 데이터 준비
+        // Prepare form data
         const formData = new FormData();
         formData.append('user_input', userInput.value);
         formData.append('rule_base', ruleBase.checked);
         
-        // 처리 시작 표시
+        // Show processing started
         currentIcon.textContent = '⏳';
-        currentTitle.textContent = '요청 처리 중...';
+        currentTitle.textContent = 'Processing request...';
         currentThinking.style.display = 'flex';
         
-        // 서버에 요청 전송
+        // Send request to server
         fetch('/process', {
             method: 'POST',
             body: formData
         })
         .then(response => response.json())
         .then(data => {
-            console.log('서버 응답:', data);
+            console.log('Server response:', data);
             
             if (data.status === 'processing') {
-                // 폴링 시작
+                // Start polling
                 pollThinkingUpdates();
             } else {
-                alert('오류: ' + JSON.stringify(data));
+                alert('Error: ' + JSON.stringify(data));
             }
         })
         .catch(error => {
-            console.error('오류:', error);
-            alert('처리 중 오류가 발생했습니다.');
+            console.error('Error:', error);
+            alert('Processing error occurred.');
         });
     });
     
-    // 생각 과정 업데이트 폴링
+    // Thinking process update polling
     function pollThinkingUpdates() {
         fetch('/thinking_updates')
             .then(response => response.json())
             .then(data => {
-                console.log('업데이트:', data);
+                console.log('Update:', data);
                 
                 if (data.status === 'waiting') {
-                    // 대기 중, 계속 확인
+                    // Waiting, continue checking
                     setTimeout(pollThinkingUpdates, 500);
                     return;
                 }
                 
                 if (data.status === 'error') {
-                    // 오류 발생
-                    console.error('오류:', data.message);
-                    alert('오류: ' + data.message);
+                    // Error occurred
+                    console.error('Error:', data.message);
+                    alert('Error: ' + data.message);
                     return;
                 }
                 
                 if (data.status === 'finished') {
-                    // 모든 처리 완료
-                    console.log('모든 처리 완료');
+                    // All processing completed
+                    console.log('All processing completed');
                     return;
                 }
                 
-                // 데이터 처리
+                // Process data
                 handleThinkingUpdate(data);
                 
-                // 계속 폴링
+                // Continue polling
                 setTimeout(pollThinkingUpdates, 500);
             })
             .catch(error => {
-                console.error('폴링 오류:', error);
+                console.error('Polling error:', error);
                 setTimeout(pollThinkingUpdates, 1000);
             });
     }
     
-    // 단계 업데이트 처리
+    // Step update processing
     function handleThinkingUpdate(data) {
         const step = data.step;
         const status = data.status;
         
-        // 새로운 단계가 시작되면 이전 단계 완료 처리
+        // If a new step starts, complete previous step
         if (currentStep && currentStep !== step && status === 'thinking') {
-            // 진행 상태 표시에서 이전 단계 완료 표시
+            // Mark previous step as complete in progress display
             const prevStepElement = document.querySelector(`.progress-step[data-step="${currentStep}"]`);
             if (prevStepElement) {
                 prevStepElement.classList.remove('active');
@@ -198,18 +198,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // 최종 완료 단계
+        // Final complete step
         if (step === 'complete') {
-            // 단일 보드 뷰에서 마지막 단계 표시
+            // Mark last step in single board view
             updateCurrentStepDisplay('complete', 'complete', data);
             
-            // 진행 상태 표시에서 모든 단계 완료 표시
+            // Mark all steps as complete in progress display
             document.querySelectorAll('.progress-step').forEach(el => {
                 el.classList.remove('active');
                 el.classList.add('complete');
             });
             
-            // 전체 펼치기 뷰 업데이트
+            // Update expanded view
             const finalElement = document.getElementById('final-result');
             if (finalElement) {
                 finalElement.classList.add('active');
@@ -222,11 +222,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const timeElement = document.getElementById('total-time');
                 if (timeElement && data.data && data.data.times) {
-                    timeElement.textContent = `총 소요 시간: ${data.data.times.total.toFixed(2)}초`;
+                    timeElement.textContent = `Total processing time: ${data.data.times.total.toFixed(2)} seconds`;
                 }
             }
             
-            // 모든 단계 활성화 (전체 펼치기 뷰용)
+            // Activate all steps (for expanded view)
             steps.forEach(s => {
                 if (s !== 'complete' && stepResults[s]) {
                     const stepEl = document.getElementById(s);
@@ -237,16 +237,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // 새로운 단계 시작 또는 현재 단계 업데이트
+        // Start new step or update current step
         if (status === 'thinking') {
-            // 단계가 변경됨
+            // Step changed
             if (currentStep !== step) {
                 currentStep = step;
                 
-                // 단일 보드 뷰 업데이트
+                // Update single board view
                 updateCurrentStepDisplay(step, 'thinking');
                 
-                // 진행 상태 표시 업데이트
+                // Update progress display
                 document.querySelectorAll('.progress-step').forEach(el => {
                     if (el.dataset.step === step) {
                         el.classList.add('active');
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
             
-            // 전체 펼치기 뷰 업데이트
+            // Update expanded view
             const stepElement = document.getElementById(step);
             if (stepElement) {
                 stepElement.classList.add('active');
@@ -270,16 +270,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         } else if (status === 'complete') {
-            // 완료된 단계의 데이터 저장
+            // Store data for completed step
             stepResults[step] = {
                 data: data.data,
                 time: data.time
             };
             
-            // 단일 보드 뷰 업데이트
+            // Update single board view
             updateCurrentStepDisplay(step, 'complete', data);
             
-            // 전체 펼치기 뷰 업데이트
+            // Update expanded view
             const stepElement = document.getElementById(step);
             if (stepElement) {
                 const thinkingElement = document.getElementById(`${step}-thinking`);
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const outputElement = document.getElementById(`${step}-output`);
                 if (outputElement) {
-                    // JSON 데이터 포맷팅
+                    // JSON data formatting
                     let formattedData = typeof data.data === 'object' 
                         ? JSON.stringify(data.data, null, 2) 
                         : data.data;
@@ -300,25 +300,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const timeElement = document.getElementById(`${step}-time`);
                 if (timeElement && data.time) {
-                    timeElement.textContent = `소요 시간: ${data.time.toFixed(2)}초`;
+                    timeElement.textContent = `Processing time: ${data.time.toFixed(2)} seconds`;
                 }
             }
         }
     }
     
-    // 단일 보드 뷰의 현재 단계 표시 업데이트
+    // Single board view current step display update
     function updateCurrentStepDisplay(step, status, data) {
-        // 페이드인 효과를 위한 opacity 변경
+        // Fade-in effect for opacity change
         currentTitle.classList.add('changing');
         
         setTimeout(() => {
-            // 아이콘 및 제목 업데이트
+            // Update icon and title
             if (stepInfo[step]) {
                 currentIcon.textContent = stepInfo[step].icon;
                 currentTitle.textContent = stepInfo[step].title;
             }
             
-            // 상태에 따른 표시 변경
+            // Update display based on status
             if (status === 'thinking') {
                 currentThinking.style.display = 'flex';
                 currentOutput.classList.remove('visible');
@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentThinking.style.display = 'none';
                 
                 if (data && data.data) {
-                    // JSON 데이터 포맷팅
+                    // JSON data formatting
                     let formattedData = typeof data.data === 'object' 
                         ? JSON.stringify(data.data, null, 2) 
                         : data.data;
@@ -337,16 +337,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 if (data && data.time) {
-                    currentTime.textContent = `소요 시간: ${data.time.toFixed(2)}초`;
+                    currentTime.textContent = `Processing time: ${data.time.toFixed(2)} seconds`;
                 }
             }
             
-            // 페이드인 효과 완료
+            // Fade-in effect completed
             currentTitle.classList.remove('changing');
-        }, 300); // 페이드 아웃 후 내용 변경
+        }, 300); // Fade-out delay before content change
     }
     
-    // 초기 UI 상태 설정
+    // Initialize UI state
     initializeUI();
-    singleViewBtn.click(); // 기본 뷰로 단일 보드 뷰 선택
+    singleViewBtn.click(); // Select single board view by default
 });

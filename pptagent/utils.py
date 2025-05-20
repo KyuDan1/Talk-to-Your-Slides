@@ -6,78 +6,78 @@ import re
 
 def parse_llm_response(response):
     """
-    LLM 응답에서 JSON을 안정적으로 파싱하는 함수
+    Function to reliably parse JSON from LLM response
     """
     import json
     import re
     
     try:
-        # 응답이 None이거나 빈 문자열인 경우 처리
+        # Handle empty response
         if not response:
-            print("응답이 비어 있습니다.")
+            print("Response is empty.")
             return None
             
-        # 초기 정리
+        # Initial cleanup
         json_str = response.strip()
         
-        # 마크다운 코드 블록 제거
+        # Remove markdown code blocks
         json_str = re.sub(r'```(?:json)?', '', json_str)
         json_str = json_str.replace('```', '').strip()
         
-        # 처음부터 유효한 JSON인지 확인
+        # Check if it's valid JSON from the start
         try:
             return json.loads(json_str)
         except:
-            pass  # 직접 파싱 실패, 계속 진행
+            pass  # Direct parsing failed, continue
         
-        # JSON 객체의 경계 찾기
+        # Find JSON object boundaries
         start_idx = json_str.find('{')
         end_idx = json_str.rfind('}')
         
         if start_idx != -1 and end_idx != -1 and start_idx < end_idx:
             json_str = json_str[start_idx:end_idx+1]
         else:
-            # 배열 형식 확인
+            # Check array format
             start_idx = json_str.find('[')
             end_idx = json_str.rfind(']')
             if start_idx != -1 and end_idx != -1 and start_idx < end_idx:
                 json_str = json_str[start_idx:end_idx+1]
             else:
-                print("유효한 JSON 구조를 찾을 수 없습니다.")
+                print("No valid JSON structure found.")
                 return None
         
-        # 제어 문자 제거 (탭, 줄바꿈, 캐리지 리턴은 제외)
+        # Remove control characters (except tab, newline, carriage return)
         json_str = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F]+', '', json_str)
         
-        # 일반적인 JSON 오류 수정
-        # 후행 쉼표 제거
+        # Fix common JSON errors
+        # Remove trailing commas
         json_str = re.sub(r',\s*}', '}', json_str)
         json_str = re.sub(r',\s*]', ']', json_str)
         
-        # 키가 따옴표로 묶여 있는지 확인
+        # Check if keys are quoted
         json_str = re.sub(r'([{,])\s*([a-zA-Z0-9_]+)\s*:', r'\1"\2":', json_str)
         
-        # 작은따옴표를 큰따옴표로 변경
+        # Convert single quotes to double quotes
         json_str = re.sub(r"'([^']*)'", r'"\1"', json_str)
         
-        # 특수 이스케이프 문자 처리
+        # Handle special escape characters
         json_str = json_str.replace('\\n', '\\\\n').replace('\\r', '\\\\r').replace('\\t', '\\\\t')
         
-        # 중첩된 따옴표 처리
+        # Handle nested quotes
         json_str = re.sub(r'(?<!\\)"(?=.*":)', '\\"', json_str)
         
         try:
             return json.loads(json_str)
         except json.JSONDecodeError as e:
-            print(f"JSON 파싱 오류 위치: {e.pos}, 메시지: {e.msg}")
+            print(f"JSON parsing error position: {e.pos}, message: {e.msg}")
             
-            # 문제가 있는 위치 주변 출력
+            # Print around error position
             error_pos = e.pos
             start = max(0, error_pos - 20)
             end = min(len(json_str), error_pos + 20)
-            print(f"문제 지점: ...{json_str[start:error_pos]}|HERE|{json_str[error_pos:end]}...")
+            print(f"Problem area: ...{json_str[start:error_pos]}|HERE|{json_str[error_pos:end]}...")
             
-            # 마지막 시도: 문제가 되는 문자 제거 후 재시도
+            # Last attempt: remove problematic character and retry
             if error_pos < len(json_str):
                 fixed_str = json_str[:error_pos] + json_str[error_pos+1:]
                 try:
@@ -85,17 +85,17 @@ def parse_llm_response(response):
                 except:
                     pass
             
-            # 실패한 경우 더 공격적인 정리 시도
-            # ASCII가 아닌 문자 제거
+            # If failed, try more aggressive cleanup
+            # Remove non-ASCII characters
             clean_str = re.sub(r'[^\x20-\x7E]', '', json_str)
             try:
                 return json.loads(clean_str)
             except:
-                print("모든 JSON 파싱 시도가 실패했습니다.")
+                print("All JSON parsing attempts failed.")
                 return None
                 
     except Exception as e:
-        print(f"예상치 못한 오류: {str(e)}")
+        print(f"Unexpected error: {str(e)}")
         return None
     
 def extract_content_after_edit(plan_json):
@@ -204,7 +204,7 @@ def get_simple_powerpoint_info():
 
 
 def get_shape_type(shape_type):
-    """Shape 유형 번호를 문자열로 변환"""
+    """Shape type number to string conversion"""
     shape_types = {
         1: "AutoShape", 
         2: "CallOut",
@@ -231,7 +231,7 @@ def get_shape_type(shape_type):
     return shape_types.get(shape_type, f"Unknown Type ({shape_type})")
 
 def get_placeholder_type(placeholder_type):
-    """Placeholder 유형 번호를 문자열로 변환"""
+    """Placeholder type number to string conversion"""
     placeholder_types = {
         1: "Title",
         2: "Body",
@@ -257,7 +257,7 @@ def get_placeholder_type(placeholder_type):
     return placeholder_types.get(placeholder_type, f"Unknown Placeholder ({placeholder_type})")
 
 def parse_text_frame(text_frame):
-    """텍스트 프레임 정보 파싱"""
+    """Text frame information parsing"""
     result = ""
     try:
         if text_frame.HasText:
@@ -280,21 +280,22 @@ def parse_text_frame(text_frame):
     return result
 
 def parse_table(table):
-    """테이블 정보 파싱"""
+    """Table information parsing"""
     result = ""
     try:
         rows = table.Rows.Count
         cols = table.Columns.Count
         result += f"\n   - Table Dimensions: {rows}x{cols} (Rows x Columns)"
         
-        # 테이블 스타일 및 속성
+        # Table style and properties
         result += f"\n   - First Row: {table.FirstRow}"
         result += f"\n   - Last Row: {table.LastRow}"
         result += f"\n   - First Column: {table.FirstCol}"
         result += f"\n   - Last Column: {table.LastCol}"
         
-        # 모든 셀의 텍스트 내용을 가져오기에는 양이 많을 수 있으므로
-        # 첫 번째 행과 열의 일부만 샘플로 표시
+        # Get text content from all cells
+        # Since the amount of text can be large,
+        # only sample the first row and column
         if rows > 0 and cols > 0:
             result += "\n   - Sample Cell Contents:"
             max_sample = min(3, rows)
@@ -310,7 +311,7 @@ def parse_table(table):
     return result
 
 def parse_chart(chart):
-    """차트 정보 파싱"""
+    """Chart information parsing"""
     result = ""
     try:
         chart_type = chart.ChartType
@@ -320,7 +321,7 @@ def parse_chart(chart):
             -4170: "xlBarClustered",
             -4102: "xlLineStacked",
             73: "xlPie",
-            # 더 많은 차트 유형을 필요에 따라 추가
+            # Add more chart types as needed
         }
         chart_type_name = chart_types.get(chart_type, f"Unknown Chart Type ({chart_type})")
         
@@ -331,15 +332,15 @@ def parse_chart(chart):
         if chart.HasTitle:
             result += f"\n   - Chart Title: {chart.ChartTitle.Text}"
         
-        # 차트 데이터 시리즈 정보
+        # Chart data series information
         try:
             series_count = chart.SeriesCollection().Count
             result += f"\n   - Series Count: {series_count}"
             
-            # 시리즈 이름 예시
+            # Series name example
             if series_count > 0:
                 result += "\n   - Series Names:"
-                for i in range(1, min(series_count + 1, 5)):  # 최대 4개 시리즈만 표시
+                for i in range(1, min(series_count + 1, 5)):  # Show up to 4 series
                     try:
                         series_name = chart.SeriesCollection(i).Name
                         result += f"\n     Series {i}: {series_name}"
@@ -352,14 +353,14 @@ def parse_chart(chart):
     return result
 
 def parse_group_shapes(group_shape):
-    """그룹 내부 Shape 정보 파싱"""
+    """Group internal Shape information parsing"""
     result = ""
     try:
         shapes_count = group_shape.GroupItems.Count
         result += f"\n   - Group Items Count: {shapes_count}"
         
-        # 모든 그룹 아이템을 파싱하면 출력이 너무 길어질 수 있으므로
-        # 처음 몇 개 아이템만 간략히 파싱
+        # Parse all group items to avoid too much output
+        # Only parse the first few items briefly
         max_items = min(3, shapes_count)
         for i in range(1, max_items + 1):
             try:
@@ -372,16 +373,16 @@ def parse_group_shapes(group_shape):
     return result
 
 def parse_picture(picture):
-    """이미지 정보 파싱"""
+    """Image information parsing"""
     result = ""
     try:
         result += f"\n   - Picture Type: {picture.Type}"
         
-        # 이미지 크기 비율
+        # Image size ratio
         if hasattr(picture, 'ScaleHeight') and hasattr(picture, 'ScaleWidth'):
             result += f"\n   - Scale: Width {picture.ScaleWidth}%, Height {picture.ScaleHeight}%"
         
-        # 이미지 품질 및 압축 정보
+        # Image quality and compression information
         if hasattr(picture, 'PictureFormat'):
             pf = picture.PictureFormat
             if hasattr(pf, 'Brightness'):
@@ -396,7 +397,7 @@ def parse_picture(picture):
     return result
 
 def parse_placeholder_details(placeholder):
-    """Placeholder 상세 정보 파싱"""
+    """Placeholder detailed information parsing"""
     result = ""
     try:
         ph_type = placeholder.PlaceholderFormat.Type
@@ -404,7 +405,7 @@ def parse_placeholder_details(placeholder):
         result += f"\n   - Placeholder ID: {placeholder.Id}"
         result += f"\n   - Placeholder Index: {placeholder.PlaceholderFormat.Index}"
         
-        # 추가 Placeholder 속성
+        # Additional Placeholder properties
         if hasattr(placeholder.PlaceholderFormat, 'ContainedType'):
             result += f"\n   - Contained Type: {placeholder.PlaceholderFormat.ContainedType}"
     except Exception as e:
@@ -412,124 +413,96 @@ def parse_placeholder_details(placeholder):
     return result
 
 def parse_shape_details(shape):
-    """Shape 유형별 세부 정보 파싱"""
-    result = ""
+    """
+    Parse details by shape type
+    """
+    details = {
+        "type": shape.Type,
+        "name": shape.Name,
+        "text": "",
+        "has_text": False,
+        "has_table": False,
+        "table_data": None,
+        "has_chart": False,
+        "chart_type": None,
+        "has_image": False,
+        "image_type": None
+    }
     
-    # 공통 추가 속성
-    try:
-        result += f"\n Visibility: {'Visible' if shape.Visible else 'Hidden'}"
-        result += f"\n Z-Order: {shape.ZOrderPosition}"
-        if hasattr(shape, 'Rotation'):
-            result += f"\n Rotation: {shape.Rotation}°"
-        result += f"\n ID: {shape.Id}"  # 고유 ID
-        
-        # 투명도 정보
-        if hasattr(shape, 'Fill') and hasattr(shape.Fill, 'Transparency'):
-            result += f"\n Fill Transparency: {shape.Fill.Transparency * 100}%"
-        
-        # 선 정보
-        if hasattr(shape, 'Line'):
-            line = shape.Line
-            if hasattr(line, 'Visible') and line.Visible:
-                result += f"\n Line: Width={line.Weight}pt"
-                if hasattr(line, 'ForeColor') and hasattr(line.ForeColor, 'RGB'):
-                    rgb = line.ForeColor.RGB
-                    result += f", Color=RGB({rgb & 0xFF}, {(rgb >> 8) & 0xFF}, {(rgb >> 16) & 0xFF})"
-    except Exception as e:
-        result += f"\n General Properties Error: {e}"
+    # Parse text content
+    if shape.HasTextFrame:
+        text_frame = shape.TextFrame
+        if text_frame.HasText:
+            details["text"] = text_frame.TextRange.Text
+            details["has_text"] = True
     
-    # Shape 유형별 세부 정보 파싱
-    try:
-        shape_type = shape.Type
-        
-        # 텍스트 프레임이 있는 경우
-        if hasattr(shape, 'HasTextFrame') and shape.HasTextFrame:
-            result += parse_text_frame(shape.TextFrame)
-        
-        # Placeholder인 경우
-        if shape_type == 14:  # Placeholder
-            result += parse_placeholder_details(shape)
-        
-        # 그룹인 경우
-        elif shape_type == 6:  # Group
-            result += parse_group_shapes(shape)
-        
-        # 테이블인 경우
-        elif shape_type == 18:  # Table
-            result += parse_table(shape.Table)
-        
-        # 차트인 경우
-        elif shape_type == 3:  # Chart
-            result += parse_chart(shape.Chart)
-        
-        # 이미지인 경우
-        elif shape_type in [11, 13]:  # LinkedPicture or Picture
-            result += parse_picture(shape)
-        
-        # SmartArt인 경우
-        elif shape_type == 19:  # SmartArt
-            result += f"\n   - SmartArt: {shape.SmartArt.AllNodes.Count} nodes"
-        
-        # OLE 객체인 경우
-        elif shape_type in [7, 10]:  # EmbeddedOLEObject or LinkedOLEObject
-            result += f"\n   - OLE Class Type: {shape.OLEFormat.ProgID if hasattr(shape, 'OLEFormat') else 'Unknown'}"
-        
-        # 미디어인 경우
-        elif shape_type == 15:  # MediaObject
-            result += f"\n   - Media Type: {shape.MediaType if hasattr(shape, 'MediaType') else 'Unknown'}"
+    # Parse table content
+    if shape.HasTable:
+        details["has_table"] = True
+        table = shape.Table
+        table_data = []
+        for row in range(1, table.Rows.Count + 1):
+            row_data = []
+            for col in range(1, table.Columns.Count + 1):
+                cell = table.Cell(row, col)
+                if cell.Shape.HasTextFrame:
+                    row_data.append(cell.Shape.TextFrame.TextRange.Text)
+                else:
+                    row_data.append("")
+            table_data.append(row_data)
+        details["table_data"] = table_data
     
-    except Exception as e:
-        result += f"\n Shape Detail Error: {e}"
+    # Parse chart content
+    if shape.HasChart:
+        details["has_chart"] = True
+        chart = shape.Chart
+        details["chart_type"] = chart.ChartType
     
-    return result
+    # Parse image content
+    if shape.Type == 13:  # msoPicture
+        details["has_image"] = True
+        if shape.Fill.Type == -1:  # msoFillPicture
+            details["image_type"] = "Picture"
+    
+    return details
 
 def parse_slide_notes(slide):
-    """슬라이드 노트 파싱"""
-    result = "\n\n--- SLIDE NOTES ---"
-    try:
-        # 노트 페이지 접근
-        if hasattr(slide, 'HasNotesPage') and slide.HasNotesPage:
-            notes_page = slide.NotesPage
-            shapes_count = notes_page.Shapes.Count
-            
-            result += f"\nNotes Shapes Count: {shapes_count}"
-            
-            # 노트 페이지의 텍스트 프레임을 찾아 내용 추출
-            note_text = ""
-            for i in range(1, shapes_count + 1):
-                shape = notes_page.Shapes(i)
-                if hasattr(shape, 'PlaceholderFormat'):
-                    # 노트 텍스트는 보통 PlaceholderType = 2 (Body)
-                    if shape.PlaceholderFormat.Type == 2:
-                        if hasattr(shape, 'TextFrame') and shape.TextFrame.HasText:
-                            note_text += shape.TextFrame.TextRange.Text
-            
-            if note_text:
-                result += f"\nNotes Content: {note_text}"
-            else:
-                result += "\nNo text found in notes"
-        else:
-            result += "\nNo notes page found"
-    except Exception as e:
-        result += f"\nError parsing notes: {e}"
+    """
+    Parse slide notes
+    """
+    if not slide.HasNotesPage:
+        return ""
     
-    return result
+    notes_page = slide.NotesPage
+    notes_text = ""
+    
+    # Find notes placeholder
+    for shape in notes_page.Shapes:
+        if shape.Type == 14:  # msoPlaceholder
+            if shape.PlaceholderFormat.Type == 2:  # ppPlaceholderBody
+                if shape.HasTextFrame:
+                    text_frame = shape.TextFrame
+                    if text_frame.HasText:
+                        notes_text = text_frame.TextRange.Text
+                        break
+    
+    return notes_text
 
 def parse_slide_properties(slide):
-    """슬라이드 속성 파싱"""
+    """Slide properties parsing"""
     result = "\n\n--- SLIDE PROPERTIES ---"
     try:
-        # 슬라이드 기본 정보
+        # Slide basic information
         result += f"\nSlide ID: {slide.SlideID}"
         result += f"\nSlide Index: {slide.SlideIndex}"
         result += f"\nSlide Name: {slide.Name}"
         
-        # 슬라이드 레이아웃 정보
+        # Slide layout information
         if hasattr(slide, 'Layout'):
             result += f"\nSlide Layout Type: {slide.Layout.Type}"
             result += f"\nSlide Layout Name: {slide.Layout.Name}"
         
-        # 슬라이드 배경 정보
+        # Slide background information
         if hasattr(slide, 'Background'):
             bg = slide.Background
             if hasattr(bg, 'Fill'):
@@ -540,7 +513,7 @@ def parse_slide_properties(slide):
                     fill_type = fill_types.get(fill.Type, f"Unknown ({fill.Type})")
                 result += f"\nBackground Fill Type: {fill_type}"
         
-        # 슬라이드 전환 효과
+        # Slide transition effect
         if hasattr(slide, 'SlideShowTransition'):
             trans = slide.SlideShowTransition
             result += f"\nTransition: {trans.EntryEffect if hasattr(trans, 'EntryEffect') else 'None'}"
@@ -554,8 +527,8 @@ def parse_slide_properties(slide):
     return result
 
 def parse_active_slide_objects(slide_num:int=1):
-    """슬라이드 객체 파싱 메인 함수"""
-    output = "" # 출력을 저장할 문자열 초기화
+    """Main function for parsing slide objects"""
+    output = "" # Initialize string to store output
     
     try:
         # Connect to running PowerPoint instance
@@ -569,11 +542,11 @@ def parse_active_slide_objects(slide_num:int=1):
             output += "No active presentation found."
             return output
         
-        # 프레젠테이션 정보 추가
+        # Add presentation information
         output += f"Presentation: {presentation.Name}\n"
         output += f"Total Slides: {presentation.Slides.Count}\n"
         
-        # 슬라이드 범위 확인
+        # Check slide range
         if slide_num > presentation.Slides.Count or slide_num < 1:
             output += f"Invalid slide number. Please provide a number between 1 and {presentation.Slides.Count}."
             return output
@@ -581,7 +554,7 @@ def parse_active_slide_objects(slide_num:int=1):
         # Access the specified slide
         slide = presentation.Slides(slide_num)
         
-        # 슬라이드 속성 파싱
+        # Slide properties parsing
         output += parse_slide_properties(slide)
         
         # Get the number of shapes in the slide
@@ -600,7 +573,7 @@ def parse_active_slide_objects(slide_num:int=1):
             # Parse details based on shape type
             output += parse_shape_details(shape)
         
-        # 슬라이드 노트 파싱
+        # Slide notes parsing
         output += parse_slide_notes(slide)
         
         output += "\n\nParsing complete."
@@ -688,24 +661,24 @@ def get_shape_type(type_val):
     return shape_types.get(type_val, f"Unknown Type ({type_val})")
 
 def extract_text_from_shape(shape, indent_level=1):
-    """모든 유형의 도형에서 텍스트를 추출하는 함수"""
+    """Function to extract text from all shape types"""
     output = ""
     indent = "  " * indent_level
     
     try:
-        # 텍스트프레임이 있는 객체에서 텍스트 추출 (TextBox, AutoShape, Placeholder 등)
+        # Extract text from objects with text frame (TextBox, AutoShape, Placeholder, etc.)
         if hasattr(shape, 'HasTextFrame') and shape.HasTextFrame:
             text_frame = shape.TextFrame
             if hasattr(text_frame, 'HasText') and text_frame.HasText:
                 text_range = text_frame.TextRange
                 output += f"\n{indent}Text content: {text_range.Text}"
                 
-                # 텍스트 서식 정보 추출
+                # Extract text formatting information
                 try:
                     output += f"\n{indent}Font: {text_range.Font.Name}, Size: {text_range.Font.Size}"
                     output += f"\n{indent}Bold: {text_range.Font.Bold}, Italic: {text_range.Font.Italic}"
                     
-                    # 단락 정보 추출
+                    # Extract paragraph information
                     if hasattr(text_range, 'ParagraphFormat'):
                         para_format = text_range.ParagraphFormat
                         output += f"\n{indent}Alignment: {get_alignment_type(para_format.Alignment)}"
@@ -713,21 +686,21 @@ def extract_text_from_shape(shape, indent_level=1):
                 except:
                     output += f"\n{indent}Cannot retrieve all text formatting details"
         
-        # TextFrame2 지원 (Office 2007 이상)
+        # TextFrame2 support (Office 2007 and above)
         elif hasattr(shape, 'HasTextFrame2') and shape.HasTextFrame2:
             text_frame = shape.TextFrame2
             if hasattr(text_frame, 'TextRange') and text_frame.TextRange.Text != "":
                 text_range = text_frame.TextRange
                 output += f"\n{indent}Text content (TextFrame2): {text_range.Text}"
                 
-                # 텍스트 서식 정보 추출
+                # Extract text formatting information
                 try:
                     output += f"\n{indent}Font: {text_range.Font.Name}, Size: {text_range.Font.Size}"
                     output += f"\n{indent}Bold: {text_range.Font.Bold}, Italic: {text_range.Font.Italic}"
                 except:
                     output += f"\n{indent}Cannot retrieve TextFrame2 formatting details"
         
-        # 테이블 셀 내의 텍스트 추출
+        # Extract text from table cells
         elif shape.Type == 19:  # Table
             try:
                 table = shape.Table
@@ -746,14 +719,14 @@ def extract_text_from_shape(shape, indent_level=1):
             except:
                 output += f"\n{indent}Cannot retrieve table text content"
                 
-        # 차트 내의 텍스트 추출
+        # Extract text from chart
         elif shape.Type == 3:  # Chart
             try:
                 chart = shape.Chart
                 if chart.HasTitle:
                     output += f"\n{indent}Chart Title: {chart.ChartTitle.Text}"
                     
-                # 축 제목 추출
+                # Extract axis titles
                 if hasattr(chart, 'Axes'):
                     for axis_type in range(1, 3):  # 1: Primary, 2: Secondary
                         for axis_group in range(1, 4):  # 1: X, 2: Y, 3: Z
@@ -766,7 +739,7 @@ def extract_text_from_shape(shape, indent_level=1):
             except:
                 output += f"\n{indent}Cannot retrieve chart text content"
                 
-        # SmartArt 내의 텍스트 추출
+        # Extract text from SmartArt
         elif shape.Type == 24:  # SmartArt
             try:
                 if hasattr(shape, 'SmartArt'):
@@ -789,7 +762,7 @@ def extract_text_from_shape(shape, indent_level=1):
     return output
 
 def get_alignment_type(alignment_val):
-    # 단락 정렬 값을 텍스트로 변환
+    # Convert paragraph alignment value to text
     alignment_types = {
         1: "Left",
         2: "Center",
@@ -801,7 +774,7 @@ def get_alignment_type(alignment_val):
 
 def parse_group_shape(group_shape, indent_level=1):
     """Recursively parse all items within a group object"""
-    output = ""  # 출력을 저장할 문자열 초기화
+    output = ""  # Initialize string to store output
     try:
         indent = "  " * indent_level
         group_items_count = group_shape.GroupItems.Count
@@ -816,7 +789,7 @@ def parse_group_shape(group_shape, indent_level=1):
             output += f"\n{indent}  Position: Left={group_item.Left}, Top={group_item.Top}"
             output += f"\n{indent}  Size: Width={group_item.Width}, Height={group_item.Height}"
             
-            # 그룹 내 개체의 텍스트 추출
+            # Extract text from the object
             output += extract_text_from_shape(group_item, indent_level + 1)
             
             # Process recursively if the item in the group is another group
@@ -833,10 +806,10 @@ def parse_group_shape(group_shape, indent_level=1):
 
 def parse_shape_details(shape, indent_level=1):
     # Extract specific details based on shape type
-    output = ""  # 출력을 저장할 문자열 초기화
+    output = ""  # Initialize string to store output
     indent = "  " * indent_level
     
-    # 모든 도형에서 텍스트 추출 시도
+    # Try extracting text from all shapes
     output += extract_text_from_shape(shape, indent_level)
     
     try:

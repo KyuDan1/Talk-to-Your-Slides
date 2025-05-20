@@ -15,7 +15,7 @@ import pythoncom
     
 
 def _call_claude_api(prompt, api_key):
-    # API 요청 준비
+    # Prepare API request
     url = "https://api.anthropic.com/v1/messages"
     headers = {
         "x-api-key": api_key,
@@ -23,7 +23,7 @@ def _call_claude_api(prompt, api_key):
         "content-type": "application/json"
     }
     
-    # API 요청 데이터
+    # API request data
     data = {
         "model": "claude-3-7-sonnet-20250219",
         "messages": [
@@ -35,24 +35,24 @@ def _call_claude_api(prompt, api_key):
         "max_tokens": 4000
     }
     
-    # 요청 설정
+    # Request configuration
     req = urllib.request.Request(url)
     for key, value in headers.items():
         req.add_header(key, value)
     
-    # JSON 데이터 인코딩
+    # Encode JSON data
     json_data = json.dumps(data).encode('utf-8')
     
-    # API 호출
+    # API call
     with urllib.request.urlopen(req, json_data) as response:
         response_text = response.read().decode('utf-8')
         result = json.loads(response_text)
         
-        print("API 응답 수신 완료")
+        print("API response received")
         return result["content"][0]["text"]
 
 def _generate_code(model, api_key, type, before, after, slide_num, total_content):
-    # API 호출을 위한 프롬프트 구성
+    # Prepare prompt for API call
     prompt = f"""
 Generate Python code modify an active PowerPoint presentation based on the provided JSON task data. The code should:
 0. Find activate powerpoint app with ppt_app = win32com.client.GetActiveObject("PowerPoint.Application")
@@ -100,7 +100,7 @@ Do not use any "**" to make bold. It won't be applied on powerpoint.
 The code must be direct, practical and focused solely on making the specific change requested. Ensure all color references use the BGR format for proper appearance in PowerPoint.
     """
 
-    # Claude API 호출
+    # Call Claude API
     if model == "claude-3.7-sonnet":
         code = _call_claude_api(prompt, api_key)
     elif "gpt" in model:
@@ -108,7 +108,7 @@ The code must be direct, practical and focused solely on making the specific cha
     else:
         "yes"
         code = _call_gpt_api(prompt, api_key, model)
-    # 코드 전처리
+    # Preprocess code
     code = code.strip()
     if code.startswith("```python"):
         code = code[len("```python"):].strip()
@@ -117,7 +117,7 @@ The code must be direct, practical and focused solely on making the specific cha
     if code.endswith("```"):
         code = code[:-3].strip()
     
-    # 코드에 필요한 변수가 정의되어 있는지 확인
+    # Check if required variables are defined in the code
     if "error_occurred = False" not in code:
         code = "error_occurred = False\n\n" + code
     
@@ -128,22 +128,20 @@ class test_Applier:
         self.model = model
         self.retry = retry
     def __call__(self, processed_json):
-        # PowerPoint 설정 코드를 별도 함수로 실행
+        # Execute PowerPoint setup code in a separate function
         pythoncom.CoInitialize()
         try:
             import win32com.client
             import win32com.client.dynamic
             
-            # PowerPoint 애플리케이션 가져오기
-            #print("Connecting to PowerPoint...")
+            # Get PowerPoint application
             ppt_application = win32com.client.Dispatch("PowerPoint.Application")
-            ppt_application.Visible = True  # PowerPoint 창 표시
+            ppt_application.Visible = True  # Show PowerPoint window
             
-            # 현재 활성화된 프레젠테이션 가져오기
+            # Get currently active presentation
             active_presentation = ppt_application.ActivePresentation
-            #print(f"Connected to PowerPoint. Presentation: {active_presentation.Name}")
             
-            # 글로벌 변수 설정 - 여기서 명시적으로 정의
+            # Set global variables - explicitly define here
             globals_dict = {
                 'ppt_application': ppt_application,
                 'active_presentation': active_presentation,
@@ -168,7 +166,7 @@ class test_Applier:
                 
                 total_content = task['contents']
                 
-                edit_target_type = task['edit target']#task['edit target type']
+                edit_target_type = task['edit target']
                 edit_target_content = task['edit target content']
                 content_after_edit = task['content after edit']
                 
@@ -179,49 +177,49 @@ class test_Applier:
                     
                     print(f"\nChanging {type}: '{before}' → '{after}'")
                     
-                    # 코드 생성
+                    # Generate code
                     code = _generate_code(self.model, self.api_key, type, before, after, slide_num, total_content)
                     
-                    # 디버깅을 위해 전체 코드 출력
+                    # Print full code for debugging
                     print("====Generated Code====")
                     print(code)
                     print("====End of Code=====")
                     
-                    # 코드 실행에 retry 로직 추가
+                    # Add retry logic for code execution
                     task_success = False
                     
-                    for attempt in range(self.retry + 1):  # 초기 시도 + retry 횟수만큼 시도
+                    for attempt in range(self.retry + 1):  # Initial attempt + retry count
                         if attempt > 0:
                             print(f"Retry attempt {attempt}/{self.retry}...")
                         
                         try:
                             print("Executing code...")
                             
-                            # 로컬 네임스페이스 생성 (각 반복마다 새로 생성)
+                            # Create local namespace (new for each iteration)
                             local_vars = globals_dict.copy()
                             
-                            # 코드 실행
+                            # Execute code
                             exec(code, globals(), local_vars)
                             
-                            # 오류 발생 여부 확인
+                            # Check if error occurred
                             if local_vars.get('error_occurred', False):
                                 print("Error occurred during code execution")
-                                # 다음 재시도로 진행 (에러가 발생했으므로)
+                                # Proceed to next retry (since error occurred)
                             else:
                                 print("Code executed successfully")
                                 task_success = True
-                                break  # 성공했으므로 재시도 루프 종료
+                                break  # Break retry loop on success
                             
-                            # 잠시 대기하여 PowerPoint가 업데이트될 시간 제공
+                            # Wait briefly to allow PowerPoint to update
                             time.sleep(0.5)
                             
                         except Exception as e:
                             print(f"Error executing code: {str(e)}")
                             print(f"Error type: {type(e).__name__}")
                             print(traceback.format_exc())
-                            # 다음 재시도로 진행 (예외가 발생했으므로)
+                            # Proceed to next retry (since exception occurred)
                     
-                    # 모든 재시도 후에도 실패한 경우 전체 성공 상태를 False로 설정
+                    # Set overall success status to False if all retries failed
                     if not task_success:
                         print(f"Failed to execute code after {self.retry} retries. Moving to next task.")
                         success = False

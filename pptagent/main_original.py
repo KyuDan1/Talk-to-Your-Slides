@@ -16,14 +16,14 @@ logging.getLogger('test_Applier').setLevel(logging.DEBUG)
 def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=None, retry=3):
     import sys
 
-    # 로그 파일을 쓰기 모드로 엽니다.
+    # Open log file in write mode
     log_file = open(f"./log/output{user_input.replace(' ', '_')}.log", "w", encoding="utf-8")
-    # 표준 출력을 log_file로 재지정합니다.
+    # Redirect standard output to log_file
     sys.stdout = log_file
 
-    print("이 메시지는 output.log 파일에 기록됩니다.")
+    print("This message will be recorded in output.log")
     
-    # --- 측정 시작: Planner ---
+    # Start measurement: Planner
     planner_start_time = time.time()
     planner = Planner()
     plan_json:json = planner(user_input, model_name="gemini-1.5-flash")
@@ -31,7 +31,7 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     print("=====PLAN====")
     print(plan_json)
 
-    # --- 측정 시작: Parser ---
+    # Start measurement: Parser
     parser_start_time = time.time()
     parser = Parser(plan_json)
     parsed_json:json = parser.process()
@@ -39,7 +39,7 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     print("=====PARSED====")
     print(parsed_json)
 
-    # --- 측정 시작: Processor ---
+    # Start measurement: Processor
     processor_start_time = time.time()
     processor = Processor(parsed_json, model_name = 'gemini-2.5-flash-preview-04-17', api_key=OPENAI_API_KEY)
     processed_json:json = processor.process()
@@ -47,7 +47,7 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
     print("=====PROCESSED====")
     print(processed_json)   
 
-    # --- 측정 시작: Applier (or test_Applier) ---
+    # Start measurement: Applier (or test_Applier)
     applier_start_time = time.time()
     if rule_base_apply:
         applier = Applier()
@@ -55,35 +55,20 @@ def main(user_input, rule_base_apply:bool = False, log_queue=None, stop_event=No
         applier = test_Applier(model="gemini-2.5-flash-preview-04-17", api_key=OPENAI_API_KEY, retry = retry)
     
     result = applier(processed_json)
-        
-    
     applier_end_time = time.time()
 
-    # --- 측정 시작: Reporter ---
-    #reporter_start_time = time.time()
-    #reporter = Reporter()
-    #summary = reporter(processed_json, result)
-    #reporter_end_time = time.time()
-    #print("=====SUMMARY=====")
-    #print(summary)
-
-    # 메모리에 기록
-    #memory = SharedLogMemory()
-    #memory = memory(user_input, plan_json, processed_json, result)
-
-    # 전체 실행 종료 시각
+    # End time of total execution
     end_time = time.time()
 
-    # --- 시간 측정 결과 출력 ---
+    # Print time measurement results
     print("\n=====TIME MEASUREMENTS=====")
     print(f"Planner Time:   {planner_end_time - planner_start_time:.4f} seconds")
     print(f"Parser Time:    {parser_end_time - parser_start_time:.4f} seconds")
     print(f"Processor Time: {processor_end_time - processor_start_time:.4f} seconds")
     print(f"Applier Time:   {applier_end_time - applier_start_time:.4f} seconds")
-    #print(f"Reporter Time:  {reporter_end_time - reporter_start_time:.4f} seconds")
     print(f"Total Time:     {end_time - planner_start_time:.4f} seconds")
 
-    # 코드 실행 후 파일을 닫습니다.
+    # Close the file after code execution
     log_file.close()
 
 
@@ -103,8 +88,5 @@ for i in range(2,50):
     try:
         main(user_input=f"Please translate in English slide number {i}", rule_base_apply=False, retry=4)
     except Exception as e:
-        print(f"Error while processing instruction : {e}")
-        continue  # 에러가 나면 다음 루프로 넘어감
-
-# 바꾼 다음에 대기하는 시간이 쓸데없이 길다.
-# reporter 없앨까?
+        print(f"Error while processing instruction: {e}")
+        continue  # Continue to next iteration if error occurs
