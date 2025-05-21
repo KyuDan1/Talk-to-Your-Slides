@@ -1,10 +1,15 @@
-# 🚀 Talk-to-Your-Slides [![Stars](https://img.shields.io/github/stars/KyuDan1/Talk-to-Your-Slides?style=social)](https://github.com/KyuDan1/Talk-to-Your-Slides/stargazers)
+---
 
 <div align="center">
 
-**Talk to Your Slides: Language-Driven Agents for Efficient Slide Editing**  
-🗒️ Our **research paper** will be published soon!  
-🖥️ Our **code** is now available!
+# 📜 *Talk to Your Slides:*
+
+## **Language-Driven Agents for Efficient Slide Editing**
+[![Stars](https://img.shields.io/github/stars/KyuDan1/Talk-to-Your-Slides?style=social)](https://github.com/KyuDan1/Talk-to-Your-Slides/stargazers)
+
+
+---
+📄 **[Research Paper (arXiv preprint)](https://arxiv.org/abs/2505.11604)**
 
 </div>
 
