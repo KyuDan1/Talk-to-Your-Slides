@@ -4,26 +4,20 @@
    
   **Talk to Your Slides: Real‑Time Agent‑Based PowerPoint Automation with Large Language Models**
   
-🗒️ Our **research paper** on PPT Agent will be published soon!
+🗒️ Our **research paper** is out!
 
-🖥️ Our **code** will be out soon!
+https://arxiv.org/abs/2505.11604
+
+🖥️ Our **code** is out!
 </div>
 
 ## 📖 Overview
 
 Our PPT Agent can modify PowerPoint presentations in real-time while PowerPoint is open.<br>
 It receives natural language-based user commands and successfully modifies the PPT through interaction with the agent, presenting the updated PowerPoint to the user.<br><br>
-**✨Our research paper on PPT Agent will be published soon!✨<br><br> It covers in-depth content about the latest AI-based presentation generation technology, so stay tuned.**
 
 > **News about the paper publication will be available first on [LinkedIn](https://www.linkedin.com/in/kyudanjung/) and [Research Blog](https://sites.google.com/view/kyudanjung/).**
 
-
-## ✨ Key Features
-
-### Overall
-
-
-- **Figure 1. Diagram of the Talk-to-Your-Slides System.** This figure illustrates the overall workflow of the system. When a user inputs a command in natural language, the **Planner** first generates a plan. Then, the **Parser** parses PowerPoint-related information using a rule-based approach. The **Processor** interprets this parsed information, and the **Applier** generates Python code to apply the intended changes to the PowerPoint file. Finally, the **Reporter** summarizes and reports all executed commands back to the user.
 
 ## 🎬 Demo Videos
 
@@ -80,17 +74,14 @@ python pptagent/main.py
 If you use PPT Agent in your research or project, please cite as follows:
 
 ```bibtex
-@software{ppt_agent2025,
-  author = {Kyudan Jung and Hojun Cho and Jooyeol Yun and Jaegul Choo},
-  title = {PPT Agent: AI-Powered Presentation Generator},
-  url = {https://github.com/KyuDan1/(will be out soon)},
-  version = {1.0.0},
-  year = {2025},
+@misc{jung2025talkslideslanguagedrivenagents,
+      title={Talk to Your Slides: Language-Driven Agents for Efficient Slide Editing}, 
+      author={Kyudan Jung and Hojun Cho and Jooyeol Yun and Soyoung Yang and Jaehyeok Jang and Jaegul Choo},
+      year={2025},
+      eprint={2505.11604},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.11604}, 
 }
 ```
 
-Or you can cite it briefly as:
-
-```
-Your Name. (2025). PPT Agent: AI-Powered Presentation Generator [Software]. Available from https://github.com/KyuDan1/(will be out soon)
-```
