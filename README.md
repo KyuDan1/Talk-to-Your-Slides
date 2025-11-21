@@ -3,7 +3,9 @@
 <div align="center">
   
 ❗The "4-24-more-finegrained" branch is better than "main" branch for dev environment.❗
-  
+
+❗We will release TSBench-Hard version❗
+
 # 📜 *Talk to Your Slides:*
 
 ## **Language-Driven Agents for Efficient Slide Editing**
@@ -37,6 +39,8 @@ To evaluate slide editing performance, we present **TSBench**, a human-annotated
 ## 📚 TSBench Benchmark Dataset
 
 📎 [Download TSBench on Google Drive](https://drive.google.com/drive/folders/1hSjBTCJXiC_rhLGIhLBMqDQpotTr9wiT?usp=sharing)
+
+📎 [Download TSBench-Hard on Google Drive]() (To be updated)
 
 ---
 
