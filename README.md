@@ -1,10 +1,6 @@
 ---
 
 <div align="center">
-  
-❗The "4-24-more-finegrained" branch is better than "main" branch for dev environment.❗
-
-❗We will release TSBench-Hard version❗
 
 # 📜 *Talk to Your Slides:*
 
@@ -16,6 +12,10 @@
 📄 **[Research Paper (arXiv preprint)](https://arxiv.org/abs/2505.11604)**
 
 </div>
+
+---
+
+> **Note:** We will release TSBench-Hard version soon!
 
 ---
 
@@ -78,47 +78,167 @@ To evaluate slide editing performance, we present **TSBench**, a human-annotated
 
 ⚠️ To allow Python to control PowerPoint via COM interface, you must enable VBA access:
 
-- Open PowerPoint
+1. Open PowerPoint
+2. Go to **File > Options > Trust Center > Trust Center Settings**
+3. In **Macro Settings**, check:
+   - ✅ "Trust access to the VBA project object model"
 
--  Go to File > Options > Trust Center > Trust Center Settings
+### 📦 Setup Instructions
 
-- In Macro Settings, make sure to check:
-- ✅ "Trust access to the VBA project object model"
-
-
-1. **Install dependencies:**
+#### Step 1: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
-````
+```
 
-2. **Create `credentials.yml`** in the root directory:
+**Note:** If you encounter issues with package installation, install these core packages:
+```bash
+pip install openai==1.74.0 google-generativeai anthropic python-pptx Flask python-dotenv pyyaml
+```
 
+#### Step 2: Configure API Keys
+
+**Option A: Using credentials.yml (Recommended)**
+
+Copy the example credentials file:
+```bash
+cp credentials.yml.example credentials.yml
+```
+
+Edit `credentials.yml` with your API keys:
 ```yaml
 gpt-4.1-mini:
   api_key:  "YOUR_OPENAI_API_KEY"
   base_url: "https://api.openai.com/v1"
 
-gpt-4.1-nano:
+gpt-4.1:
   api_key:  "YOUR_OPENAI_API_KEY"
   base_url: "https://api.openai.com/v1"
 
 gemini-1.5-flash:
   api_key: "YOUR_GEMINI_API_KEY"
+
+claude-3.7-sonnet:
+  api_key: "YOUR_ANTHROPIC_API_KEY"
 ```
 
-3. **Create `.env`** in the `pptagent/` directory:
+**Option B: Using .env file**
 
+Create a `.env` file in the `pptagent/` directory:
+```bash
+cd pptagent
+cat > .env << EOF
+OPENAI_API_KEY=your_openai_key_here
+ANTHROPIC_API_KEY=your_anthropic_key_here
+GEMINI_API_KEY=your_gemini_key_here
+EOF
 ```
-# Example .env content
-OPENAI_API_KEY=your_key_here
+
+#### Step 3: Run the System
+
+**Web UI (Flask) - Recommended for interactive use:**
+```bash
+python pptagent/main_flask.py
+```
+Then open your browser to `http://localhost:8080`
+
+**CLI Mode - For batch processing:**
+```bash
+cd pptagent
+python main_cli.py
 ```
 
-4. **Run the system:**
-
+**Quick Start (shows usage):**
 ```bash
 python pptagent/main.py
 ```
+
+### 🔧 Project Structure
+
+```
+Talk-to-Your-Slides/
+├── pptagent/
+│   ├── main.py              # Entry point (shows usage)
+│   ├── main_flask.py        # Web UI server (Flask)
+│   ├── main_cli.py          # CLI interface
+│   ├── classes.py           # Core PPT agent classes
+│   ├── test_Applier.py      # Applier implementations
+│   ├── llm_api.py           # LLM API wrappers
+│   ├── gemini_api.py        # Gemini-specific API
+│   ├── utils.py             # Utility functions
+│   ├── prompt.py            # System prompts
+│   └── templates/           # Flask HTML templates
+├── credentials.yml.example  # Example API credentials
+├── requirements.txt         # Python dependencies
+└── README.md               # This file
+```
+
+### 🎯 Supported Models
+
+- **OpenAI**: GPT-4.1, GPT-4.1-mini, GPT-4.1-nano
+- **Google**: Gemini 1.5 Flash, Gemini 2.5 Flash
+- **Anthropic**: Claude 3.7 Sonnet
+
+### 💡 Usage Examples
+
+**Example 1: Translate slide content**
+```
+"Translate all text content on slide 1 into Korean."
+```
+
+**Example 2: Fix typos**
+```
+"Check slide 4 for any typos or errors and correct them."
+```
+
+**Example 3: Change formatting**
+```
+"Change all English text to blue color on slide 3."
+```
+
+See demo videos below for more examples!
+
+### 🐛 Troubleshooting
+
+**Issue: ModuleNotFoundError for openai or google.generativeai**
+```bash
+# Solution: Install missing packages
+pip install openai==1.74.0 google-generativeai
+```
+
+**Issue: FileNotFoundError for credentials.yml**
+```bash
+# Solution: Create credentials file from example
+cp credentials.yml.example credentials.yml
+# Then edit credentials.yml with your API keys
+```
+
+**Issue: COM error on Windows**
+- Make sure PowerPoint is installed
+- Enable VBA access (see installation guide above)
+- Run Python as Administrator if needed
+
+**Issue: Flask server not starting**
+```bash
+# Check if port 8080 is available
+# Try a different port by editing main_flask.py line 341:
+# app.run(debug=True, port=8081)  # Change to different port
+```
+
+### 🏗️ Code Architecture
+
+The system follows a hierarchical pipeline:
+
+1. **Planner**: Analyzes user request and creates high-level plan
+2. **Parser**: Parses the plan into structured tasks
+3. **Processor**: Processes each task with contextual information
+4. **Applier**: Applies changes to PowerPoint slides via COM/python-pptx
+5. **Reporter**: Generates summary of changes made
+
+Each component is modular and can be extended independently.
+
+---
+
 ## 📊 How to Cite
 
 If you use PPT Agent in your research or project, please cite as follows:
