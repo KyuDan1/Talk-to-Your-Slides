@@ -239,19 +239,5 @@ Each component is modular and can be extended independently.
 
 ---
 
-## 📊 How to Cite
 
-If you use PPT Agent in your research or project, please cite as follows:
-
-```bibtex
-@misc{jung2025talkslideslanguagedrivenagents,
-      title={Talk to Your Slides: Language-Driven Agents for Efficient Slide Editing}, 
-      author={Kyudan Jung and Hojun Cho and Jooyeol Yun and Soyoung Yang and Jaehyeok Jang and Jaegul Choo},
-      year={2025},
-      eprint={2505.11604},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2505.11604}, 
-}
-```
 ---
