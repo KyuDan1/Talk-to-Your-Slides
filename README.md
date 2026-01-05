@@ -16,7 +16,7 @@
 ---
 
 > **Note:** TSBench-Hard version out! 📎 [Download TSBench-Hard on Google Drive](https://drive.google.com/file/d/11Mc0NWRyLe3AKl8QccjSgQPh0oNZMR9v/view?usp=sharing)
-
+> **Note:** Batch slide inferece examples available.📎 [Download Examples on Google Drive](https://drive.google.com/drive/folders/1-TmujhQkMg17QsdFx_LOCVRr19QNFyOd?usp=sharing)
 ---
 
 ## 📖 Overview
