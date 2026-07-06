@@ -2,6 +2,10 @@
 
 <div align="center">
 
+!!! Our next work released !!!
+- https://anonymous.4open.science/r/EditPPT-0E27/README.md
+- https://github.com/ben8169/EditPPT-release refer this release to execute .exe file on your windows.
+
 # 📜 *Talk to Your Slides:*
 
 ## **Language-Driven Agents for Efficient Slide Editing**
